@@ -1,0 +1,227 @@
+<div class="container">
+  <div class="page-content-wrapper">  
+    <h3>{{ 'products.compare.compare_main_title' | t }}</h3> 
+    <div class="table-responsive">
+      <table class="shop_table cart compare_table">
+        <thead>      
+        </thead>
+        <tbody class="compare-box">
+          <tr class="remove1">
+            <th class="product-remove">{{ 'products.compare.remove' | t }}</th>
+          </tr>
+          <tr class="product-img">
+            <th class="product-thumbnail"><span class="nobr">{{ 'products.compare.product_image' | t }}</span></th>
+          </tr>
+          <tr class="productname">
+            <th class="product-name"><span class="nobr">{{ 'products.compare.product_name' | t }}</span></th>
+          </tr>
+          <tr class="productdesc">
+            <th class="product-desc1"><span class="nobr">{{ 'products.compare.product_desc' | t }}</span></th>
+          </tr>
+          <tr class="producttype">
+            <th class="product-type"><span class="nobr">{{ 'products.compare.product_type' | t }}</span> </th>
+          </tr>
+          <tr class="productvender">
+            <th class="product-vender"><span class="nobr">{{ 'products.compare.product_vender' | t }}</span> </th>
+          </tr>
+          <tr class="productprice">
+            <th class="product-price"><span class="nobr">{{ 'products.compare.unit_price' | t }}</span></th>
+          </tr>
+          <tr class="product-stock">
+            <th class="product-stock-stauts"><span class="nobr">{{ 'products.compare.stock_status' | t }}</span></th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div> 
+</div>
+<div class="modal fade" id="compareModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog white-modal" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">are you sure want to remove this product?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span class="mdi mdi-close" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary remove_from_compare product-remove-js" data-producthandle="{{ product.handle }}" >ok</button> 
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">cancle</button>        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .compare_table{
+    display:none;
+    border:none;
+  }
+  .compare_table .compare-box th{
+    width:180px;
+    font-weight: 500;
+    color: #111;
+    font-size: 13px;
+  }
+  .compare_table .compare-box td{
+    text-align:center;
+    font-size: 13px;
+    color:#666;
+  }
+  .compare_table .compare-box .compare-item-link img{
+    margin:auto;
+    border-radius: 5px; 
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    padding: 3px;
+    border: 1px solid var(--color-border);
+      }
+  .compare .page-content-wrapper h3 {
+    font: 500 18px/20px var(--font-stack-header);
+      color: #111;
+      margin: 0 0 15px;
+      }
+  .compare_table .compare-box td span.compare-out-of-stock {
+    color: #ff0000;
+  }
+  .compare_table .compare-box td span.compare-in-stock {
+    color: #1cc373;
+  }
+  @media only screen and (max-width: 991px) {
+    .compare .page-content-wrapper h3 {
+      font-size:16px;
+      line-height:18px;
+    }
+  }
+  @media only screen and (max-width: 480px) {
+    .compare .page-content-wrapper h3 {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+</style>
+<script>
+  $(function(){
+    var local1=JSON.parse(localStorage.getItem('localCompare')) || [];   
+    try
+    {
+      if(local1.length <= 3 && local1.length > 0){
+        var str=String(local1).split(",");
+        for(var i=0;i<str.length;i++){if(str[i]!=''){
+          Shopify.getProduct(str[i],function(product){compare_product(product)})
+        }}}
+      else{emptycompare()}
+      jQuery('.currency .active').trigger('click')}
+    catch(err){}
+    function emptycompare(){$(".compare_table").css('display', 'none');$(".table-responsive").append("<div class='compare-empty tc'>{{ 'products.compare.compare-empty' | t }}</div>")}
+                                                                                                     function compare_product(product){
+      $(".compare_table").css('display', 'block');
+      var $cloneitem=$(".compare-item1").clone();
+      $cloneitem.find(".compare-item-link").attr("href",product.url);
+      $cloneitem.find(".img-responsive").attr("src",product.featured_image);
+      var $cloneitemname=$(".compare-item-name").clone();
+      var $cloneitemdesc=$(".compare-item-desc").clone();
+      var $cloneitemtype=$(".compare-type").clone();
+      var $cloneitemvender=$(".compare-vender").clone();
+      $cloneitemname.find(".compare-item-link").attr("href",product.url);
+      $cloneitemname.find(".compare-item-link").text(product.title);
+      $cloneitemdesc.find(".compare-item-des").html(product.description);
+      $cloneitemtype.find(".compare-in-type").text(product.type);
+      $cloneitemvender.find(".compare-in-vender").text(product.vendor);
+      var $cloneitemprice=$(".table-compare-1__product-price");
+      $cloneitemprice.html(Shopify.formatMoney(product.price, window.money_format));
+      Currency.convertAll(window.shop_currency, Currency.cookie.read(), 'span.money', 'money_format');
+      var $cloneitemclear=$(".compare-item-clear").clone();
+      var $cloneitemstock=$(".compare-stock").clone();
+      if(product.available){
+        $cloneitemstock.find(".compare-stock-value").addClass("compare-in-stock").text(window.in_stock);
+      }else{
+        $cloneitemstock.find(".compare-stock-value").addClass("compare-out-of-stock").text(window.out_of_stock);
+      }
+      $('.compare-box .remove1').append("<td id='com-"+product.id+"' class='"+product.handle+"' data-comparehandle='"+product.handle+"'><a href='' data-toggle='modal' data-target='#compareModal' class='remove' title='Remove this product'><i class='mdi mdi-delete'></i></a></td>");
+      $('.compare-box .product-img').append("<td class='"+product.handle+"' data-comparehandle='"+product.handle+"'>"+$cloneitem.html()+"</td>");
+      $('.compare-box .productname').append("<td class='"+product.handle+"' data-comparehandle='"+product.handle+"' >"+$cloneitemname.html()+"</td>");
+      $('.compare-box .productdesc').append("<td class='"+product.handle+"' data-comparehandle='"+product.handle+"'>"+$cloneitemdesc.html().split(" ").splice(0, 15).join(" ") + '...'+"</td>");
+      $('.compare-box .producttype').append("<td class='"+product.handle+"' data-comparehandle='"+product.handle+"'>"+$cloneitemtype.html()+"</td>");
+      $('.compare-box .productvender').append("<td class='"+product.handle+"' data-comparehandle='"+product.handle+"'>"+$cloneitemvender.html()+"</td>");
+      $('.compare-box .productprice').append("<td class='"+product.handle+"' data-comparehandle='"+product.handle+"'>"+$cloneitemprice.html()+"</td>");
+      $('.compare-box .product-stock').append("<td class='"+product.handle+"' data-comparehandle='"+product.handle+"'>"+$cloneitemstock.html()+"</td>");
+
+      $('.modal-footer').find('.product-remove-js.'+product.handle+'').click(function(event) {
+        event.preventDefault();
+        var compareRemoveButtonClass = '.product-remove-js';
+        var compareObject = JSON.parse(localStorage.getItem('localCompare')) || [];
+
+        var productHandle = $(this).data('comparehandle');
+        console.log(productHandle);
+        compareObject.splice(compareObject.indexOf(productHandle), 1);
+        console.log(compareObject);
+        localStorage.setItem('localCompare', JSON.stringify(compareObject));
+        var compareCount = $('.compare-count');
+        console.log(compareCount);
+        var compareObject1 = JSON.parse(localStorage.getItem('localCompare')) || [];
+
+        compareCount.text(compareObject1.length);
+
+        var item1 = $('.modal-footer td[data-comparehandle="'+product.handle+'"]');
+        item1.fadeOut(300);setTimeout(removeItem, 300, item1);
+
+
+        function removeItem(item1) {
+          item1.remove();
+          if (compareObject.length == []) {emptycompare();}
+
+        }
+
+      })
+    }
+                           });
+
+    function removeCompareItem() {
+      var removeBtns = document.querySelectorAll('[data-target="#compareModal"]')
+      var handle = ''
+      var removeOks = document.querySelectorAll('.remove_from_compare')
+      removeBtns.forEach(function(btn){
+        btn.addEventListener('click', function(e){
+          var target = e.target
+          var parent = target.closest('td[data-comparehandle]')
+          handle = parent.getAttribute('data-comparehandle')
+        })
+      })
+      removeOks.forEach(function(ok){
+        ok.addEventListener('click', function(e){
+          var localCompare = JSON.parse(localStorage.getItem('localCompare'))
+          var newLocalCompare = localCompare.filter(compare => compare !== handle)
+          if (newLocalCompare.length === 0 ) { 
+            localStorage.removeItem('localCompare')
+            location.reload()
+            return null
+          }
+          localStorage.setItem('localCompare', JSON.stringify(newLocalCompare))
+          location.reload()
+        })
+      })
+    }
+    setTimeout(function(){
+      removeCompareItem()
+    }, 1000)
+</script>
+<div class="compare-item-clear" style="display:none">
+</div>
+<div class="compare-item1" style="display:none">
+  <a class="compare-item-link" href="#">
+   <img loading="lazy" class="img-responsive" width="180" height="198" src="#" alt="compare-featured-image" class="lazyload">
+  </a>
+</div>
+<span class="table-compare-1__product-price" style="display:none">#</span>
+<div class="compare-item-name" style="display:none">
+  <a class="compare-item-link" href="#">#</a>
+</div>
+<div class="compare-item-desc" style="display:none">
+  <span class="compare-item-des">#</span>
+</div>
+<div class="compare-stock" style="display:none"><span class="compare-stock-value">#</span></div>
+<div class="compare-type" style="display:none"><span class="compare-in-type">#</span></div>
+<div class="compare-vender" style="display:none"><span class="compare-in-vender">#</span></div>

@@ -1,0 +1,1741 @@
+<style>
+  .header_3_wrapper{
+    background-color:{{section.settings.color_menu_bg }};
+  }
+  .header_3_wrapper .main-header{
+    background-color:{{section.settings.main_bgheader }};
+  }
+  .header_3 .site-header__cart-count .cart-products-count{
+    color:{{section.settings.count_color }};
+    background:{{section.settings.countbgcolor }};
+  }
+  .header_3 .site-header__cart-count .cart-products-detail{
+    color:{{section.settings.icon_txt_color }};
+  }
+  .header_3 .right-link-icon .myaccount .dropdown-toggle>i,.header_3 .wishlist-icon-div a>i,.header_3 .compare-icon-div a>i{
+    color:{{section.settings.Header_link_color }};
+  }
+  .header_3 .right-link-icon .myaccount .dropdown-toggle:hover >i,.header_3 .right-link-icon .myaccount .dropdown-toggle.open >i,.header_3 .wishlist-icon-div:hover a>i,.header_3 .compare-icon-div:hover a>i{
+    color:{{section.settings.Header_link_hover_color }};
+  }
+  .header_3 .top-header,.top_header_3 .header_language .disclosure .language_wrapper, 
+  .top_header_3 a.currency_wrapper.dropdown-toggle{color:{{section.settings.top_header_text_color }};}
+
+  .top_header_3 .header_language .disclosure .language_wrapper:hover,.top_header_3 .header_language .disclosure .language_wrapper.active, 
+  .top_header_3 .currency_wrapper.dropdown-toggle:hover,.top_header_3 .currency_wrapper.dropdown-toggle.active{
+    color:{{section.settings.top_header_text_hover_color }};
+  }
+  .header_3 .top_header_3{ background-color:{{section.settings.top_bg_color }};}
+  .header_3 .bottom_header_3{ background-color:{{section.settings.bottom_bg_color }};}
+  #accessibleNav>li>a{color:{{section.settings.toplink_txt_clr }};}
+  #accessibleNav>li:hover>a{color:{{section.settings.toplink_txthover_clr }};}
+  #accessibleNav>li:hover>a::before {background-color:{{section.settings.toplink_txtbg_clr }};}
+  #tt-megamenu span.toggle_menu{ background:{{section.settings.tt_title_bgclr }}; color:{{section.settings.tt_title_clr }};}
+  .tt-mega-menu #tt-megamenu .tt-mega_menu{ background:{{section.settings.menu_bgclr }};}
+  #tt-megamenu .tt-mega_menu .tt_menus_ul>li>a{color:{{section.settings.menu_txt_clr }};}
+  #tt-megamenu .tt_menu_item span.icon {color: {{section.settings.menu_txt_clr }};background: {{section.settings.menu_txt_clr }};}
+  .tt-mega-menu #tt-megamenu .tt-mega_menu{border: 2px solid var(--color-btn-secondary); border-top: transparent}
+</style>
+{% capture navSize %}250px{% endcapture %}
+{% capture navHeaderSize %}{{ section.settings.menu_mobile }}px{% endcapture %}
+{% capture logoMaxHeight %}{{ section.settings.menu_mobile | minus: 30 }}px{% endcapture %}
+{% capture borderWidth %}{{ settings.border_width }}px{% endcapture %}
+{% capture colorBorder %}{{ settings.color_borders }}{% endcapture %}
+{% assign navMenu = linklists[section.settings.nav_menu] %}
+{%- assign sticky_class = '' -%}
+{% if section.settings.sticky_header %}{%- assign sticky_class = 'sticky_header' -%}{% endif %}
+<header class="site-header page-element header_3" data-section-id="{{ section.id }}" data-section-type="header-section">
+  <div class="header_3_wrapper">
+    <div class="top_header_3">
+      <div class="container">
+        <div class="top-header">
+          <i class="mdi mdi-odnoklassniki"></i>
+          <div class="destination">{{ section.settings.destination }}</div>
+        </div>
+        <div class="top_header_3_link">
+          {% if section.settings.display_language %} 
+          <div class="header_language">
+            <ul class="tbl-list">
+              <li class="language dropdown-parent uppercase language-block"> 
+                {% include 'language-switcher' %}
+              </li>
+            </ul>
+          </div>
+          {% endif %}
+          {% if section.settings.display_currency %} 
+          <div class="header_currency">
+            <ul class="tbl-list">
+              <li class="currency dropdown-parent uppercase currency-block">
+                {% if section.settings.display_currency %}    
+                {% include 'currencies-switcher' %}
+                {% endif %}
+              </li>
+            </ul>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div id="header-sticky" class="main-header {{ sticky_class }}">
+      <div class="container">
+        <div class="header_logo_wrap">
+          <div class="h1 header-logo" itemscope itemtype="http://schema.org/Organization">
+            {% if section.settings.logo != blank %}
+            <a href="{{ routes.root_url }}" itemprop="url">
+              <img loading="lazy" class="lazyload" src="{{ section.settings.logo | img_url: 'master' }}" alt="{{ shop.name }}" title="{{ shop.name }}" itemprop="logo">
+            </a>
+            {% else %}
+            <a href="{{ routes.root_url }}" itemprop="url">{{ shop.name }}</a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="site-header__search icon-btn col-sm-7">
+          <div class="search_wrapper">
+            {% include 'search-bar' %} 
+          </div>
+        </div> 
+        <div class="ttresponsive_menu">
+          {% if section.blocks.size > 0 %}
+          <div id="shopify-section-TT-megamenu" class="shopify-section tt-mega-menu col-sm-3">
+            <div id="tt-megamenu" class="tt-megamenu">
+              <span class="toggle_menu current-close">
+                <i class="mdi mdi-menu"></i>
+                <span class="toggle_text">{{ section.settings.tt-title }}</span>
+              </span> 
+              <div class="tt-mega_menu">
+<ul class="tt_menus_ul">
+                  {%- assign i = 0 -%}
+                  {%- assign ik = 0 -%}
+                  {% for block in section.blocks %}
+                  {%- assign i = i | plus: 1 -%}
+                  {% if block.type == 'tt_mm_menu' %}
+                  {% if i == 1 %}
+                  <li class="tt_menu_item{% if block.settings.tt_mn_show_sub == true %} tt_mm_hassub{% endif %}{% if block.settings.tt_mn_show_sub == false %} single{% endif %}{% if block.settings.tt_mn_class != blank %} {{ block.settings.tt_mn_class }}{% endif %}">
+                    <a href="{{ block.settings.button_link }}">
+                      <span id="menuicon-{{ block.id }}" class="icon"></span>
+                      <span class="tt_menu_item_heading_title">{{ block.settings.title }}
+                        {% if block.settings.tt_mn_sub_heading != blank %}
+                        <span class="tt_mn_sub_heading" style="{% if block.settings.tt_mn_subheading_bg != blank %}background-color:{{ block.settings.tt_mn_subheading_bg }};{% endif %}{% if block.settings.tt_mn_subheading_color != blank %}color:{{ block.settings.tt_mn_subheading_color }};{% endif %}">{{ block.settings.tt_mn_sub_heading }}</span>{% endif %}
+                      </span>
+                    </a>
+                    <style> #tt-megamenu .tt_menu_item span#menuicon-{{ block.id }}.icon{mask-image:url({{ block.settings.tt_sub_menu_icon | img_url: '30x30'}});-webkit-mask-image:url({{ block.settings.tt_sub_menu_icon | img_url: '30x30'}});}</style>   
+                    {% if block.settings.tt_mn_show_sub == true %}  
+                    <span class="mobile-nav__sublist-trigger">
+                      <span class="mobile-nav__sublist-expand">
+                        <i class="mdi mdi-chevron-down" aria-hidden="true"></i>
+                      </span>
+                      <span class="mobile-nav__sublist-contract">
+                        <i class="mdi mdi-chevron-up" aria-hidden="true"></i>
+                      </span>
+                    </span>{% endif %}
+                    <div class="tt_sub_menu_wrap {% if block.settings.tt_mn_show_sub == false %}disable{% endif %}" {% if block.settings.tt_mn_sub_contentwidth != blank %}style="width:{{ block.settings.tt_mn_sub_contentwidth }}"{% endif %} >
+                      {% else %}
+                    </div>
+                  </li>
+                  <li id="menu--{{ block.id }}" class="tt_menu_item{% if block.settings.tt_mn_show_sub == true %} tt_mm_hassub{% endif %}{% if block.settings.tt_mn_show_sub == false %} single{% endif %} {% if block.settings.tt_mn_class != blank %} {{ block.settings.tt_mn_class }}{% endif %}">
+                    <a href="{{ block.settings.button_link }}">
+                      <span id="menuicon-{{ block.id }}" class="icon"></span>
+                      <span class="tt_menu_item_heading_title">{{ block.settings.title }}
+                        {% if block.settings.tt_mn_sub_heading != blank %}
+                        <span class="tt_mn_sub_heading" style="{% if block.settings.tt_mn_subheading_bg != blank %}background-color:{{ block.settings.tt_mn_subheading_bg }};{% endif %}{% if block.settings.tt_mn_subheading_color != blank %}color:{{ block.settings.tt_mn_subheading_color }};{% endif %}">{{ block.settings.tt_mn_sub_heading }}</span>{% endif %}
+                      </span>
+                    </a>
+                    <style> #tt-megamenu .tt_menu_item span#menuicon-{{ block.id }}.icon{mask-image:url({{ block.settings.tt_sub_menu_icon | img_url: '30x30'}});-webkit-mask-image:url({{ block.settings.tt_sub_menu_icon | img_url: '30x30'}});}</style>   
+                    {% if block.settings.tt_mn_show_sub == true %}
+                    <span class="mobile-nav__sublist-trigger">
+                      <span class="mobile-nav__sublist-expand">
+                        <i class="mdi mdi-chevron-down" aria-hidden="true"></i>
+                      </span>
+                      <span class="mobile-nav__sublist-contract">
+                        <i class="mdi mdi-chevron-up" aria-hidden="true"></i>
+                      </span>
+                    </span>{% endif %}
+                    <div class="tt_sub_menu_wrap {% if block.settings.tt_mn_show_sub == false %}disable{% endif %}{% if block.settings.bg_img_collection != blank %} bg_img{% endif %}" {% if block.settings.tt_mn_sub_contentwidth != blank %}style="width:{{ block.settings.tt_mn_sub_contentwidth }}"{% endif %}>
+                      {% endif %}
+                      {%- assign ik = 0 -%}
+                      {% endif %}
+                      <style> 
+                        #tt-megamenu #menu--{{ block.id }}.tt_menu_item .tt_sub_menu_wrap.bg_img{padding: 20px 15px 30px 15px; background-attachment:scroll; background-repeat:no-repeat; background-position:bottom; background-image:url('{{ block.settings.bg_img_collection | img_url: "master" }}');}
+                          @media(max-width:991px){#tt-megamenu #menu--{{ block.id }}.tt_menu_item .tt_sub_menu_wrap.bg_img{background-image:none;}}
+                      </style>
+
+                      {% if block.settings.tt_mn_show_sub == true %}
+                      {% if block.settings.tt_sub_menu_img != blank %}
+                      <div class="tt_sub_menu{% if block.settings.tt_sub_menu_customclass != blank %} {{ block.settings.tt_sub_menu_customclass }}{% endif %}" {% if block.settings.tt_sub_menu_width != blank %} style="width:{{ block.settings.tt_sub_menu_width }}"{% endif %}>
+                        {% if block.settings.tt_sub_menu_title_show != blank %}
+                        {% if block.settings.tt_sub_menu_link != blank %}
+                        {% if block.settings.tt_sub_menu_title != blank %}
+                        <h4 class="sub_mn_title">
+                          <a href="{{ block.settings.tt_sub_menu_link }}">{{ block.settings.tt_sub_menu_title }}</a>
+                          {% if block.settings.tt_mn_sub_heading_inner != blank %}
+                          <span class="tt_mn_sub_heading" style="{% if block.settings.tt_mn_subheading_bg_inner != blank %}background-color:{{ block.settings.tt_mn_subheading_bg_inner }};{% endif %}{% if block.settings.tt_mn_subheading_color_inner != blank %}color:{{ block.settings.tt_mn_subheading_color_inner }};{% endif %}">{{ block.settings.tt_mn_sub_heading_inner }}</span>{% endif %}
+                        </h4>
+                        {% endif %}
+                        {% else %}
+                        {% if block.settings.tt_sub_menu_title != blank %}
+                        <h4 class="sub_mn_title">{{ block.settings.tt_sub_menu_title }}</h4>
+                        {% endif %}
+                        {% endif %}
+                        {% endif %}
+                        {% if block.settings.tt_sub_menu_img != blank %}
+                        {% if block.settings.tt_sub_menu_link != blank %}
+                        <a href="{{ block.settings.tt_sub_menu_link }}" class="{% if block.settings.tt_sub_menu_img != blank %}menu-banner{% endif %}">
+                          {% endif %}
+                          <img loading="lazy" class="lazyload" {% if block.settings.tt_sub_menu_width != blank %}width="{{ block.settings.tt_sub_menu_width }}"{% endif %} src="{{ block.settings.tt_sub_menu_img | img_url: "master"}}" alt="img"/>
+                          {% if block.settings.tt_sub_menu_link != blank %}
+                        </a>
+                        {% endif %}
+                        {% endif %}
+                      </div>
+                      {% endif %}
+                      {% if block.settings.tt_sub_menu_Second_img != blank %}
+                      <div class="tt_sub_menu{% if block.settings.tt_sub_menu_Second_customclass != blank %} {{ block.settings.tt_sub_menu_Second_customclass }}{% endif %}" {% if block.settings.tt_sub_menu_Second_width != blank %} style="width:{{ block.settings.tt_sub_menu_Second_width }}"{% endif %}>
+                        {% if block.settings.tt_sub_menu_title_Second_show != blank %}
+                        {% if block.settings.tt_sub_menu_Second_link != blank %}
+                        {% if block.settings.tt_sub_menu_Second_title != blank %}
+                        <h4 class="sub_mn_title">
+                          <a href="{{ block.settings.tt_sub_menu_Second_link }}">{{ block.settings.tt_sub_menu_Second_title }}</a>
+                          {% if block.settings.tt_mn_sub_heading_Second_inner != blank %}
+                          <span class="tt_mn_sub_heading" style="{% if block.settings.tt_mn_subheading_bg_Second_inner != blank %}background-color:{{ block.settings.tt_mn_subheading_bg_Second_inner }};{% endif %}{% if block.settings.tt_mn_subheading_color_Second_inner != blank %}color:{{ block.settings.tt_mn_subheading_color_Second_inner }};{% endif %}">{{ block.settings.tt_mn_sub_heading_Second_inner }}</span>{% endif %}
+                        </h4>
+                        {% endif %}
+                        {% else %}
+                        {% if block.settings.tt_sub_menu_Second_title != blank %}
+                        <h4 class="sub_mn_title">{{ block.settings.tt_sub_menu_Second_title }}</h4>
+                        {% endif %}
+                        {% endif %}
+                        {% endif %}
+                        {% if block.settings.tt_sub_menu_Second_img != blank %}
+                        {% if block.settings.tt_sub_menu_Second_link != blank %}
+                        <a href="{{ block.settings.tt_sub_menu_Second_link }}" class="{% if block.settings.tt_sub_menu_Second_img != blank %}menu-banner{% endif %}">
+                          {% endif %}
+                          <img loading="lazy" class="lazyload" {% if block.settings.tt_sub_menu_Second_width != blank %}width="{{ block.settings.tt_sub_menu_Second_width }}"{% endif %} src="{{ block.settings.tt_sub_menu_Second_img | img_url: "master"}}" alt="img"/>
+                          {% if block.settings.tt_sub_menu_Second_link != blank %}
+                        </a>
+                        {% endif %}
+                        {% endif %}
+                      </div>
+                      {% endif %}
+                      {% if block.settings.tt_sub_menu_third_img != blank %}
+                      <div class="tt_sub_menu{% if block.settings.tt_sub_menu_third_customclass != blank %} {{ block.settings.tt_sub_menu_third_customclass }}{% endif %}" {% if block.settings.tt_sub_menu_third_width != blank %} style="width:{{ block.settings.tt_sub_menu_third_width }}"{% endif %}>
+                        {% if block.settings.tt_sub_menu_title_third_show != blank %}
+                        {% if block.settings.tt_sub_menu_third_link != blank %}
+                        {% if block.settings.tt_sub_menu_third_title != blank %}
+                        <h4 class="sub_mn_title">
+                          <a href="{{ block.settings.tt_sub_menu_third_link }}">{{ block.settings.tt_sub_menu_third_title }}</a>
+                          {% if block.settings.tt_mn_sub_heading_third_inner != blank %}
+                          <span class="tt_mn_sub_heading" style="{% if block.settings.tt_mn_subheading_bg_third_inner != blank %}background-color:{{ block.settings.tt_mn_subheading_bg_third_inner }};{% endif %}{% if block.settings.tt_mn_subheading_color_third_inner != blank %}color:{{ block.settings.tt_mn_subheading_color_third_inner }};{% endif %}">{{ block.settings.tt_mn_sub_heading_third_inner }}</span>{% endif %}
+                        </h4>
+                        {% endif %}
+                        {% else %}
+                        {% if block.settings.tt_sub_menu_third_title != blank %}
+                        <h4 class="sub_mn_title">{{ block.settings.tt_sub_menu_third_title }}</h4>
+                        {% endif %}
+                        {% endif %}
+                        {% endif %}
+                        {% if block.settings.tt_sub_menu_third_img != blank %}
+                        {% if block.settings.tt_sub_menu_third_link != blank %}
+                        <a href="{{ block.settings.tt_sub_menu_third_link }}" class="{% if block.settings.tt_sub_menu_third_img != blank %}menu-banner{% endif %}">
+                          {% endif %}
+                          <img loading="lazy" class="lazyload" {% if block.settings.tt_sub_menu_third_width != blank %}width="{{ block.settings.tt_sub_menu_third_width }}"{% endif %} src="{{ block.settings.tt_sub_menu_third_img | img_url: "master"}}" alt="img"/>
+                          {% if block.settings.tt_sub_menu_third_link != blank %}
+                        </a>
+                        {% endif %}
+                        {% endif %}
+                      </div>
+                      {% endif %}
+                      {% if block.settings.tt_sub_menu_fourth_img != blank %}
+                      <div class="tt_sub_menu{% if block.settings.tt_sub_menu_fourth_customclass != blank %} {{ block.settings.tt_sub_menu_fourth_customclass }}{% endif %}" {% if block.settings.tt_sub_menu_fourth_width != blank %} style="width:{{ block.settings.tt_sub_menu_fourth_width }}"{% endif %}>
+                        {% if block.settings.tt_sub_menu_title_fourth_show != blank %}
+                        {% if block.settings.tt_sub_menu_fourth_link != blank %}
+                        {% if block.settings.tt_sub_menu_fourth_title != blank %}
+                        <h4 class="sub_mn_title">
+                          <a href="{{ block.settings.tt_sub_menu_fourth_link }}">{{ block.settings.tt_sub_menu_fourth_title }}</a>
+                          {% if block.settings.tt_mn_sub_heading_fourth_inner != blank %}
+                          <span class="tt_mn_sub_heading" style="{% if block.settings.tt_mn_subheading_bg_fourth_inner != blank %}background-color:{{ block.settings.tt_mn_subheading_bg_fourth_inner }};{% endif %}{% if block.settings.tt_mn_subheading_color_fourth_inner != blank %}color:{{ block.settings.tt_mn_subheading_color_fourth_inner }};{% endif %}">{{ block.settings.tt_mn_sub_heading_fourth_inner }}</span>{% endif %}
+                        </h4>
+                        {% endif %}
+                        {% else %}
+                        {% if block.settings.tt_sub_menu_fourth_title != blank %}
+                        <h4 class="sub_mn_title">{{ block.settings.tt_sub_menu_fourth_title }}</h4>
+                        {% endif %}
+                        {% endif %}
+                        {% endif %}
+                        {% if block.settings.tt_sub_menu_fourth_img != blank %}
+                        {% if block.settings.tt_sub_menu_fourth_link != blank %}
+                        <a href="{{ block.settings.tt_sub_menu_fourth_link }}" class="{% if block.settings.tt_sub_menu_fourth_img != blank %}menu-banner{% endif %}">
+                          {% endif %}
+                          <img loading="lazy" class="lazyload" {% if block.settings.tt_sub_menu_fourth_width != blank %}width="{{ block.settings.tt_sub_menu_fourth_width }}"{% endif %} src="{{ block.settings.tt_sub_menu_fourth_img | img_url: "master"}}" alt="img"/>
+                          {% if block.settings.tt_sub_menu_fourth_link != blank %}
+                        </a>
+                        {% endif %}
+                        {% endif %}
+                      </div>
+                      {% endif %}
+                      {% if block.settings.tt_sub_menu_fifth_img != blank %}
+                      <div class="tt_sub_menu{% if block.settings.tt_sub_menu_fifth_customclass != blank %} {{ block.settings.tt_sub_menu_fifth_customclass }}{% endif %}" {% if block.settings.tt_sub_menu_fifth_width != blank %} style="width:{{ block.settings.tt_sub_menu_fifth_width }}"{% endif %}>
+                        {% if block.settings.tt_sub_menu_title_fifth_show != blank %}
+                        {% if block.settings.tt_sub_menu_fifth_link != blank %}
+                        {% if block.settings.tt_sub_menu_fifth_title != blank %}
+                        <h4 class="sub_mn_title">
+                          <a href="{{ block.settings.tt_sub_menu_fifth_link }}">{{ block.settings.tt_sub_menu_fifth_title }}</a>
+                          {% if block.settings.tt_mn_sub_heading_fifth_inner != blank %}
+                          <span class="tt_mn_sub_heading" style="{% if block.settings.tt_mn_subheading_bg_fifth_inner != blank %}background-color:{{ block.settings.tt_mn_subheading_bg_fifth_inner }};{% endif %}{% if block.settings.tt_mn_subheading_color_fifth_inner != blank %}color:{{ block.settings.tt_mn_subheading_color_fifth_inner }};{% endif %}">{{ block.settings.tt_mn_sub_heading_fifth_inner }}</span>{% endif %}
+                        </h4>
+                        {% endif %}
+                        {% else %}
+                        {% if block.settings.tt_sub_menu_fifth_title != blank %}
+                        <h4 class="sub_mn_title">{{ block.settings.tt_sub_menu_fifth_title }}</h4>
+                        {% endif %}
+                        {% endif %}
+                        {% endif %}
+                        {% if block.settings.tt_sub_menu_fifth_img != blank %}
+                        {% if block.settings.tt_sub_menu_fifth_link != blank %}
+                        <a href="{{ block.settings.tt_sub_menu_fifth_link }}" class="{% if block.settings.tt_sub_menu_fifth_img != blank %}menu-banner{% endif %}">
+                          {% endif %}
+                          <img loading="lazy" class="lazyload" {% if block.settings.tt_sub_menu_fifth_width != blank %}width="{{ block.settings.tt_sub_menu_fifth_width }}"{% endif %} src="{{ block.settings.tt_sub_menu_fifth_img | img_url: "master"}}" alt="img"/>
+                          {% if block.settings.tt_sub_menu_fifth_link != blank %}
+                        </a>
+                        {% endif %}
+                        {% endif %}
+                      </div>
+                      {% endif %}
+                      {% if block.settings.tt_sub_menu_sixth_img != blank %}
+                      <div class="tt_sub_menu{% if block.settings.tt_sub_menu_sixth_customclass != blank %} {{ block.settings.tt_sub_menu_sixth_customclass }}{% endif %}" {% if block.settings.tt_sub_menu_sixth_width != blank %} style="width:{{ block.settings.tt_sub_menu_sixth_width }}"{% endif %}>
+                        {% if block.settings.tt_sub_menu_title_sixth_show != blank %}
+                        {% if block.settings.tt_sub_menu_sixth_link != blank %}
+                        {% if block.settings.tt_sub_menu_sixth_title != blank %}
+                        <h4 class="sub_mn_title">
+                          <a href="{{ block.settings.tt_sub_menu_sixth_link }}">{{ block.settings.tt_sub_menu_sixth_title }}</a>
+                          {% if block.settings.tt_mn_sub_heading_sixth_inner != blank %}
+                          <span class="tt_mn_sub_heading" style="{% if block.settings.tt_mn_subheading_bg_sixth_inner != blank %}background-color:{{ block.settings.tt_mn_subheading_bg_sixth_inner }};{% endif %}{% if block.settings.tt_mn_subheading_color_sixth_inner != blank %}color:{{ block.settings.tt_mn_subheading_color_sixth_inner }};{% endif %}">{{ block.settings.tt_mn_sub_heading_sixth_inner }}</span>{% endif %}
+                        </h4>
+                        {% endif %}
+                        {% else %}
+                        {% if block.settings.tt_sub_menu_sixth_title != blank %}
+                        <h4 class="sub_mn_title">{{ block.settings.tt_sub_menu_sixth_title }}</h4>
+                        {% endif %}
+                        {% endif %}
+                        {% endif %}
+                        {% if block.settings.tt_sub_menu_sixth_img != blank %}
+                        {% if block.settings.tt_sub_menu_sixth_link != blank %}
+                        <a href="{{ block.settings.tt_sub_menu_sixth_link }}" class="{% if block.settings.tt_sub_menu_sixth_img != blank %}menu-banner{% endif %}">
+                          {% endif %}
+                          <img loading="lazy" class="lazyload" {% if block.settings.tt_sub_menu_sixth_width != blank %}width="{{ block.settings.tt_sub_menu_sixth_width }}"{% endif %} src="{{ block.settings.tt_sub_menu_sixth_img | img_url: "master"}}" alt="img"/>
+                          {% if block.settings.tt_sub_menu_sixth_link != blank %}
+                        </a>
+                        {% endif %}
+                        {% endif %}
+                      </div>
+                      {% endif %}
+                      {% if block.settings.tt_sub_menu_seventh_img != blank %}
+                      <div class="tt_sub_menu{% if block.settings.tt_sub_menu_seventh_customclass != blank %} {{ block.settings.tt_sub_menu_seventh_customclass }}{% endif %}" {% if block.settings.tt_sub_menu_seventh_width != blank %} style="width:{{ block.settings.tt_sub_menu_seventh_width }}"{% endif %}>
+                        {% if block.settings.tt_sub_menu_title_seventh_show != blank %}
+                        {% if block.settings.tt_sub_menu_seventh_link != blank %}
+                        {% if block.settings.tt_sub_menu_seventh_title != blank %}
+                        <h4 class="sub_mn_title">
+                          <a href="{{ block.settings.tt_sub_menu_seventh_link }}">{{ block.settings.tt_sub_menu_seventh_title }}</a>
+                          {% if block.settings.tt_mn_sub_heading_seventh_inner != blank %}
+                          <span class="tt_mn_sub_heading" style="{% if block.settings.tt_mn_subheading_bg_seventh_inner != blank %}background-color:{{ block.settings.tt_mn_subheading_bg_seventh_inner }};{% endif %}{% if block.settings.tt_mn_subheading_color_seventh_inner != blank %}color:{{ block.settings.tt_mn_subheading_color_seventh_inner }};{% endif %}">{{ block.settings.tt_mn_sub_heading_seventh_inner }}</span>{% endif %}
+                        </h4>
+                        {% endif %}
+                        {% else %}
+                        {% if block.settings.tt_sub_menu_seventh_title != blank %}
+                        <h4 class="sub_mn_title">{{ block.settings.tt_sub_menu_seventh_title }}</h4>
+                        {% endif %}
+                        {% endif %}
+                        {% endif %}
+                        {% if block.settings.tt_sub_menu_seventh_img != blank %}
+                        {% if block.settings.tt_sub_menu_seventh_link != blank %}
+                        <a href="{{ block.settings.tt_sub_menu_seventh_link }}" class="{% if block.settings.tt_sub_menu_seventh_img != blank %}menu-banner{% endif %}">
+                          {% endif %}
+                          <img loading="lazy" class="lazyload" {% if block.settings.tt_sub_menu_seventh_width != blank %}width="{{ block.settings.tt_sub_menu_seventh_width }}"{% endif %} src="{{ block.settings.tt_sub_menu_seventh_img | img_url: "master"}}" alt="img"/>
+                          {% if block.settings.tt_sub_menu_seventh_link != blank %}
+                        </a>
+                        {% endif %}
+                        {% endif %}
+                      </div>
+                      {% endif %}
+                      {% if block.settings.tt_sub_menu_eighth_img != blank %}
+                      <div class="tt_sub_menu{% if block.settings.tt_sub_menu_eighth_customclass != blank %} {{ block.settings.tt_sub_menu_eighth_customclass }}{% endif %}" {% if block.settings.tt_sub_menu_eighth_width != blank %} style="width:{{ block.settings.tt_sub_menu_eighth_width }}"{% endif %}>
+                        {% if block.settings.tt_sub_menu_title_eighth_show != blank %}
+                        {% if block.settings.tt_sub_menu_eighth_link != blank %}
+                        {% if block.settings.tt_sub_menu_eighth_title != blank %}
+                        <h4 class="sub_mn_title">
+                          <a href="{{ block.settings.tt_sub_menu_eighth_link }}">{{ block.settings.tt_sub_menu_eighth_title }}</a>
+                          {% if block.settings.tt_mn_sub_heading_eighth_inner != blank %}
+                          <span class="tt_mn_sub_heading" style="{% if block.settings.tt_mn_subheading_bg_eighth_inner != blank %}background-color:{{ block.settings.tt_mn_subheading_bg_eighth_inner }};{% endif %}{% if block.settings.tt_mn_subheading_color_eighth_inner != blank %}color:{{ block.settings.tt_mn_subheading_color_eighth_inner }};{% endif %}">{{ block.settings.tt_mn_sub_heading_eighth_inner }}</span>{% endif %}
+                        </h4>
+                        {% endif %}
+                        {% else %}
+                        {% if block.settings.tt_sub_menu_eighth_title != blank %}
+                        <h4 class="sub_mn_title">{{ block.settings.tt_sub_menu_eighth_title }}</h4>
+                        {% endif %}
+                        {% endif %}
+                        {% endif %}
+                        {% if block.settings.tt_sub_menu_eighth_img != blank %}
+                        {% if block.settings.tt_sub_menu_eighth_link != blank %}
+                        <a href="{{ block.settings.tt_sub_menu_eighth_link }}" class="{% if block.settings.tt_sub_menu_eighth_img != blank %}menu-banner{% endif %}">
+                          {% endif %}
+                          <img loading="lazy" class="lazyload" {% if block.settings.tt_sub_menu_eighth_width != blank %}width="{{ block.settings.tt_sub_menu_eighth_width }}"{% endif %} src="{{ block.settings.tt_sub_menu_eighth_img | img_url: "master"}}" alt="img"/>
+                          {% if block.settings.tt_sub_menu_eighth_link != blank %}
+                        </a>
+                        {% endif %}
+                        {% endif %}
+                      </div>
+                      {% endif %}
+                      {% if block.settings.tt_sub_menu_nineth_img != blank %}
+                      <div class="tt_sub_menu{% if block.settings.tt_sub_menu_nineth_customclass != blank %} {{ block.settings.tt_sub_menu_nineth_customclass }}{% endif %}" {% if block.settings.tt_sub_menu_nineth_width != blank %} style="width:{{ block.settings.tt_sub_menu_nineth_width }}"{% endif %}>
+                        {% if block.settings.tt_sub_menu_title_nineth_show != blank %}
+                        {% if block.settings.tt_sub_menu_nineth_link != blank %}
+                        {% if block.settings.tt_sub_menu_nineth_title != blank %}
+                        <h4 class="sub_mn_title">
+                          <a href="{{ block.settings.tt_sub_menu_nineth_link }}">{{ block.settings.tt_sub_menu_nineth_title }}</a>
+                          {% if block.settings.tt_mn_sub_heading_nineth_inner != blank %}
+                          <span class="tt_mn_sub_heading" style="{% if block.settings.tt_mn_subheading_bg_nineth_inner != blank %}background-color:{{ block.settings.tt_mn_subheading_bg_nineth_inner }};{% endif %}{% if block.settings.tt_mn_subheading_color_nineth_inner != blank %}color:{{ block.settings.tt_mn_subheading_color_nineth_inner }};{% endif %}">{{ block.settings.tt_mn_sub_heading_nineth_inner }}</span>{% endif %}
+                        </h4>
+                        {% endif %}
+                        {% else %}
+                        {% if block.settings.tt_sub_menu_nineth_title != blank %}
+                        <h4 class="sub_mn_title">{{ block.settings.tt_sub_menu_nineth_title }}</h4>
+                        {% endif %}
+                        {% endif %}
+                        {% endif %}
+                        {% if block.settings.tt_sub_menu_nineth_img != blank %}
+                        {% if block.settings.tt_sub_menu_nineth_link != blank %}
+                        <a href="{{ block.settings.tt_sub_menu_nineth_link }}" class="{% if block.settings.tt_sub_menu_nineth_img != blank %}menu-banner{% endif %}">
+                          {% endif %}
+                          <img loading="lazy" class="lazyload" {% if block.settings.tt_sub_menu_nineth_width != blank %}width="{{ block.settings.tt_sub_menu_nineth_width }}"{% endif %} src="{{ block.settings.tt_sub_menu_nineth_img | img_url: "master"}}" alt="img"/>
+                          {% if block.settings.tt_sub_menu_nineth_link != blank %}
+                        </a>
+                        {% endif %}
+                        {% endif %}
+                      </div>
+                      {% endif %}
+                      {% if block.settings.tt_sub_menu_tenth_img != blank %}
+                      <div class="tt_sub_menu{% if block.settings.tt_sub_menu_tenth_customclass != blank %} {{ block.settings.tt_sub_menu_tenth_customclass }}{% endif %}" {% if block.settings.tt_sub_menu_tenth_width != blank %} style="width:{{ block.settings.tt_sub_menu_tenth_width }}"{% endif %}>
+                        {% if block.settings.tt_sub_menu_title_tenth_show != blank %}
+                        {% if block.settings.tt_sub_menu_tenth_link != blank %}
+                        {% if block.settings.tt_sub_menu_tenth_title != blank %}
+                        <h4 class="sub_mn_title">
+                          <a href="{{ block.settings.tt_sub_menu_tenth_link }}">{{ block.settings.tt_sub_menu_tenth_title }}</a>
+                          {% if block.settings.tt_mn_sub_heading_tenth_inner != blank %}
+                          <span class="tt_mn_sub_heading" style="{% if block.settings.tt_mn_subheading_bg_tenth_inner != blank %}background-color:{{ block.settings.tt_mn_subheading_bg_tenth_inner }};{% endif %}{% if block.settings.tt_mn_subheading_color_tenth_inner != blank %}color:{{ block.settings.tt_mn_subheading_color_tenth_inner }};{% endif %}">{{ block.settings.tt_mn_sub_heading_tenth_inner }}</span>{% endif %}
+                        </h4>
+                        {% endif %}
+                        {% else %}
+                        {% if block.settings.tt_sub_menu_tenth_title != blank %}
+                        <h4 class="sub_mn_title">{{ block.settings.tt_sub_menu_tenth_title }}</h4>
+                        {% endif %}
+                        {% endif %}
+                        {% endif %}
+                        {% if block.settings.tt_sub_menu_tenth_img != blank %}
+                        {% if block.settings.tt_sub_menu_tenth_link != blank %}
+                        <a href="{{ block.settings.tt_sub_menu_tenth_link }}" class="{% if block.settings.tt_sub_menu_tenth_img != blank %}menu-banner{% endif %}">
+                          {% endif %}
+                          <img loading="lazy" class="lazyload" {% if block.settings.tt_sub_menu_tenth_width != blank %}width="{{ block.settings.tt_sub_menu_tenth_width }}"{% endif %} src="{{ block.settings.tt_sub_menu_tenth_img | img_url: "master"}}" alt="img"/>
+                          {% if block.settings.tt_sub_menu_tenth_link != blank %}
+                        </a>
+                        {% endif %}
+                        {% endif %}
+                      </div>
+                      {% endif %}
+                      {% if block.settings.tt_sub_menu_clinklist != blank or block.settings.tt_sub_menu_csecondlinklist != blank %}
+                      <div class="tt_sub_menu" {% if block.settings.tt_sub_menu_cwidth != blank %}style="width:{{ block.settings.tt_sub_menu_cwidth }}"{% endif %}>
+                        {% if block.settings.tt_sub_menu_ctitle != blank %}
+                        <h4 class="sub_mn_title">
+                          <a href="{{ block.settings.tt_sub_menu_clink }}">{{ block.settings.tt_sub_menu_ctitle }}</a>
+                        </h4>
+                        {% endif %}
+                        {%- assign tt_sub_menu_c = block.settings.tt_sub_menu_clinklist -%}
+                        {%- if linklists[tt_sub_menu_c].links != blank -%}
+                        <ul class="tt_sub_menu_linklist">
+                          {%- for link in linklists[tt_sub_menu_c].links -%}
+                          <li{% if link.links != blank %} class="tt_menu_item"{% endif %}>
+                            <a href="{{ link.url }}" title="{{ link.object.description | strip_html }}">{{ link.title }}</a>
+                            {% if link.links != blank %}
+                            <div class="tt_sub_menu_wrap tt_sub_menu_wraps">
+                              <ul class="sub_menu_linklist">
+                                {% for link in link.links %}
+                                <li>
+                                  <a href="{{ link.url }}" title="{{ link.object.description | strip_html }}">{{ link.title }}</a>
+                                </li>
+                                {% endfor %}
+                              </ul>
+                            </div>
+                            {% endif %}
+                          </li>
+                          {% endfor %}
+                        </ul>
+                        {% endif %}
+
+                        {% if block.settings.tt_sub_menu_csecondtitle != blank %}
+                        <h4 class="sub_mn_title">
+                          <a href="{{ block.settings.tt_sub_menu_csecondlink }}">{{ block.settings.tt_sub_menu_csecondtitle }}</a>
+                        </h4>
+                        {% endif %}    
+
+                        {%- assign tt_sub_menu_csecondmenu = block.settings.tt_sub_menu_csecondlinklist -%}
+
+                        {%- if linklists[tt_sub_menu_csecondmenu].links != blank -%}
+                        <ul class="tt_sub_menu_linklist">
+                          {%- for link in linklists[tt_sub_menu_csecondmenu].links -%}
+                          <li>
+                            <a href="{{ link.url }}" title="{{ link.object.description | strip_html }}">{{ link.title }}</a>
+                            {% if link[tt_sub_menu_csecondmenu].links != blank %}
+                            <ul class="tt_sub_menu_linklist">
+                              {%- for sub_link in link[tt_sub_menu_csecondmenu].links -%}
+                              <li>
+                                <a href="{{ sub_link.url }}" title="{{ sub_link.object.description | strip_html }}">{{ sub_link.title }}</a>
+                              </li>
+                              {% endfor %}
+                            </ul>
+                            {% endif %}
+                          </li>
+                          {% endfor %}
+                        </ul>
+                        {% endif %}
+                      </div>
+                      {% endif %}
+
+                      {% if block.settings.tt_sub_menu_cthirdlinklist != blank or block.settings.tt_sub_menu_cfrouthlinklist != blank %}
+                      <div class="tt_sub_menu" {% if block.settings.tt_sub_menu_cwidth != blank %}style="width:{{ block.settings.tt_sub_menu_cwidth }}"{% endif %}>
+                        {% if block.settings.tt_sub_menu_cthirdtitle != blank %}
+                        <h4 class="sub_mn_title">
+                          <a href="{{ block.settings.tt_sub_menu_cthirdlink }}">{{ block.settings.tt_sub_menu_cthirdtitle }}</a>
+                        </h4>
+                        {% endif %}
+                        {%- assign tt_sub_menu_cthirdmenu = block.settings.tt_sub_menu_cthirdlinklist -%}
+
+                        {%- if linklists[tt_sub_menu_cthirdmenu].links != blank -%}
+                        <ul class="tt_sub_menu_linklist">
+                          {%- for link in linklists[tt_sub_menu_cthirdmenu].links -%}
+                          <li>
+                            <a href="{{ link.url }}" title="{{ link.object.description | strip_html }}">{{ link.title }}</a>
+                            {% if link[tt_sub_menu_cthirdmenu].links != blank %}
+                            <ul class="tt_sub_menu_linklist">
+                              {%- for sub_link in link[tt_sub_menu_cthirdmenu].links -%}
+                              <li>
+                                <a href="{{ sub_link.url }}" title="{{ sub_link.object.description | strip_html }}">{{ sub_link.title }}</a>
+                              </li>
+                              {% endfor %}
+                            </ul>
+                            {% endif %}
+                          </li>
+                          {% endfor %}
+                        </ul>
+                        {% endif %}
+
+                        {% if block.settings.tt_sub_menu_cfourthtitle != blank %}
+                        <h4 class="sub_mn_title">
+                          <a href="{{ block.settings.tt_sub_menu_cfourthlink }}">{{ block.settings.tt_sub_menu_cfourthtitle }}</a>
+                        </h4>
+                        {% endif %}
+
+                        {%- assign tt_sub_menu_cfourthmenu = block.settings.tt_sub_menu_cfourthlinklist -%}
+                        {%- if linklists[tt_sub_menu_cfourthmenu].links != blank -%}
+                        <ul class="tt_sub_menu_linklist">
+                          {%- for link in linklists[tt_sub_menu_cfourthmenu].links -%}
+                          <li>
+                            <a href="{{ link.url }}" title="{{ link.object.description | strip_html }}">{{ link.title }}</a>
+                            {% if link[tt_sub_menu_cfourthmenu].links != blank %}
+                            <ul class="tt_sub_menu_linklist">
+                              {%- for sub_link in link[tt_sub_menu_cfourthmenu].links -%}
+                              <li>
+                                <a href="{{ sub_link.url }}" title="{{ sub_link.object.description | strip_html }}">{{ sub_link.title }}</a>
+                              </li>
+                              {% endfor %}
+                            </ul>
+                            {% endif %}
+                          </li>
+                          {% endfor %}
+                        </ul>
+                        {% endif %}
+                      </div>
+                      {% endif %}
+                      {%- assign ik = 1 -%}
+                      {% endif %}
+
+
+                      {% if block.type == 'tt_sub_menu_p' %}
+                      <div class="tt_sub_menu product{% if block.settings.tt_sub_menu_pcustomclass != blank %} {{ block.settings.tt_sub_menu_pcustomclass }}{% endif %}" {% if block.settings.tt_sub_menu_pwidth != blank %}style="width:{{ block.settings.tt_sub_menu_pwidth }}"{% endif %}>
+                        {% if block.settings.tt_sub_menu_ptitle_show != blank %}
+                        {% if block.settings.tt_sub_menu_plink != blank %}
+                        {% if block.settings.tt_sub_menu_ptitle != blank %}
+                        <h4 class="sub_mn_title">
+                          <a href="{{ block.settings.tt_sub_menu_plink }}">
+                            {{ block.settings.tt_sub_menu_ptitle }}
+                          </a>
+                        </h4>
+                        {% endif %}
+                        {% else %}
+                        {% if block.settings.tt_sub_menu_ptitle != blank %}
+                        <h4 class="sub_mn_title">{{ block.settings.tt_sub_menu_ptitle }}</h4>
+                        {% endif %}
+                        {% endif %}
+                        {% endif %}
+                        {% case block.settings.tt_sub_menu_items_desktop %}
+                        {% when 1 %}
+                        {%- assign pmenu_items_des = 'col-lg-12' -%}
+                        {% when 2 %}
+                        {%- assign pmenu_items_des = 'col-lg-6' -%}
+                        {% when 3 %}
+                        {%- assign pmenu_items_des = 'col-lg-4' -%}
+                        {% when 4 %}
+                        {%- assign pmenu_items_des = 'col-lg-3' -%}
+                        {% when 5 %}
+                        {%- assign pmenu_items_des = 'col-lg-five' -%}
+                        {% when 6 %}
+                        {%- assign pmenu_items_des = 'col-lg-2' -%}
+                        {% endcase %}
+                        {% case block.settings.tt_sub_menu_items_tablet %}
+                        {% when 1 %}
+                        {%- assign pmenu_items_tab = 'col-sm-12' -%}
+                        {% when 2 %}
+                        {%- assign pmenu_items_tab = 'col-sm-6' -%}
+                        {% when 3 %}
+                        {%- assign pmenu_items_tab = 'col-sm-4' -%}
+                        {% when 4 %}
+                        {%- assign pmenu_items_tab = 'col-sm-3' -%}
+                        {% when 5 %}
+                        {%- assign pmenu_items_tab = 'col-sm-five' -%}
+                        {% when 6 %}
+                        {%- assign pmenu_items_tab = 'col-sm-2' -%}
+                        {% endcase %}
+                        {% case block.settings.tt_sub_menu_items_mobile %}
+                        {% when 1 %}
+                        {%- assign pmenu_items_mob = 'col-xs-12' -%}
+                        {% when 2 %}
+                        {%- assign pmenu_items_mob = 'col-xs-6' -%}
+                        {% when 3 %}
+                        {%- assign pmenu_items_mob = 'col-xs-4' -%}
+                        {% when 4 %}
+                        {%- assign pmenu_items_mob = 'col-xs-3' -%}
+                        {% when 5 %}
+                        {%- assign pmenu_items_mob = 'col-lg-five' -%}
+                        {% when 6 %}
+                        {%- assign pmenu_items_mob = 'col-xs-2' -%}
+                        {% endcase %}
+                        <div class="list_products_menu">
+                          <div class="list_product_menu_content owl-carousel">
+                            {%- assign collection = collections[block.settings.tt_sub_menu_pproduts] -%}
+                            {% assign menu_product_limit = block.settings.tt_sub_menu_pprodut_item %}
+                            {% if collection != blank %}
+                            {% for product in collection.products limit: menu_product_limit %}
+                            <div class="item-row product-layouts col-xs-12 grid-view-item{% unless product.available %} product-price--sold-out grid-view-item--sold-out{% endunless %}" data-ajax-enabled="{{ settings.use_ajax_cart }}">  
+                              <div class="product-wrapper">    
+                                <div class="thumbs product-thumb">
+                                  <div class="grid-view-item {{ pmenu_items_mob }} {{ pmenu_items_tab }} {{ pmenu_items_des }}">
+                                    <a class="grid-view-item__link grid-view-item__links" href="{{ product.url | within: collection }}">
+                                      <img loading="lazy"  class="grid-view-item__image featured-image image_thumb lazyload" height="230" width="209" src="{{ product.featured_media | img_url: settings.product_image_width_height }}" alt="{{ product.featured_image.alt }}">
+                                      {% if product.images.size > 1 %}
+                                      {% if product.images.last %} 
+                                      <div class="second-productimg">
+                                        <img loading="lazy" class="image_thumb_swap lazyload" height="230" width="209" src="{{ product.images.last | product_img_url: settings.product_image_width_height }}" alt="{{ product.images.last.alt | escape }}" />
+                                      </div>
+                                      {% endif %} 
+                                      {% endif %}
+                                    </a>
+                                    {% if product.available %} 
+                                    {% else %}
+                                    <div class="sold-out-tag text-center">
+                                      <span class="tag">{{ 'products.product.sold_out' | t }}</span>
+                                    </div>
+                                    {% endif %}
+                                    <div class="product_info">
+                                      <div class="h4 grid-view-item__title">
+                                        <a href="{{ product.url | within: collection }}">
+                                          {{ product.title }}
+                                        </a>
+                                      </div>
+                                      <div class="grid-view-item__meta">
+                                        {% render 'product-price-listing', product: product %}
+                                      </div> 
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            {% endfor %}
+                            {% endif %}
+                            {%- for i in (1..4) -%}
+                            {%- assign product_id = 'tt_sub_menu_potherprodut_' | append:i -%}
+                            {%- assign block_product_id = block.settings[product_id] -%}
+                            {%- if block_product_id != blank -%}
+                            {% assign product = all_products[block_product_id] %}
+                            {%- unless check_product_id contains product.id -%}
+                            <div class="item-row product-layouts col-xs-12 grid-view-item{% unless product.available %} product-price--sold-out grid-view-item--sold-out{% endunless %}" data-ajax-enabled="{{ settings.use_ajax_cart }}">  
+                              <div class="product-wrapper">    
+                                <div class="thumbs product-thumb">
+                                  <div class="grid-view-item {{ pmenu_items_mob }} {{ pmenu_items_tab }} {{ pmenu_items_des }} {{ settings.product_img_hover }}">
+                                    <a class="grid-view-item__link grid-view-item__links" href="{{ product.url | within: collection }}">
+                                      <img loading="lazy" class="grid-view-item__image featured-image image_thumb lazyload" height="230" width="209" src="{{ product.featured_media | img_url: settings.product_image_width_height }}" alt="{{ product.featured_image.alt }}">
+                                      {% if product.images.size > 1 %}
+                                      {% if product.images.last %} 
+                                      <div class="second-productimg">
+                                        <img loading="lazy" class="image_thumb_swap lazyload" height="230" width="209" src="{{ product.images.last | product_img_url: settings.product_image_width_height }}" alt="{{ product.images.last.alt | escape }}" />
+                                      </div>
+                                      {% endif %} 
+                                      {% endif %}
+                                    </a>
+                                    {% if product.available %} 
+                                    {% else %}
+                                    <div class="sold-out-tag text-center">
+                                      <span class="tag">{{ 'products.product.sold_out' | t }}</span>
+                                    </div>
+                                    {% endif %}
+                                    <div class="product_info">
+                                      <div class="h4 grid-view-item__title">
+                                        <a href="{{ product.url | within: collection }}">
+                                          {{ product.title }}
+                                        </a>
+                                      </div>
+                                      <div class="grid-view-item__meta">
+                                        {% render 'product-price-listing', product: product %}
+                                      </div> 
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end product-items -->
+                            {%- endunless -%}
+                            {%- endif -%}
+                            {%- endfor-%}
+                          </div>
+                        </div>
+                      </div>
+                      {%- assign ik = 1 -%}
+                      {% endif %}
+                      {% endfor %}
+                      {% if ik == 0 %}
+                    </div>
+                  </li>
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="bottom_header_3">
+      <div class="container">
+        {% assign navMenu = linklists[section.settings.nav_menu] %}
+        {% include 'site-nav' with navMenu %}
+        <div class="right-link-icon">
+          {% if section.settings.display_wishlist %}   
+          <div class="wishlist-icon-div">
+            {% include 'wishlist' %} 
+          </div>
+          {% endif %}
+          {% if section.settings.display_compare %}   
+          <div class="compare-icon-div">
+            <a class="compare" href="{% if shop.locale != 'en' %}/{{ shop.locale }}{% endif %}/pages/compare" title="{{ 'products.compare.compare_name' | t }}">
+              <i class="mdi mdi-repeat"></i><div class="compare-icon">{{ 'products.compare.compare_name' | t }}</div><span class="compare-count"></span></a>
+          </div>
+          {% endif %} 
+          {% if section.settings.display_myaccount %}
+          <div class="myaccount icon-btn">
+            <span class="dropdown-toggle" title="My Account" data-toggle="dropdown">
+              <i class="mdi mdi-account-outline"></i>
+              <span class="account-title">{{ 'customer.account.title' | t }}</span>
+              <i class="mdi mdi-chevron-down" aria-hidden="true"></i>
+              <i class="mdi mdi-chevron-up" aria-hidden="true"></i>
+            </span>
+            <div class="customer_account">  
+              <ul>
+                {% if shop.customer_accounts_enabled %}
+                {% if customer %}
+                <li>
+                  <a href="/account" title="{{ 'customer.account.hello' | t }}">{{ 'customer.account.hello' | t }} , <span class="username">{{ customer.first_name }}</span></a>
+                </li>
+                <li class="logout-link">
+                  {{ 'layout.customer.log_out' | t | customer_logout_link }}
+                </li>
+                {% else %}
+                <li>
+                  <i class="mdi mdi-login"></i>
+                  <a href="/account/login" title="{{ 'layout.customer.log_in' | t }}">{{ 'layout.customer.log_in' | t }}</a>
+                </li>
+                <li>
+                  <i class="mdi mdi-account-plus-outline"></i>
+                  <a href="/account/register" title="{{ 'layout.customer.create_account' | t }}">{{ 'layout.customer.create_account' | t }}</a>
+                </li>          
+                {% endif %}  
+                {% endif %} 
+              </ul>
+            </div>
+          </div>
+          {% endif %}
+          {% if section.settings.display_cart %}  
+          <div class="site-header__cart icon-btn">
+            <div class="wrapper-top-cart">                 
+              <a href="/cart" id="cart-products-count" class="site-header_cart_link">                    
+                <i class="mdi mdi-cart"></i>
+                {% if cart.item_count > 0 %}
+                <div id="CartCount_sticky" class="site-header__cart-count" title="Cart" >
+                  <span class="cart-products-count" aria-hidden="true">{{ cart.item_count }}</span><span class="cart-products-detail">{{ 'general.header.cart_title' | t }}</span>                
+                </div>
+                {% else %}
+                <div id="CartCount_sticky" class="site-header__cart-count">
+                  <span class="cart-products-count" aria-hidden="true">0</span><span class="cart-products-detail">{{ 'general.header.cart_title' | t }}</span>        
+                </div>
+                {% endif %}
+              </a>
+            </div>
+          </div>
+          <div class="fixed-cart-wrap">
+            {% include 'mini-cart' %} 
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "sticky_header",
+      "label": "Set Header Sticky",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "color_menu_bg",
+      "label": "Header Background Color",
+      "default": "#222222"
+    },
+    {
+      "type": "header",
+      "content": "Top Bar Header "
+    },
+    {
+      "type": "checkbox",
+      "id": "display_currency",
+      "label": "Display Currency Switcher",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "display_language",
+      "label": "Display language Switcher",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "top_bg_color",
+      "label": "Top Background Color"
+    },
+    {
+      "type": "color",
+      "id": "top_header_text_color",
+      "label": "Top Header Text Color"
+    },
+    {
+      "type": "color",
+      "id": "top_header_text_hover_color",
+      "label": "Top Header Text Hover Color"
+    },
+    {
+      "type": "text",
+      "id": "destination",
+      "label": "Top Contant"
+    },
+    {
+      "type": "header",
+      "content": "Main Header "
+    },
+    {
+      "type": "color",
+      "id": "main_bgheader",
+      "label": "Main Background Color"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Custom logo",
+      "info": "235px x 50px max"
+    },
+    {
+      "type": "header",
+      "content": "menu settings"
+    },
+    {
+      "type": "text",
+      "id": "tt-title",
+      "label": "title",
+      "default": "shop categories"
+    },
+    {
+      "type": "color",
+      "id": "tt_title_bgclr",
+      "label": "title background color",
+      "default": "#202b38"
+    },
+    {
+      "type": "color",
+      "id": "tt_title_clr",
+      "label": "title text color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "fixed-tt-title_clr",
+      "label": "sticky header title text color",
+      "default": "#111"
+    },
+    {
+      "type": "color",
+      "id": "menu_bgclr",
+      "label": "menu background color",
+      "default": "#111"
+    },
+    {
+      "type": "color",
+      "id": "menu_txt_clr",
+      "label": "menu text color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "menu_txt_hvr_clr",
+      "label": "menu text Hover color",
+      "default": "#ffd200"
+    },
+    {
+      "type": "header",
+      "content": "Bottom Header Settings"
+    },
+    {
+      "type": "color",
+      "id": "bottom_bg_color",
+      "label": "Bottom Background Color"
+    },
+    {
+      "type": "header",
+      "content": "toplink settings"
+    },
+    {
+      "type": "link_list",
+      "id": "nav_menu",
+      "label": "Toplink",
+      "default": "main-menu"
+    },
+    {
+      "type": "color",
+      "id": "toplink_txt_clr",
+      "label": "Toplink text color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "toplink_txthover_clr",
+      "label": "Toplink text hover color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "toplink_txtbg_clr",
+      "label": "Toplink text Background Color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "Header_link_color",
+      "label": "Header link color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "Header_link_hover_color",
+      "label": "Header link Hover Color"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_wishlist",
+      "label": "Display wishlist",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "display_compare",
+      "label": "Display Compare",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "display_myaccount",
+      "label": "Display Myaccount",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "display_cart",
+      "label": "Display Cart",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "icon_txt_color",
+      "label": "Cart Text color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "count_color",
+      "label": "count color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "countbgcolor",
+      "label": "count background color",
+      "default": "#fff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tt_mm_menu",
+      "name": "Heading menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Menu Item"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Menu Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "tt_sub_menu_icon",
+          "label": "menu icon"
+        },
+        {
+          "type": "text",
+          "id": "tt_mn_class",
+          "label": "Custom class"
+        },
+        {
+          "type": "text",
+          "id": "tt_mn_sub_heading",
+          "label": "Bubble alert text"
+        },
+        {
+          "type": "color",
+          "id": "tt_mn_subheading_bg",
+          "label": "Bubble alert background",
+          "default": "#febb01"
+        },
+        {
+          "type": "color",
+          "id": "tt_mn_subheading_color",
+          "label": "Bubble alert color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "text",
+          "id": "tt_mn_sub_contentwidth",
+          "label": "Sub-menu width",
+          "default": "540px",
+          "info": "Ex: 540px or 100% ..."
+        },
+        {
+          "type": "checkbox",
+          "id": "tt_mn_show_sub",
+          "default": false,
+          "label": "Display sub-menu"
+        },
+        {
+          "type": "image_picker",
+          "id": "bg_img_collection",
+          "label": "Submenu Background image"
+        },
+        {
+          "type": "header",
+          "content": "Sub Menu Content"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_cwidth",
+          "label": "Content Submenu Width"
+        },
+        {
+          "type": "header",
+          "content": "First Menu links"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_ctitle",
+          "label": "Column title"
+        },
+        {
+          "type": "url",
+          "id": "tt_sub_menu_clink",
+          "label": "Sub-menu link"
+        },
+        {
+          "type": "link_list",
+          "id": "tt_sub_menu_clinklist",
+          "label": "Select a menu"
+        },
+        {
+          "type": "header",
+          "content": "Second Menu links"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_csecondtitle",
+          "label": "Second column title"
+        },
+        {
+          "type": "url",
+          "id": "tt_sub_menu_csecondlink",
+          "label": "Second sub-menu link"
+        },
+        {
+          "type": "link_list",
+          "id": "tt_sub_menu_csecondlinklist",
+          "label": "Select a second menu"
+        },
+        {
+          "type": "header",
+          "content": "Third Menu links"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_cthirdtitle",
+          "label": "Third column title"
+        },
+        {
+          "type": "url",
+          "id": "tt_sub_menu_cthirdlink",
+          "label": "Third sub-menu link"
+        },
+        {
+          "type": "link_list",
+          "id": "tt_sub_menu_cthirdlinklist",
+          "label": "Select a third menu"
+        },
+        {
+          "type": "header",
+          "content": "Fourth Menu links"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_cfourthtitle",
+          "label": "Fourth column title"
+        },
+        {
+          "type": "url",
+          "id": "tt_sub_menu_cfourthlink",
+          "label": "Fourth sub-menu link"
+        },
+        {
+          "type": "link_list",
+          "id": "tt_sub_menu_cfourthlinklist",
+          "label": "Select a fourth menu"
+        },
+        {
+          "type": "header",
+          "content": "First Menu Image"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_title",
+          "label": "Column title"
+        },
+        {
+          "type": "url",
+          "id": "tt_sub_menu_link",
+          "label": "Sub-menu link"
+        },
+        {
+          "type": "checkbox",
+          "id": "tt_sub_menu_title_show",
+          "label": "Show column title",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_width",
+          "label": "Sub-menu width"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_customclass",
+          "label": "Custom class"
+        },
+        {
+          "type": "text",
+          "id": "tt_mn_sub_heading_inner",
+          "label": "Bubble alert text"
+        },
+        {
+          "type": "color",
+          "id": "tt_mn_subheading_bg_inner",
+          "label": "Bubble alert background",
+          "default": "#febb01"
+        },
+        {
+          "type": "color",
+          "id": "tt_mn_subheading_color_inner",
+          "label": "Bubble alert color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "image_picker",
+          "id": "tt_sub_menu_img",
+          "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Second Menu Image"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_Second_title",
+          "label": "Second Column title"
+        },
+        {
+          "type": "url",
+          "id": "tt_sub_menu_Second_link",
+          "label": "Second Sub-menu link"
+        },
+        {
+          "type": "checkbox",
+          "id": "tt_sub_menu_title_Second_show",
+          "label": "Second Show column title"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_Second_width",
+          "label": "Second Sub-menu width"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_Second_customclass",
+          "label": "Second Custom class"
+        },
+        {
+          "type": "text",
+          "id": "tt_mn_sub_heading_Second_inner",
+          "label": "Second Bubble alert text"
+        },
+        {
+          "type": "color",
+          "id": "tt_mn_subheading_bg_Second_inner",
+          "label": "Second Bubble alert background"
+        },
+        {
+          "type": "color",
+          "id": "tt_mn_subheading_color_Second_inner",
+          "label": "Second Bubble alert color"
+        },
+        {
+          "type": "image_picker",
+          "id": "tt_sub_menu_Second_img",
+          "label": "Second Image"
+        },
+        {
+          "type": "header",
+          "content": "Third Menu Image"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_third_title",
+          "label": "Third Column title"
+        },
+        {
+          "type": "url",
+          "id": "tt_sub_menu_third_link",
+          "label": "Third Sub-menu link"
+        },
+        {
+          "type": "checkbox",
+          "id": "tt_sub_menu_title_third_show",
+          "label": "Third Show column title"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_third_width",
+          "label": "Third Sub-menu width"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_third_customclass",
+          "label": "Third Custom class"
+        },
+        {
+          "type": "text",
+          "id": "tt_mn_sub_heading_third_inner",
+          "label": "Third Bubble alert text"
+        },
+        {
+          "type": "color",
+          "id": "tt_mn_subheading_bg_third_inner",
+          "label": "Third Bubble alert background"
+        },
+        {
+          "type": "color",
+          "id": "tt_mn_subheading_color_third_inner",
+          "label": "Third Bubble alert color"
+        },
+        {
+          "type": "image_picker",
+          "id": "tt_sub_menu_third_img",
+          "label": "Third Image"
+        },
+        {
+          "type": "header",
+          "content": "Fourth Menu Image"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_fourth_title",
+          "label": "Fourth Column title"
+        },
+        {
+          "type": "url",
+          "id": "tt_sub_menu_fourth_link",
+          "label": "Fourth Sub-menu link"
+        },
+        {
+          "type": "checkbox",
+          "id": "tt_sub_menu_title_fourth_show",
+          "label": "Fourth Show column title"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_fourth_width",
+          "label": "Fourth Sub-menu width"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_fourth_customclass",
+          "label": "Fourth Custom class"
+        },
+        {
+          "type": "text",
+          "id": "tt_mn_sub_heading_fourth_inner",
+          "label": "Fourth Bubble alert text"
+        },
+        {
+          "type": "color",
+          "id": "tt_mn_subheading_bg_fourth_inner",
+          "label": "Fourth Bubble alert background"
+        },
+        {
+          "type": "color",
+          "id": "tt_mn_subheading_color_fourth_inner",
+          "label": "Fourth Bubble alert color"
+        },
+        {
+          "type": "image_picker",
+          "id": "tt_sub_menu_fourth_img",
+          "label": "Fourth Image"
+        },
+        {
+          "type": "header",
+          "content": "Fifth Menu Image"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_fifth_title",
+          "label": "Fifth Column title"
+        },
+        {
+          "type": "url",
+          "id": "tt_sub_menu_fifth_link",
+          "label": "Fifth Sub-menu link"
+        },
+        {
+          "type": "checkbox",
+          "id": "tt_sub_menu_title_fifth_show",
+          "label": "Fifth Show column title"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_fifth_width",
+          "label": "Fifth Sub-menu width"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_fifth_customclass",
+          "label": "Fifth Custom class"
+        },
+        {
+          "type": "text",
+          "id": "tt_mn_sub_heading_fifth_inner",
+          "label": "Fifth Bubble alert text"
+        },
+        {
+          "type": "color",
+          "id": "tt_mn_subheading_bg_fifth_inner",
+          "label": "Fifth Bubble alert background"
+        },
+        {
+          "type": "color",
+          "id": "tt_mn_subheading_color_fifth_inner",
+          "label": "Fifth Bubble alert color"
+        },
+        {
+          "type": "image_picker",
+          "id": "tt_sub_menu_fifth_img",
+          "label": "Fifth Image"
+        },
+{
+"type": "header",
+"content": "Six Menu Image"
+},
+{
+"type": "text",
+"id": "tt_sub_menu_sixth_title",
+"label": "Six Column title"
+},
+{
+"type": "url",
+"id": "tt_sub_menu_sixth_link",
+"label": "Six Sub-menu link"
+},
+{
+"type": "checkbox",
+"id": "tt_sub_menu_title_sixth_show",
+"label": "Six Show column title"
+},
+{
+"type": "text",
+"id": "tt_sub_menu_sixth_width",
+"label": "Six Sub-menu width"
+},
+{
+"type": "text",
+"id": "tt_sub_menu_sixth_customclass",
+"label": "Six Custom class"
+},
+{
+"type": "text",
+"id": "tt_mn_sub_heading_sixth_inner",
+"label": "Six Bubble alert text"
+},
+{
+"type": "color",
+"id": "tt_mn_subheading_bg_sixth_inner",
+"label": "Six Bubble alert background"
+},
+{
+"type": "color",
+"id": "tt_mn_subheading_color_sixth_inner",
+"label": "Six Bubble alert color"
+},
+{
+"type": "image_picker",
+"id": "tt_sub_menu_sixth_img",
+"label": "Sixth Image"
+},
+{
+"type": "header",
+"content": "Seven Menu Image"
+},
+{
+"type": "text",
+"id": "tt_sub_menu_seventh_title",
+"label": "Seven Column title"
+},
+{
+"type": "url",
+"id": "tt_sub_menu_seventh_link",
+"label": "Seven Sub-menu link"
+},
+{
+"type": "checkbox",
+"id": "tt_sub_menu_title_seventh_show",
+"label": "Seven Show column title"
+},
+{
+"type": "text",
+"id": "tt_sub_menu_seventh_width",
+"label": "Seven Sub-menu width"
+},
+{
+"type": "text",
+"id": "tt_sub_menu_seventh_customclass",
+"label": "Seven Custom class"
+},
+{
+"type": "text",
+"id": "tt_mn_sub_heading_seventh_inner",
+"label": "Seven Bubble alert text"
+},
+{
+"type": "color",
+"id": "tt_mn_subheading_bg_seventh_inner",
+"label": "Seven Bubble alert background"
+},
+{
+"type": "color",
+"id": "tt_mn_subheading_color_seventh_inner",
+"label": "Seven Bubble alert color"
+},
+{
+"type": "image_picker",
+"id": "tt_sub_menu_seventh_img",
+"label": "Seventh Image"
+},
+{
+"type": "header",
+"content": "Eight Menu Image"
+},
+{
+"type": "text",
+"id": "tt_sub_menu_eighth_title",
+"label": "Eight Column title"
+},
+{
+"type": "url",
+"id": "tt_sub_menu_eighth_link",
+"label": "Eight Sub-menu link"
+},
+{
+"type": "checkbox",
+"id": "tt_sub_menu_title_eighth_show",
+"label": "Eight Show column title"
+},
+{
+"type": "text",
+"id": "tt_sub_menu_eighth_width",
+"label": "Eight Sub-menu width"
+},
+{
+"type": "text",
+"id": "tt_sub_menu_eighth_customclass",
+"label": "Eight Custom class"
+},
+{
+"type": "text",
+"id": "tt_mn_sub_heading_eighth_inner",
+"label": "Eight Bubble alert text"
+},
+{
+"type": "color",
+"id": "tt_mn_subheading_bg_eighth_inner",
+"label": "Eight Bubble alert background"
+},
+{
+"type": "color",
+"id": "tt_mn_subheading_color_eighth_inner",
+"label": "Eight Bubble alert color"
+},
+{
+"type": "image_picker",
+"id": "tt_sub_menu_eighth_img",
+"label": "Eighth Image"
+},
+{
+"type": "header",
+"content": "Nine Menu Image"
+},
+{
+"type": "text",
+"id": "tt_sub_menu_nineth_title",
+"label": "Nine Column title"
+},
+{
+"type": "url",
+"id": "tt_sub_menu_nineth_link",
+"label": "Nine Sub-menu link"
+},
+{
+"type": "checkbox",
+"id": "tt_sub_menu_title_nineth_show",
+"label": "Nine Show column title"
+},
+{
+"type": "text",
+"id": "tt_sub_menu_nineth_width",
+"label": "Nine Sub-menu width"
+},
+{
+"type": "text",
+"id": "tt_sub_menu_nineth_customclass",
+"label": "Nine Custom class"
+},
+{
+"type": "text",
+"id": "tt_mn_sub_heading_nineth_inner",
+"label": "Nine Bubble alert text"
+},
+{
+"type": "color",
+"id": "tt_mn_subheading_bg_nineth_inner",
+"label": "Nine Bubble alert background"
+},
+{
+"type": "color",
+"id": "tt_mn_subheading_color_nineth_inner",
+"label": "Nine Bubble alert color"
+},
+{
+"type": "image_picker",
+"id": "tt_sub_menu_nineth_img",
+"label": "Nineth Image"
+},
+{
+"type": "header",
+"content": "Ten Menu Image"
+},
+{
+"type": "text",
+"id": "tt_sub_menu_tenth_title",
+"label": "Ten Column title"
+},
+{
+"type": "url",
+"id": "tt_sub_menu_tenth_link",
+"label": "Ten Sub-menu link"
+},
+{
+"type": "checkbox",
+"id": "tt_sub_menu_title_tenth_show",
+"label": "Ten Show column title"
+},
+{
+"type": "text",
+"id": "tt_sub_menu_tenth_width",
+"label": "Ten Sub-menu width"
+},
+{
+"type": "text",
+"id": "tt_sub_menu_tenth_customclass",
+"label": "Ten Custom class"
+},
+{
+"type": "text",
+"id": "tt_mn_sub_heading_tenth_inner",
+"label": "Ten Bubble alert text"
+},
+{
+"type": "color",
+"id": "tt_mn_subheading_bg_tenth_inner",
+"label": "Ten Bubble alert background"
+},
+{
+"type": "color",
+"id": "tt_mn_subheading_color_tenth_inner",
+"label": "Ten Bubble alert color"
+},
+{
+"type": "image_picker",
+"id": "tt_sub_menu_tenth_img",
+"label": "Tenth Image"
+}
+      ]
+    },
+    {
+      "type": "tt_sub_menu_p",
+      "name": "__ sub menu products",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tt_sub_menu_ptitle",
+          "label": "Column title"
+        },
+        {
+          "type": "url",
+          "id": "tt_sub_menu_plink",
+          "label": "Sub-menu link"
+        },
+        {
+          "type": "checkbox",
+          "id": "tt_sub_menu_ptitle_show",
+          "label": "Show column title",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_pwidth",
+          "label": "Sub-menu width"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_pcustomclass",
+          "label": "Custom class"
+        },
+        {
+          "type": "range",
+          "id": "tt_sub_menu_items_desktop",
+          "label": "( DESKTOP ) Number of products per row",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 1
+        },
+        {
+          "type": "range",
+          "id": "tt_sub_menu_items_tablet",
+          "label": "( TABLET ) Number of products per row",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 1
+        },
+        {
+          "type": "range",
+          "id": "tt_sub_menu_items_mobile",
+          "label": "( MOBILE ) Number of products per row",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 1
+        },
+        {
+          "type": "header",
+          "content": "Product in collection"
+        },
+        {
+          "type": "collection",
+          "id": "tt_sub_menu_pproduts",
+          "label": "Choose collection"
+        },
+        {
+          "type": "text",
+          "id": "tt_sub_menu_pprodut_item",
+          "label": "Max items show"
+        },
+        {
+          "type": "header",
+          "content": "Choose other products"
+        },
+        {
+          "type": "product",
+          "id": "tt_sub_menu_potherprodut_1",
+          "label": "Choose product"
+        },
+        {
+          "type": "product",
+          "id": "tt_sub_menu_potherprodut_2",
+          "label": "Choose product"
+        },
+        {
+          "type": "product",
+          "id": "tt_sub_menu_potherprodut_3",
+          "label": "Choose product"
+        },
+        {
+          "type": "product",
+          "id": "tt_sub_menu_potherprodut_4",
+          "label": "Choose product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

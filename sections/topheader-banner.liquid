@@ -1,0 +1,45 @@
+{% if section.settings.enable_banner %}
+<div class="ttcmstopbanner">
+  {% if section.settings.banner_image != blank %}
+  <a href="{% if section.settings.banner_link != blank %}{{section.settings.banner_link }}{% else %}#{% endif %}"><img loading="lazy" src="{{  section.settings.banner_image | img_url: 'master' }}" alt="topheader-banner" /></a>
+  {% else %}
+  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+  {% endif %}
+  <div class="headerbanner-close"><a href="#"></a></div>
+</div>
+{% endif %}
+{% schema %}
+{
+"name": "Topheader Banner",
+"class": "index-section topheader-banner",
+"settings": [
+{
+"type": "checkbox",
+"id": "enable_banner",
+"label": "Display Banner"
+},
+{
+"type": "image_picker",
+"id": "banner_image",
+"label": "Image"
+},
+{
+"type": "url",
+"id": "banner_link",
+"label": "Banner link"
+},
+{
+"type": "color",
+"id": "banner_bg",
+"label": "banner background color",
+"default": "#f4f3f0"
+}
+],
+"presets": [
+{
+"name": "Topheader Banner",
+"category": "Image"
+}
+]
+}
+{% endschema %}

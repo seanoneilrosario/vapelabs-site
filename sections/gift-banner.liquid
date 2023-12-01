@@ -1,0 +1,51 @@
+<style>
+  .gift-banner .title {color: {{section.settings.banner_title_color }};}
+  .giftbanner{background:{{section.settings.bg_color }};}
+</style>    
+<div class="gift-banner">
+  <div class="title">{{ section.settings.banner_title }}</div>
+  {% if section.settings.banner_img != blank %}
+  <a href="{% if section.settings.banner_url != blank %}{{ section.settings.banner_url }}{% else %}#{% endif %}">
+    <img loading="lazy" src="{{ section.settings.banner_img | img_url:"master" }}" alt="banner" class="lazyload">
+  </a>
+  {% endif %}
+</div>  
+{% schema %}
+{
+"name": "Gift Banner",
+"class": "index-section giftbanner",
+"settings": [
+{
+"type": "color",
+"id": "bg_color",
+"label": "Background Color"
+},
+{
+"type": "text",
+"id": "banner_title",
+"label": "Banner title"
+},
+{
+"type": "color",
+"id": "banner_title_color",
+"label": "Banner title color"
+},
+{
+"type": "image_picker",
+"id": "banner_img",
+"label": "Banner1 image"
+},
+{
+"type": "url",
+"id": "banner_url",
+"label": "Banner1 url"
+}
+],
+"presets": [
+{
+"name": "Gift Banner",
+"category": "TT CMS section"
+}
+]
+}
+{% endschema %}

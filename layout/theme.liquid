@@ -1,0 +1,286 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> 
+<html  lang="{{ shop.locale }}" class="no-js{% if shop.locale == 'ar' or shop.locale == 'he' or shop.locale == 'ur' %} rtl {% endif %}"> <!--<![endif]-->
+  <head>
+    <!-- Basic page needs ================================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="theme-color" content="">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <meta name="google-site-verification" content="aRUexk9YClD4QH2OsCAhC2OXdLPdRX0eyttGuu5WvAE" />
+    {% if settings.favicon %}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
+    {% endif %}
+    <!-- Title and description ================================================== -->
+    <title>
+      {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+    </title>
+    {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    <!-- Social meta ================================================== -->
+    {% render 'social-meta-tags' %}
+    <!-- Helpers ================================================== -->
+    <link rel="canonical" href="{{ canonical_url }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% render 'css-variables' %}
+
+    <!-- CSS ================================================== -->
+    {{ 'lightbox.min.css' | asset_url | stylesheet_tag }} 
+    {{ 'materialdesignicons.min.css' | asset_url | stylesheet_tag }}
+    {{ 'magnific-popup.min.css' | asset_url | stylesheet_tag }}
+    {{ 'animate.css' | asset_url | stylesheet_tag }} 
+    {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }} 
+    {{ 'owl.carousel.css' | asset_url | stylesheet_tag }}
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {{ 'aos.css' | asset_url | stylesheet_tag }}
+    {{ 'product.css' | asset_url | stylesheet_tag }}
+    {% if template == 'index' %}
+      {{ 'home.css' | asset_url | stylesheet_tag }}
+    {% endif %}
+    {% render 'google-fonts' %}
+    <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
+    <!-- Header hook for plugins ================================================== -->
+    {{ content_for_header }}
+    {% render 'oldIE-js' %}  
+    {% if template.directory == 'customers' %}
+    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+    {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+    {% endif %}
+    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'modernizr.min.js' | asset_url }}"></script>  
+    <script src="{{ 'jquery.min.js' | asset_url  }}"></script>  
+    <script src="{{ 'theme.js' | asset_url  }}"></script>  
+    <script src="{{ 'aos.js' | asset_url  }}"></script>  
+    <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'jquery-cookie.min.js' | asset_url }}"></script>  
+    <script src="{{ 'bootstrap.min.js' | asset_url  }} "></script>  
+    <script src="{{ 'api.jquery.js' | shopify_asset_url  }}" defer="defer"></script>  
+    <script src="{{ 'jquery.history.js' | asset_url }} " defer="defer"></script>
+    <script src="{{ 'countdown.js' | asset_url }}" async="async"></script>
+    <script src="{{ 'owl.carousel.min.js' | asset_url }}"></script>  
+    <script src="{{ 'slick.min.js' | asset_url }}"></script> 
+    {{ 'slick.min.css' | asset_url | stylesheet_tag }}  
+    <script src="{{ 'magnific-popup.min.js' | asset_url  }}" defer="defer"></script>
+    <script src="{{ 'threesixty.min.js' | asset_url}} " defer="defer"></script>
+    <script src="{{ 'imagesLoaded.min.js' | asset_url }} " defer="defer"></script> 
+    <script src="{{ 'lightbox-2.6.min.js' | asset_url }}" defer="defer"></script> 
+    <script src="{{ 'parallax.min.js' | asset_url }}" defer="defer"></script> 
+    <script src="{{ 'shop.js' | asset_url }}" defer="defer"></script> 
+    <script src="{{ 'ResizeSensor.min.js' | asset_url }}" defer="defer"></script> 
+    <script src="{{ 'theia-sticky-sidebar.min.js' | asset_url}}" defer="defer"></script>     
+    <script src="{{ 'inview.js' | asset_url  }}" defer="defer"></script>     
+    <script src="{{ 'custom-js.js' | asset_url }}" defer="defer"></script>  
+    <script src="{{ 'jquery.hoverdir.js' | asset_url }}" defer="defer"></script>  
+    
+    {% if shop.locale == 'ar' or shop.locale == 'he' or shop.locale == 'ur' %} 
+    {{ 'rtl.css' | asset_url | stylesheet_tag }} 
+    <script>window.rtltrue = "rtltrue";</script>  
+    <style>.customNavigation .navigation_wrap,.customNavigation,.owl-carousel .owl-wrapper-outer,.flexslider .slides,.owl-carousel,.flexslider .slides>li,.flexslider{direction: ltr !important;}</style>
+    {% endif %}
+    <script>window.money_format = "{{shop.money_with_currency_format}}";window.shop_currency = "{{ shop.currency }}";window.show_multiple_currencies = {{settings.enable_multiple_currencies}};window.many_in_stock="{{ 'products.product.many_in_stock' | t  }}";window.out_of_stock="{{ 'products.product.out_of_stock' | t  }}";window.in_stock="{{ 'products.product.in_stock' | t  }}";window.unavailable="{{ 'products.product.unavailable' | t  }}";</script>  
+    <style>.ttloader {background-color:  {{ settings.preloader_bg }};height: 100%;left: 0;position: fixed;top: 0; width: 100%; z-index: 999999;}.rotating {background-image: url("{{ settings.pre_loader_img | img_url: "master" }}");}.rotating {background-position: center center;background-repeat: no-repeat;bottom: 0;height: auto;left: 0;margin: auto;position: absolute;right: 0; top: 0; width: 100%; }</style>
+    <script>
+      if (window.MSInputMethodContext && document.documentMode) {
+        var scripts = document.getElementsByTagName('script')[0];
+        var polyfill = document.createElement("script");
+        polyfill.defer = true;
+        polyfill.src = "{{ 'ie11CustomProperties.min.js' | asset_url }}";
+        scripts.parentNode.insertBefore(polyfill, scripts);
+      }
+    </script>
+  </head>
+  <body id="{{ page_title | handle }}" class="{{ settings.toggle_menu_position }} header_{{ settings.header_style_1 }} footer_{{ settings.footer_style_1 }} hover_{{ settings.product_hover_btn }} {% if settings.display_toogle_menu == false %}menu-content{% endif %} {% if shop.locale == 'ar' or shop.locale == 'he' or shop.locale == 'ur' %}rtl {% endif %}{{ settings.header_icon_color }} {{ page_title | handle }} {% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if settings.display_toogle_menu  == false %} left-menu{% else %} toggle-menu{% endif %}">
+    {% render 'modal-box' %}
+    <div class="quick-view"></div> 
+    <div class="compare-model">
+      <div class="modal fade" id="modalCompare1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog white-modal modal-sm">
+          <div class="modal-content">              
+            <div class="modal-body">
+              <div class="modal-header">
+                <p class="max_compare">
+                  Maximum products to compare. Limit is 3!
+                </p>  
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span class="mdi mdi-close"></span>
+                </button>
+              </div>
+              <div class="compare-button">
+                <a class="compare btn" href="{% if shop.locale != 'en' %}/{{ shop.locale }}{% endif %}/pages/compare" title="{{ 'products.compare.compare_name' | t }}">{{ 'products.compare.compare_name' | t }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% if settings.display_preloader and template == 'index' %}
+    <div class="ttloader">
+      <span class="rotating"></span>
+    </div>
+    {% endif %}
+    <input type="hidden" name="type" value="{{shop.url}}" id="shop-url">
+    <div class="page-wrapper page-element">
+      {% if settings.display_sticky %}
+      <div class="main-social-icon">
+        <div class="social-icon-content col-sm-4">
+          <ul>
+            {% if settings.social_twitter_link != blank %}
+            <li>
+              <a class="social-icon" href="{{ settings.social_twitter_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Twitter' }}">
+                <span class="mdi mdi-twitter" aria-hidden="true"></span>
+                <span class="social-text">Twitter</span>
+              </a>
+            </li>
+            {% endif %}
+            {% if settings.social_facebook_link != blank %}
+            <li>
+              <a class="social-icon" href="{{ settings.social_facebook_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Facebook' }}">
+                <span class="mdi mdi-facebook" aria-hidden="true"></span>
+                <span class="social-text">Facebook</span>
+              </a>
+            </li>
+            {% endif %}
+            {% if settings.social_pinterest_link != blank %}
+            <li>
+              <a class="social-icon" href="{{ settings.social_pinterest_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Pinterest' }}">
+                <span class="mdi mdi-pinterest" aria-hidden="true"></span>
+                <span class="social-text">Pinterest</span>
+              </a>
+            </li>
+            {% endif %}
+            {% if settings.social_instagram_link != blank %}
+            <li>
+              <a class="social-icon" href="{{ settings.social_instagram_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Instagram' }}">
+                <span class="mdi mdi-instagram" aria-hidden="true"></span>
+                <span class="social-text">Instagram</span>
+              </a>
+            </li>
+            {% endif %}
+            {% if settings.social_tumblr_link != blank %}
+            <li>
+              <a class="social-icon" href="{{ settings.social_tumblr_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Tumblr' }}">
+                <span class="mdi mdi-tumblr" aria-hidden="true"></span>
+                <span class="social-text">Tumblr</span>
+              </a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+      <div class="sticky-link-icon">
+        <ul class="link-icon-content">
+          <li>
+            <a href="/cart" class="mycart"> 
+              <i class="mdi mdi-cart"></i>
+              <span class="text">{{ 'cart.general.cart_checkout' | t }}</span>
+            </a>
+          </li>
+          <li>
+            <a class="myaccount" href="/account/login">
+              <i class="mdi mdi-account-outline"></i>
+              <span class="text">{{ 'customer.account.title' | t }}</span>
+            </a>
+          </li>
+          <li>
+            {% render 'wishlist' %} 
+          </li>
+          <li>
+            <a class="compare" href="{% if shop.locale != 'en' %}/{{ shop.locale }}{% endif %}/pages/compare" title="{{ 'products.compare.compare_name' | t }}">
+              <i class="mdi mdi-repeat"></i><div class="text">{{ 'products.compare.compare_name' | t }} - <span class="compare-count"></span></div></a>
+          </li>
+        </ul>
+      </div>
+      {% endif %}
+      {% if template == 'index' %}
+      {% section 'topheader-banner' %}
+      {% endif %}
+      {% case settings.header_style_1 %}
+      {% when 'style_1' %}  
+      {% section 'header-model-1' %}
+      {% when 'style_2' %}
+      {% section 'header-style-2' %}
+      {% when 'style_3' %}
+      {% section 'header-style-3' %}
+      {% endcase %}
+      <main class="main-content" role="main">
+        {% render 'breadcrumb' %}
+        <div class="pagecontent">
+          {{ content_for_layout }}
+        </div>
+      </main>
+      {% case settings.footer_style_1 %}
+      {% when 'style_1' %}  
+      {% section 'footer-model-1' %}
+      {% when 'style_2' %}
+      {% section 'footer-model-2' %}
+      {% when 'style_3' %}
+      {% section 'footer-model-3' %}
+      {% endcase %}
+      {% section 'recommendations-product' %}
+      {% render 'site-cookie' %}
+      <script>
+        window.ajax_cart = {{ settings.use_ajax_cart }};
+        jQuery(window).on('load', function() {       
+          jQuery(".ttloader").fadeOut(500); 
+          jQuery(".ttloader .rotating").addClass("load-open");  
+        });
+      </script>  
+      {% render 'quick-veiw' %}
+      {% if template == 'index' %}
+      {% render 'popup-newsletter' %}
+      {% endif %}
+      <a href="#" id="GotoTop"><span id="toTopHover"></span><i class="mdi mdi-arrow-up"></i></a>
+    </div>
+    <script>/* Product Tag Filters - Good for any number of filters on any type of collection pages */var collFilters = jQuery('.coll-filter');collFilters.change(function() {var newTags = [];collFilters.each(function() {if (jQuery(this).val()) {newTags.push(jQuery(this).val());}});if (newTags.length) {var query = newTags.join('+');window.location.href = jQuery('{{ 'tag' | link_to_tag: 'tag' }}').attr('href').replace('/' + 'tag', '/' + query);}else {
+          {% if collection.handle %}window.location.href = '/collections/{{ collection.handle }}';{% elsif collection.products.first.type == collection.title %}window.location.href = '{{ collection.title | url_for_type }}';{% elsif collection.products.first.vendor == collection.title %}window.location.href = '{{ collection.title | url_for_vendor }}';{% endif %}}});</script>    
+    <script>jQuery(document).ready(function() {	"use strict";/* ------------ Start TemplateTrip Parallax JS ------------ */var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);if(!isMobile) {if(jQuery(".parallex").length){jQuery(".parallex:not(.invert_true)").sitManParallex({ invert: false});};  if(jQuery(".parallex.invert_true").length){jQuery(".parallex").sitManParallex({ invert: true});}; }else{jQuery(".parallex:not(.invert_true)").sitManParallex({invert: true});jQuery(".parallex.invert_true").sitManParallex({invert: true});}	/* ------------ End TemplateTrip Parallax JS ------------ */});</script>
+    {% render 'currencies' %}   
+    {% render 'search-autocomplete' %}
+    {% if template contains 'product' %}
+    <script>Shopify.Products.recordRecentlyViewed();</script>
+    {% endif %}
+    <link rel="alternate" hreflang ="{{ request.locale.iso_code }}" href="{{canonical_url}}" />
+    <script>
+      jQuery(function() {
+        jQuery('.swatch :radio').change(function() {
+          var optionIndex = jQuery(this).closest('.swatch').attr('data-option-index');
+          var optionValue = jQuery(this).val();
+          jQuery(this)
+          .closest('form')
+          .find('.single-option-selector')
+          .eq(optionIndex)
+          .val(optionValue)
+          .trigger('change');
+        });
+      });
+    </script>
+    <script>
+      theme.moneyFormat = {{ shop.money_format | json }};
+    </script>
+    <script>
+      window.routes = {
+        cart_add_url: '{{ routes.cart_add_url }}',
+        cart_change_url: '{{ routes.cart_change_url }}',
+        cart_update_url: '{{ routes.cart_update_url }}'
+      };
+      window.cartStrings = {
+        error: `{{ 'cart.general.cart_error' | t }}`
+      }
+      window.variantStrings = {
+        addToCart: `{{ 'products.product.add_to_cart' | t }}`,
+        soldOut: `{{ 'products.product.sold_out' | t }}`,
+        unavailable: `{{ 'products.product.unavailable' | t }}`,
+      }
+      window.accessibilityStrings = {
+        shareSuccess: `{{ 'general.share.success_message' | t }}`,
+      }
+    </script>
+  </body>
+</html>

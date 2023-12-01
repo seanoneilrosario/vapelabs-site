@@ -1,0 +1,137 @@
+{% if section.blocks.size > 0 %}
+<div class="cmsblockbanner hb-animate-element bottom-to-top">
+  <div class="container">
+    <div class="row">
+      <div class="ttbanner-wrap owl-carousel">
+        {% for block in section.blocks %}
+        {% if block.settings.banner_image1 != blank %}
+        <div id="blockbanner-{{ block.id }}" class="banner col-sm-12">
+          <a href="{{block.settings.banner_link1 }}">
+            {% if block.settings.banner_image1 != blank %}
+            <img loading="lazy" src="{{  block.settings.banner_image1 | img_url: "master" }}" alt="banner-image" class="lazyload"/>
+            {% endif %}
+            <div class="banner-content {{ block.settings.text_position }}">
+              <div class="banner-inner">
+                {% if block.settings.subtitle !="" %}
+                <div class="subtitle">{{ block.settings.subtitle }}</div>
+                {% endif %}
+                {% if block.settings.title !="" %}
+                <div class="title">{{ block.settings.title }}</div>
+                {% endif %}
+                {% if block.settings.btn != blank %}
+                <div class="ttbanner-btn btn" href="{{block.settings.banner_link1 }}">{{block.settings.btn}}
+                </div>  
+                {% endif %}
+              </div>
+            </div> 
+          </a>                          
+          <style>.cmsblockbanner .ttbanner-wrap #blockbanner-{{ block.id }} .banner-content .title{color:{{ block.settings.title_color }};}.cmsblockbanner .ttbanner-wrap #blockbanner-{{ block.id }} .banner-content .subtitle{color:{{ block.settings.subtitle_color }};}.cmsblockbanner .ttbanner-wrap #blockbanner-{{ block.id }} .btn{color:{{block.settings.btntxt_color}};background:{{block.settings.btnbg_color }};}
+            .cmsblockbanner .ttbanner-wrap #blockbanner-{{ block.id }} .banner-content .btn:hover{color:{{block.settings.btnhvrtxt_color}};}.cmsblockbanner .ttbanner-wrap #blockbanner-{{ block.id }} .banner-content .btn:after{background:{{block.settings.btnhvr_color }};}
+          </style>              
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% schema %}
+{
+"name": "Cms Blockbanner",
+"class": "index-section cms-blockbanner",
+"max_blocks": 4,
+"blocks" : [
+{
+"type": "image",
+"name": "Slide",
+"settings": [
+{
+"type": "image_picker",
+"id": "banner_image1",
+"label": "Image"
+},
+{
+"type": "url",
+"id": "banner_link1",
+"label": "Banner link"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Title",
+"default":"Kid's Corner"
+},
+{
+"type": "color",
+"id": "title_color",
+"label": "Title Color",
+"default":"#f12a43"
+},
+{
+"type": "text",
+"id": "subtitle",
+"label": "Subtitle",
+"default":"Kid's Corner"
+},
+{
+"type": "color",
+"id": "subtitle_color",
+"label": "SubTitle Color",
+"default":"#f12a43"
+},
+{
+"type": "text",
+"id": "btn",
+"label": "Button text"
+},
+{
+"type": "color",
+"id": "btnbg_color",
+"label": "Button Background Color"
+},
+{
+"type": "color",
+"id": "btntxt_color",
+"label": "Button text Color"
+},
+{
+"type": "color",
+"id": "btnhvr_color",
+"label": "Button Hover Background Color"
+},
+{
+"type": "color",
+"id": "btnhvrtxt_color",
+"label": "Button Hover text Color"
+},
+{
+"type": "select",
+"id": "text_position",
+"label": "Text Position",
+"options": [
+{
+"value": "left",
+"label": "left"
+},
+{
+"value": "right",
+"label": "Right"
+},
+{
+"value": "center",
+"label": "Center"
+}
+]
+}
+]
+}
+],
+"presets": [
+{
+"name": "Cms Blockbanner",
+"category": "Image"
+}
+]
+}
+{% endschema %}

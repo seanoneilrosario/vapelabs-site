@@ -1,0 +1,13 @@
+<div id="shopify-section-sidebar-promoimage" class="shopify-section">
+<div class="widget widget_promo_img" data-section-id="{{ section.id }}" >
+  <ul id="promo-carousel">
+    {% if promo_img != blank %}
+    <li>
+      <a href="{{ section.settings.promo_link }}" title="{{ promo_title }}"> 
+        <img loading="lazy" height="350" width="282" src="{{ promo_img | img_url : '282x350' }}" alt="{{ promo_title }}" title="{{ promo_title }}" class="lazyload"/>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</div>
+</div>

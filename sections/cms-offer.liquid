@@ -1,0 +1,94 @@
+{% if section.blocks.size > 0 %} 
+<div class="container">
+  <div class="row">
+    <div id="cmsoffer" class="block_content hb-animate-element bottom-to-top">
+      <div class="cmsofferblock owl-carousel">
+        {% for block in section.blocks %}      
+        <div id="cmsoffer-{{block.id}}" class="ttcms-offer col-sm-12">
+          <a class="cmsoffer-img" href="{{  block.settings.offer_img_url }}">                
+            <img loading="lazy" src="{{ block.settings.topoffer-img  | img_url: "master" }}" alt="offer-img" class="lazyload"/>
+            <div class="offer-content">
+              <div class="title">{{  block.settings.title }}</div>
+              <div class="subtitle">{{  block.settings.subtitle }}</div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .offer-content .title{color: {{section.settings.offer_title_color }}; background:{{ section.settings.offer_titlebg_color }};}
+  .offer-content .subtitle{color: {{section.settings.offer_subtitle_color }}; background:{{ section.settings.offer_subtitlebg_color }};}
+  .cms-offer .block_content{background: {{section.settings.offer_bg_color }};}
+</style>
+{% endif %}
+{% schema %}
+{
+"name": "cms-offer",
+"class": "index-section cms-offer",
+"settings": [
+{
+"type": "color",
+"id": "offer_bg_color",
+"label": "Background Color"
+},
+{
+"type": "color",
+"id": "offer_title_color",
+"label": "Title Color"
+},
+{
+"type": "color",
+"id": "offer_titlebg_color",
+"label": "Subtitle Color"
+},
+{
+"type": "color",
+"id": "offer_subtitle_color",
+"label": "Subtitle Color"
+},
+{
+"type": "color",
+"id": "offer_subtitlebg_color",
+"label": "Subtitle Color"
+}
+],
+"blocks": [
+{
+"type": "offer_text",
+"name": "services",
+"settings": [
+{
+"type": "url",
+"id": "offer_img_url",
+"label": "Offer Image URL"
+},
+{
+"type": "image_picker",
+"id": "topoffer-img",
+"label": "Offer Image",
+"info": "Size: 62x52"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Title"
+},            
+{
+"type": "text",
+"id": "subtitle",
+"label": "Sub Title"
+}
+]
+}
+],
+"presets": [
+{
+"name": "cms-offer",
+"category": "offer"
+}
+]
+}
+{% endschema %}

@@ -1,0 +1,139 @@
+{{ '//ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js' | script_tag }}
+{{ 'jQuery.products.min.js' | asset_url | script_tag }}
+{%- assign grid_image_width = '600x600' -%}
+{%- assign viewed_products_item = 6 -%}
+<div id="recently-viewed-products-wrap" class="collection clearfix" style="display:none">
+  <div class="section-header text-center">   
+    <h2 class="tt-title">{{ 'products.general.recently_products_title' | t }}</h2></div>
+  <div id="recently-viewed-products" class="collection recently-collection clearfix owl-carousel owl-theme {{ settings.product_hover_btn }}">
+  </div>
+</div>
+{% raw %}
+<div class="recentveiw">
+  <script id="recently-viewed-product-template"  type="text/x-jquery-tmpl">
+          <div id="product-${handle}" class="product product-layouts item-row col-xs-12">
+            <div class="product-container" itemtype="https://schema.org/Product">
+              <div class="product-wrapper">              
+                  <div class="thumbs product-thumb">
+                    <a href="${url}">
+                      <img loading="lazy" src="${Shopify.Products.resizeImage(featured_image, "376x489")}" alt="featured-image" class="lazyload"/>
+    </a>
+                {{if available}}
+
+          {{else}}
+              <div class="sold-out-tag text-center">
+                    <span class="tag">Sold out</span>
+    </div>
+          {{/if}}
+    </div>
+                  <div class="product-description">      
+                      <span class="h4 grid-view-item__title">
+                      <a class="grid-view-item__link grid-link__title" href="${url}">${title}</a>
+    </span>
+    <div class="spr-badges grid-item-meta"> 
+                    <span class="shopify-product-reviews-badge" data-id="${id}"></span>
+    </div>
+                      <div class="content_price">
+                          <div class="product-price-and-shipping">
+                <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+                <meta itemprop="price" content="{{ variant.price | divided_by: 100.00 }}">
+                            {{if price_varies}}                            
+                              <span itemprop="price" class="price"><span class="money">${price_min}</span></span>
+                                 {{if compare_at_price > price}}
+                              <span class="price-regular"><span class="money">${compare_at_price}</span></span>
+                              {{/if}}
+                           {{else}}
+                                <span  itemprop="price" class="price"><span class="money">${price_min}</span></span>
+                            {{/if}}
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </script>
+</div>
+{% endraw %}
+<script type="text/javascript">
+  var viewed_number_of = 6;
+  var viewed_products_item = {{viewed_products_item}};
+  Shopify.Products.showRecentlyViewed( { 
+    howManyToShow: viewed_number_of,
+    onComplete: function() {
+      var listPrice = jQuery('#recently-viewed-products .product .money');
+      listPrice.each(function() {
+        var $this = jQuery(this);
+        var $price = Shopify.formatMoney($this.html(), window.money_format);
+        $this.html($price);
+      });
+      jQuery("body:not(.rtl) #recently-viewed-products").owlCarousel({
+        nav : true,
+        dots : false,
+        pagination: true,
+        mouseDrag: true,
+        rtl:false,
+        scrollPerPage: false,
+        items: viewed_products_item,
+        responsive: {
+          1530: {
+            items: viewed_products_item
+          },
+          1300: {
+            items: 5
+          },
+          1200: {
+            items: 4
+          },
+          751: {
+            items: 3
+          },
+          319: {
+            items: 2
+          },
+          100: {
+            items: 1
+          }
+        }
+      });
+      jQuery("body.rtl #recently-viewed-products").owlCarousel({
+        nav : true,
+        dots : false,
+        pagination: true,
+        mouseDrag: true,
+        rtl:true,
+        scrollPerPage: false,
+        items: viewed_products_item,
+        responsive: {
+          1530: {
+            items: viewed_products_item
+          },
+          1300: {
+            items: 5
+          },
+          1200: {
+            items: 4
+          },
+          751: {
+            items: 3
+          },
+          319: {
+            items: 2
+          },
+          100: {
+            items: 1
+          }
+        }
+      });      
+
+      jQuery('#recently-viewed-wrapper').show();
+      if(window.show_multiple_currencies){
+        Currency.convertAll(
+          shopCurrency, 
+          jQuery('[name=currencies]').val(), 
+          '#recently-viewed-products span.money'
+        );
+      }
+    } 
+  });
+</script>

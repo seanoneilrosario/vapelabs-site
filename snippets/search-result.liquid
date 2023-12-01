@@ -1,0 +1,273 @@
+
+{% assign on_sale = false %}
+{% assign sale_text = 'products.product.sale' | t %}
+{% if product.compare_at_price > product.price %}{% assign on_sale = true %}{% endif %}
+{% assign sold_out = true %}
+{% assign sold_out_text = 'products.product.sold_out' | t %}
+{% if product.available %}{% assign sold_out = false %}{% endif %}
+{% unless grid_item_width %}{% assign grid_item_width = 'wide--one-third large--one-third medium-down--one-half' %}{% endunless %}
+{% assign grid_image_width = settings.product_image_width_height  %}
+{% assign grid_item_width = 'medium-up--one-third large-up--one-fifth' %}
+<!-- search-result -->
+<div class="grid-item {{ settings.product_hover_btn }} {{ grid_item_width }} {{product.type}}"
+     data-collection='
+                      {% for collection in product.collections %}
+                      {{ collection | json }}
+                      {% endfor %}'>
+  <div id="product-{{ product.id }}" data-id="product-{{ product.id }}"  data-col="{{ product.id }}" class="item-row {{ settings.product_hover_btn }} product-{{ product.id }} product-layouts col-xs-12 grid-view-item{% unless product.available %} product-price--sold-out grid-view-item--sold-out{% endunless %}" data-ajax-enabled="{{ settings.use_ajax_cart }}">  
+    <div class="product-wrapper{% if product.images.size > 1 %} product_container{% endif %}">
+      <div class="thumbs product-thumb">
+        {% if settings.product_hover_btn =="style1" %}
+        {% if settings.show_vendor %}
+        <div class="grid-view-item__vendor">{{ product.vendor }}</div>
+        {% endif %}
+        <div class="h4 grid-view-item__title">
+          <a class="grid-view-item__link grid-link__title" href="{{ product.url | within: collection }}">{{ product.title }}</a>
+        </div>
+        {% endif %}
+        <div class="product-image col-xs-12 padding_0">
+          <a class="grid-view-item__link grid-view-item__links" href="{{ product.url | within: collection }}">
+            <img loading="lazy" class="grid-view-item__image featured-image image_thumb lazyload" height="230" width="209" src="{{ product.featured_media | img_url: settings.product_image_width_height }}" alt="{{ product.featured_image.alt }}">
+            {% if product.images.size > 1 %}
+            {% if product.images.last %} 
+            <div class="second-productimg">
+              <img loading="lazy" class="image_thumb_swap lazyload" height="230" width="209" src="{{ product.images.last | product_img_url: settings.product_image_width_height }}" alt="{{ product.images.last.alt | escape }}" />
+            </div>
+            {% endif %} 
+            {% endif %}
+          </a>
+          {% if product.images.size > 1 %}
+          {% if product.images.last %}
+          <div class="loader">
+            <div class="preloader-wrapper active">
+              <div class="spinner-layer"></div>
+            </div>
+          </div>
+          {% endif %} 
+          {% endif %} 
+          {% if product.compare_at_price > product.price %}
+          <span class="product-price__sale-label">{{ 'products.product.on_sale' | t }}</span>
+          {% endif %}
+          {% assign my_fields = product.metafields.my_fields %}
+          {% assign key = 'custom_label' %}
+          {% if my_fields.custom_label != nil %}
+          <span class="custom_label">{{ product.metafields.my_fields.custom_label }}</span>
+          {% endif %}
+          {% if product.available %} 
+          {% else %}
+          <div class="sold-out-tag text-center">
+            <span class="tag">{{ 'products.product.sold_out' | t }}</span>
+          </div>
+          {% endif %}
+          {% if settings.enable_countdown %}        
+          {% assign my_fields = product.metafields.my_fields %}
+          {% assign key = 'countdown' %}
+          {% if my_fields.countdown != nil %}
+          <div class="flip-countdown simple-countdown"><div class="countdown-container flip-countdown" data-countdown="{{ product.metafields.my_fields.countdown }}"></div></div>
+          {% endif %}
+          {% endif %}
+        </div>
+        {% if settings.product_hover_btn =="style3" %}
+        <div class="btn_wrapper">  
+          {% if settings.enable_wishlist %}       
+          {% render 'wishlist-icon', product: product %}         
+          {% endif %} 
+          {% if settings.enable_compare %}
+          <div class="add-to-compare pro_btn">     
+            <div class="show">
+              <div class="default-comparebutton-{{ product.handle }} loading">
+                <a class="add-in-compare-js btn" data-comparehandle="{{ product.handle }}" title="{{ 'products.compare.add_to_compare' | t }}">
+                  <i class="mdi mdi-cached"></i>
+                  <i class="mdi mdi-repeat"></i><i class="mdi mdi-repeat-once"></i>
+                  <span class="tooltip-label">{{ 'products.compare.add_to_compare' | t }}</span></a></div>
+            </div>
+          </div>
+          {% endif %}
+          {% if settings.enable_quick_view %}                  
+          {% render 'quickveiw-icon', product: product %}                   
+          {% endif %} 
+        </div>
+        {% endif %}
+      </div>  
+      <div class="product-description">
+        {% if settings.display_size_variant or settings.display_color_variant %}
+        {% if product.has_only_default_variant != true %}
+        <div class="color-size">
+          {% if settings.display_color_variant %}     
+          {% render 'item-swatch' , product: product %}
+          {% endif %}
+          {% if settings.display_size_variant %}  
+          <ul class="product-size">  
+            {% for option in product.options %}
+            {% if option == 'Size' %}
+            {% assign index = forloop.index0 %}
+            {% assign sizelist = '' %}
+            {% assign size = '' %}
+            {% for variant in product.variants %}
+            {% capture size %}
+            {{ variant.options[index] }}
+            {% endcapture %}
+            {% unless sizelist contains size %}  
+            {% assign text = size | handleize %}
+            <li>
+              <label>{{ size | split: ' ' | last | handle }}</label>
+              {% if variant.image != null %}
+              <span class="hidden">
+                <img loading="lazy" width="373" height="486" src="{{ variant.image.src | product_img_url: '373x486' }}" alt="{{ text }}"/>
+              </span>
+              {% endif %}
+            </li>
+            {% capture tempList %}
+            {{ sizelist | append: size | append: ' ' }}
+            {% endcapture %}
+            {% assign sizelist = tempList %}
+            {% endunless %}
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
+          </ul>
+          {% endif %}  
+        </div>
+        {% endif %}
+        {% endif %} 
+        {% if settings.product_hover_btn !="style1" %}
+        {% if settings.show_vendor %}
+        <div class="grid-view-item__vendor">{{ product.vendor }}</div>
+        {% endif %}
+        <div class="h4 grid-view-item__title">
+          <a class="grid-view-item__link grid-link__title" href="{{ product.url | within: collection }}">{{ product.title | strip_html | truncatewords: 5 }}</a>
+        </div>
+        {% endif %}
+        <div class="product-desc rte">
+          {{ product.description | strip_html | truncatewords: 15 }}         
+        </div>
+        {% if settings.collections_show_rating %}    
+        <div class="spr-badges grid-item-meta {% if product.variants == blank %} color {% endif %}">
+          <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+        </div>
+        {% endif %}
+        <div class="grid-view-item__meta">
+          {% capture price %}{{ product.price | money }}{% endcapture %}
+          {% render 'product-price-listing', product: product, show_vendor: section.settings.show_vendor %}
+        </div> 
+        <div class="cart-qty">  
+          {% if settings.enable_quantity %}
+          {% if product.available %} 
+          <div class="product-qty">        
+            <form action="/cart/add" method="post" class="variants clearfix cart-form-{{ product.id }}"> 
+              <div class="qty-box-set">  
+                <input type="number" name="quantity" value="1" min="1" data-id="Qty" class="quantity">
+                <div class="qnt_wrap">
+                  <div class="inc button qtyplus"><i class="mdi mdi-plus"></i></div>
+                  <div class="dec button qtyminus"><i class="mdi mdi-minus"></i></div>
+                </div>
+              </div>
+            </form>
+          </div>
+          {% endif %}
+          {% endif %} 
+          {% if settings.enable_add_cart %}
+          {% if product.available %}
+          {% if product.variants.first.inventory_management == "shopify" %}
+          {% if product.variants %}  
+          {% if product.variants.first.inventory_quantity > 0 %}
+          <div class="pro_btn btn1 add_tocart">
+            <form action="/cart/add" method="post" class="variants clearfix cart-form-{{ product.id }}">                                    
+              <input type="hidden" name="id" value="{{ product.variants[0].id }}" />  
+              <a class="add-cart-btn btn" title="{{ 'products.product.add_to_cart' | t }}">
+                <i class="mdi mdi-cached"></i>
+                <i class="mdi mdi-plus"></i><span class="add_cart tooltip-label">{{ 'products.product.add_to_cart' | t }}</span>
+              </a>
+            </form>   
+          </div>
+          {% else %}
+          <div class="pro_btn btn1 add_tocart soldout">
+            <a class="add-cart-btn1 btn add-to-cart-disable" title="{{ 'products.product.sold_out' | t }}">
+              <i class="mdi mdi-plus"></i><span class="sold_cart tooltip-label">{{ 'products.product.sold_out' | t }}</span>
+            </a>  
+          </div>
+          {% endif %}
+          {% else %}
+          {% if product.inventory_quantity > 0 %}
+          <div class="pro_btn btn2 add_tocart">
+            <form action="/cart/add" method="post" class="variants clearfix cart-form-{{ product.id }}">                                    
+              <input type="hidden" name="id" value="{{ product.variants[0].id }}" />  
+              <a class="add-cart-btn btn" title="{{ 'products.product.add_to_cart' | t }}">
+                <i class="mdi mdi-cached"></i>
+                <i class="mdi mdi-plus"></i><span class="add_cart  tooltip-label">{{ 'products.product.add_to_cart' | t }}</span>
+              </a>
+            </form>   
+          </div>
+          {% else %}
+          <div class="pro_btn btn2 add_tocart soldout">
+            <a class="add-cart-btn1 btn add-to-cart-disable" title="{{ 'products.product.sold_out' | t }}">
+              <i class="mdi mdi-plus"></i><span class="sold_cart tooltip-label">{{ 'products.product.sold_out' | t }}</span>
+            </a>  
+          </div>
+          {% endif %}
+          {% endif %}
+          {% else %}
+          {% if product.variants.first.inventory_management == "shopify" %}  
+          {% if product.variants.first.inventory_quantity > 0 %}
+          <div class="pro_btn btn3 add_tocart">
+            <form action="/cart/add" method="post" class="variants clearfix cart-form-{{ product.id }}">                                    
+              <input type="hidden" name="id" value="{{ product.variants[0].id }}" />  
+              <a class="add-cart-btn btn" title="{{ 'products.product.add_to_cart' | t }}">
+                <i class="mdi mdi-cached"></i>
+                <i class="mdi mdi-plus"></i><span class="add_cart  tooltip-label">{{ 'products.product.add_to_cart' | t }}</span>
+              </a>
+            </form>   
+          </div>
+          {% else %}
+          <div class="pro_btn btn3 add_tocart soldout">
+            <a class="add-cart-btn1 btn add-to-cart-disable" title="{{ 'products.product.sold_out' | t }}">
+              <i class="mdi mdi-plus"></i><span class="sold_cart tooltip-label">{{ 'products.product.sold_out' | t }}</span>
+            </a>  
+          </div>
+          {% endif %}
+          {% else %}
+          <div class="pro_btn btn4 add_tocart">
+            <form action="/cart/add" method="post" class="variants clearfix cart-form-{{ product.id }}">                                    
+              <input type="hidden" name="id" value="{{ product.variants[0].id }}" />  
+              <a class="add-cart-btn btn" title="{{ 'products.product.add_to_cart' | t }}">
+                <i class="mdi mdi-cached"></i>
+                <i class="mdi mdi-plus"></i><span class="add_cart  tooltip-label">{{ 'products.product.add_to_cart' | t }}</span>
+              </a>
+            </form>   
+          </div>
+          {% endif %}
+          {% endif %}
+          {% else %}
+          <div class="pro_btn btn4 add_tocart soldout">
+            <a class="add-cart-btn1 btn add-to-cart-disable" title="{{ 'products.product.sold_out' | t }}">
+              <i class="mdi mdi-plus"></i><span class="sold_cart tooltip-label">{{ 'products.product.sold_out' | t }}</span>
+            </a>  
+          </div>
+          {% endif %}
+          {% endif %} 
+        </div>  
+      </div>
+      {% if settings.product_hover_btn !="style3" %}
+      <div class="btn_wrapper">  
+        {% if settings.enable_wishlist %}       
+        {% render 'wishlist-icon', product: product %}         
+        {% endif %} 
+        {% if settings.enable_compare %}
+        <div class="add-to-compare pro_btn">     
+          <div class="show">
+            <div class="default-comparebutton-{{ product.handle }} loading">
+              <a class="add-in-compare-js btn" data-comparehandle="{{ product.handle }}" title="{{ 'products.compare.add_to_compare' | t }}">
+                <i class="mdi mdi-cached"></i>
+                <i class="mdi mdi-repeat"></i><i class="mdi mdi-repeat-once"></i>
+                <span class="tooltip-label">{{ 'products.compare.add_to_compare' | t }}</span></a></div>
+          </div>
+        </div>
+        {% endif %}
+        {% if settings.enable_quick_view %}                  
+        {% render 'quickveiw-icon', product: product %}                   
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

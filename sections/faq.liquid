@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="page-content-wrapper">
+    <div class="rte">
+      {{ page.content }}
+      <div class="page-width" data-section-id="{{ section.id }}" data-section-type="faq-section">
+        <div class="grid">
+          <div class="grid__item shortcodes-section">
+            <div class="tt-toggle-frame-set">
+              {% for block in section.blocks %}          
+              <h5 class="tt-toggle-accordion  {% if forloop.first == true %}active{% endif %}"><a href="#">{{ block.settings.title }}</a></h5>
+              <div class="tt-toggle-content" {% if forloop.first == true %}style="display:block;"{% endif %}>
+                <div class="tt-block">{{ block.settings.description }}</div>
+              </div>        
+              {% endfor %}           
+            </div>     
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "FAQs",
+  "max_blocks": 50,
+  "settings": [],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "FAQ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Question",
+          "label": "Question"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "default": "Answer goes here...",
+          "label": "Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

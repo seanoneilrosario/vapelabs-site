@@ -1,0 +1,224 @@
+<style>
+  .cms-banner .banner .banner-content1 .title {color: {{section.settings.banner1_title_color }};}
+  .cms-banner .banner .banner-content2 .title {color: {{section.settings.banner2_title_color }};}
+  .cms-banner .banner .banner-content1 .subtitle {color: {{section.settings.banner1_subtitle_color }};}
+  .cms-banner .banner .banner-content2 .subtitle {color: {{section.settings.banner2_subtitle_color }};}  	
+  .cms-banner .banner .banner-content1 .desc {color: {{section.settings.banner1_desc_color }};}  	 
+  .cms-banner .banner .banner-content1 .btn {color: {{section.settings.btn1_txt_color }};background:{{ section.settings.btn1_bg_color }}; }
+  .cms-banner .banner .banner-content1 .btn:hover {color: {{section.settings.btn1_txt_hover_color }};}
+  .cms-banner .banner .banner-content1 .btn::after { background:{{ section.settings.btn1_bg_hover_color }}; }
+  .cms-banner .banner .banner-content2 .btn {color: {{section.settings.btn2_txt_color }};background:{{ section.settings.btn2_bg_color }}; }
+  .cms-banner .banner .banner-content2 .btn:hover {color: {{section.settings.btn2_txt_hover_color }};}
+  .cms-banner .banner .banner-content2 .btn::after { background:{{ section.settings.btn2_bg_hover_color }}; }
+</style>    
+<div class="container">  
+  <div class="row">
+    <div class="cms-banner">
+      <div class="banner banner1 col-sm-6 col-xs-6" data-aos="fade-right">
+        {% if section.settings.banner1_img != blank %}
+        <a href="{% if section.settings.banner1_url != blank %}{{ section.settings.banner1_url }}{% else %}#{% endif %}">
+          <img loading="lazy" class="lazyload" src="{{ section.settings.banner1_img | img_url:"master" }}" alt="banner1">
+          <div class="banner-content banner-content1 {{ section.settings.text1_position }}">
+            <div class="banner-inner">
+              {% if section.settings.banner1_subtitle != blank %}<div class="subtitle">{{ section.settings.banner1_subtitle }}</div>{% endif %}
+              {% if section.settings.banner1_title != blank %}<div class="title">{{ section.settings.banner1_title }}</div>{% endif %}
+              {% if section.settings.btn1_text != blank %}
+              <div class="ttbanner-btn btn" href="{{ section.settings.btn_link1 }}">{{ section.settings.btn1_text }}</div>
+              {% endif %}
+            </div>
+          </div>
+        </a>
+        {% endif %}
+      </div>
+      <div class="banner banner2 col-sm-6 col-xs-6" data-aos="fade-left">
+        {% if section.settings.banner2_img != blank %}
+        <a href="{% if section.settings.banner2_url != blank %}{{ section.settings.banner2_url }}{% else %}#{% endif %}">
+          <img loading="lazy" class="lazyload" src="{{ section.settings.banner2_img | img_url:"master" }}" alt="banner1">
+          <div class="banner-content banner-content2 {{ section.settings.text2_position }}">
+            <div class="banner-inner">
+              {% if section.settings.banner2_subtitle != blank %}<div class="subtitle">{{ section.settings.banner2_subtitle }}</div>{% endif %}
+              {% if section.settings.banner2_title != blank %}<div class="title">{{ section.settings.banner2_title }}</div>{% endif %}
+              {% if section.settings.btn2_text != blank %}
+              <div class="ttbanner-btn btn" href="{{ section.settings.btn_link2 }}">{{ section.settings.btn2_text }}</div>
+              {% endif %}
+            </div>
+          </div>
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>    
+</div>  
+{% schema %}
+{
+"name": "CMS Banner",
+"class": "index-section cmsbanner",
+"settings": [
+{
+"type": "image_picker",
+"id": "banner1_img",
+"label": "Banner1 image"
+},
+{
+"type": "url",
+"id": "banner1_url",
+"label": "Banner1 url"
+},
+{
+"type": "select",
+"id": "text1_position",
+"label": "Text Position",
+"options": [
+{
+"value": "left",
+"label": "left"
+},
+{
+"value": "right",
+"label": "Right"
+},
+{
+"value": "center",
+"label": "Center"
+}
+]
+},
+{
+"type": "text",
+"id": "banner1_subtitle",
+"label": "Banner1 subtitle"
+},
+{
+"type": "color",
+"id": "banner1_subtitle_color",
+"label": "Banner1 subtitle color",
+"default": "#000"
+},
+{
+"type": "text",
+"id": "banner1_title",
+"label": "Banner1 title"
+},
+{
+"type": "color",
+"id": "banner1_title_color",
+"label": "Banner1 title color"
+},
+{
+"type": "text",
+"id": "btn1_text",
+"label": "Button text"
+},
+{
+"type": "url",
+"id": "btn_link1",
+"label": "Button url"
+},
+{
+"type": "color",
+"id": "btn1_bg_color",
+"label": "Button Background Color"
+},
+{
+"type": "color",
+"id": "btn1_txt_color",
+"label": "Button Text color"
+},
+{
+"type": "color",
+"id": "btn1_txt_hover_color",
+"label": "Button text hover color"
+},
+{
+"type": "color",
+"id": "btn1_bg_hover_color",
+"label": "Button Hover Background Color"
+},
+{
+"type": "image_picker",
+"id": "banner2_img",
+"label": "Banner2 image"
+},
+{
+"type": "url",
+"id": "banner2_url",
+"label": "Banner2 url"
+},
+{
+"type": "select",
+"id": "text2_position",
+"label": "Text Position",
+"options": [
+{
+"value": "left",
+"label": "left"
+},
+{
+"value": "right",
+"label": "Right"
+},
+{
+"value": "center",
+"label": "Center"
+}
+]
+},
+{
+"type": "text",
+"id": "banner2_subtitle",
+"label": "Banner2 subtitle"
+},
+{
+"type": "color",
+"id": "banner2_subtitle_color",
+"label": "Banner2 subtitle color"
+},
+{
+"type": "text",
+"id": "banner2_title",
+"label": "Banner2 title"
+},
+{
+"type": "color",
+"id": "banner2_title_color",
+"label": "Banner2 title color"
+},
+{
+"type": "text",
+"id": "btn2_text",
+"label": "Button text"
+},
+{
+"type": "url",
+"id": "btn_link2",
+"label": "Button url"
+},
+{
+"type": "color",
+"id": "btn2_bg_color",
+"label": "Button Background Color"
+},
+{
+"type": "color",
+"id": "btn2_txt_color",
+"label": "Button Text color"
+},
+{
+"type": "color",
+"id": "btn2_txt_hover_color",
+"label": "Button text hover color"
+},
+{
+"type": "color",
+"id": "btn2_bg_hover_color",
+"label": "Button Hover Background Color"
+}
+],
+"presets": [
+{
+"name": "CMS Banner",
+"category": "TT CMS section"
+}
+]
+}
+{% endschema %}

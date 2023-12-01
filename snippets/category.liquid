@@ -1,0 +1,45 @@
+<div class="topcat_content hb-animate-element bottom-to-top">
+  {% for block in section.blocks %} 
+  <div class="cat-cnt {% if block.settings.tt_mn_show_sub == true %}toggle{% else %}single{% endif %}">
+    <a class="cat-content" href="{{ block.settings.topcat_url}}">
+      <span id="icon-{{ block.id }}" class="cat-icon">
+        <img loading="lazy" class="lazyload" height="32" width="32" src="{{ block.settings.service_icon | img_url: '32x32' }}" alt="icon"/>
+      </span>
+      <span class="cat-title">{{  block.settings.title }}</span>
+    </a>  
+    {% if block.settings.tt_mn_show_sub == true %}  
+    <span class="mobile-nav__sublist-trigger">
+      <span class="mobile-nav__sublist-expand">
+        <i class="mdi mdi-chevron-down" aria-hidden="true"></i>
+      </span>
+      <span class="mobile-nav__sublist-contract">
+        <i class="mdi mdi-chevron-up" aria-hidden="true"></i>
+      </span>
+    </span>
+    {% endif %}
+    {% if block.settings.tt_mn_show_sub == true %}  
+    {%- assign tt_sub_menu_c = block.settings.tt_sub_menu_clinklist -%}
+    {%- if linklists[tt_sub_menu_c].links != blank -%}
+    <ul class="tt_sub_menu_linklist">
+      {%- for link in linklists[tt_sub_menu_c].links -%}
+      <li{% if link.links != blank %} class="tt_menu_item"{% endif %}>
+        <a href="{{ link.url }}" title="{{ link.object.description | strip_html }}">{{ link.title }}</a>
+        {% if link.links != blank %}
+        <div class="tt_sub_menu_wrap">
+          <ul class="sub_menu_linklist">
+            {% for link in link.links %}
+            <li>
+              <a href="{{ link.url }}" title="{{ link.object.description | strip_html }}">{{ link.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>  

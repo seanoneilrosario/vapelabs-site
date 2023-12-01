@@ -1,0 +1,75 @@
+{% comment %}
+The {{ content_for_header }} in theme.liquid will output the following stylesheet just for this page:
+- <link rel="stylesheet" href="/global/search.css" type="text/css">
+It has a few helpers in there, but this theme writes its own styles so there are no dependencies or conflicts. You can ignore that file.
+Return only products or pages in results:
+- http://docs.shopify.com/manual/configuration/store-customization/return-only-product-in-storefront-search-results
+- Or manually add type=product or type=page to the search URL as a parameter
+{% endcomment %}
+{% comment %}If you're only showing products with the method above, why not show them off in a grid instead?Set grid_results to true and see your updated results page for the new layout.{% endcomment %}
+{% assign grid_results = false %}
+{% comment %}Check to enforce respond.js{% endcomment %}
+{% assign respond_js_secret_key = shop.domain | md5 %}
+{% unless search.terms == respond_js_secret_key %}
+{% if search.performed %}
+{% comment %}Avoid accessing search.results before the opening paginate tag.If you do, the pagination of results will be broken.{% endcomment %}
+{% paginate search.results by 20 %}
+{% comment %}We don't have any results to show. Feel free to show off featured products or suggested searches here.{% endcomment %}
+{% unless products_per_page  %}
+{% assign products_per_page = 10 %}
+{% endunless %}
+<div class="search-products">
+  <div class="container">
+    {% if search.results_count == 0 %}
+    <h1 class="text--left section-header__title">{{ 'general.search.no_results_html' | t: terms: search.terms }}</h1>
+    {% render 'search-bar' %}
+    {% else %}
+    <h1 class="text--left section-header__title">{{ 'general.search.results_for_html' | t: terms: search.terms }}</h1>
+    {% render 'search-bar' %}
+    {% comment %}Each result template, based on the grid_layout variable above{% endcomment %}
+    {% if grid_results == false %}
+    <div class="search-result-product">
+      <div class="grid-uniform product-grid col-main">
+        <div class="products-grid-view">
+          <div class="row">
+            {% for item in search.results %}{% if item.type == 'PPLR_HIDDEN_PRODUCT' %}{% continue %}{% endif %}
+            {% render 'search-result', product: item %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <div class="grid-uniform">
+      {% for item in search.results %}{% if item.type == 'PPLR_HIDDEN_PRODUCT' %}{% continue %}{% endif %}             
+      {% render 'search-result-grid', product: item %}
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% endif %}
+    {% if paginate.pages > 1 %}
+    <div class="text-center pagination-wrap">
+      {% render 'pagination-custom', paginate: paginate %}
+      <div class="showing">
+        <span class="show-txt">Showing</span> <span class="loadcount">{{ products_per_page }}</span> of {{ search.results_count }}
+      </div>
+    </div>
+    {% endif %}
+    {% endpaginate %}
+  </div>
+</div>
+{% else %}
+{% comment %}
+If search.performed is false, someone either accessed the page without
+the q parameter, or it was blank.
+Be sure to show a search form here, along with anything else you want to showcase.
+{% endcomment %}
+<div class="container">
+  <h1 class="h2 left tt-innerpagetitle">{{ 'general.search.title' | t }}</h1>
+  {% render 'search-bar' %}
+</div>
+{% endif %}
+{% else %}
+{% render 'respond' %}
+{% layout none %}
+{% endunless %}

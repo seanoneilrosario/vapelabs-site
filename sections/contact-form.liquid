@@ -1,0 +1,167 @@
+<div class="grid">
+  <div class="container">
+    <div class="contact-content">
+      <div class="contact-title">Contact Us</div>
+      <div class="row">
+        <div class="contact-us-page">
+          <div class="contact-us-map col-sm-12">
+            <div id="google_map" data-section-id="{{ section.id }}" data-section-type="map-section">
+              <div id="map"></div>
+            </div>
+          </div>
+          <div class="contact_wrapper col-sm-8">
+            <div class="contact-us-form">
+              {% form 'contact' %}
+              {% if form.posted_successfully? %}
+              <p class="note form-success">
+                {{ 'contact.form.post_success' | t }}
+              </p>
+              {% endif %}
+              {{ form.errors | default_errors }}
+              <div id="contactFormWrapper">
+                {% assign name_attr = 'contact.form.name' | t | handle %}
+                <label for="contactFormName" class="form-label--hidden">
+                  <span class="visuallyhidden">
+                    {{ 'contact.form.name' | t }}
+                  </span>
+                </label>
+                <input type="text" id="contactFormName" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.name' | t }}" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+                <label for="contactFormEmail" class="form-label--hidden">
+                  <span class="visuallyhidden">
+                    {{ 'contact.form.email' | t }}
+                  </span>
+                </label>
+                <input type="email" id="contactFormEmail" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+                {% assign name_attr = 'contact.form.phone' | t | handle %}
+                <label for="contactFormPhone" class="form-label--hidden">
+                  <span class="visuallyhidden">
+                    {{ 'contact.form.phone' | t }}
+                  </span>
+                </label>
+                <input type="tel" id="contactFormPhone" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.phone' | t }}" pattern="[0-9\-]*" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+                <label for="contactFormMessage" class="form-label--hidden">
+                  <span class="visuallyhidden">
+                    {{ 'contact.form.message' | t }}
+                  </span>
+                </label>
+                <textarea rows="10" id="contactFormMessage" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+                <input type="submit" class="btn right" value="{{ 'contact.form.send' | t }}">
+              </div>
+              {% endform %}
+            </div>
+          </div>
+          <div class="rte col-sm-4">
+            <div class="address-container right-to-left">
+              {{ page.content }}
+              <div class="social-sharing">
+                <div class="social-title">Follow Us :</div>
+                {% if settings.show_linkedin_share or settings.show_facebook_share or settings.show_twitter_share or settings.show_google_plus_share or settings.show_mailto_share or settings.show_pinterest_share %}
+                <div class="tt-social-share">
+                  {% if settings.show_facebook_share %}
+                  <div class="social-icon">
+                    <a href="http://www.facebook.com/sharer.php?u={{ article.url }}"><i class="mdi mdi-facebook"></i></a>
+                  </div>
+                  {% endif %}
+                  {% if settings.show_twitter_share %}
+                  <div class="social-icon">
+                    <a href="http://twitter.com/share?url={{ article.url }}"><i class="mdi mdi-twitter"></i></a>
+                  </div>
+                  {% endif %}
+                  {% if settings.show_pinterest_share %}
+                  <div class="social-icon">
+                    <a href="http://pinterest.com/pin/create/button/?url={{ article.url }}"><i class="mdi mdi-pinterest"></i></a>
+                  </div>
+                  {% endif %}
+                  {% if settings.show_linkedin_share %}
+                  <div class="social-icon">
+                    <a href="http://www.linkedin.com/shareArticle?mini=true&url={{ article.url }}"><i class="mdi mdi-linkedin"></i></a>
+                  </div>
+                  {% endif %}
+                </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Contact Page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Contact Us",
+      "label": "Heading"
+    },
+    {
+      "type":"header",
+      "content":"Google Map"
+    },
+    {
+      "type": "text",
+      "id": "map_height",
+      "default": "400px",
+      "label": "Enter Map Height in (px)"
+    },
+    {
+      "type": "text",
+      "id": "map_api_key",
+      "label": "Enter Your Map API KEY"
+    },
+    {
+      "type": "select",
+      "id": "map_type",
+      "label": "Select Map Type",
+      "default": "ROADMAP",
+      "options": [
+        {
+          "value": "ROADMAP",
+          "label": "ROADMAP"
+        },
+        {
+          "value": "TERRAIN",
+          "label": "TERRAIN"
+        },
+        {
+          "value": "SATELLITE",
+          "label": "SATELLITE"
+        },
+        {
+          "value": "HYBRID",
+          "label": "HYBRID"
+        }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "map_icon",
+      "label": " Map Marker Icon"
+    },
+    {
+      "type": "textarea",
+      "id": "map_address",
+      "label": "Enter Adress",
+      "default": "india"
+    },
+    {
+      "type": "textarea",
+      "id": "map_custom_style",
+      "label": "Enter Map Custom Style JavaScript Code"
+    }
+  ]
+}
+{% endschema %}
+<style>#map {height: {{ section.settings.map_height }};width: 100%;}</style>
+<script>function DisplayMapAddress(address){var geocoder=new google.maps.Geocoder();geocoder.geocode({address:address},function(results,status){if(status==google.maps.GeocoderStatus.OK){var location=results[0].geometry.location;var options={zoom:10,center:location,streetViewControl:!0,mapTypeId:google.maps.MapTypeId.{{section.settings.map_type}},scrollwheel:!1,draggable:!0,panControl:!0,zoomControl:!0,{%if section.settings.map_custom_style!=""%}
+styles:{{section.settings.map_custom_style}},{%endif%}
+zoomControlOptions:{style:google.maps.ZoomControlStyle.SMALL}};var mymap=new google.maps.Map(document.getElementById('map'),options);var marker=new google.maps.Marker({map:mymap,flat:!0,icon:'{{ section.settings.map_icon }}',position:results[0].geometry.location});var infowindow=new google.maps.InfoWindow({content:'india'});google.maps.event.addListener(marker,'click',function(){infowindow.open(mymap,marker)})}})}
+jQuery(document).ready(function(){DisplayMapAddress('{{ section.settings.map_address }}')});</script>
+{% if section.settings.map_api_key != nil %}
+<script src="https://maps.googleapis.com/maps/api/js?key={{ section.settings.map_api_key }}"></script>
+{% else %}
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+{% endif %}

@@ -1,0 +1,12 @@
+<a href="/cart" id="cart-products-count" class="site-header_cart_link">                    
+  <i class="mdi mdi-cart"></i>
+  {% if cart.item_count > 0 %}
+  <div id="CartCount_sticky" class="site-header__cart-count" title="Cart" >
+    <span class="cart-products-count" aria-hidden="true">{{ cart.item_count }}</span><span class="cart-products-detail">{{ 'general.header.cart_title' | t }}</span>                
+  </div>
+  {% else %}
+  <div id="CartCount_sticky" class="site-header__cart-count">
+    <span class="cart-products-count" aria-hidden="true">0</span><span class="cart-products-detail">{{ 'general.header.cart_title' | t }}</span>        
+  </div>
+  {% endif %}
+</a>

@@ -1,0 +1,158 @@
+{% comment %}
+This is used to create CSS custom variables with Liquid references
+The file variables.scss is referring these CSS custom variables as Sass variables
+to use throughout the stylesheet
+{% endcomment %}
+{% style %}
+{%- assign header_font = settings.type_header_font -%}
+{%- assign base_font = settings.type_base_font -%}
+{%- assign base_font_bolder = base_font | font_modify: 'weight', 'bolder' -%}
+{%- assign base_font_bold = base_font | font_modify: 'weight', 'bold' -%}
+{%- assign base_font_italic = base_font | font_modify: 'style', 'italic' -%}
+{%- assign base_font_bold_italic = base_font_bold | font_modify: 'style', 'italic' -%}
+
+:root {
+--color-text: {{ settings.title_color }};
+--color-sub-text: {{ settings.subtitle_color }};
+--color-body-text: {{ settings.color_body_text }};
+--color-body: {{ settings.color_body_bg }};
+--color-border: {{ settings.color_borders }};
+--color-header-text: {{ settings.color_body_text | color_darken: 20}};
+--color-sale-text: {{ settings.price_color }};
+--color-meta: {{ settings.meta_color }};
+--color-text-field: {{ settings.color_accent }};
+--color-text-hover-field: {{ settings.link_hover_color }};
+--color-text-breadcrumb: {{ settings.breadcrumb_text_color }};
+--color-text-hover-breadcrumb: {{ settings.breadcrumb_hover_text_color }};
+--color-bg-breadcrumb: {{ settings.breadcrumb_bg_color }};
+
+--errorRed: #dc0000;
+--successGreen: #0a942a;
+
+--color-btn-primary: {{ settings.color_btn_primary }};
+--color-btn-primary-2: {{ settings.color_btn_primary_2 }};
+--color-btn-primary-text: {{ settings.color_btn_text }};
+--color-btn-secondary: {{ settings.color_btn_secondary }};
+--color-btn-secondary-2: {{ settings.color_btn_secondary_2 }};
+--color-btn-secondary-text: {{ settings.color_btn_hover_text }};
+--color-product-primary: {{ settings.icon_background_color }};
+--color-product-primary-text: {{ settings.icon_color }};
+--color-product-secondary: {{ settings.icon_background_hovercolor }};
+--color-product-secondary-text: {{ settings.icon_hovercolor }};
+
+--passwordPageUseBgImage: {{ settings.password_bg_img }};
+
+--font-stack-header: {{ settings.type_header_family  | remove: 'Google+' | replace: '+', ' ' }}, sans-serif;
+--font-stack-body: {{ settings.body_font | remove: 'Google+' | replace: '+', ' ' }}, sans-serif;
+--font-stack-subheading: {{ settings.type_subheader_family | remove: 'Google+' | replace: '+', ' ' }}, sans-serif;
+--font-size-base: {{ settings.type_base_size }};
+--font-line-height: {{ settings.line_height }};
+--font-letterspace: {{ settings.letter_space }};
+
+--colorFooterContent: {{ settings.footer_color_content }};
+--colorFooterSocial: {{ settings.color_footer_social_link }};
+--colorFooterSocialHover: {{ settings.color_footer_social_link_hover }};
+--colorFooterbg: {{ settings.color_footer_bg }};
+--colorFooterTitle: {{ settings.footer_title_color }};
+--colorFooterBottombg: {{ settings.color_copyright_bg }};
+--colorFooterBorder: {{ settings.footer_border_color }};
+--FooterBottomLink: {{ settings.bottom_text_linkcolor }};
+--FooterBottomText: {{ settings.bottom_text_color }};
+
+--selectIcon: url('{{ "ico-select.svg" | asset_url }}');
+
+--gutter: 30px;
+--sectionSpacing: 55px;
+--sectionSpacingSmall: 35px;
+
+--colorBlankstate: {{ settings.color_body_text | color_to_rgb | remove: 'rgb(' | remove: 'rgba(' | remove: ')' | remove: ', 0.35' }};
+--colorBlankstateBorder: {{ settings.color_body_text | color_to_rgb | remove: 'rgb(' | remove: 'rgba(' | remove: ')' | remove: ', 0.15' }};
+--colorBlankstateBackground: {{ settings.color_body_text | color_to_rgb | remove: 'rgb(' | remove: 'rgba(' | remove: ')' | remove: ', 0.05' }};
+
+--slick-font-family: "slick-icons, sans-serif";
+--slick-arrow-color:  #111;
+--slick-dot-color: #111;
+--slick-dot-color-active: #111;
+--slick-prev-character: '\2190';
+--slick-next-character: '\2192';
+--slick-dot-character:'\2022';
+--slick-dot-size: 6px;
+--slick-opacity-default: 0.75;
+--slick-opacity-on-hover: 1;
+--slick-opacity-not-active: 0.25;
+}
+{% if settings.display_body_bg_img %}
+body .page-wrapper {
+background-image: url('{{ "body-bg.png" | asset_url }}');
+background-repeat: repeat;
+background-color: var(--color-body);
+}
+{% endif %}
+
+.password-page__signup-form .input-group-field {
+background-color: transparent;
+}
+.password-page__wrapper {
+display: table;
+height: 100%;
+width: 100%;
+background-color: var(--color-body);
+padding-top: 15%;
+}
+.password-page__wrapper.bg-img {
+background-image: url('{{ "password-page-background.jpg" | asset_url }}');
+background-size: cover;
+background-repeat: no-repeat;
+color: #ffffff;
+}
+.tt-serviceslider{
+float:left;
+width:100%;
+background: url('{{ "slider-bg.jpg" | asset_url }}') repeat fixed;
+background-color:#572a68;
+background-size: cover;
+}
+.password-page__wrapper a {
+color: inherit;
+}
+.password-page__wrapper a:hover {
+color: inherit;
+}
+.password-page__wrapper.bg-img .social-sharing a {
+color: #ffffff;
+}
+.password-page__wrapper.bg-img .social-sharing a:hover {
+color: #ffffff;
+}
+.password-page__wrapper .social-sharing a {
+color: var(--color-text-field);
+}
+.password-page__wrapper .social-sharing a:hover {
+color: var(--color-meta);
+}
+.password-page__wrapper.bg-img h1, .password-page__wrapper.bg-img h2, .password-page__wrapper.bg-img h3, .password-page__wrapper.bg-img h4, .password-page__wrapper.bg-img h5, .password-page__wrapper.bg-img h6, .password-page__wrapper.bg-img .h1, .password-page__wrapper.bg-img .h2, .password-page__wrapper.bg-img .h3, .password-page__wrapper.bg-img .h4, .password-page__wrapper.bg-img .h5, .password-page__wrapper.bg-img .h6 {
+color: #fff;
+}
+.password-page__wrapper.bg-img .input-group-btn .icon {
+color: inherit;
+}
+.flag-usd { background-image: url(//cdn.shopify.com/s/files/1/1454/2846/t/5/assets/currency_1.png?5796274980970116025);background-repeat:no-repeat; display: inline-block; height: 11px; width: 16px;}
+.flag-eur { background-image: url(//cdn.shopify.com/s/files/1/1454/2846/t/5/assets/currency_2.png?5796274980970116025);background-repeat:no-repeat; display: inline-block; height: 11px; width: 16px;}
+.flag-gbp { background-image: url(//cdn.shopify.com/s/files/1/1454/2846/t/5/assets/currency_3.png?5796274980970116025);background-repeat:no-repeat;display: inline-block; height: 11px; width: 16px;}
+.flag-aud { background-image: url(//cdn.shopify.com/s/files/1/1454/2846/t/5/assets/currency_4.png?5796274980970116025);background-repeat:no-repeat; display: inline-block; height: 11px;width: 16px;}
+.flag- { background-image: url(//cdn.shopify.com/s/files/1/2392/4435/t/2/assets/currency_6.png?13466799072974063191);background-repeat:no-repeat; display: inline-block; height: 11px; width: 16px;}
+.flag- { background-image: url(//cdn.shopify.com/s/files/1/2392/4435/t/2/assets/currency_7.png?13466799072974063191);background-repeat:no-repeat; display: inline-block; height: 11px; width: 16px;}
+.flag- { background-image: url(//cdn.shopify.com/s/files/1/2392/4435/t/2/assets/currency_8.png?13466799072974063191);background-repeat:no-repeat;display: inline-block; height: 11px; width: 16px;}
+.flag- { background-image: url(//cdn.shopify.com/s/files/1/2392/4435/t/2/assets/currency_9.png?13466799072974063191);background-repeat:no-repeat; display: inline-block; height: 11px;width: 16px;}
+.flag- { background-image: url(//cdn.shopify.com/s/files/1/2392/4435/t/2/assets/currency_10.png?13466799072974063191); background-repeat:no-repeat; display: inline-block; height: 11px; width: 16px;}
+.flag-1 { background-image: url({{ 'currency_1.png' | asset_url }});background-repeat:no-repeat; display: inline-block; height: 11px; width: 16px;}
+.flag-2 { background-image: url({{ 'currency_2.png' | asset_url }});background-repeat:no-repeat; display: inline-block; height: 11px; width: 16px;}
+.flag-3 { background-image: url({{ 'currency_3.png' | asset_url }});background-repeat:no-repeat;display: inline-block; height: 11px; width: 16px;}
+.flag-4 { background-image: url({{ 'currency_4.png' | asset_url }});background-repeat:no-repeat; display: inline-block; height: 11px;width: 16px;}
+.flag-5 { background-image: url({{ 'currency_5.png' | asset_url }}); background-repeat:no-repeat; display: inline-block; height: 11px; width: 16px;}
+.flag-6 { background-image: url({{ 'currency_6.png' | asset_url }});background-repeat:no-repeat; display: inline-block; height: 11px; width: 16px;}
+.flag-7 { background-image: url({{ 'currency_7.png' | asset_url }});background-repeat:no-repeat; display: inline-block; height: 11px; width: 16px;}
+.flag-8 { background-image: url({{ 'currency_8.png' | asset_url }});background-repeat:no-repeat;display: inline-block; height: 11px; width: 16px;}
+.flag-9 { background-image: url({{ 'currency_9.png' | asset_url }});background-repeat:no-repeat; display: inline-block; height: 11px;width: 16px;}
+.flag-10 { background-image: url({{ 'currency_10.png' | asset_url }}); background-repeat:no-repeat; display: inline-block; height: 11px; width: 16px;}
+{% endstyle %}

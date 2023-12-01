@@ -1,0 +1,166 @@
+{% assign products_per_row = settings.collection_products_per_row %}
+{% unless products_per_page  %}
+{% assign products_per_page = settings.products_per_page %}
+{% endunless %}
+<div id="ProductGridContainer">
+  {% paginate collection.products by products_per_page %}
+  <div data-section-id="{{ section.id }}" data-section-type="collection-template" class="collection_template" id="product-grid" data-id="{{ section.id }}">
+    <header class="section-header text-left">
+      {% if collection.description != blank and settings.enable_category_image == true %}
+      <div class="rte rte--header collection-desc-wrap">
+        {% if settings.category_image != blank %}
+        <div class="category_img">
+          <img loading="lazy" src="{{ settings.category_image | image_url }}"  alt="{{ collection.title | escape }}" display="block" width="1170" height="250" class="lazyload"/>
+        </div>   
+        {% endif %}
+        <h1 class="section-header__title text-left">{{ collection.title }}</h1>
+        <div class="description">{{ collection.description }}</div>
+      </div>
+      {% else %}
+      <h1 class="section-header__title">{{ collection.title }}</h1>
+      {% endif %} 
+      <div class="filter-wrapper {{ settings.collection_sidebar_use }} wrap_{{ settings.collection_filter_pos }}">
+        {% if settings.collection_sidebar_use == "full_width" %}
+        {% if settings.collection_filter_pos == "left_filter" %}  
+        <a class="filter-left" href="#"><i class="mdi mdi-format-align-left"></i>filter</a>   
+        {% endif %}
+        {% endif %}
+        {%- if enable_sorting -%}
+        <facet-filters-form class="facets facet-hide sorting_wrapper">
+          <form id="FacetFiltersForm" class="facets__form collection-sorting">
+            <div class="facet-filters sorting caption">
+              <div class="filter-sortby facet-filters__field">
+                <label class="facet-filters__label caption-large" for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
+                <div class="select sorting-section">
+                  {%- assign sort_by = results.sort_by | default: results.default_sort_by -%}
+                  <select name="sort_by" class="facet-filters__sort select__select caption-large" id="SortBy" aria-describedby="a11y-refresh-page-message">
+                    {%- for option in results.sort_options -%}
+                    <option value="{{ option.value | escape }}"{% if option.value == sort_by %} selected="selected"{% endif %}>{{ option.name | escape }}</option>
+                    {%- endfor -%}
+                  </select>
+                </div>
+              </div>
+            </div>
+          </form>
+        </facet-filters-form>
+        {%- endif -%} 
+        {% if settings.collection_sidebar_use == "full_width" %}
+        {% if settings.collection_filter_pos == "right_filter" %}  
+        <a class="filter-right" href="#">filter<i class="mdi mdi-format-align-right"></i></a> 
+        {% endif %}
+        {% endif %}
+        <div class="sorting_wrapper">     
+          <div class="filter-show grid__item">
+            {% if collection.products.size != collection.all_products.size %}
+            <label>{{ 'collections.toolbar.show' | t }}</label>
+            {% assign current_page_size = paginate.page_size %}
+            <div class="pages_list">
+              <button class="btn dropdown-toggle" data-toggle="dropdown">
+                <i class="mdi mdi-swap-horizontal hide"></i>
+                <span class="pag-product">{{ collection.products.size }}</span>
+                <i class="mdi mdi-chevron-down"></i>
+              </button>
+              {% if collection.products.size != collection.all_products.size %}
+              <ul class="dropdown-menu" role="menu">
+                {% if settings.collection_results_per_page != blank %}
+                {% assign product_per_page = settings.collection_results_per_page %}
+                {% if collection.all_products.size <= products_per_page %}<li {% if current_page_size <= products_per_page %} class="active" {% endif %}><a href="{{ paginate.items }}">{{ paginate.items }}</a></li>{% endif %}
+                {% else %}
+                {% assign product_per_page = 12 %}
+                {% endif %}
+
+                {% if collection.all_products.size >= products_per_page %} 
+                <li {% if current_page_size == products_per_page %} class="active" {% endif %}><a href="{{products_per_page}}">{{products_per_page}}</a></li> 
+                {% endif %}
+
+                {% if collection.all_products.size >= 12 %}
+                <li {% if current_page_size == 12 %} class="active" {% endif %}><a href="12">12</a></li>
+                {% endif %}
+
+                {% if collection.all_products.size >= 24 %}
+                <li {% if current_page_size == 24 %} class="active" {% endif %}><a href="24">24</a></li>
+                {% endif %}
+
+                {% if collection.all_products.size >= 36 %}
+                <li {% if current_page_size == 36 %} class="active" {% endif %}><a href="36">36</a></li>
+                {% endif %}
+
+                {% if collection.all_products.size >= products_per_page %}
+                <li {% if current_page_size > products_per_page %} class="active" {% endif %} ><a href="all">all</a></li>
+                {% endif %}
+
+              </ul>
+              {% endif %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        {% if settings.collection_sidebar_use == "full_width" %} 
+        {% if settings.collection_filter_pos == "toggle_filter" %}  
+        <a class="filter-toggle" href="#">filter<i class="mdi mdi-format-align-right"></i></a> 
+        <div class="filter-toggle-wrap">
+          <div class="collection_sidebar">
+            {% if current_tags == blank %}
+            {% assign has_refined = false %} 
+            {% else %}
+            {% assign has_refined = true %} 
+            {% endif %}
+            <div class="sidebar-block">
+              {% render 'sidebar-category', enable_sidecategory: section.settings.enable_sidecategory, linkedlist: section.settings.linkedlist, linkedlist_title: section.settings.linkedlist_title %}
+              {% render 'facets', results: collection, collapse_on_larger_devices: section.settings.collapse_on_larger_devices, show_filter: section.settings.show_filter, enable_sorting: section.settings.enable_sorting %}
+            </div> 
+            {% render 'sidebar-bestsellers', show_best_products: section.settings.show_best_products,  bestseller: section.settings.bestseller, product_rows: section.settings.product_rows, pro_img_width_height: section.settings.pro_img_width_height, limit: section.settings.limit %}  
+            {% render 'promo-banner', show_promo_banner: section.settings.show_promo_banner, promo_img: section.settings.promo_img, promo_link: section.settings.promo_link %}
+          </div>
+        </div>
+
+        {% endif %}
+        {% endif %}
+      </div>
+    </header>
+    <div class="grid-uniform product-grid col-main masonary-collection">
+      <div class="row">
+        <div class="products-grid-view collections_masonry shop_masonry">
+          {% case products_per_row %}
+          {% when '2' %}
+          {% assign grid_item_width = 'medium-up--one-third large-up--one-half' %}
+          {% when '3' %}
+          {% assign grid_item_width = 'medium-up--one-third large-up--one-third' %}
+          {% when '4' %}
+          {% assign grid_item_width = 'medium-up--one-third large-up--one-quarter' %}
+          {% when '5' %}
+          {% assign grid_item_width = 'medium-down--one-half large-up--one-fifth' %}
+          {% when '6' %}
+          {% assign grid_item_width = 'medium-down--one-half large-up--one-sixth' %}
+          {% endcase %}
+          {% for product in collection.products %}{% if product.type == 'PPLR_HIDDEN_PRODUCT' %}{% continue %}{% endif %}
+          {% assign featured = product %}
+          <div class="grid-item ms-item {{ settings.product_hover_btn }} {{ grid_item_width }}">
+            {% render 'product-grid-masonry-item', collection: collection, product: product %}
+          </div>
+          {% else %}
+          {% if collection.handle == 'all' %}
+          {% render 'onboarding-empty-collection' %}
+          {% else %}
+          {% comment %}
+          If collection exists but is empty, display message
+          {% endcomment %}
+          <div class="grid-item">
+            <p>{{ 'collections.general.no_matches' | t }}</p>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="text-center pagination-wrap">
+      {% render 'pagination-custom' %}
+      <div class="showing">
+        <span class="show-txt">Showing</span><span class="loadcount">{{ products_per_page }}</span> of {{ collection.all_products.size }}.
+      </div>
+    </div>
+  </div>
+  {% endpaginate %}
+</div>
+{{ 'masonry.js' | asset_url | script_tag }}
+<script>$(window).load(function(){var $container=$(".shop_masonry");$container.imagesLoaded(function(){$container.masonry({itemSelector:".ms-item",columnWidth:".ms-item",percentPosition:!0})})});</script>

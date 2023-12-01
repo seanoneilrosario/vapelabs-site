@@ -1,0 +1,150 @@
+<div data-section-id="{{ section.id }}" class="page-width slider-specialproduct-wrap special-collection">
+  {%- assign collection = collections[section.settings.collection] -%}
+
+  {%- assign image_size = '270x270' -%}
+  {%- assign product_limit =  7 -%}
+  <div class="container">
+    <div class="special-product-div {{ section.settings.class }} special-product TTProduct-Tab tab-content" data-aos="fade-up">    
+      <div class="box-heading tthometab-title section-header">
+        {% if section.settings.title != blank %}
+        <h2 class="tt-title">{{ section.settings.title | escape }}</h2>
+        <div class="subtitle">{{ section.settings.subtitle | escape }}</div>
+        {% endif %}
+      </div>  
+      {% if section.settings.title != blank %}
+      <div class="view-btn"><a href="{{ section.settings.btn_url }}" class="btn">{{ section.settings.btn_txt | escape }}</a></div>
+      {% endif %}
+        <div  id="{{ section.settings.class }}_products_slider" data-col="{{ section.settings.product_col }}"  class="contents tab-pane slider-specialproduct grid grid--view-items owl-carousel owl-theme" data-col="{{ section.settings.product_col }}">
+          {% for product in collection.products limit: product_limit %}
+          <div class="{{ grid_item_width }}">
+            {% render 'product-card-grid', collection: collection, grid_image_width: image_size , product: product %}
+          </div>
+          {% else %}
+          {% for i in (1..product_limit) %}
+          <div class="{{ grid_item_width }}">
+            <div class="grid-view-item">
+              <a href="#" class="grid-view-item__link">
+                <div class="grid-view-item__image">
+                  {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                  {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+                {% include 'wishlist-icon' %}
+                <div class="h4 grid-view-item__title">{{ 'home_page.onboarding.product_title' | t }}</div>
+                <div class="grid-view-item__meta">
+                  {% include 'product-price' %}
+                </div>
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+          {% endfor %}
+        </div>
+    </div>
+  </div>
+</div>
+<style>
+  .slider-specialproduct{
+    background: {{ section.settings.bg_color }};
+  }
+  .slider-specialproduct-wrap .special-product-div.specialproduct .view-btn .btn{
+    color: {{ section.settings.button_text_color }};
+  }
+  .slider-specialproduct-wrap .special-product-div.specialproduct .view-btn .btn::after{
+    background: {{ section.settings.button_hover_text_color }};
+  }
+  .slider-specialproduct-wrap .special-product-div.specialproduct .view-btn .btn:hover{
+    color: {{ section.settings.button_hover_text_color }};
+  }
+</style>
+{% schema %}
+{
+"name": "Special product",
+"class": "index-section special",
+"settings": [
+{
+"type": "text",
+"id": "class",
+"label": "Add Class",
+"default": "specialproduct"
+},
+{
+"type": "color",
+"id": "bg_color",
+"label": "Background color",
+"default": "#000"
+},	
+{
+"type": "text",
+"id": "title",
+"label": "Heading",
+"default": "Special collection"
+},
+{
+"type": "text",
+"id": "subtitle",
+"label": "Subtitle"
+},
+{
+"type": "url",
+"id": "btn_url",
+"label": "Button url"
+},
+{
+"type": "text",
+"id": "btn_txt",
+"label": "Button Text"
+},
+{
+"type": "color",
+"id": "button_text_color",
+"label": "Button text color",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "button_hover_text_color",
+"label": "Button text hover color",
+"default": "#fff"
+},
+{
+"id": "collection",
+"type": "collection",
+"label": "Collection"
+},
+{
+"type": "select",
+"id": "product_col",
+"label": "Select product Column",
+"options": [
+{
+"value": "2",
+"label": "2 Column"
+},
+{
+"value": "3",
+"label": "3 Column"
+},
+{
+"value": "4",
+"label": "4 Column"
+},
+{
+"value": "5",
+"label": "5 Column"
+},
+{
+"value": "6",
+"label": "6 Column"
+}
+],
+"default": "6"
+}
+],
+"presets": [
+{
+"name": "Special product",
+"category": "Collection"
+}
+]
+}
+{% endschema %}

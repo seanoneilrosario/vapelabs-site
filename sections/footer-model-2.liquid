@@ -1,0 +1,714 @@
+<style>
+  .block_newsletter form .input-group .input-group-btn .btn{
+    background: {{ section.settings.btn_bg_color }};
+    color: {{ section.settings.btn_txt_color }};
+  }
+  .block_newsletter form .input-group .input-group-btn .btn::after{
+    background:{{ section.settings.btn_hoverbg_color }};
+  }
+  .block_newsletter form .input-group .input-group-btn .btn:hover,
+  .block_newsletter form .input-group .input-group-btn .btn:focus,
+  .block_newsletter form .input-group .input-group-btn .btn:active{
+    color: {{ section.settings.btn_hovertxt_color }};
+  }
+  .block_newsletter form .input-group .input-group-btn .btn .icon{
+    color: {{ section.settings.btn_txt_color }};
+    display:inline-block;
+  }
+  .block_newsletter form .input-group .input-group-btn .btn:hover .icon{
+    color: {{ section.settings.btn_hovertxt_color }};
+  }
+  #footer-services{
+    background: {{ section.settings.bg_color }};
+  }
+  #footer-services .ttcontent .service-title{color: {{ section.settings.title_color }};}
+  #footer-services .ttcontent:hover .content .service-title {color: {{ section.settings.title_hover_color }};}
+  #footer-services .block_content .ttcontent:hover .service .ttshipping_img.service-icon{
+    background: {{ section.settings.icon_hover_color }};
+  }
+  #footer-services .ttcontent .service-desc{color: {{ section.settings.desc_color }};}  
+  #footer-services .block_content .ttcontent .service .service-icon{
+    color: {{ section.settings.icon_color }};
+    background: {{ section.settings.icon_color }};} 
+  .testimonial-app{background: {{ section.settings.testi_bg_color }};}
+</style>
+{% capture borderWidth %}{{ settings.border_width }}px{% endcapture %}
+{% capture colorBorder %}{{ settings.color_borders }}{% endcapture %}
+{% if settings.social_twitter_link != blank or settings.social_facebook_link != blank or settings.social_pinterest_link != blank or settings.social_instagram_link != blank or settings.social_tumblr_link != blank or settings.social_snapchat_link != blank or settings.social_youtube_link != blank or settings.social_vimeo_link != blank or settings.social_fancy_link != blank %}
+{% assign show_social_icons = true %}
+{% else %}{% assign show_social_icons = false %}{% endif %}
+{% assign flexifooter = 0 %}
+{% if show_social_icons %}{% assign flexifooter = flexifooter | plus: 1 %}{% endif %}
+{% if section.settings.newsletter_desc != blank %}{% assign class = 'has_desc' %}{% else %}{% assign class = '' %}{% endif %}
+<footer class="site-footer text-left" data-section-id="{{ section.id }}" >
+  <div class="footer-container">
+    <div class="footer-wrapper">
+      <div class="footer-wrap {% if template == 'index' %}bottom-to-top hb-animate-element{% endif %}">
+        {% if section.blocks.size > 0 %} 
+        <div id="footer-services" class="ttservice">  
+          <div class="container">    
+            <div class="block_content owl-carousel hb-animate-element bottom-to-top" style="display: block;">
+              {% for block in section.blocks %}
+              {% if block.type != 'text' %}
+              <div class="ttcontent">
+                <div class="service">
+                  <div id="icon-{{ block.id }}" class="ttshipping_img service-icon">
+                  </div>
+                  <div class="content">
+                    <div class="service-title">{{  block.settings.title }}</div>
+                    <div class="service-desc">{{  block.settings.desc }}</div>
+                  </div>
+                  <style> 
+                    #footer-services .block_content .ttcontent .service #icon-{{ block.id }}.service-icon 
+                    { mask-image:url({{ block.settings.service_icon | img_url: '50x50'}});
+                      -webkit-mask-image:url({{ block.settings.service_icon | img_url: '50x50'}});}               
+                  </style>
+                </div>
+              </div> 
+              {% endif %}
+              {% endfor %}
+            </div>      
+          </div>  
+        </div>
+        {% endif %}
+        <div class="testimonial-app">
+          <div class="container">
+            <div class="row">
+              <div class="tt-testimonial-wrap col-sm-12">
+                <div class="testimonial-desc col-sm-8 col-xs-12 hb-animate-element right-to-left">
+                  <div class="grid__item testimonials_wrap owl-carousel">
+                    {% if section.blocks.size > 0 %}  
+                    {% for block in section.blocks %}    
+                    {% if block.type == 'text' %}
+                    {%- assign block_width = 'small-grid__item' -%}      
+                    <div class="grid__item {{ block_width }}"> 
+                      <div class="testimonial-block">   
+                        <div class="testimonial-detail">
+                          {% if block.settings.text_desc != blank %}
+                          <div class="testimonial-desc" style="color:{{block.settings.des_color }}">{{ block.settings.text_desc }}</div> 
+                          {% endif %}
+                          <div class="testimonial-user">
+                            {% if block.settings.author_name != blank %}
+                            <div class="testimonial-user-title" style="color:{{block.settings.author_color }}">{{ block.settings.author_name }}</div>
+                            <div class="testimonial-user-desc" style="color:{{block.settings.author_descolor }}">{{ block.settings.author_designation }}</div>
+                          </div>
+                          {% endif %}
+                        </div>                        
+                      </div>
+                    </div>
+                    {% endif %}   
+                    {% endfor %}         
+                    {% endif %}   
+                  </div>
+                </div>
+                <div class="testimonial-img col-sm-4 col-xs-12 hb-animate-element left-to-right"><a href="#"><img loading="lazy" class="lazyload" src="{{  section.settings.Testi_img | img_url: "master" }}" alt="testi"></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="app-content">
+              <div class="col-sm-6 dwld">
+                {% if section.settings.app_heading != blank %}<h5 class="widget-title">{{ section.settings.app_heading }}</h5>{% endif %}
+                <div class=" dwld-app">
+                  {% if section.settings.dwld_app1 != blank %}
+                  <div class="app-img"><a href="{{section.settings.dwld_app_url1}}"><img loading="lazy" class="lazyload" src="{{  section.settings.dwld_app1 | img_url: "master" }}" alt="dwld-app" /></a></div>
+                  {% endif %}
+                  {% if section.settings.dwld_app2 != blank %}
+                  <div class="app-img"><a href="{{section.settings.dwld_app_url2}}"><img loading="lazy" class="lazyload" src="{{  section.settings.dwld_app2 | img_url: "master" }}" alt="dwld-app" /></a></div>
+                  {% endif %}
+                  {% if section.settings.dwld_app3 != blank %}
+                  <div class="app-img"><a href="{{section.settings.dwld_app_url3}}"><img loading="lazy" class="lazyload" src="{{  section.settings.dwld_app3 | img_url: "master" }}" alt="dwld-app" /></a></div>  
+                  {% endif %}
+                </div>
+              </div>
+              <div class="cms-security col-sm-6">
+                {% if section.settings.security_title != blank %}<h5 class="widget-title">{{ section.settings.security_title }}</h5>{% endif %}
+                <div class="security-content">
+                  {% if section.settings.security_img1 != blank %}
+                  <div class="security-img col-sm-4 col-xs-4">
+                    <a href="#"><img loading="lazy" class="lazyload" src="{{ section.settings.security_img1 | img_url: "master" }}" alt="security-image" /></a>
+                  </div>
+                  {% endif %}
+                  {% if section.settings.security_img2 != blank %}
+                  <div class="security-img col-sm-4 col-xs-4">
+                    <a href="#"><img loading="lazy" class="lazyload" src="{{ section.settings.security_img2 | img_url: "master"}}" alt="security-image" /></a>
+                  </div>
+                  {% endif %}
+                  {% if section.settings.security_img3 != blank %}
+                  <div class="security-img col-sm-4 col-xs-4">
+                    <a href="#"><img loading="lazy" class="lazyload" src="{{ section.settings.security_img3 | img_url: "master"}}" alt="security-image" /></a>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="Newsletter-content">
+                <div class="col-sm-12 block_newsletter footer-column">
+                  <h5 class="widget-title col-sm-4">{{ section.settings.newsletter_title }}</h5>
+                  <div class="news-desc col-sm-4">{{ section.settings.footer_desc }}</div>
+                  <div class="newsletter-bottom-cotent col-sm-4">	
+                    {% include 'newsletter-form' %}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-left grid grid-content"> 
+              <div class="col-sm-3 footer-column contactus">
+                <h5 class="widget-title">{{ section.settings.footer_contact_title }}</h5>
+                <h5 class="widget-title toggle">{{ section.settings.footer_contact_title }}</h5>
+                <div class="contact-us inline-list nav-secondary">
+                  <ul class="list-unstyled" style="display: block;">
+                    <li class="contact-detail">
+                      <div class="address">	
+                        <i class="mdi mdi-map-marker"></i><div class="contact-address">{{ section.settings.contact_address }}</div>
+                      </div>
+                    </li>
+                    <li class="contact"><i class="mdi mdi-phone"></i><span class="phone"><a href="tel:{{ section.settings.contact_no }}">{{ section.settings.contact_no }}</a></span></li>
+                    <li class="email"><i class="mdi mdi-email-outline"></i><span class="email-address"><a href="mailto:{{ section.settings.contact_email }}">{{ section.settings.contact_email }}</a></span></li>
+                  </ul>
+                </div>
+              </div> 
+              <div class="col-sm-9 footer-section">
+                <div class="col-sm-3 footer-column">
+                  {% if section.settings.footer_col_title_1 != blank %}
+                  <h5 class="widget-title">{{ section.settings.footer_col_title_1 }}</h5>
+                  <h5 class="widget-title toggle">{{ section.settings.footer_col_title_1 }}</h5>{% endif %}
+                  {% if linklists[section.settings.col_1_menu].links != blank %}
+                  <ul class="inline-list nav-secondary">
+                    {% for link in linklists[section.settings.col_1_menu].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+                  {% endif %}
+                </div>
+                <div class="col-sm-3 footer-column">
+                  {% if section.settings.footer_col_title_2 != blank %}
+                  <h5 class="widget-title">{{ section.settings.footer_col_title_2 }}</h5>
+                  <h5 class="widget-title toggle">{{ section.settings.footer_col_title_2 }}</h5>{% endif %}
+                  {% if linklists[section.settings.col_2_menu].links != blank %}
+                  <ul class="inline-list nav-secondary">
+                    {% for link in linklists[section.settings.col_2_menu].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+                  {% endif %}
+                </div>
+                <div class="col-sm-3 footer-column">
+                  {% if section.settings.footer_col_title_3 != blank %}
+                  <h5 class="widget-title">{{ section.settings.footer_col_title_3 }}</h5>
+                  <h5 class="widget-title toggle">{{ section.settings.footer_col_title_3 }}</h5>{% endif %}
+                  {% if linklists[section.settings.col_3_menu].links != blank %}
+                  <ul class="inline-list nav-secondary">
+                    {% for link in linklists[section.settings.col_3_menu].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+                  {% endif %}
+                </div>
+                <div class="col-sm-3 footer-column">
+                  {% if section.settings.footer_col_title_4 != blank %}
+                  <h5 class="widget-title">{{ section.settings.footer_col_title_4 }}</h5>
+                  <h5 class="widget-title toggle">{{ section.settings.footer_col_title_4 }}</h5>{% endif %}
+                  {% if linklists[section.settings.col_4_menu].links != blank %}
+                  <ul class="inline-list nav-secondary">
+                    {% for link in linklists[section.settings.col_4_menu].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            <div class="bottom-footer-section">
+              <div class="text-left grid"> 
+                <div class="footer-column">
+                  {% if section.settings.footer_col_title_5 != blank %}
+                  <h5 class="widget-title">{{ section.settings.footer_col_title_5 }}</h5>
+                  <h5 class="widget-title toggle">{{ section.settings.footer_col_title_5 }}</h5>{% endif %}
+                  {% if linklists[section.settings.col_5_menu].links != blank %}
+                  <ul class="inline-list nav-secondary">
+                    {% for link in linklists[section.settings.col_5_menu].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+                  {% endif %}
+                </div>
+                <div class="footer-column">
+                  {% if section.settings.footer_col_title_6 != blank %}
+                  <h5 class="widget-title">{{ section.settings.footer_col_title_6 }}</h5>
+                  <h5 class="widget-title toggle">{{ section.settings.footer_col_title_6 }}</h5>{% endif %}
+                  {% if linklists[section.settings.col_6_menu].links != blank %}
+                  <ul class="inline-list nav-secondary">
+                    {% for link in linklists[section.settings.col_6_menu].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+                  {% endif %}
+                </div>
+                <div class="footer-column">
+                  {% if section.settings.footer_col_title_7 != blank %}
+                  <h5 class="widget-title">{{ section.settings.footer_col_title_7 }}</h5>
+                  <h5 class="widget-title toggle">{{ section.settings.footer_col_title_7 }}</h5>{% endif %}
+                  {% if linklists[section.settings.col_7_menu].links != blank %}
+                  <ul class="inline-list nav-secondary">
+                    {% for link in linklists[section.settings.col_7_menu].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom-wrap">
+      <div class="container">
+        <div class="footer-bottom">
+          <div class="col-sm-4 copyright left-to-right hb-animate-element">
+            <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}</small> {{ shop.name | link_to: '/' }} | {{ powered_by_link }}
+          </div>
+          {% if show_social_icons %}
+          <div class="col-sm-4 follow-us-outer text-center">
+            {% if show_social_icons %}
+            {% comment %}
+            Loop through the social network links
+            {% endcomment %}
+            <ul class="inline-list social-icons">
+              {% if settings.social_facebook_link != blank %}
+              <li>
+                <a class="icon-fallback-text" href="{{ settings.social_facebook_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Facebook' }}">
+                  <span class="mdi mdi-facebook" aria-hidden="true"></span>
+                  <span class="fallback-text">Facebook</span>
+                </a>
+              </li>
+              {% endif %}
+              {% if settings.social_twitter_link != blank %}
+              <li>
+                <a class="icon-fallback-text" href="{{ settings.social_twitter_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Twitter' }}">
+                  <span class="mdi mdi-twitter" aria-hidden="true"></span>
+                  <span class="fallback-text">Twitter</span>
+                </a>
+              </li>
+              {% endif %}
+              {% if settings.social_pinterest_link != blank %}
+              <li>
+                <a class="icon-fallback-text" href="{{ settings.social_pinterest_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Pinterest' }}">
+                  <span class="mdi mdi-pinterest" aria-hidden="true"></span>
+                  <span class="fallback-text">Pinterest</span>
+                </a>
+              </li>
+              {% endif %}
+              {% if settings.social_instagram_link != blank %}
+              <li>
+                <a class="icon-fallback-text" href="{{ settings.social_instagram_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Instagram' }}">
+                  <span class="mdi mdi-instagram" aria-hidden="true"></span>
+                  <span class="fallback-text">Instagram</span>
+                </a>
+              </li>
+              {% endif %}
+              {% if settings.social_tumblr_link != blank %}
+              <li>
+                <a class="icon-fallback-text" href="{{ settings.social_tumblr_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Tumblr' }}">
+                  <span class="mdi mdi-tumblr" aria-hidden="true"></span>
+                  <span class="fallback-text">Tumblr</span>
+                </a>
+              </li>
+              {% endif %}
+              {% if settings.social_snapchat_link != blank %}
+              <li>
+                <a class="icon-fallback-text" href="{{ settings.social_snapchat_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Snapchat' }}">
+                  <span class="mdi mdi-snapchat" aria-hidden="true"></span>
+                  <span class="fallback-text">Snapchat</span>
+                </a>
+              </li>
+              {% endif %}
+              {% if settings.social_youtube_link != blank %}
+              <li>
+                <a class="icon-fallback-text" href="{{ settings.social_youtube_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'YouTube' }}">
+                  <span class="mdi mdi-youtube" aria-hidden="true"></span>
+                  <span class="fallback-text">YouTube</span>
+                </a>
+              </li>
+              {% endif %}
+              {% if settings.social_vimeo_link != blank %}
+              <li>
+                <a class="icon-fallback-text" href="{{ settings.social_vimeo_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Vimeo' }}">
+                  <span class="mdi mdi-vimeo" aria-hidden="true"></span>
+                  <span class="fallback-text">Vimeo</span>
+                </a>
+              </li>
+              {% endif %}
+              {% if settings.social_fancy_link != blank %}
+              <li>
+                <a class="icon-fallback-text" href="{{ settings.social_fancy_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Fancy' }}">
+                  <span class="mdi mdi-led-variant-outline" aria-hidden="true"></span>
+                  <span class="fallback-text">Fancy</span>
+                </a>
+              </li>
+              {% endif %}
+            </ul>
+            {% endif %}
+          </div>
+          {% endif %}
+          <div class="col-sm-4 text-right payment-icon">
+            {% unless shop.enabled_payment_types == empty %}
+            {% assign payment_icons_available = 'amazon_payments,american_express,apple_pay,bitcoin,cirrus,dankort,diners_club,discover,dogecoin,dwolla,forbrugsforeningen,interac,jcb,litecoin,maestro,master,paypal,visa' | split: ',' %}
+            <div class="footer-links">
+              <div class="inline-list payment_logo_block">
+                <ul class="payment-icons">
+                  {%- for type in shop.enabled_payment_types -%}
+                  <li>
+                    {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                  </li>
+                  {%- endfor -%}
+                </ul>
+              </div>
+            </div>
+            {% endunless %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{% schema %}
+{
+"name": "Footer Design 2",
+"blocks": [
+{
+"type": "s_text",
+"name": "services",
+"settings": [
+{
+"type": "image_picker",
+"id": "service_icon",
+"label": "Service Icon",
+"info": "Size: 65x65"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Title"
+},
+{
+"type": "text",
+"id": "desc",
+"label": "Description"
+}
+]
+},
+{
+"type": "text",
+"name": "Testimonial",
+"settings": [
+{
+"type": "textarea",
+"id": "text_desc",
+"label": "Description"
+},
+{
+"type": "color",
+"id": "des_color",
+"label": "Description Color",
+"default":"#000"
+},
+{
+"type": "text",
+"id": "author_name",
+"label": "author name"
+},
+{
+"type": "text",
+"id": "author_designation",
+"label": "Designation"
+},
+{
+"type": "color",
+"id": "author_color",
+"label": "Author Color",
+"default":"#000"
+},
+{
+"type": "color",
+"id": "author_descolor",
+"label": "Designation Color",
+"default":"#000"
+}
+]
+}
+],
+"settings": [
+{
+"type": "header",
+"content": "Services"
+},
+{
+"type": "color",
+"id": "bg_color",
+"label": "background Color",
+"default":"#000"
+},
+{
+"type": "color",
+"id": "title_color",
+"label": "Title Color",
+"default":"#000"
+},
+{
+"type": "color",
+"id": "title_hover_color",
+"label": "Title Hover Color",
+"default":"#fc9f22"
+},
+{
+"type": "color",
+"id": "desc_color",
+"label": "Description Color",
+"default":"#000"
+},
+{
+"type": "color",
+"id": "icon_color",
+"label": "Service Icon Color",
+"default":"#000"
+},
+{
+"type": "color",
+"id": "icon_hover_color",
+"label": "Service Icon Hover Color",
+"default":"#000"
+},
+{
+"type": "header",
+"content": "Testimonial & App"
+},
+{
+"type": "color",
+"id": "testi_bg_color",
+"label": "Testimonial Main Background Color"
+},
+{
+"type": "image_picker",
+"id": "Testi_img",
+"label": "Testimonial Image"
+},
+{
+"type": "text",
+"id": "app_heading",
+"label": "Heading",
+"default": "App Heading"
+},
+{
+"type": "image_picker",
+"id": "dwld_app1",
+"label": "download image1"
+},
+{
+"type": "url",
+"id": "dwld_app_url1",
+"label": "App1 url"
+},
+{
+"type": "image_picker",
+"id": "dwld_app2",
+"label": "download image2"
+},
+{
+"type": "url",
+"id": "dwld_app_url2",
+"label": "App2 url"
+},
+{
+"type": "image_picker",
+"id": "dwld_app3",
+"label": "download image3"
+},
+{
+"type": "url",
+"id": "dwld_app_url3",
+"label": "App3 url"
+},
+{
+"type": "header",
+"content": "newsletter"
+},
+{
+"type": "text",
+"id": "newsletter_title",
+"label": "Newsletter Title",
+"default": "Sign Up For Newsletter"
+},
+{
+"type": "text",
+"id": "footer_desc",
+"label": "footer Newletter description"
+},
+{
+"type": "color",
+"id": "btn_txt_color",
+"label": "Button Text Color",
+"default": "#ffffff"
+},
+{
+"type": "color",
+"id": "btn_bg_color",
+"label": "Button Background Color",
+"default": "#000000"
+},
+{
+"type": "color",
+"id": "btn_hovertxt_color",
+"label": "Button Hover Text Color",
+"default": "#000000"
+},
+{
+"type": "color",
+"id": "btn_hoverbg_color",
+"label": "Button Hover Background Color",
+"default": "#fdd413"
+},
+{
+"type": "header",
+"content": "Security Store"
+},
+{
+"type": "text",
+"id": "security_title",
+"label": "Security Title"
+},
+{
+"type": "image_picker",
+"id": "security_img1",
+"label": "Security logo 1"
+},
+{
+"type": "image_picker",
+"id": "security_img2",
+"label": "Security logo 2"
+},
+{
+"type": "image_picker",
+"id": "security_img3",
+"label": "Security logo 3"
+},
+{
+"type": "header",
+"content": "contact"
+},
+{
+"type": "text",
+"id": "footer_contact_title",
+"label": "Contact Title",
+"default": "store information"
+},
+{
+"type": "richtext",
+"id": "contact_address",
+"label": "Address",
+"default": "<p>My Company, 42 Puffin street 12345 Puffinville France</p>"
+},	
+{
+"type": "text",
+"id": "contact_no",
+"label": "Contact Text",
+"default": "0123-456-789"
+},
+{
+"type": "text",
+"id": "contact_email",
+"label": "Email Id",
+"default": "sales@yourcompany.com"
+},
+{
+"type": "header",
+"content": "Menu links"
+},
+{
+"type": "text",
+"id": "footer_col_title_1",
+"label": "Heading",
+"default": "Footer Title 1"
+},	
+{
+"type": "link_list",
+"id": "col_1_menu",
+"label": "Footer Column 1"
+},
+{
+"type": "text",
+"id": "footer_col_title_2",
+"label": "Heading",
+"default": "Footer Title 2"
+},	
+{
+"type": "link_list",
+"id": "col_2_menu",
+"label": "Footer Column 2"
+},
+{
+"type": "text",
+"id": "footer_col_title_3",
+"label": "Heading",
+"default": "Footer Title 3"
+},	
+{
+"type": "link_list",
+"id": "col_3_menu",
+"label": "Footer Column 3"
+},
+{
+"type": "text",
+"id": "footer_col_title_4",
+"label": "Heading",
+"default": "Footer Title 4"
+},	
+{
+"type": "link_list",
+"id": "col_4_menu",
+"label": "Footer Column 4"
+},
+{
+"type": "header",
+"content": "Bottom Menu links"
+},
+{
+"type": "text",
+"id": "footer_col_title_5",
+"label": "Heading",
+"default": "Footer Title 5"
+},	
+{
+"type": "link_list",
+"id": "col_5_menu",
+"label": "Footer Column 5"
+},
+{
+"type": "text",
+"id": "footer_col_title_6",
+"label": "Heading",
+"default": "Footer Title 6"
+},	
+{
+"type": "link_list",
+"id": "col_6_menu",
+"label": "Footer Column 6"
+},
+{
+"type": "text",
+"id": "footer_col_title_7",
+"label": "Heading",
+"default": "Footer Title 7"
+},	
+{
+"type": "link_list",
+"id": "col_7_menu",
+"label": "Footer Column 7"
+}
+]
+}
+{% endschema %}

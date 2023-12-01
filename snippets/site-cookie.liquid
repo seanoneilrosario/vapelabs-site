@@ -1,0 +1,24 @@
+<div class="cookiestatus">
+  <div class="cookie-block {{settings.cookie_style}}">
+    <div id="cookie_message" class="cookie-message-block">
+      <div class="tt-global-inner {% if settings.cookie_style == 'full_bottom' and settings.cookie_style == 'bottom_fix' %} container{% endif %}">
+        <div class="tt-cookie-inner">
+          <span>{{settings.cookie_desc}}<a target="_blank" href="{% if settings.link_url %}{{settings.link_url}}{% else %}#{% endif %}" class="c_link"><strong> {{settings.link_title}}</strong></a></span>
+          <button class="btn" onclick="closeWdCookie()"><span>{{settings.c_btn_txt}}</span></button></div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .cookie-block #cookie_message{background:{{settings.cookie_bg}};}
+  .cookie-block #cookie_message .tt-cookie-inner > span{color:{{settings.cookie_txt_clr}};}
+  .cookie-block #cookie_message .tt-cookie-inner span a.c_link{color:{{settings.cookie_txt_link_clr}};}
+  .cookie-block #cookie_message .tt-cookie-inner span a.c_link:hover{color:{{settings.cookie_txt_link_hvrclr}};}
+  .cookie-block #cookie_message .tt-cookie-inner button{color:{{settings.btn_txt_clr}};background:{{settings.btn_bg_clr}};}
+  .cookie-block #cookie_message .tt-cookie-inner button:hover,
+  .cookie-block #cookie_message .tt-cookie-inner button::after,
+  .cookie-block #cookie_message .tt-cookie-inner button::before,
+  .cookie-block #cookie_message .tt-cookie-inner button:focus,
+  .cookie-block #cookie_message .tt-cookie-inner button:active{color:{{settings.btn_txt_hvr_clr}};border-bottom-color:{{settings.btn_bg_hvr_clr}};}
+</style>
+<script>var cook="site_cookie";function setcookie(){var e=new Date;e.setMonth(e.getMonth()+12),document.cookie=cook+"="+escape("1")+";path=/;"+(null==e?"":"; expires="+e.toGMTString())}function SE_CheckCookies(){1!=$.cookie(cook)&&(document.getElementById("cookie_message").className+=" se-cookies-message-open")}function closeWdCookie(){$("#cookie_message").slideUp(),setcookie()}document.addEventListener("DOMContentLoaded",function(){SE_CheckCookies()});</script>

@@ -1,0 +1,185 @@
+<style>
+  #ttcmsservices{
+    background: {{ section.settings.bg_color }};
+  }
+  #ttcmsservices .ttcontent .service-title{color: {{ section.settings.title_color }};}
+  #ttcmsservices .ttcontent:hover .content .service-title {color: {{ section.settings.title_hover_color }};}
+  #ttcmsservices .block_content .ttcontent:hover .service .ttshipping_img.service-icon{
+    background: {{ section.settings.icon_hover_color }};
+  }
+  #ttcmsservices .ttcontent .service-desc{color: {{ section.settings.desc_color }};}  
+  #ttcmsservices .block_content .ttcontent .service .service-icon{
+    color: {{ section.settings.icon_color }};
+    background: {{ section.settings.icon_color }};}  
+</style>
+{% if section.blocks.size > 0 %} 
+<div id="ttcmsservices" class="ttservice hb-animate-element bottom-to-top">  
+  <div class="container">  
+    <div class="col-sm-3 col-xs-3 service-offer">
+      <div class="offer-img">
+       <img loading="lazy" src="{{ section.settings.offer_img | img_url: "master" }}" alt="offer-img" class="lazyload"/>
+      </div>
+      <div class="title">{{ section.settings.offer_text }}</div>
+    </div>
+     {% if section.settings.display_offer %} 
+    <div class="col-sm-9 col-xs-9 service-content">
+      {% endif %}
+      <div class="block_content owl-carousel" style="display: block;">
+        {% for block in section.blocks %}      
+        <div class="ttcontent">
+          <div class="service">
+            <div id="icon-{{ block.id }}" class="ttshipping_img service-icon">
+            </div>
+            <div class="content">
+              <div class="service-title">{{  block.settings.title }}</div>
+              <div class="service-desc">{{  block.settings.desc }}</div>
+            </div>
+            <style> 
+              #ttcmsservices .block_content .ttcontent .service #icon-{{ block.id }}.service-icon 
+              { mask-image:url({{ block.settings.service_icon | img_url: '50x50'}});
+                -webkit-mask-image:url({{ block.settings.service_icon | img_url: '50x50'}});}               
+            </style>
+          </div>
+        </div>   
+        {% endfor %}
+      </div>  
+       {% if section.settings.display_offer %} 
+    </div>   
+    {% endif %}
+  </div>  
+</div>
+<style>
+  .service-offer .offer-img{background:{{ section.settings.offer_bg }};}
+  .service-offer .title{color:{{ section.settings.offer_text_color }};}
+</style>
+{% endif %}
+{% schema %}
+{
+"name": "CMS Services",
+"class":"index-section ttservices",
+"settings": [
+{
+"type": "checkbox",
+"id": "display_offer",
+"label": "Display Offer Content",
+"default": true
+},
+{
+"type": "color",
+"id": "offer_bg",
+"label": "Offer Background"
+},
+{
+"type": "image_picker",
+"id": "offer_img",
+"label": "Offer Image"
+},
+{
+"type": "color",
+"id": "offer_text_color",
+"label": "Offer Content color"
+},
+{
+"type": "text",
+"id": "offer_text",
+"label": "Offer Content"
+},
+{
+"type": "header",
+"content": "Services"
+},
+{
+"type": "color",
+"id": "bg_color",
+"label": "background Color",
+"default":"#000"
+},
+{
+"type": "color",
+"id": "title_color",
+"label": "Title Color",
+"default":"#000"
+},
+{
+"type": "color",
+"id": "title_hover_color",
+"label": "Title Hover Color",
+"default":"#fc9f22"
+},
+{
+"type": "color",
+"id": "desc_color",
+"label": "Description Color",
+"default":"#000"
+},
+{
+"type": "color",
+"id": "icon_color",
+"label": "Service Icon Color",
+"default":"#000"
+},
+{
+"type": "color",
+"id": "icon_hover_color",
+"label": "Service Icon Hover Color",
+"default":"#000"
+}
+],
+"blocks": [
+{
+"type": "s_text",
+"name": "services",
+"settings": [
+{
+"type": "image_picker",
+"id": "service_icon",
+"label": "Service Icon",
+"info": "Size: 65x65"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Title"
+},
+{
+"type": "text",
+"id": "desc",
+"label": "Description"
+}
+]
+}
+],
+"presets": [
+{
+"name": "CMS Services",
+"category": "TT CMS section",
+"blocks": [
+{
+"type": "s_text",
+"settings": {
+"title": "FREE SHIPPING"
+}
+},
+{
+"type": "s_text",
+"settings": {
+"title": "24/7 SUPPORT"
+}
+},
+{
+"type": "s_text",
+"settings": {
+"title": "BIG SAVING"
+}
+},      
+{
+"type": "s_text",
+"settings": {
+"title": "ONLINE PAYMENT"
+}
+} 
+]
+}
+]
+}
+{% endschema %}

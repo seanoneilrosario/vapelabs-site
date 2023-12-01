@@ -1,0 +1,72 @@
+{% if section.blocks.size > 0 %} 
+  <div id="tt-topoffer" class="block_content hb-animate-element bottom-to-top">
+    <div class="topoffer-content">{{ section.settings.offer_content }}</div>
+    <div class="ttofferblock">
+      {% for block in section.blocks %}      
+      <div id="topoffer-{{block.id}}" class="top-offer">
+        <a class="topoffer-img" href="{{block.settings.topoffer_img_url }}">                
+          <img loading="lazy" height="135" width="268" src="{{ block.settings.topoffer_img  | img_url: "268x135" }}" alt="offer-img" class="lazyload"/>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+<style>
+  #tt-topoffer .topoffer-content{color: {{section.settings.offer_content_color }}; background:{{ section.settings.offer_content_bgcolor }};}.topoffer #tt-topoffer{background:{{ section.settings.offer_bg }};}
+</style>
+{% schema %}
+{
+"name": "topoffer",
+"class": "index-section topoffer col-sm-2",
+"settings": [
+{
+"type": "color",
+"id": "offer_bg",
+"label": "Offer Background Color"
+},
+{
+"type": "text",
+"id": "offer_content",
+"label": "Offer Title"
+},
+{
+"type": "color",
+"id": "offer_content_color",
+"label": "Offer Title Color",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "offer_content_bgcolor",
+"label": "Offer Title Background Color",
+"default": "#000"
+}
+],
+"blocks": [
+{
+"type": "offer_text",
+"name": "services",
+"settings": [
+{
+"type": "url",
+"id": "topoffer_img_url",
+"label": "Offer Image URL"
+},
+{
+"type": "image_picker",
+"id": "topoffer_img",
+"label": "Offer Image",
+"info": "Size: 270x130"
+}
+]
+}
+],
+"presets": [
+{
+"name": "topoffer",
+"category": "offer"
+}
+]
+}
+{% endschema %}

@@ -1,0 +1,401 @@
+<div class="about-page">
+  <div class="row">
+    <div class="cms-aboutus1">
+      <div class="col-sm-6 tt-about">
+        <div class="aboutus-img">
+          <a href="#"> {% if section.settings.about1_us != blank %}{{ section.settings.about1_us | img_url: "master" | img_tag: 'about_us' }}{% endif %}</a>
+        </div>
+      </div>
+      <div class="col-sm-6 tt-about">
+        <div class="section-header">
+          <div class="tt-title" style="color:{{ section.settings.about1_title_color }}">{{ section.settings.about1_title}}</div>
+          <div class="desc" style="color:{{ section.settings.about1_desc_color }}">{{ section.settings.about1_desc}}</div>
+          <div class="about-icon col-xs-6">
+            <div class="about-icon-cnt">
+              <i class="mdi mdi-car" style="color:{{ section.settings.about_icon_color }}"></i>
+              <div class="about-icon-title" style="color:{{ section.settings.about_title_icon_color }}">{{ section.settings.about_title_icon1}}</div>
+            </div>
+            <div class="about-icon-cnt">
+              <i class="mdi mdi-ferry" style="color:{{ section.settings.about_icon_color }}"></i>
+              <div class="about-icon-title" style="color:{{ section.settings.about_title_icon_color }}">{{ section.settings.about_title_icon2}}</div>
+            </div>
+          </div>
+          <div class="about-icon col-xs-6">
+            <div class="about-icon-cnt">
+              <i class="mdi mdi-airplane" style="color:{{ section.settings.about_icon_color }}"></i>
+              <div class="about-icon-title" style="color:{{ section.settings.about_title_icon_color }}">{{ section.settings.about_title_icon3}}</div>
+            </div>
+            <div class="about-icon-cnt">
+              <i class="mdi mdi-tram" style="color:{{ section.settings.about_icon_color }}"></i>
+              <div class="about-icon-title" style="color:{{ section.settings.about_title_icon_color }}">{{ section.settings.about_title_icon4}}</div>
+            </div>
+          </div>
+          <div class="aboutus-btn"><a href="{{ section.settings.about1_btn_url}}" class="btn">{{ section.settings.about1_btn}}</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about-services" style="background:{{ section.settings.bg_color }}">
+    <div class="block_content owl-carousel" style="display: block;">
+      <div class="tt-service">
+        <div class="service-img"><a href="#"><img loading="lazy" src="{{ section.settings.service_1 | img_url: "master"  }}" alt="service-img" class="lazyload"/></a></div>
+        <div class="service-content">
+          <div class="service-title" style="color:{{ section.settings.service_title1_color }}">{{ section.settings.service_title1 }}</div>
+          <div class="service-desc" style="color:{{ section.settings.service_desc1_color }}">{{ section.settings.service_desc1 }}</div>
+        </div>
+      </div>
+      <div class="tt-service">
+        <div class="service-img"><a href="#"><img loading="lazy" src="{{ section.settings.service_2 | img_url: "master"  }}" alt="service-img" class="lazyload"/></a></div>
+        <div class="service-content">
+          <div class="service-title" style="color:{{ section.settings.service_title2_color }}">{{ section.settings.service_title2 }}</div>
+          <div class="service-desc" style="color:{{ section.settings.service_desc2_color }}">{{ section.settings.service_desc2 }}</div>
+        </div>
+      </div>
+      <div class="tt-service">
+        <div class="service-img"><a href="#"><img loading="lazy" src="{{ section.settings.service_3 | img_url: "master"  }}" alt="service-img" class="lazyload"/></a></div>
+        <div class="service-content">
+          <div class="service-title" style="color:{{ section.settings.service_title3_color }}">{{ section.settings.service_title3 }}</div>
+          <div class="service-desc" style="color:{{ section.settings.service_desc3_color }}">{{ section.settings.service_desc3 }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-header">
+    <div class="tt-title">{{ section.settings.about_main_title }}</div></div>
+  <div class="row">
+    <div class="about-blog owl-carousel">
+      <div class="tt-blog col-sm-12">
+        <div class="about-blog-img"><a><img loading="lazy" src="{{ section.settings.about_img1 | img_url: "master"  }}" class="lazyload"></a></div>
+        <div class="about-blog-content">
+          <div class="about-blog-title" style="color:{{ section.settings.about_title_color }}">{{ section.settings.about_title1 }}</div>
+          <div class="about-blog-desc" style="color:{{ section.settings.about_desc_color }}">{{ section.settings.about_desc1 }}</div>
+        </div>
+      </div>
+      <div class="tt-blog col-sm-12">
+        <div class="about-blog-img"><a><img loading="lazy" src="{{ section.settings.about_img2 | img_url: "master"  }}" class="lazyload"></a></div>
+        <div class="about-blog-content">
+          <div class="about-blog-title" style="color:{{ section.settings.about_title_color }}">{{ section.settings.about_title2 }}</div>
+          <div class="about-blog-desc" style="color:{{ section.settings.about_desc_color }}">{{ section.settings.about_desc2 }}</div>
+        </div>
+      </div>
+      <div class="tt-blog col-sm-12">
+        <div class="about-blog-img"><a><img loading="lazy" src="{{ section.settings.about_img3 | img_url: "master"  }}" class="lazyload"></a></div>
+        <div class="about-blog-content">
+          <div class="about-blog-title" style="color:{{ section.settings.about_title_color }}">{{ section.settings.about_title3 }}</div>
+          <div class="about-blog-desc" style="color:{{ section.settings.about_desc_color }}">{{ section.settings.about_desc3 }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about-videoblock">
+    <div class="video-featured">
+      <div id="popup_toggle"><a href="#">{% if section.settings.video_img != blank %}{{ section.settings.video_img | img_url: "master" | img_tag: 'video_img' }}{% endif %}</a>
+        <span id="playVideo" class="play-icone"><i class="mdi mdi-play-circle" aria-hidden="true"></i></span>
+      </div>
+      <div class="popup_overlay">
+        <div class="popup" id="popupVid"><a class="popup_close">X</a>
+          <div class="video-wrapper"><iframe id="youtubeVideo" width="560" height="315" src="{{ section.settings.video_url }}" frameborder="0" class="lazyload"></iframe></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $("#playvideo").one(function(){
+    //as noted in addendum, check for querystring exitence
+    var symbol = $("#youtubeVideo")[0].src.indexOf("?") > -1 ? "&" : "?";
+    //modify source to autoplay and start video
+    $("#youtubeVideo")[0].src += symbol + "autoplay=1";
+  });
+</script>
+<style>
+  .about-videoblock .video-featured #popup_toggle .play-icone { 
+    background: {{ section.settings.video_btn_bg_color }};
+  }
+  .about-videoblock .video-featured #popup_toggle .play-icone:hover { 
+    background: {{ section.settings.video_btn_bg_hover_color }};
+  }
+  .about-videoblock .video-featured #popup_toggle .play-icone i.mdi-play-circle{ 
+    color: {{ section.settings.video_btn_color }};
+  }
+  .about-videoblock .video-featured #popup_toggle .play-icone:hover i.mdi-play-circle{ 
+    color: {{ section.settings.video_btn_hover_color }};
+  }
+</style>
+{% schema %}
+{
+"name": "About-us",
+"class": "index-section",
+"settings": [ 
+{
+"type": "header",
+"content": "About Detail"
+},
+{
+"type": "color",
+"id": "about1_title_color",
+"label": "About title color"
+},
+{
+"type": "text",
+"id": "about1_title",
+"label": "About title"
+},
+{
+"type": "color",
+"id": "about1_desc_color",
+"label": "About Description color"
+},
+{
+"type": "textarea",
+"id": "about1_desc",
+"label": "About Description"
+},
+{
+"type": "color",
+"id": "about_icon_color",
+"label": "About icon color"
+},
+{
+"type": "color",
+"id": "about_title_icon_color",
+"label": "About title icon color"
+},
+{
+"type": "text",
+"id": "about_title_icon1",
+"label": "About title icon 1"
+},
+{
+"type": "text",
+"id": "about_title_icon2",
+"label": "About title icon 2"
+},
+{
+"type": "text",
+"id": "about_title_icon3",
+"label": "About title icon 3"
+},
+{
+"type": "text",
+"id": "about_title_icon4",
+"label": "About title icon 4"
+},
+{
+"type": "url",
+"id": "about1_btn_url",
+"label": "About Button URL"
+},
+{
+"type": "text",
+"id": "about1_btn",
+"label": "About Button"
+},
+{
+"type": "image_picker",
+"id": "about1_us",
+"label": "About Us Image"
+},
+{
+"type": "header",
+"content": "About ervices"
+},
+{
+"type": "color",
+"id": "bg_color",
+"label": "background Color",
+"default":"#000"
+},
+{
+"type": "image_picker",
+"id": "service_1",
+"label": "Service 1 Image"
+},
+{
+"type": "color",
+"id": "service_title1_color",
+"label": "Service 1 Title Color",
+"default":"#000"
+},
+{
+"type": "text",
+"id": "service_title1",
+"label": "Service 1 Title"
+},
+{
+"type": "color",
+"id": "service_desc1_color",
+"label": "Service 1 Description Color",
+"default":"#000"
+},
+{
+"type": "text",
+"id": "service_desc1",
+"label": "Service 1 Description"
+},
+{
+"type": "image_picker",
+"id": "service_2",
+"label": "Service 2 Image"
+},
+{
+"type": "color",
+"id": "service_title2_color",
+"label": "Service 2 Title Color",
+"default":"#000"
+},
+{
+"type": "text",
+"id": "service_title2",
+"label": "Service 2 Title"
+},
+{
+"type": "color",
+"id": "service_desc2_color",
+"label": "Service 2 Description Color",
+"default":"#000"
+},
+{
+"type": "text",
+"id": "service_desc2",
+"label": "Service 2 Description"
+},
+{
+"type": "image_picker",
+"id": "service_3",
+"label": "Service 3 Image"
+},
+{
+"type": "color",
+"id": "service_title3_color",
+"label": "Service 3 Title Color",
+"default":"#000"
+},
+{
+"type": "text",
+"id": "service_title3",
+"label": "Service 3 Title"
+},
+{
+"type": "color",
+"id": "service_desc3_color",
+"label": "Service 3 Description Color",
+"default":"#000"
+},
+{
+"type": "text",
+"id": "service_desc3",
+"label": "Service 3 Description"
+},
+{
+"type": "header",
+"content": "About Blog"
+},
+{
+"type": "text",
+"id": "about_main_title",
+"label": "About Blog Main title"
+},
+{
+"type": "color",
+"id": "about_title_color",
+"label": "About Blog title color"
+},
+{
+"type": "color",
+"id": "about_desc_color",
+"label": "About Blog Description color"
+},
+{
+"type": "image_picker",
+"id": "about_img1",
+"label": "About Blog Image 1"
+},
+{
+"type": "text",
+"id": "about_title1",
+"label": "About Blog Title 1"
+},
+{
+"type": "text",
+"id": "about_desc1",
+"label": "About Blog Description 1"
+},
+{
+"type": "image_picker",
+"id": "about_img2",
+"label": "About Blog Image 2"
+},
+{
+"type": "text",
+"id": "about_title2",
+"label": "About Blog Title 2"
+},
+{
+"type": "text",
+"id": "about_desc2",
+"label": "About Blog Description 2"
+},
+{
+"type": "image_picker",
+"id": "about_img3",
+"label": "About Blog Image 3"
+},
+{
+"type": "text",
+"id": "about_title3",
+"label": "About Blog Title 3"
+},
+{
+"type": "text",
+"id": "about_desc3",
+"label": "About Blog Description 3"
+},
+{
+"type": "header",
+"content": "About Video"
+},
+{	
+"type": "image_picker",
+"id": "video_img",
+"label": "Video Image"
+},
+{
+"type": "url",
+"id": "video_url",
+"label": "Video Url",
+"info": "Accept Youtube Embed Link"
+},
+{
+"type": "color",
+"id": "video_btn_color",
+"label": "Video Button Color",
+"default":"#111"
+},
+{
+"type": "color",
+"id": "video_btn_hover_color",
+"label": "Video Button Hover Color",
+"default":"#ffc600"
+},
+{
+"type": "color",
+"id": "video_btn_bg_color",
+"label": "Video Button Background Color",
+"default":"#111"
+},
+{
+"type": "color",
+"id": "video_btn_bg_hover_color",
+"label": "Video Button Background Hover Color",
+"default":"#ffc600"
+}
+],
+"presets": [
+{
+"name": "About-us",
+"category": "Image"
+}
+]
+}
+{% endschema %}

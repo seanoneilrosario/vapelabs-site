@@ -1,0 +1,112 @@
+<style>
+  .right-banner  .owl-nav>div{
+    color: {{ section.settings.nav_color }};
+    background: {{ section.settings.nav_bg }};
+  }
+  .right-banner .banner-block{
+    background: {{ section.settings.bg_color }};
+  }
+  .right-banner .owl-nav>div:hover {
+    color: {{ section.settings.nav_hover_color }};
+    background: {{ section.settings.nav_hover_bg }};
+  }
+</style>
+<div class="banner-block">
+    <div class="rightbanner-block owl-carousel">
+      {% for block in section.blocks %}
+      <div class="img_banner1 rightbanner--{{ block.id }}">
+        <a href="#"><img loading="lazy" class="lazyload" src="{{ block.settings.right_banner | img_url : 'master' }}"/></a>
+        <div class="banner-description">
+          {% if block.settings.title !="" %}
+          <div class="title" style="color:{{ block.settings.title_color }}">{{ block.settings.title }}</div>
+          {% endif %}    
+          {% if block.settings.subtitle !="" %}
+          <div class="subtitle" style="color:{{ block.settings.subtitle_color }}">{{ block.settings.subtitle }}</div>
+          {% endif %}
+        </div>
+        <style>.right-banner .rightbanner--{{ block.id }} .banner-description .subtitle{border-color:{{ block.settings.subtitle_color }};}</style>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+{% schema %}
+{
+"name": "right Banner",
+"class": "index-section1 right-banner col-sm-3 col-xs-12",
+"settings": [
+{
+"type": "color",
+"id": "bg_color",
+"label": "Background color"
+},
+{
+"type": "color",
+"id": "nav_bg",
+"label": "Navigation Button Background"
+},
+{
+"type": "color",
+"id": "nav_color",
+"label": "Navigation Button Text Color"
+},
+{
+"type": "color",
+"id": "nav_hover_bg",
+"label": "Navigation Button Hover Background"
+},
+{
+"type": "color",
+"id": "nav_hover_color",
+"label": "Navigation Button Hover Text Color"
+}
+],
+"blocks" : [
+{
+"type": "image",
+"name": "Slide",
+"settings": [
+{
+"type": "image_picker",
+"id": "right_banner",
+"label": "Image"
+},
+{
+"type": "textarea",
+"id": "title",
+"label": "Title",
+"default":"exclusive"
+},
+{
+"type": "textarea",
+"id": "subtitle",
+"label": "Sub Title",
+"default":"surface pro."
+},
+{
+"type": "color",
+"id": "title_color",
+"label": "Title Color",
+"default":"#111"
+},
+{
+"type": "color",
+"id": "subtitle_color",
+"label": "Subtitle Color",
+"default":"#111"
+}
+]
+}
+],
+"presets": [
+{
+"name": "right Banner",
+"category": "right Banner",
+"blocks": [
+{
+"type": "image"
+}
+]
+}
+]
+}
+{% endschema %}

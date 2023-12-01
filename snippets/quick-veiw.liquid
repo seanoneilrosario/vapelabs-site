@@ -1,0 +1,55 @@
+{% render 'currencies' %} 
+<!-- Begin quick-view-template -->
+<div class="clearfix" id="quickview-template" style="display:none">
+  <div class="overlay"></div>
+  <div class="content clearfix">
+    <div class="quick-shop-modal-bg"><div class="quickloader"><div class="spinner"></div></div></div>
+    <a href="javascript:void(0)" class="close-window"></a> 
+    <div class="product-img images col-xs-12 col-sm-5">      
+      <div class="quickview-featured-image product-photo-container"></div>
+      <div class="more-view-wrapper">
+        <ul class="product-photo-thumbs product-wrapper-owlslider owl-carousel owl-theme ">
+        </ul>
+      </div>
+    </div>
+    <div class="product-shop summary col-xs-12 col-sm-7">
+      <div class="product-item product-detail-section">
+        <h2 class="product-title"><a>&nbsp;</a></h2>
+        <p class="item-text product-description"></p>
+        <div class="prices product_price product-price__price">
+          <span class="price h2 money" id="QProductPrice"></span>
+          <span class="compare-price product-price__price compare_price" id="QComparePrice"></span> 
+          <div class="pro_price"></div>
+        </div>
+
+        <div class="product-info">
+          <p class="product-inventory"><label>{{ 'products.product.availability' | t }}</label><span></span></p>    
+        </div>
+        <div class="details clearfix">
+          <form action="/cart/add" method="post" class="variants">
+            <select name='id' style="display:none"></select>
+            <div class="grid--uniform product-single__addtocart">
+              <div class="qty-section quantity-box">
+                <label>{{ 'products.product.quantity' | t }}</label>              
+                <div class="qty-box-set">
+                  <input type="number" name="quantity" id="Quick-Qty" value="1" min="1" class="quantity">
+                  <div class="qnt_wrap">
+                    <div class="inc button qtyplus"><i class="mdi mdi-plus"></i></div>
+                    <div class="dec button qtyminus"><i class="mdi mdi-minus"></i></div>
+                  </div>
+                </div>          
+                <div class="actions">
+                  <button type="button" class="add-to-cart-btn btn">
+<!--                       {{ 'products.product.add_to_cart' | t }} -->
+                  </button>
+                </div>
+              </div>  
+            </div>
+          </form>
+        </div>     
+      </div>
+    </div>  
+  </div>
+</div>
+ <script src="{{ 'option_selection.js' | shopify_asset_url }}"></script>  
+<!-- End of quick-view-template -->

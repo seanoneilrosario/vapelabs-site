@@ -1,0 +1,169 @@
+<style>
+  .top-category{
+    background: {{ section.settings.bg_color }};
+  }
+  .topcat_content .cat-content .cat-title,.top-category .more_menu_title{color: {{ section.settings.title_color }};}
+  .topcat_content .cat-cnt:hover .cat-content .cat-title,.topcat_content .cat-cnt.open .cat-content .cat-title,.top-category .cat-cnt:hover .mobile-nav__sublist-trigger i,.top-category .cat-cnt.open .mobile-nav__sublist-trigger i{color: {{ section.settings.title_hover_color }};}
+</style>
+{% if section.blocks.size > 0 %} 
+{% render 'category' %} 
+{% endif %}
+{% if section.settings.display_barcode %} 
+<div class="barcode">
+  <a href="">
+    <img loading="lazy" src="{{  section.settings.image | img_url: "master" }}" class="lazyload">
+  </a> 
+  <div class="barcode-content">
+    {% if section.settings.bar_title != blank %}<div class="title" style="color:{{section.settings.bar_title_clr}};">{{ section.settings.bar_title}}</div>{% endif %}
+    {% if section.settings.bar_desc != blank %}<div class="desc" style="color:{{section.settings.bar_desc_clr}};">{{ section.settings.bar_desc}}</div>{% endif %}
+  </div>
+</div>
+{% endif %}
+<script>
+  function moremenuleft() {
+    var d = {{ section.settings.more_menu_category }};
+    var a="{{ 'general.header.more' | t }}";
+    var b="{{ 'general.header.less' | t }}";
+    var c=$(".topcat_content > .cat-content");
+    if(c.length>d) {
+      jQuery(".topcat_content").append('<a class="cat-content more_menu"><span class="more_menu_title">'+a+'<i class="mdi mdi-plus"></i></span></a>')
+    }
+    jQuery(".topcat_content .more_menu").click(function() {
+      if(jQuery(this).hasClass("active")) {
+        c.each(function(e) {
+          if(e>=d) {
+            jQuery(this).slideUp(200)
+          }
+        });
+        jQuery(this).removeClass("active");
+        jQuery(".more_menu").html('<span class="more_menu_title">'+a+'<i class="mdi mdi-plus"></i></span>')
+      }
+      else {
+        c.each(function(e) {
+          if(e>=d) {
+            jQuery(this).slideDown(200)
+          }
+        });
+        jQuery(this).addClass("active");
+        jQuery(".more_menu").html('<span class="more_menu_title">'+b+' <i class="mdi mdi-minus"></i></span>')
+      }
+    });
+    c.each(function(e) {
+      if(e>=d) {
+        jQuery(this).css("display", "none")
+      }
+    });
+  }
+  jQuery(document).ready(function() {
+    moremenuleft()
+  });
+</script>
+{% schema %}
+{
+"name": "Top Category",
+"class":"index-section top-category col-sm-2",
+"settings": [
+{
+"type": "color",
+"id": "bg_color",
+"label": "background Color",
+"default":"#000"
+},
+{
+"type": "color",
+"id": "title_color",
+"label": "Title Color",
+"default":"#000"
+},
+{
+"type": "color",
+"id": "title_hover_color",
+"label": "Title Hover Color",
+"default":"#fc9f22"
+},
+{
+"type": "text",
+"id": "more_menu_category",
+"label": "Select More Menu Category",
+"default": "9",
+"info": "Must be add numeric-value Ex: 9, 10,..."
+},
+{
+"type": "header",
+"content": "barcode settings"
+},
+{
+"type": "checkbox",
+"id": "display_barcode",
+"label": "Display Barcode Banner",
+"default": true
+},
+{
+"type": "image_picker",
+"id": "image",
+"label": "Barcode Image"
+},
+{
+"type": "text",
+"id": "bar_title",
+"label": "Title"
+},
+{
+"type": "color",
+"id": "bar_title_clr",
+"label": "Title Color"
+},
+{
+"type": "text",
+"id": "bar_desc",
+"label": "Description"
+},
+{
+"type": "color",
+"id": "bar_desc_clr",
+"label": "Description Color"
+}
+],
+"blocks": [
+{
+"type": "text",
+"name": "category",
+"settings": [
+{
+"type": "url",
+"id": "topcat_url",
+"label": "url"
+},
+{
+"type": "image_picker",
+"id": "service_icon",
+"label": "Icon",
+"info": "Size: 65x65"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Title"
+},
+{
+"type": "checkbox",
+"id": "tt_mn_show_sub",
+"default": false,
+"label": "Display sub-menu"
+},
+{
+"type": "link_list",
+"id": "tt_sub_menu_clinklist",
+"label": "Select a menu"
+}
+]
+}
+],
+"presets": [
+{
+"name": "Top Category",
+"category": "TT CMS section"
+}
+]
+}
+{% endschema %}

@@ -1,0 +1,107 @@
+<div class="container" data-aos="fade-up">
+  {% if section.settings.title != blank %}
+  <div class="section-header">
+    <h2 class="tt-title">{{ section.settings.title | escape }}</h2>
+    <div class="subtitle">{{ section.settings.subtitle | escape }}</div>
+  </div>
+  {% endif %}
+  <div class="brands_slider_wrap" data-section-id="{{ section.id }}" style="background:{{section.settings.bg_color }}">
+    {%- assign product_limit =  7 -%}
+    <div id="{{ section.settings.addclass }}_list_slider" class="tt-brand_slider owl-carousel owl-theme">
+      {% if section.blocks.size > 0 %}
+      {% for block in section.blocks limit:product_limit %}
+      <div class="brand-bar__item" {{ block.shopify_attributes }}>
+        {% if block.settings.link != blank %}
+        <a href="{{ block.settings.link }}">
+          {% endif %}
+          {% if block.settings.image != blank %}
+          <img loading="lazy" src="{{ block.settings.image | img_url: "master"  }}" alt="brand-logo" class="brand-bar__image lazyload"/>
+          {% else %}
+          {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+          {% if block.settings.link != blank %}
+        </a>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}   
+  </div>
+</div>
+{% schema %}
+{
+"name": "Brand list",
+"class": "index-section brand-logo",
+"max_blocks": 20,
+"settings": [
+{
+"type": "text",
+"id": "addclass",
+"label": "Add Class",
+"default": "brands"
+},
+{
+"type": "color",
+"id": "bg_color",
+"label": "Background color",
+"default": "#f1f1f1"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Heading",
+"default": "Brand list"
+},
+{
+"type": "text",
+"id": "subtitle",
+"label": "Subtitle"
+}
+],
+"blocks": [
+{
+"type": "brand_image",
+"name": "Brand",
+"settings": [
+{
+"type": "image_picker",
+"id": "image",
+"label": "Image"
+},
+{
+"type": "url",
+"id": "link",
+"label": "Link",
+"info": "Optional"
+}
+]
+}
+],
+"presets": [
+{
+"name": "Brand list",
+"category": "Image",
+"blocks": [
+{
+"type": "brand_image"
+},
+{
+"type": "brand_image"
+},
+{
+"type": "brand_image"
+},
+{
+"type": "brand_image"
+},
+{
+"type": "brand_image"
+},
+{
+"type": "brand_image"
+}
+]
+}
+]
+}
+{% endschema %}

@@ -1,0 +1,156 @@
+<div class="page-width col-sm-4{% if cart == empty %} hide{% endif %}" id="cart-footer" data-id="{{ section.id }}">
+  <div class="cart__footer">
+    {%- if section.settings.show_cart_note -%}
+    <cart-note class="cart__note field">
+      <label for="Cart-note">{{ 'cart.general.note' | t }}</label>
+      <textarea class="text-area text-area--resize-vertical field__input" name="note" id="Cart-note" placeholder="{{ 'cart.general.note' | t }}">{{ cart.note }}</textarea>
+    </cart-note>
+    {%- endif -%}
+
+    <div class="cart__blocks">
+      {% for block in section.blocks %}
+      {% if block.type != 's_text' %}
+      {%- case block.type -%}
+      {%- when '@app' -%}
+      {% render block %}
+      {%- when 'subtotal' -%}
+      <div class="js-contents" {{ block.shopify_attributes }}>
+        <div class="totals">
+          <h3 class="totals__subtotal">{{ 'cart.general.carttotal' | t }}</h3>
+          <p class="totals__subtotal-value">{{ cart.total_price | money_with_currency }}</p>
+        </div>
+        {%- if cart.cart_level_discount_applications.size > 0 -%}
+        <div>
+          <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+            {%- for discount in cart.cart_level_discount_applications -%}
+            <li class="discounts__discount discounts__discount--end">
+              {{ discount.title }}
+              (-{{ discount.total_allocated_amount | money }})
+            </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+        {%- endif -%}
+        <p class="tax-note caption-large rte">{{ 'cart.general.taxes_extra' | t }}</p>
+      </div>
+      {%- else -%}
+      <div class="cart__ctas" {{ block.shopify_attributes }}>
+        <noscript>
+          <button type="submit" class="cart__update-button button button--secondary" form="cart">
+            {{ 'cart.general.update' | t }}
+          </button>
+        </noscript>
+
+        <button type="submit" id="checkout" class="cart__checkout-button button btn" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
+          {{ 'cart.general.checkout' | t }}
+        </button>
+      </div>
+
+      {%- if additional_checkout_buttons -%}
+      <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
+        {{ content_for_additional_checkout_buttons }}
+      </div>
+      {%- endif -%}
+      {%- endcase -%}
+      {% endif %}
+      {% endfor %}
+      <div id="cart-errors"></div>
+    </div>
+  </div>
+  <div class="cart-policy">
+    {% if section.blocks.size > 0 %} 
+    {% for block in section.blocks %}   
+    {% if block.type == 's_text' %}
+    <div class="policy">
+      <div id="icon-{{ block.id }}" class="policy-icon">
+      </div>
+      <div class="content">
+        <div class="policy-title">{{  block.settings.title }}</div>
+        <div class="policy-desc">{{  block.settings.desc }}</div>
+      </div>
+      <style> 
+        .cart-policy .policy #icon-{{ block.id }}.policy-icon 
+        { mask-image:url({{ block.settings.policy_icon | img_url: '40x40'}});
+          -webkit-mask-image:url({{ block.settings.policy_icon | img_url: '40x40'}});}               
+      </style>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    function isIE() {
+      const ua = window.navigator.userAgent;
+      const msie = ua.indexOf('MSIE ');
+      const trident = ua.indexOf('Trident/');
+
+      return (msie > 0 || trident > 0);
+    }
+
+    if (!isIE()) return;
+    const cartSubmitInput = document.createElement('input');
+    cartSubmitInput.setAttribute('name', 'checkout');
+    cartSubmitInput.setAttribute('type', 'hidden');
+    document.querySelector('#cart').appendChild(cartSubmitInput);
+    document.querySelector('#checkout').addEventListener('click', function(event) {
+      document.querySelector('#cart').submit();
+    });
+  });
+</script>
+
+{% schema %}
+{
+"name": "cart-footer",
+"class": "cart__footer-wrapper",
+"settings": [
+{
+"type": "checkbox",
+"id": "show_cart_note",
+"default": true,
+"label": "Show Cart note"
+},
+{
+"type": "color",
+"id": "icon_color",
+"label": "Policy Icon Color",
+"default":"#000"
+}
+],
+"blocks": [
+{
+"type": "subtotal",
+"name": "Subtotal",
+"limit": 1
+},
+{
+"type": "buttons",
+"name": "Buttons",
+"limit": 1
+},
+{
+"type": "s_text",
+"name": "policy",
+"settings": [
+{
+"type": "image_picker",
+"id": "policy_icon",
+"label": "Policy Icon",
+"info": "Size: 40x40"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Title"
+},
+{
+"type": "text",
+"id": "desc",
+"label": "Description"
+}
+]
+}
+]
+}
+{% endschema %}

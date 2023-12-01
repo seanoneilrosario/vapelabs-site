@@ -1,0 +1,35 @@
+{% if settings.display_color_variant %}
+{% if product.has_only_default_variant != true %}
+<ul class="item-swatch color_swatch_Value grid-item-meta">
+  {% for option in product.options %}
+  {% if option == 'Color' %}
+  {% assign index = forloop.index0 %}
+  {% assign colorlist = '' %}
+  {% assign color = '' %}
+  {% for variant in product.variants %}
+  {% capture color %}
+  {{ variant.options[index] }}
+  {{color.options[0]}}
+  {% endcapture %}
+  {% unless colorlist contains color %}
+  {% assign text = color | handleize %}
+  <li class="color{% if colorlist == '' %} active{% endif %}" id="color-{{variant.id}}" data-id="{{variant.id}}">
+    <label style="{% if text == 'white' %}border: 1px solid #cbcbcb; {% endif %}background-color: {{ color | split: ' ' | last | handle }}; "></label>
+    <input type="text" name="variants" data-id="variant" value="{{ color | split: ' ' | last | handle }}">
+    {% if variant.image != null %}
+    <div class="hidden">
+      <img loading="lazy" width="373" height="486" src="{{ variant.image.src | product_img_url: '373x486' }}" alt="{{ text }}" class="lazyload"/>
+    </div>
+    {% endif %}
+  </li>
+  {% capture tempList %}
+  {{ colorlist | append: color | append: ' ' }}
+  {% endcapture %}
+  {% assign colorlist = tempList %}
+  {% endunless %}
+  {% endfor %}
+  {% endif %}
+  {% endfor %}
+</ul>
+{% endif %}
+{% endif %}

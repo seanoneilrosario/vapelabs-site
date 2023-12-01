@@ -1,0 +1,289 @@
+<style>
+  .tt-collection-slider-wrap .collection_cms_slider_wrap .collection_title{color:{{section.settings.title_color }};}
+  .category-banner a .banner-content .banner-inner .title{color:{{section.settings.banner_title_color }};}
+  .category-banner a .banner-content .banner-inner .subtitle{color:{{section.settings.banner_subtitle_color }};}
+  .category-banner a .banner-content .banner-inner .desc{color:{{section.settings.banner_desc_color }};}
+  .collection_cat_item  .ttcat-content .collection_title {color:{{section.settings.title_color }};} 
+  .sub_collection_title{color:{{section.settings.sub_title_color }};background:{{section.settings.sub_bg_title_color }};}
+  .sub-category-content:hover .sub_collection_title{color:{{section.settings.sub_title_hv_color }};background:{{section.settings.sub_bg_title_hv_color }};}
+</style>
+<div data-section-id="{{ section.id }}"  data-section-type="tt-collection-slider-wrap" class="tt-collection-slider-wrap" >
+  <div class="container">
+    <div class="tt-collection-wrap" data-aos="fade-up">
+      <div class="section-header">
+        <div class="tt-title">{{ section.settings.title }}</div>  
+        <div class="subtitle">{{ section.settings.subtitle }}</div>
+      </div>
+      <div class="collection-wrap">
+        <div class="col-sm-3 category-banner">
+          <div class="banner">
+            {% if section.settings.banner_img != blank %}
+            <a href="{% if section.settings.banner_url != blank %}{{ section.settings.banner_url }}{% else %}#{% endif %}">
+              <img loading="lazy" src="{{ section.settings.banner_img | img_url:"master" }}" alt="banner" class="lazyload">
+              <div class="banner-content">
+                <div class="banner-inner">
+                  {% if section.settings.banner_title != blank %}<div class="title">{{ section.settings.banner_title }}</div>{% endif %}
+                  {% if section.settings.banner_subtitle != blank %}<div class="subtitle">{{ section.settings.banner_subtitle }}</div>{% endif %}
+                  {% if section.settings.banner_desc != blank %}<div class="desc">{{ section.settings.banner_desc }}</div>{% endif %}
+                </div>
+              </div>
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="collection_cms_slider_wrap col-sm-9">       
+          {% if section.blocks.size > 0 %}  
+          <div class="category_feature owl-carousel owl-theme">
+            {% for block in section.blocks %}  
+            {%- assign collection = collections[block.settings.collection_cat_id] -%}   
+            <div id="cat-featured--{{ block.id }}" class="collection_cat_item col-sm-12"> 
+              <div class="category_content">              
+                <img loading="lazy" class="category-img" src="{{ block.settings.image_1 | img_url: "master"  }}" alt="collection-img" class="lazyload"/>      
+                {% if collection.title != blank  %}  
+                <a href="{{ collection.url }}" class="collection_title">{{ block.settings.collection_title }}</a>
+                {% endif %} 
+                <div class="sub_category_wrap">
+                  <div class="sub_category_wrap_content">
+                    <div class="sub-category-content">
+                      {%- assign collection = collections[block.settings.sub_collection_cat_id_1] -%}   
+                      <img loading="lazy" class="lazyload" src="{{ block.settings.sub_image_1 | img_url: "master"  }}" alt="collection-img"/>             
+                      <div class="collection_title">
+                        <a href="{{ collection.url }}" class="sub_collection_title">{{ block.settings.sub_collection_title_1 }}</a>
+                      </div>
+                    </div>
+                    <div class="sub-category-content">
+                      {%- assign collection = collections[block.settings.sub_collection_cat_id_2] -%}   
+                      <img loading="lazy" class="lazyload" src="{{ block.settings.sub_image_3 | img_url: "master"  }}" alt="collection-img"/>              
+                      <div class="collection_title">
+                        <a href="{{ collection.url }}" class="sub_collection_title">{{ block.settings.sub_collection_title_3 }}</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sub_category_wrap_content">
+                    <div class="sub-category-content">
+                      {%- assign collection = collections[block.settings.sub_collection_cat_id_3] -%}   
+                      <img loading="lazy" class="lazyload" src="{{ block.settings.sub_image_2 | img_url: "master"  }}" alt="collection-img"/>             
+                      <div class="collection_title">
+                        <a href="{{ collection.url }}" class="sub_collection_title">{{ block.settings.sub_collection_title_2 }}</a>
+                      </div>
+                    </div>
+                    <div class="sub-category-content">
+                      {%- assign collection = collections[block.settings.sub_collection_cat_id_4] -%}   
+                      <img loading="lazy" class="lazyload" src="{{ block.settings.sub_image_4 | img_url: "master"  }}" alt="collection-img"/>             
+                      <div class="collection_title">
+                        <a href="{{ collection.url }}" class="sub_collection_title">{{ block.settings.sub_collection_title_4 }}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+"name": "Category Feature",
+"class": "index-section category",
+"max_blocks":5,
+"settings": [
+{
+"type": "text",
+"id": "title",
+"label": "Section Title"
+},
+{
+"type": "text",
+"id": "subtitle",
+"label": "Subtitle"
+},
+{
+"type": "header",
+"content": "CMS category Banner setting"
+},
+{
+"type": "image_picker",
+"id": "banner_img",
+"label": "Banner image"
+},
+{
+"type": "url",
+"id": "banner_url",
+"label": "Banner url"
+},
+{
+"type": "text",
+"id": "banner_title",
+"label": "Banner title"
+},
+{
+"type": "color",
+"id": "banner_title_color",
+"label": "Banner title color"
+},
+{
+"type": "text",
+"id": "banner_subtitle",
+"label": "Banner subtitle"
+},
+{
+"type": "color",
+"id": "banner_subtitle_color",
+"label": "Banner subtitle color",
+"default": "#000"
+},
+{
+"type": "text",
+"id": "banner_desc",
+"label": "Banner Description"
+},
+{
+"type": "color",
+"id": "banner_desc_color",
+"label": "Banner Description color",
+"default": "#000"
+},
+{
+"type": "header",
+"content": "CMS category setting"
+},
+{
+"type": "color",
+"id": "image_content_bg_color",
+"label": "Content Background Color",
+"default":"#1d1c1c"
+},
+{
+"type": "color",
+"id": "title_color",
+"label": "Category Title Color",
+"default": "#fff"
+},
+{
+"type": "color",
+"id": "sub_title_color",
+"label": "Sub Category Title Color",
+"default": "#fff"
+},
+{
+"type": "color",
+"id": "sub_bg_title_color",
+"label": "Sub Category Title Background Color",
+"default": "#fff"
+},
+{
+"type": "color",
+"id": "sub_title_hv_color",
+"label": "Sub Category Title Hover Color",
+"default": "#fff"
+},
+{
+"type": "color",
+"id": "sub_bg_title_hv_color",
+"label": "Sub Category Title Background Hover Color",
+"default": "#fff"
+}
+],
+"blocks": [
+{
+"type": "text_collection",
+"name": "collection cms",
+"settings": [
+{
+"type": "image_picker",
+"id": "image_1",
+"label": "Image",
+"info": "Size: 140x140"
+},
+{
+"type": "text",
+"id": "collection_title",
+"label": "collection Title"
+},
+{
+"type": "collection",
+"id": "collection_cat_id",
+"label": "Select collection"
+},
+{
+"type": "image_picker",
+"id": "sub_image_1",
+"label": "Sub Image"
+},
+{
+"type": "text",
+"id": "sub_collection_title_1",
+"label": "Sub collection Title"
+},
+{
+"type": "collection",
+"id": "sub_collection_cat_id_1",
+"label": "Sub Select collection"
+}, 
+{
+"type": "image_picker",
+"id": "sub_image_2",
+"label": "Sub Image"
+},
+{
+"type": "text",
+"id": "sub_collection_title_2",
+"label": "Sub collection Title"
+},
+{
+"type": "collection",
+"id": "sub_collection_cat_id_2",
+"label": "Sub Select collection"
+},
+{
+"type": "image_picker",
+"id": "sub_image_3",
+"label": "Sub Image"
+},
+{
+"type": "text",
+"id": "sub_collection_title_3",
+"label": "Sub collection Title"
+},
+{
+"type": "collection",
+"id": "sub_collection_cat_id_3",
+"label": "Sub Select collection"
+},
+{
+"type": "image_picker",
+"id": "sub_image_4",
+"label": "Sub Image"
+},
+{
+"type": "text",
+"id": "sub_collection_title_4",
+"label": "Sub collection Title"
+},
+{
+"type": "collection",
+"id": "sub_collection_cat_id_4",
+"label": "Sub Select collection"
+}
+]
+}
+],
+"presets": [
+{
+"name": "Category Feature",
+"category": "TT CMS section",
+"blocks": [
+{
+"type": "text_collection"
+}     
+]
+}
+]
+}
+{% endschema %}
+

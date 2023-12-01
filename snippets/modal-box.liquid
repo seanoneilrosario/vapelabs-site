@@ -1,0 +1,42 @@
+<div class="loading-modal modal">{{ 'general.search.loading' | t }}</div>
+<div class="ajax-error-modal modal cart-popup-wrapper">
+  <div class="overlay"></div>
+  <div class="modal-inner">
+    <div class="close-popup">
+      <a href="javascript:void(0)" class="close-modal"><i class="mdi mdi-close"></i></a>
+    </div>
+    <div class="error-content">
+      <div class="ajax-error-title">{{ 'general.search.error' | t }}</div>
+      <div class="ajax-error-message"></div>
+    </div>
+  </div>
+</div>
+<div class="ajax-success-modal cart-popup-wrapper modal">
+  <div class="modal-cart">
+    <div class="overlay"></div>
+    <div class="cart-content">
+      <div class="content">
+        <p class="added-to-cart info">{{ 'cart.general.just_to_cart' | t }}</p>
+        <a href="javascript:void(0)" class="close-modal"><i class="mdi mdi-close"></i></a>
+        <div class="content-wrap">    
+          <div class="ajax-content">
+            <div class="ajax-left">        
+              <img loading="lazy" class="ajax-product-image lazyload" alt="modal window" src="/" />
+            </div>
+            <div class="ajax-right"> 
+              <div class="ajax_variant"></div>
+              <div class="product-title">
+                <h3 class="ajax-product-title">Product name</h3>
+              </div>
+              <span class="ajax_price">
+              </span>
+<!--               <div class="total_itmes">{{ 'cart.general.quantity' | t }}: {% if settings.enable_quantity or settings.product_qty_enable %}<span class="popup-qty"></span>{% else %}1{% endif %}</div>            -->
+            </div>
+          </div>
+          <div class="success-message added-to-cart"><a href="{{ routes.cart_url }}" class="cart btn">{{ 'cart.general.view_cart' | t }} (<span class="ajax_item_total"> </span>)</a> </div>  
+          <div class="continue-shopping" data-cart-popup-dismiss>{{ 'cart.general.continue_shopping' | t }}</div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
