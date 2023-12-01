@@ -4457,7 +4457,7 @@ body.template-search.search-open .page-wrapper::after{
   /* float: left; */
   width:auto;
   /* margin: 30px 0; */
-  max-width: 270px;
+ 
 }
 .header_1 .site-header__search.icon-btn {
   margin: 28px 0;
@@ -4521,6 +4521,7 @@ body.template-search.search-open .page-wrapper::after{
   width: 100%;
   margin: 0;
   line-height: 0;
+  max-width: 270px;
 }
 .header_1_wrapper .right-link-icon{
   float: right;
@@ -4615,7 +4616,6 @@ body.template-search.search-open .page-wrapper::after{
 }
 @media (max-width: 1299px) {
   .header_1 .sticky_header.fixed .header_logo_wrap {
-    width: 200px;
     margin: 32px 0;
   }
   .header_1 .collections-selector select{
@@ -4654,7 +4654,6 @@ body.template-search.search-open .page-wrapper::after{
   }
   .header_1_wrapper .header_logo_wrap {
     margin: 24px 0;
-    width: 190px;
   }
   .header_1 .site-header__search.icon-btn{
     margin: 18px 0;
@@ -4691,10 +4690,8 @@ body.template-search.search-open .page-wrapper::after{
   }
   .header_1_wrapper .header_logo_wrap {
     margin: 15px 0;
-    float: none;
     display: inline-block;
     vertical-align: top;
-    width: auto;
   }
   .header_1 #shopify-section-TT-megamenu{
     width:100%;
@@ -4758,21 +4755,15 @@ body.template-search.search-open .page-wrapper::after{
     margin: 0 0 0 5px;
   }
   .header_1 #accessibleNav{
-    float: left;
-    width: 100%;
     margin: 0;
     padding: 0;
   }
   .header_1 #accessibleNav li {
-    float: left;
-    width: 100%;
     text-align: left;
     padding: 0;
   }
   .header_1 #accessibleNav>li>a {
     padding: 10px 20px;
-    float: left;
-    width: 100%;
     font-size:13px;
   }
   .header_1 .offer-content{
@@ -4832,7 +4823,6 @@ body.template-search.search-open .page-wrapper::after{
   }
   .header_1_wrapper .header_logo_wrap{
     margin: 11px 0;
-    width: 170px;
   }
   .header_1 .site-header__search.icon_btn .search_wrapper .input-group input[type="search"], .header_1 .site-header__search.icon-btn .search_wrapper .input-group input[type="search"] {
     padding: 0 55px 0 15px;

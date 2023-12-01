@@ -5,7 +5,6 @@
 }
 
 .header_contents-wrap .site-nav {
-    flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,4 +20,35 @@
 
 #accessibleNav>li:hover>a {
     color: #81BBE1;
+}
+
+.header_logo_wrap {
+    order: 2;
+    flex-grow: 1;
+}
+
+.site-nav {
+    order: 1;
+    width: fit-content;
+    flow
+}
+
+.right-link-icon {
+    order: 3;
+}
+
+@media(min-width: 990px) {
+    .header_logo_wrap {
+        order: 1;
+        flex-grow: initial;
+    }
+
+    .site-nav {
+        order: 2;
+        flex-grow: 1;
+    }
+
+    .right-link-icon {
+        order: 3;
+    }
 }
