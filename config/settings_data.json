@@ -286,7 +286,6 @@
             "settings": {
               "title": "Home",
               "button_link": "#",
-              "tt_sub_menu_icon": "shopify:\/\/shop_images\/01_bd2701eb-6e48-4932-8735-b8caa9dffd54.png",
               "tt_mn_class": "",
               "tt_mn_sub_heading": "Hot",
               "tt_mn_subheading_bg": "#febb01",
@@ -314,7 +313,6 @@
               "tt_mn_sub_heading_inner": "",
               "tt_mn_subheading_bg_inner": "#febb01",
               "tt_mn_subheading_color_inner": "#ffffff",
-              "tt_sub_menu_img": "shopify:\/\/shop_images\/h1.png",
               "tt_sub_menu_Second_title": "Electronic 2",
               "tt_sub_menu_Second_link": "https:\/\/themes-warehouse.myshopify.com\/?preview_theme_id=127579193504",
               "tt_sub_menu_title_Second_show": true,
@@ -323,7 +321,6 @@
               "tt_mn_sub_heading_Second_inner": "",
               "tt_mn_subheading_bg_Second_inner": "",
               "tt_mn_subheading_color_Second_inner": "",
-              "tt_sub_menu_Second_img": "shopify:\/\/shop_images\/h2.png",
               "tt_sub_menu_third_title": "Electronic 3",
               "tt_sub_menu_third_link": "https:\/\/themes-warehouse.myshopify.com\/?preview_theme_id=127624741024",
               "tt_sub_menu_title_third_show": true,
@@ -332,7 +329,6 @@
               "tt_mn_sub_heading_third_inner": "",
               "tt_mn_subheading_bg_third_inner": "",
               "tt_mn_subheading_color_third_inner": "",
-              "tt_sub_menu_third_img": "shopify:\/\/shop_images\/h3.png",
               "tt_sub_menu_fourth_title": "Electronic 4",
               "tt_sub_menu_fourth_link": "https:\/\/themes-warehouse.myshopify.com\/?preview_theme_id=127660916896",
               "tt_sub_menu_title_fourth_show": true,
@@ -341,7 +337,6 @@
               "tt_mn_sub_heading_fourth_inner": "",
               "tt_mn_subheading_bg_fourth_inner": "",
               "tt_mn_subheading_color_fourth_inner": "",
-              "tt_sub_menu_fourth_img": "shopify:\/\/shop_images\/h-4_5f566914-113d-4d52-91da-145ec4df5182.png",
               "tt_sub_menu_fifth_title": "Electronic 5",
               "tt_sub_menu_fifth_link": "https:\/\/themes-warehouse.myshopify.com\/?preview_theme_id=127680577696",
               "tt_sub_menu_title_fifth_show": true,
@@ -350,7 +345,6 @@
               "tt_mn_sub_heading_fifth_inner": "",
               "tt_mn_subheading_bg_fifth_inner": "",
               "tt_mn_subheading_color_fifth_inner": "",
-              "tt_sub_menu_fifth_img": "shopify:\/\/shop_images\/h-5_37200f75-d259-439e-93c0-a187c6cff951.png",
               "tt_sub_menu_sixth_title": "Electronic 6",
               "tt_sub_menu_sixth_link": "https:\/\/themes-warehouse.myshopify.com\/?preview_theme_id=129722908832",
               "tt_sub_menu_title_sixth_show": true,
@@ -359,7 +353,6 @@
               "tt_mn_sub_heading_sixth_inner": "",
               "tt_mn_subheading_bg_sixth_inner": "",
               "tt_mn_subheading_color_sixth_inner": "",
-              "tt_sub_menu_sixth_img": "shopify:\/\/shop_images\/h-6.png",
               "tt_sub_menu_seventh_title": "Electronic 7",
               "tt_sub_menu_seventh_link": "https:\/\/themes-warehouse.myshopify.com\/?preview_theme_id=129796472992",
               "tt_sub_menu_title_seventh_show": true,
@@ -368,7 +361,6 @@
               "tt_mn_sub_heading_seventh_inner": "",
               "tt_mn_subheading_bg_seventh_inner": "",
               "tt_mn_subheading_color_seventh_inner": "",
-              "tt_sub_menu_seventh_img": "shopify:\/\/shop_images\/h-7.png",
               "tt_sub_menu_eighth_title": "Electronic 8",
               "tt_sub_menu_eighth_link": "https:\/\/themes-warehouse.myshopify.com\/?preview_theme_id=129828978848",
               "tt_sub_menu_title_eighth_show": true,
@@ -377,7 +369,6 @@
               "tt_mn_sub_heading_eighth_inner": "",
               "tt_mn_subheading_bg_eighth_inner": "",
               "tt_mn_subheading_color_eighth_inner": "",
-              "tt_sub_menu_eighth_img": "shopify:\/\/shop_images\/h-8.png",
               "tt_sub_menu_nineth_title": "Electronic 9",
               "tt_sub_menu_nineth_link": "https:\/\/themes-warehouse.myshopify.com\/?preview_theme_id=129862467744",
               "tt_sub_menu_title_nineth_show": true,
@@ -386,7 +377,6 @@
               "tt_mn_sub_heading_nineth_inner": "",
               "tt_mn_subheading_bg_nineth_inner": "",
               "tt_mn_subheading_color_nineth_inner": "",
-              "tt_sub_menu_nineth_img": "shopify:\/\/shop_images\/h-9.png",
               "tt_sub_menu_tenth_title": "Electronic 10",
               "tt_sub_menu_tenth_link": "https:\/\/themes-warehouse.myshopify.com\/?preview_theme_id=129882423456",
               "tt_sub_menu_title_tenth_show": true,
@@ -394,8 +384,7 @@
               "tt_sub_menu_tenth_customclass": "",
               "tt_mn_sub_heading_tenth_inner": "",
               "tt_mn_subheading_bg_tenth_inner": "",
-              "tt_mn_subheading_color_tenth_inner": "",
-              "tt_sub_menu_tenth_img": "shopify:\/\/shop_images\/h-10.png"
+              "tt_mn_subheading_color_tenth_inner": ""
             }
           },
           "089dda7f-6fde-43a1-86f5-4d5ce53ef90a": {
@@ -403,24 +392,22 @@
             "settings": {
               "title": "Catalog",
               "button_link": "#",
-              "tt_sub_menu_icon": "shopify:\/\/shop_images\/02_2832c38a-a4e7-4321-8b68-ea98eb9015a7.png",
               "tt_mn_class": "",
               "tt_mn_sub_heading": "",
               "tt_mn_subheading_bg": "#febb01",
               "tt_mn_subheading_color": "#ffffff",
               "tt_mn_sub_contentwidth": "671px",
               "tt_mn_show_sub": true,
-              "bg_img_collection": "shopify:\/\/shop_images\/menu-banner-02_256x256_aed3714f-0545-48d2-8f5a-a35fb4a276f9.jpg",
               "tt_sub_menu_cwidth": "317px",
               "tt_sub_menu_ctitle": "Category Page",
               "tt_sub_menu_clink": "",
-              "tt_sub_menu_clinklist": "category-page",
+              "tt_sub_menu_clinklist": "",
               "tt_sub_menu_csecondtitle": "Product Layout page",
               "tt_sub_menu_csecondlink": "",
-              "tt_sub_menu_csecondlinklist": "product-layout-page",
+              "tt_sub_menu_csecondlinklist": "",
               "tt_sub_menu_cthirdtitle": "Product Hover Effect",
               "tt_sub_menu_cthirdlink": "",
-              "tt_sub_menu_cthirdlinklist": "product-hover-effect",
+              "tt_sub_menu_cthirdlinklist": "",
               "tt_sub_menu_cfourthtitle": "",
               "tt_sub_menu_cfourthlink": "#",
               "tt_sub_menu_cfourthlinklist": "",
@@ -511,24 +498,22 @@
             "settings": {
               "title": "Shop",
               "button_link": "",
-              "tt_sub_menu_icon": "shopify:\/\/shop_images\/03_0dd5f938-96d8-4e23-bc3a-8bf6aa38a818.png",
               "tt_mn_class": "",
               "tt_mn_sub_heading": "",
               "tt_mn_subheading_bg": "#febb01",
               "tt_mn_subheading_color": "#ffffff",
               "tt_mn_sub_contentwidth": "700px",
               "tt_mn_show_sub": true,
-              "bg_img_collection": "shopify:\/\/shop_images\/menu-banner-01_256x256_8547f183-0cd8-442c-bf81-f73940de98b5.jpg",
               "tt_sub_menu_cwidth": "322px",
               "tt_sub_menu_ctitle": "Product Page",
               "tt_sub_menu_clink": "",
-              "tt_sub_menu_clinklist": "product-page",
+              "tt_sub_menu_clinklist": "",
               "tt_sub_menu_csecondtitle": "",
               "tt_sub_menu_csecondlink": "#",
               "tt_sub_menu_csecondlinklist": "",
               "tt_sub_menu_cthirdtitle": "Extended Product",
               "tt_sub_menu_cthirdlink": "",
-              "tt_sub_menu_cthirdlinklist": "extended-product",
+              "tt_sub_menu_cthirdlinklist": "",
               "tt_sub_menu_cfourthtitle": "",
               "tt_sub_menu_cfourthlink": "",
               "tt_sub_menu_cfourthlinklist": "",
@@ -619,7 +604,6 @@
             "settings": {
               "title": "Products",
               "button_link": "",
-              "tt_sub_menu_icon": "shopify:\/\/shop_images\/04_670de633-04c7-47e5-82f8-b1bee771bc49.png",
               "tt_mn_class": "custom-menu",
               "tt_mn_sub_heading": "",
               "tt_mn_subheading_bg": "#febb01",
@@ -745,7 +729,6 @@
             "settings": {
               "title": "About Us",
               "button_link": "shopify:\/\/pages\/about-us",
-              "tt_sub_menu_icon": "shopify:\/\/shop_images\/06_f260b2e6-8183-48ba-b9b9-9029041f7ae5.png",
               "tt_mn_class": "",
               "tt_mn_sub_heading": "",
               "tt_mn_subheading_bg": "#febb01",
@@ -852,7 +835,6 @@
             "settings": {
               "title": "Contact Us",
               "button_link": "shopify:\/\/pages\/contact",
-              "tt_sub_menu_icon": "shopify:\/\/shop_images\/05_fb706562-fdf3-449d-a812-6e29912f781f.png",
               "tt_mn_class": "",
               "tt_mn_sub_heading": "",
               "tt_mn_subheading_bg": "#febb01",
@@ -959,7 +941,6 @@
             "settings": {
               "title": "Faq's",
               "button_link": "shopify:\/\/pages\/faqs",
-              "tt_sub_menu_icon": "shopify:\/\/shop_images\/07_5c3455a2-fb53-4fa1-a141-d6efd4324c7d.png",
               "tt_mn_class": "",
               "tt_mn_sub_heading": "",
               "tt_mn_subheading_bg": "#febb01",
@@ -1066,7 +1047,6 @@
             "settings": {
               "title": "Blogs",
               "button_link": "#",
-              "tt_sub_menu_icon": "shopify:\/\/shop_images\/12_1138c770-22c0-4399-ae24-cda04b6bc7a2.png",
               "tt_mn_class": "custom-menu",
               "tt_mn_sub_heading": "",
               "tt_mn_subheading_bg": "#febb01",
@@ -1076,7 +1056,7 @@
               "tt_sub_menu_cwidth": "",
               "tt_sub_menu_ctitle": "",
               "tt_sub_menu_clink": "",
-              "tt_sub_menu_clinklist": "blog",
+              "tt_sub_menu_clinklist": "",
               "tt_sub_menu_csecondtitle": "",
               "tt_sub_menu_csecondlink": "",
               "tt_sub_menu_csecondlinklist": "",
@@ -1173,7 +1153,6 @@
             "settings": {
               "title": "Electronics",
               "button_link": "#",
-              "tt_sub_menu_icon": "shopify:\/\/shop_images\/08_f301f356-4e13-4dc6-a2c4-2dbfe7c35510.png",
               "tt_mn_class": "",
               "tt_mn_sub_heading": "",
               "tt_mn_subheading_bg": "#febb01",
@@ -1280,7 +1259,6 @@
             "settings": {
               "title": "Autoparts",
               "button_link": "#",
-              "tt_sub_menu_icon": "shopify:\/\/shop_images\/09_5966e3fb-3868-4d84-a1e2-ae672f98eec1.png",
               "tt_mn_class": "",
               "tt_mn_sub_heading": "",
               "tt_mn_subheading_bg": "#febb01",
@@ -1387,7 +1365,6 @@
             "settings": {
               "title": "Grocery",
               "button_link": "#",
-              "tt_sub_menu_icon": "shopify:\/\/shop_images\/10_e04ce3f0-23ef-4fc8-8dca-a006b3aa2552.png",
               "tt_mn_class": "",
               "tt_mn_sub_heading": "",
               "tt_mn_subheading_bg": "#febb01",
@@ -1494,7 +1471,6 @@
             "settings": {
               "title": "Tools",
               "button_link": "#",
-              "tt_sub_menu_icon": "shopify:\/\/shop_images\/11_29d3f886-e79e-4b72-9a29-76c39db966a2.png",
               "tt_mn_class": "",
               "tt_mn_sub_heading": "",
               "tt_mn_subheading_bg": "#febb01",
@@ -1601,7 +1577,6 @@
             "settings": {
               "title": "Kids",
               "button_link": "#",
-              "tt_sub_menu_icon": "shopify:\/\/shop_images\/12.png",
               "tt_mn_class": "",
               "tt_mn_sub_heading": "",
               "tt_mn_subheading_bg": "#febb01",
@@ -1721,20 +1696,20 @@
           "6dccce7e-739a-4561-a553-883f5bcec204"
         ],
         "settings": {
-          "sticky_header": true,
+          "sticky_header": false,
           "color_menu_bg": "#ffffff",
           "top_bg_color": "#f1f3f8",
           "top_header_text_color": "#666666",
           "top_header_text_hover_color": "#325ecd",
           "destination": "Hurrah! Get Free Shipping on All Orders Over $99!",
-          "display_currency": true,
-          "display_language": true,
+          "display_currency": false,
+          "display_language": false,
           "main_bgheader": "#ffffff",
-          "logo": "shopify:\/\/shop_images\/logo.png",
+          "logo": "shopify:\/\/shop_images\/horizontal_coloured.png",
           "Header_link_color": "#7b818f",
           "Header_link_hover_color": "#2453c9",
-          "display_wishlist": true,
-          "display_compare": true,
+          "display_wishlist": false,
+          "display_compare": false,
           "display_myaccount": true,
           "display_cart": true,
           "icon_txt_color": "#111111",
@@ -1748,7 +1723,7 @@
           "menu_bgclr": "#ffffff",
           "menu_txt_clr": "#111111",
           "menu_txt_hvr_clr": "#ffd200",
-          "nav_menu": "site-menu",
+          "nav_menu": "",
           "toplink_txt_clr": "#111111",
           "toplink_txthover_clr": "#111111",
           "toplink_txtbg_clr": "#ffcc00",
@@ -1887,7 +1862,6 @@
           "ac03dde5-3fa6-403e-862b-2ef93bc11b84": {
             "type": "s_text",
             "settings": {
-              "service_icon": "shopify:\/\/shop_images\/01_29e11d96-9e09-44b8-ac75-cfc6a5eec56b.png",
               "title": "Shop Worldwide",
               "desc": "dropship worldwide"
             }
@@ -1895,7 +1869,6 @@
           "aa4c98f0-b223-4676-bbc8-24b90054833a": {
             "type": "s_text",
             "settings": {
-              "service_icon": "shopify:\/\/shop_images\/02_dda3e823-b98c-4725-8f78-6cc74e4effd7.png",
               "title": "Big Saving Shop",
               "desc": "Save big every order"
             }
@@ -1903,7 +1876,6 @@
           "1e152515-cb9f-4623-a49f-2075ea979bd9": {
             "type": "s_text",
             "settings": {
-              "service_icon": "shopify:\/\/shop_images\/03_b9f36109-2a7f-47eb-9fb4-2ec95a2107a6.png",
               "title": "24H 7D Support",
               "desc": "one-on-one support"
             }
@@ -1911,7 +1883,6 @@
           "432eacdf-f145-43a3-a1d3-f1eecdc7061d": {
             "type": "s_text",
             "settings": {
-              "service_icon": "shopify:\/\/shop_images\/04_f3883023-8603-4d09-934c-9659e7470921.png",
               "title": "Money Back Return",
               "desc": "cancel order anytime"
             }
@@ -1967,13 +1938,9 @@
           "icon_color": "#111111",
           "icon_hover_color": "#3f41bc",
           "testi_bg_color": "#2453c9",
-          "Testi_img": "shopify:\/\/shop_images\/testimonial.png",
           "app_heading": "Download App",
-          "dwld_app1": "shopify:\/\/shop_images\/1_a8aea30f-ce75-4030-964a-0d9fe6c10539.png",
           "dwld_app_url1": "#",
-          "dwld_app2": "shopify:\/\/shop_images\/2_d999b2b9-c230-4913-a3f2-9d204acb6854.png",
           "dwld_app_url2": "#",
-          "dwld_app3": "shopify:\/\/shop_images\/3_42e75559-8611-4525-85d2-e74d90b8ad92.png",
           "dwld_app_url3": "#",
           "newsletter_title": "Sign up for Newsletter",
           "footer_desc": "Shopping First for Coupon  $20  Receive  and....",
@@ -1982,27 +1949,24 @@
           "btn_hovertxt_color": "#ffffff",
           "btn_hoverbg_color": "#2453c9",
           "security_title": "Security Store",
-          "security_img1": "shopify:\/\/shop_images\/1_95df5c81-028d-4a52-a8b5-486c253b61e4.png",
-          "security_img2": "shopify:\/\/shop_images\/2_56ec582c-b706-4436-b7ce-591e7970cbfc.png",
-          "security_img3": "shopify:\/\/shop_images\/3_d31c8fbf-e424-4c39-a102-db64759d64d5.png",
           "footer_contact_title": "Store Information",
           "contact_address": "<p>4030, Central Bazzar,<br\/>Varachha Road, Surat.<\/p>",
           "contact_no": "092770-77088",
           "contact_email": "admin@yourstore.com",
           "footer_col_title_1": "Quick Links",
-          "col_1_menu": "footer-menu",
+          "col_1_menu": "",
           "footer_col_title_2": "My Accounts",
-          "col_2_menu": "footer-menu-1",
+          "col_2_menu": "",
           "footer_col_title_3": "Products",
-          "col_3_menu": "footer-menu",
+          "col_3_menu": "",
           "footer_col_title_4": "Our Company",
-          "col_4_menu": "footer-menu-2",
+          "col_4_menu": "",
           "footer_col_title_5": "Mobiles :",
-          "col_5_menu": "footer-menu",
+          "col_5_menu": "",
           "footer_col_title_6": "Mobiles Accessories :",
-          "col_6_menu": "footer-menu-2",
+          "col_6_menu": "",
           "footer_col_title_7": "Memory Cards :",
-          "col_7_menu": "footer-menu-1"
+          "col_7_menu": ""
         }
       },
       "bloglist_inner_content": {
@@ -5156,7 +5120,6 @@
         "type": "topheader-banner",
         "settings": {
           "enable_banner": true,
-          "banner_image": "shopify:\/\/shop_images\/top-banner.jpg",
           "banner_link": "#",
           "banner_bg": "#f4f3f0"
         }
