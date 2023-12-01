@@ -4520,7 +4520,13 @@ body.template-search.search-open .page-wrapper::after{
   width: 100%;
   margin: 0 auto;
   line-height: 0;
-  max-width: 270px;
+  max-width: 150px;
+}
+
+@media(min-width:990px) {
+  .header_1_wrapper .header_logo_wrap .header-logo {
+    max-width: 270px;
+  }
 }
 .header_1_wrapper .right-link-icon{
   float: right;

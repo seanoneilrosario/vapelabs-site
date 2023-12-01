@@ -1961,8 +1961,16 @@ pre code {
   margin-left: auto;
 }
 
+.container--narrow {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 @media (min-width:768px) {
-  .container {
+  .container,
+  .container--narrow {
     max-width: 750px;
   }
 }
@@ -1970,6 +1978,12 @@ pre code {
 @media (min-width:992px) {
   .container {
     max-width: 970px;
+  }
+
+  .container--narrow {
+    max-width: 1140px;
+    padding-right: 30px;
+    padding-left: 30px;
   }
 }
 
@@ -1999,8 +2013,10 @@ pre code {
 
 @media (min-width:1530px) {
   .container {
-    width: 1700px;
+    max-width: 1700px;
   }
+
+  
 }
 .container-fluid {
   padding-right: 0;

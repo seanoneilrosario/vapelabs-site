@@ -1,0 +1,51 @@
+<div class="hero-banner container--narrow">
+    <img class="banner_image" src="{{ section.settings.image_banner | img_url: 'master' }}" />
+    <div class="banner_contents">
+        <h3>{{ section.settings.sub_title }}</h3>
+        <h2>{{ section.settings.title }}</h2>
+        {% if section.settings.button_title %}
+            <a href="{{ section.settings.button_link }}">{{ section.settings.button_title }}</a>
+        {% endif %}
+    </div>
+</div>
+
+{%- schema -%}
+    {
+        "name": "Hero Banner",
+        "tag": "section",
+        "class": "hero_banner_wrapper",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image_banner",
+                "label": "Image"
+            },
+            {
+                "type": "text",
+                "id": "sub_title",
+                "label": "Sub Heading"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Heading"
+            },
+            {
+                "type": "text",
+                "id": "button_title",
+                "label": "Button Title"
+            },
+            {
+                "type": "url",
+                "id": "button_link",
+                "label": "Button link"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Hero Banner",
+                "settings": {}
+            }
+        ]
+    }
+{%- endschema -%}

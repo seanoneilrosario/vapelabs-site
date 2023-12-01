@@ -790,34 +790,34 @@ class VariantRadios extends VariantSelects {
 }
 
 customElements.define('variant-radios', VariantRadios);
-  function buildSearchQuery() {
-    var form = document.querySelector('#custom-results')
-    form.addEventListener('submit', function(e){
-      var collection = form.querySelector('[name="collection"]')
-      collection.addEventListener('change', function(e){
-        var value = collection.selectedOptions[0].value
-        if(value === 'all') return null
-        var input = form.querySelector('[type="search"][name="q"]').value
-      })
-      var value = collection.selectedOptions[0].value
-      var attr = collection.selectedOptions[0].getAttribute('data-product-types').trim().replaceAll(/\s/g,'').split('OR').join(' OR ').trim()
-      if(value === 'all') return
-       e.preventDefault()
-      var input = form.querySelector('[type="search"][name="q"]').value
-      var isInputEmpty = input === ''
-      if (isInputEmpty) {
-        var collectionHandle = value.split('/')[2]
-        var query = `/search?collection=${collectionHandle}&type=product&q=${attr}`
-        location.assign(query)
-      }
-      if (!isInputEmpty) {
-        var collectionHandle = value.split('/')[2]
-        var query = `/search?collection=${collectionHandle}&type=product&q=${input}`
-        location.assign(query)
-      }
-    })
-  }
-  buildSearchQuery()
+  // function buildSearchQuery() {
+  //   var form = document.querySelector('#custom-results')
+  //   form.addEventListener('submit', function(e){
+  //     var collection = form.querySelector('[name="collection"]')
+  //     collection.addEventListener('change', function(e){
+  //       var value = collection.selectedOptions[0].value
+  //       if(value === 'all') return null
+  //       var input = form.querySelector('[type="search"][name="q"]').value
+  //     })
+  //     var value = collection.selectedOptions[0].value
+  //     var attr = collection.selectedOptions[0].getAttribute('data-product-types').trim().replaceAll(/\s/g,'').split('OR').join(' OR ').trim()
+  //     if(value === 'all') return
+  //      e.preventDefault()
+  //     var input = form.querySelector('[type="search"][name="q"]').value
+  //     var isInputEmpty = input === ''
+  //     if (isInputEmpty) {
+  //       var collectionHandle = value.split('/')[2]
+  //       var query = `/search?collection=${collectionHandle}&type=product&q=${attr}`
+  //       location.assign(query)
+  //     }
+  //     if (!isInputEmpty) {
+  //       var collectionHandle = value.split('/')[2]
+  //       var query = `/search?collection=${collectionHandle}&type=product&q=${input}`
+  //       location.assign(query)
+  //     }
+  //   })
+  // }
+  // buildSearchQuery()
   
   
   function filterCollection () {
@@ -844,3 +844,6 @@ customElements.define('variant-radios', VariantRadios);
     }
   }
 filterCollection()
+
+const header_height = document.querySelector('.header_contents-wrap');
+document.documentElement.style.setProperty('--header-height', `${header_height.clientHeight}px`);
