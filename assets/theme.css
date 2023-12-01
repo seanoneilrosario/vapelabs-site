@@ -4387,11 +4387,11 @@ body.template-search.search-open .page-wrapper::after{
   z-index: 2;
   float: left;
   width: 100%;
-  box-shadow: -1px 1px 2px 0 #e5e5e5;
+  /* box-shadow: -1px 1px 2px 0 #e5e5e5;
   -webkit-box-shadow: -1px 1px 2px 0 #e5e5e5;
   -moz-box-shadow: -1px 1px 2px 0 #e5e5e5;
   -ms-box-shadow: -1px 1px 2px 0 #e5e5e5;
-  -o-box-shadow: -1px 1px 2px 0 #e5e5e5;
+  -o-box-shadow: -1px 1px 2px 0 #e5e5e5; */
 }
 .header_1 .wrapper-top-cart {
   margin: 30px 0;
@@ -4454,9 +4454,10 @@ body.template-search.search-open .page-wrapper::after{
   text-align:center;
 }
 .header_1_wrapper .header_logo_wrap{
-  float: left;
+  /* float: left; */
   width:auto;
-  margin: 30px 0;
+  /* margin: 30px 0; */
+  max-width: 270px;
 }
 .header_1 .site-header__search.icon-btn {
   margin: 28px 0;
@@ -4475,10 +4476,10 @@ body.template-search.search-open .page-wrapper::after{
   width: 100%;
   border-top: 1px solid #e5e5e5;
 }
-.header_1 #accessibleNav{
+/* .header_1 #accessibleNav{
   margin:0 0 0 15px;
   padding: 0 0 0 15px;
-}
+} */
 .header_1 #accessibleNav li {
   padding: 9px 0;
 }
@@ -4587,11 +4588,7 @@ body.template-search.search-open .page-wrapper::after{
 .header_1 .sticky_header.fixed #tt-megamenu .toggle_menu::after{
   display:none;
 }
-@media (min-width: 992px) {
-  .site-header.page-element.header_1 {
-    min-height: 218px;
-  }
-}
+
 @media (min-width: 1430) and (max-width: 1529px) {
   .header_1 .sticky_header.fixed .site-header__cart-count .cart-products-detail{
     display: none;
@@ -13176,10 +13173,13 @@ a.product-t {
   position:relative;
 }
 #accessibleNav>li>a {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  color: #2C4C7B;
   float: none;
   display: inline-block;
   vertical-align: top;
-  font: 400 14px/17px var(--font-stack-body);
     position: relative;
     overflow: hidden;
     z-index: 1;

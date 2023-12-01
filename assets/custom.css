@@ -1,0 +1,24 @@
+/* Header */
+.header_contents-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.header_contents-wrap .site-nav {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_contents-wrap .site-nav:after {
+    display: none;
+}
+
+#accessibleNav>li>a:before {
+    display: none;
+}
+
+#accessibleNav>li:hover>a {
+    color: #81BBE1;
+}

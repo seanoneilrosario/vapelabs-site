@@ -27,9 +27,6 @@
   }
   .header_1 .top_header_1{ background-color:{{section.settings.top_bg_color }};}
   .header_1 .bottom_header_1{ background-color:{{section.settings.bottom_bg_color }};}
-  #accessibleNav>li>a{color:{{section.settings.toplink_txt_clr }};}
-  #accessibleNav>li:hover>a{color:{{section.settings.toplink_txthover_clr }};}
-  #accessibleNav>li:hover>a::before {background-color:{{section.settings.toplink_txtbg_clr }};}
   #tt-megamenu span.toggle_menu{ background:{{section.settings.tt_title_bgclr }}; color:{{section.settings.tt_title_clr }};}
   .tt-mega-menu #tt-megamenu .tt-mega_menu{ background:{{section.settings.menu_bgclr }};}
   #tt-megamenu .tt-mega_menu .tt_menus_ul>li>a{color:{{section.settings.menu_txt_clr }};}
@@ -48,7 +45,7 @@
 {% if section.settings.sticky_header %}{%- assign sticky_class = 'sticky_header' -%}{% endif %}
 <header class="site-header page-element header_1" data-section-id="{{ section.id }}" data-section-type="header-section">
   <div class="header_1_wrapper">
-    <div class="top_header_1">
+    {% comment %} <div class="top_header_1">
       <div class="container">
         <div class="top-header">
           <i class="mdi mdi-odnoklassniki"></i>
@@ -77,9 +74,9 @@
           {% endif %}
         </div>
       </div>
-    </div>
+    </div> {% endcomment %}
     <div id="header-sticky" class="main-header {{ sticky_class }}">
-      <div class="container">
+      <div class="container header_contents-wrap">
         <div class="header_logo_wrap">
           <div class="h1 header-logo" itemscope itemtype="http://schema.org/Organization">
             {% if section.settings.logo != blank %}
@@ -91,11 +88,13 @@
             {% endif %}
           </div>
         </div>
-        <div class="site-header__search icon-btn col-sm-7">
+        {% assign navMenu = linklists[section.settings.nav_menu] %}
+        {% include 'site-nav' with navMenu %}
+        {% comment %} <div class="site-header__search icon-btn col-sm-7">
           <div class="search_wrapper">
             {% render 'search-bar' %} 
           </div>
-        </div> 
+        </div>  {% endcomment %}
         <div class="right-link-icon">
           {% if section.settings.display_wishlist %}   
           <div class="wishlist-icon-div">
@@ -166,7 +165,7 @@
         </div>
       </div>
     </div>
-    <div class="bottom_header_1">
+    {% comment %} <div class="bottom_header_1">
       <div class="container">
         <div class="ttresponsive_menu">
           {% if section.blocks.size > 0 %}
@@ -792,14 +791,12 @@
           </div>
           {% endif %}
         </div>
-        {% assign navMenu = linklists[section.settings.nav_menu] %}
-        {% include 'site-nav' with navMenu %}
         <a href="{{ section.settings.offer_url }}" class="offer-content">
           <i class="mdi mdi-percent"></i>
           <div class="offer-title">{{ section.settings.offer_title }}</div>
         </a>
       </div>
-    </div>
+    </div> {% endcomment %}
   </div>
 </header>
 {% schema %}
