@@ -1723,7 +1723,7 @@
           "menu_bgclr": "#ffffff",
           "menu_txt_clr": "#111111",
           "menu_txt_hvr_clr": "#ffd200",
-          "nav_menu": "",
+          "nav_menu": "main-menu",
           "toplink_txt_clr": "#111111",
           "toplink_txthover_clr": "#111111",
           "toplink_txtbg_clr": "#ffcc00",
@@ -3516,7 +3516,7 @@
           "1598010548574"
         ],
         "settings": {
-          "show_notification": true,
+          "show_notification": false,
           "notify_product_pos": "left",
           "product_title": "Product Notification",
           "delay_time": "3000"
@@ -5120,6 +5120,7 @@
         "type": "topheader-banner",
         "settings": {
           "enable_banner": true,
+          "banner_image": "shopify:\/\/shop_images\/11.png",
           "banner_link": "#",
           "banner_bg": "#f4f3f0"
         }
