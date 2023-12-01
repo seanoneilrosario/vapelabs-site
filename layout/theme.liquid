@@ -198,9 +198,6 @@
         </ul>
       </div>
       {% endif %}
-      {% if template == 'index' %}
-      {% section 'topheader-banner' %}
-      {% endif %}
       {% case settings.header_style_1 %}
       {% when 'style_1' %}  
       {% section 'header-model-1' %}
@@ -209,6 +206,9 @@
       {% when 'style_3' %}
       {% section 'header-style-3' %}
       {% endcase %}
+      {% if template == 'index' %}
+      {% section 'topheader-banner' %}
+      {% endif %}
       <main class="main-content" role="main">
         {% render 'breadcrumb' %}
         <div class="pagecontent">
