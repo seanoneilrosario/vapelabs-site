@@ -892,28 +892,28 @@
             "type": "menu",
             "settings": {
               "menu_heading": "Directory",
-              "menu": ""
+              "menu": "directory"
             }
           },
           "18d935d9-c1b7-4db7-82bd-5b38dace2b08": {
             "type": "menu",
             "settings": {
               "menu_heading": "Legal",
-              "menu": ""
+              "menu": "legal"
             }
           },
           "57b5feb5-f8fa-4836-a84e-2aaae6127f0a": {
             "type": "menu",
             "settings": {
               "menu_heading": "Registration",
-              "menu": ""
+              "menu": "registration"
             }
           },
           "b602c66a-db93-4d62-a7f3-60a2cdfb66c6": {
             "type": "menu",
             "settings": {
               "menu_heading": "Vapelabs",
-              "menu": ""
+              "menu": "vapelabs-1"
             }
           },
           "deb3fc4a-934e-45e0-99b7-544a1cfee925": {
