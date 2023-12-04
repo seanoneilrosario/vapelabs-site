@@ -1,34 +1,36 @@
-<div class="hero-banner container--narrow">
-    <img class="banner_image" src="{{ section.settings.image_banner | img_url: 'master' }}" />
-    <div class="banner_contents">
-        <h3>{{ section.settings.sub_title }}</h3>
-        <h2>{{ section.settings.title }}</h2>
-        {% if section.settings.button_title %}
+<div class="cta-parallax-banner container--narrow">
+    <div class="parallax_wrapper">
+        <div class="parallax_content-wrap">
+            <h4>
+                {{ section.settings.heading }}
+            </h4>
+            {{ section.settings.content }}
             <a class="btn_primary" href="{{ section.settings.button_link }}">{{ section.settings.button_title }}</a>
-        {% endif %}
+        </div>
+        <img src="{{ section.settings.image_parallax | img_url: 'master' }}" />
     </div>
 </div>
 
 {%- schema -%}
     {
-        "name": "Hero Banner",
+        "name": "CTA Parallax Banner",
         "tag": "section",
-        "class": "hero_banner_wrapper",
+        "class": "cta-parallax-banner_wrap",
         "settings": [
             {
                 "type": "image_picker",
-                "id": "image_banner",
+                "id": "image_parallax",
                 "label": "Image"
             },
             {
                 "type": "text",
-                "id": "sub_title",
-                "label": "Sub Heading"
+                "id": "heading",
+                "label": "Heading"
             },
             {
-                "type": "text",
-                "id": "title",
-                "label": "Heading"
+                "type": "richtext",
+                "id": "content",
+                "label": "Text Contents"
             },
             {
                 "type": "text",
@@ -43,7 +45,7 @@
         ],
         "presets": [
             {
-                "name": "Hero Banner",
+                "name": "CTA Parallax Banner",
                 "settings": {}
             }
         ]

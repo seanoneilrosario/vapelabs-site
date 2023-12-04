@@ -762,11 +762,145 @@ body {
 
     .second-row_right {
         width: 50%;
-        padding: 50px 30px 12px 20px;
+        padding: 50px 30px 12px 0;
     }
 
     .boxes {
         width: calc(50% - 20px);
     }
     
+}
+
+
+/* Third Row */
+.third_row {
+    background: #77b6de;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.third-row_left {
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    width: calc(100% - 20px);
+    margin: 10px;
+}
+
+.third-row_right {
+    width: calc(100% - 20px);
+    margin: 10px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.third_row-first-col h4,
+.third_row-second-col h4 {
+    color: #2C4C7B;
+    font-family: "Outfit", Sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.third-row_right .third_row-second-col h4,
+.third-row_right .third_row-second-col p {
+    color: #fff;
+}
+
+@media(min-width:990px) {
+    .third_row {
+        margin-top: -8px;
+        flex-direction: row;
+    }
+
+    .third-row_left {
+        width: calc(45% - 20px);
+        margin: 30px 20px 30px 60px;   
+        display: flex;
+        align-items: center; 
+    }
+
+    .third-row_right {
+        width: calc(55% - 105px);
+        margin: 30px 0px 30px 6px;
+        display: flex;
+        align-items: center; 
+    }
+
+    .third_row-first-col h4 {
+        font-size: 31px;
+    }
+
+    .third-row_left img,
+    .third-row_right img {
+        width: 40%;
+        object-fit: contain;
+    }
+}
+
+
+
+/* Cta Parallax */
+.parallax_wrapper {
+    background: #2C4C7B;
+    position: relative;
+    border-radius: 40px;
+    overflow: hidden;
+    padding: 40px 20px;
+}
+
+.parallax_wrapper img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    opacity: 0.25;
+}
+
+.parallax_content-wrap {
+    position: relative;
+    z-index: 1;
+}
+
+.parallax_content-wrap h4 {
+    color: #FFFFFF;
+    font-family: "Outfit", Sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.parallax_content-wrap p {
+    color: #FFFFFF;
+}
+
+.parallax_content-wrap p:last-of-type {
+    margin-bottom: 30px;
+}
+
+@media(min-width: 990px) {
+    .parallax_wrapper {
+        padding: 80px 60px;
+    }
+
+    .parallax_content-wrap h4 {
+        font-size: 29px;
+    }
+}
+
+
+@media(max-width: 989px) {
+    .parallax_wrapper img {
+        transform: translate(0) !important;
+        height: 100%;
+    }
 }

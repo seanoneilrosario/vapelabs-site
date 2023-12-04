@@ -847,3 +847,19 @@ filterCollection()
 
 const header_height = document.querySelector('.header_contents-wrap');
 document.documentElement.style.setProperty('--header-height', `${header_height.clientHeight}px`);
+
+const parallax_start = document.querySelector('.cta-parallax-banner_wrap');
+const image = document.querySelector('.parallax_wrapper img');
+window.addEventListener("scroll", function () {
+  scrollObject = {
+    x: window.pageXOffset,
+    y: window.scrollY
+  }
+  const el_from_top = window.scrollY + parallax_start.getBoundingClientRect().top - parallax_start.offsetHeight - 40;
+  const scroll = scrollY - el_from_top;
+  console.log(scroll, scrollY);
+  if (scrollY >= el_from_top && scroll < 380) {
+    const es = scrollY - el_from_top;
+    image.style.transform = `translateY(-${es / 3}px)`;
+  }
+})

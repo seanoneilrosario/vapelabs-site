@@ -44,6 +44,23 @@
                             </div>
                         </div>
                     </div>
+                {% when 'third' %}
+                    <div class="third_row">
+                        <div style="background:{{ block.settings.first_bg_col }}" class="third-row_left">
+                            <div class="third_row-first-col">
+                                <h4>{{ block.settings.third_left_text }}</h4>
+                                {{ block.settings.third_left_contents }}
+                            </div>
+                            <img src="{{ block.settings.third_third_image | img_url: 'master' }}" />
+                        </div>
+                        <div style="background:{{ block.settings.second_bg_col }}" class="third-row_right">
+                            <img src="{{ block.settings.third_right_image | img_url: 'master' }}" />
+                            <div class="third_row-second-col">
+                                <h4>{{ block.settings.third_right_title }}</h4>
+                                {{ block.settings.third_right_contents }}
+                            </div>
+                        </div>
+                    </div>
             {% endcase %}
         {% endfor %}
         
@@ -160,6 +177,18 @@
                 "name": "Third Row",
                 "settings": [
                     {
+                        "type": "color",
+                        "id": "first_bg_col",
+                        "label": "First Box Background",
+                        "default": "#fff"
+                    },
+                    {
+                        "type": "color",
+                        "id": "second_bg_col",
+                        "label": "Second Box Background",
+                        "default": "#001a3d"
+                    },
+                    {
                         "type": "text",
                         "id": "third_left_text",
                         "label": "Left side Title"
@@ -183,6 +212,11 @@
                         "type": "richtext",
                         "id": "third_right_contents",
                         "label": "Right side Contents"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "third_right_image",
+                        "label": "Image"
                     }
                 ]
             }
