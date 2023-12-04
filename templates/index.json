@@ -66,7 +66,7 @@
         "288715cf-e958-4939-aedf-c495464404be"
       ],
       "settings": {
-        "bg_color": "#F8F8F8"
+        "bg_color": "#f8f8f8"
       }
     },
     "084ee365-c6d4-419d-8d90-c578dc6949fe": {
@@ -96,10 +96,10 @@
         "3d0378ec-7e4f-4762-8e8d-f9ecde5a68a0": {
           "type": "second",
           "settings": {
-            "bg_col1": "#fff",
-            "bg_col2": "#001A3E",
-            "bg_col3": "#2B4C7B",
-            "bg_col4": "#fff",
+            "bg_col1": "#ffffff",
+            "bg_col2": "#001a3e",
+            "bg_col3": "#2b4c7b",
+            "bg_col4": "#ffffff",
             "left_title": "Intuitive Dashboard & Business Profile",
             "left_image": "shopify:\/\/shop_images\/image-3.png",
             "right_first_box_title": "Order with ease",
@@ -112,10 +112,14 @@
         "9f47c712-7304-4f84-8791-0db7f4b20b85": {
           "type": "third",
           "settings": {
-            "third_left_text": "",
-            "third_left_contents": "",
-            "third_right_title": "",
-            "third_right_contents": ""
+            "first_bg_col": "#fff",
+            "second_bg_col": "#001a3d",
+            "third_left_text": "Get Products Faster.",
+            "third_left_contents": "<p>Say goodbye to unnecessary delays and experience the convenience of a well-coordinated supply chain. No matter where you’re located in Australia, Vapelabs ensures prompt and reliable shipping.<\/p>",
+            "third_third_image": "shopify:\/\/shop_images\/Get-product-faster.png",
+            "third_right_title": "Dedicated Support",
+            "third_right_contents": "<p>At Vapelabs, we believe in building lasting relationships with our partners. From answering your queries to providing personalised guidance, we strive to ensure your business thrives with Vaplabs as your trusted wholesaler.<\/p>",
+            "third_right_image": "shopify:\/\/shop_images\/dedicated-support-icon.png"
           }
         }
       },
@@ -126,6 +130,27 @@
       ],
       "settings": {
       }
+    },
+    "e1e7994b-7c11-4201-a901-d971d1c4118e": {
+      "type": "image-with-text",
+      "settings": {
+        "image_aligment": "left",
+        "image": "shopify:\/\/shop_images\/home-2.png",
+        "heading": "Unlock New Possibilities for Your Business Today",
+        "contents": "<p>Open your 30 day wholesale account today and take advantage of our expansive product selection, competitive pricing, and streamlined ordering process.<\/p>",
+        "btn_text": "SIGN UP TO VIEW OUR RANGE",
+        "btn_link": "#"
+      }
+    },
+    "57dfba87-ecd8-4166-87b9-7deaf2b0c3ba": {
+      "type": "cta-parallax-banner",
+      "settings": {
+        "image_parallax": "shopify:\/\/shop_images\/oos.jpg",
+        "heading": "Book your free training session with our Nicotine Vaping Product specialists.",
+        "content": "<p>Request a chat with our dedicated Account Managers and experience personalised support tailored to your unique needs. Our team of experts is committed to assisting you every step of the way, whether you require a training session on NVP products or onboarding assistance.<\/p><p>Book your free training session with our Nicotine Vaping Product specialist today.<\/p>",
+        "button_title": "BOOK NOW",
+        "button_link": "#"
+      }
     }
   },
   "order": [
@@ -133,6 +158,8 @@
     "16631550897b501cb1",
     "dfa32f02-12fe-4a0d-a16a-0232d71b8960",
     "084ee365-c6d4-419d-8d90-c578dc6949fe",
-    "3c2ff592-a431-46a7-b3ec-d1383953b656"
+    "3c2ff592-a431-46a7-b3ec-d1383953b656",
+    "e1e7994b-7c11-4201-a901-d971d1c4118e",
+    "57dfba87-ecd8-4166-87b9-7deaf2b0c3ba"
   ]
 }
