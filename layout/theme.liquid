@@ -227,7 +227,7 @@
       {% when 'style_3' %}
       {% section 'footer-model-3' %}
       {% endcase %}
-      {% section 'recommendations-product' %}
+      {% comment %} {% section 'recommendations-product' %} {% endcomment %}
       {% render 'site-cookie' %}
       <script>
         window.ajax_cart = {{ settings.use_ajax_cart }};
