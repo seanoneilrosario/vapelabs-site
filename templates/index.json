@@ -26,10 +26,113 @@
         "url_5": "shopify:\/\/pages\/wishlist",
         "title_5": "Wishlist"
       }
+    },
+    "dfa32f02-12fe-4a0d-a16a-0232d71b8960": {
+      "type": "icons-text",
+      "blocks": {
+        "b25b76cb-2f2f-4edd-a4b3-6a21f88c8a26": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_2.png",
+            "icon_title": "Express Delivery"
+          }
+        },
+        "9b8a9833-81c3-4c46-81d7-9422bd49be97": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_4.png",
+            "icon_title": "Widest Range"
+          }
+        },
+        "25a03b70-2d95-4971-b980-0db16dab2701": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_5.png",
+            "icon_title": "TGO110 Compliant"
+          }
+        },
+        "288715cf-e958-4939-aedf-c495464404be": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_3.png",
+            "icon_title": "Dedicated Support"
+          }
+        }
+      },
+      "block_order": [
+        "b25b76cb-2f2f-4edd-a4b3-6a21f88c8a26",
+        "9b8a9833-81c3-4c46-81d7-9422bd49be97",
+        "25a03b70-2d95-4971-b980-0db16dab2701",
+        "288715cf-e958-4939-aedf-c495464404be"
+      ],
+      "settings": {
+        "bg_color": "#F8F8F8"
+      }
+    },
+    "084ee365-c6d4-419d-8d90-c578dc6949fe": {
+      "type": "image-with-text",
+      "settings": {
+        "image_aligment": "right",
+        "image": "shopify:\/\/shop_images\/home-1.png",
+        "heading": "Start your journey with Vapelabs today",
+        "contents": "<p>Vapelabs is a leading wholesaler of pharmaceutical Nicotine Vaping Products.  Our comprehensive product selection caters to the requirements of pharmacies throughout Australia, ensuring your patients have access to compliant and regulated items for dispensing.<\/p><p>Register and create your account today to gain access to the latest product information, educational materials, training sessions, and a user-friendly B2B ordering platform, all conveniently available in one place, and all at no cost.<\/p>",
+        "btn_text": "REGISTER TODAY",
+        "btn_link": "#"
+      }
+    },
+    "3c2ff592-a431-46a7-b3ec-d1383953b656": {
+      "type": "contens-image-blocks",
+      "blocks": {
+        "bbaf2b25-4a6d-4dcf-bd31-8c31c8aae621": {
+          "type": "first",
+          "settings": {
+            "left_text": "Why choose Vapelabs?",
+            "left_contents": "<p>At Vapelabs, we pride ourselves on being the premier choice for your B2B wholesale needs. Here’s why businesses across Australia choose us as their partners.<\/p>",
+            "right_title": "Unparralleled Product Selection",
+            "right_contents": "<p>Our wide selection of devices and e-liquids are all compliant with TGO 110 standards.<\/p>",
+            "right_image": "shopify:\/\/shop_images\/Vape-icon.png"
+          }
+        },
+        "3d0378ec-7e4f-4762-8e8d-f9ecde5a68a0": {
+          "type": "second",
+          "settings": {
+            "bg_col1": "#fff",
+            "bg_col2": "#001A3E",
+            "bg_col3": "#2B4C7B",
+            "bg_col4": "#fff",
+            "left_title": "Intuitive Dashboard & Business Profile",
+            "left_image": "shopify:\/\/shop_images\/image-3.png",
+            "right_first_box_title": "Order with ease",
+            "right_first_box_content": "<p>B2B transactions require seamless processes. You can easily place, track, and manage your orders with Vapelabs' user-friendly ordering system.<\/p>",
+            "second_image": "shopify:\/\/shop_images\/Icon.png",
+            "third_image": "shopify:\/\/shop_images\/Competitive-pricing-icon.png",
+            "fourth_image": "shopify:\/\/shop_images\/Compliant-products.png"
+          }
+        },
+        "9f47c712-7304-4f84-8791-0db7f4b20b85": {
+          "type": "third",
+          "settings": {
+            "third_left_text": "",
+            "third_left_contents": "",
+            "third_right_title": "",
+            "third_right_contents": ""
+          }
+        }
+      },
+      "block_order": [
+        "bbaf2b25-4a6d-4dcf-bd31-8c31c8aae621",
+        "3d0378ec-7e4f-4762-8e8d-f9ecde5a68a0",
+        "9f47c712-7304-4f84-8791-0db7f4b20b85"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "475ba417-2210-4be0-8bda-4108799fe41d",
-    "16631550897b501cb1"
+    "16631550897b501cb1",
+    "dfa32f02-12fe-4a0d-a16a-0232d71b8960",
+    "084ee365-c6d4-419d-8d90-c578dc6949fe",
+    "3c2ff592-a431-46a7-b3ec-d1383953b656"
   ]
 }
