@@ -89,7 +89,7 @@
 {% schema %}
 {
 "name": "Footer Design 3",
-"settings": [
+  "settings": [
       {
         "type": "richtext",
         "id": "footer_header",
@@ -106,8 +106,8 @@
         "label": "Text intro"
       }
     ],
-    "blocks": [
-      {
+"blocks": [
+  {
         "name": "Menu items",
         "type": "menu",
         "settings": [
@@ -138,7 +138,353 @@
             "label": "Button link"
           }
         ]
-      }
-    ]
+      },
+{
+"type": "s_text",
+"name": "services",
+"settings": [
+{
+"type": "image_picker",
+"id": "service_icon",
+"label": "Service Icon",
+"info": "Size: 65x65"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Title"
+},
+{
+"type": "text",
+"id": "desc",
+"label": "Description"
+}
+]
+},
+{
+"type": "text",
+"name": "Testimonial",
+"settings": [
+{
+"type": "textarea",
+"id": "text_desc",
+"label": "Description"
+},
+{
+"type": "color",
+"id": "des_color",
+"label": "Description Color",
+"default":"#000"
+},
+{
+"type": "text",
+"id": "author_name",
+"label": "author name"
+},
+{
+"type": "text",
+"id": "author_designation",
+"label": "Designation"
+},
+{
+"type": "color",
+"id": "author_color",
+"label": "Author Color",
+"default":"#000"
+},
+{
+"type": "color",
+"id": "author_descolor",
+"label": "Designation Color",
+"default":"#000"
+}
+]
+}
+],
+"settings": [
+{
+"type": "header",
+"content": "Services"
+},
+{
+"type": "color",
+"id": "bg_color",
+"label": "background Color",
+"default":"#000"
+},
+{
+"type": "color",
+"id": "title_color",
+"label": "Title Color",
+"default":"#000"
+},
+{
+"type": "color",
+"id": "title_hover_color",
+"label": "Title Hover Color",
+"default":"#fc9f22"
+},
+{
+"type": "color",
+"id": "desc_color",
+"label": "Description Color",
+"default":"#000"
+},
+{
+"type": "color",
+"id": "icon_color",
+"label": "Service Icon Color",
+"default":"#000"
+},
+{
+"type": "color",
+"id": "icon_hover_color",
+"label": "Service Icon Hover Color",
+"default":"#000"
+},
+{
+"type": "header",
+"content": "Testimonial & App"
+},
+{
+"type": "color",
+"id": "testi_bg_color",
+"label": "Testimonial Main Background Color"
+},
+{
+"type": "image_picker",
+"id": "Testi_img",
+"label": "Testimonial Image"
+},
+{
+"type": "text",
+"id": "app_heading",
+"label": "Heading",
+"default": "App Heading"
+},
+{
+"type": "image_picker",
+"id": "dwld_app1",
+"label": "download image1"
+},
+{
+"type": "url",
+"id": "dwld_app_url1",
+"label": "App1 url"
+},
+{
+"type": "image_picker",
+"id": "dwld_app2",
+"label": "download image2"
+},
+{
+"type": "url",
+"id": "dwld_app_url2",
+"label": "App2 url"
+},
+{
+"type": "image_picker",
+"id": "dwld_app3",
+"label": "download image3"
+},
+{
+"type": "url",
+"id": "dwld_app_url3",
+"label": "App3 url"
+},
+{
+"type": "header",
+"content": "contact"
+},
+{
+"type": "text",
+"id": "footer_contact_title",
+"label": "Contact Title",
+"default": "store information"
+},
+{
+"type": "richtext",
+"id": "contact_address",
+"label": "Address",
+"default": "<p>My Company, 42 Puffin street 12345 Puffinville France</p>"
+},	
+{
+"type": "text",
+"id": "contact_no",
+"label": "Contact Text",
+"default": "0123-456-789"
+},
+{
+"type": "text",
+"id": "contact_email",
+"label": "Email Id",
+"default": "sales@yourcompany.com"
+},
+{
+"type": "header",
+"content": "Menu links"
+},
+{
+"type": "text",
+"id": "footer_col_title_1",
+"label": "Heading",
+"default": "Footer Title 1"
+},	
+{
+"type": "link_list",
+"id": "col_1_menu",
+"label": "Footer Column 1"
+},
+{
+"type": "text",
+"id": "footer_col_title_2",
+"label": "Heading",
+"default": "Footer Title 2"
+},	
+{
+"type": "link_list",
+"id": "col_2_menu",
+"label": "Footer Column 2"
+},
+{
+"type": "text",
+"id": "footer_col_title_3",
+"label": "Heading",
+"default": "Footer Title 3"
+},	
+{
+"type": "link_list",
+"id": "col_3_menu",
+"label": "Footer Column 3"
+},
+{
+"type": "text",
+"id": "footer_col_title_4",
+"label": "Heading",
+"default": "Footer Title 4"
+},	
+{
+"type": "link_list",
+"id": "col_4_menu",
+"label": "Footer Column 4"
+},
+{
+"type": "header",
+"content": "newsletter"
+},
+{
+"type": "color",
+"id": "newsletter_bg",
+"label": "newsletter Background Color"
+},
+{
+"type": "text",
+"id": "newsletter_title",
+"label": "Newsletter Title",
+"default": "Sign Up For Newsletter"
+},
+{
+"type": "color",
+"id": "newsletter_title_color",
+"label": "Newsletter Title Color",
+"default": "#ffffff"
+},
+{
+"type": "text",
+"id": "newsletter_desc",
+"label": "Newletter description"
+},
+{
+"type": "color",
+"id": "newsletter_desc_color",
+"label": "Newletter description Color",
+"default": "#ffffff"
+},
+{
+"type": "color",
+"id": "btn_txt_color",
+"label": "Button Text Color",
+"default": "#ffffff"
+},
+{
+"type": "color",
+"id": "btn_bg_color",
+"label": "Button Background Color",
+"default": "#000000"
+},
+{
+"type": "color",
+"id": "btn_hovertxt_color",
+"label": "Button Hover Text Color",
+"default": "#000000"
+},
+{
+"type": "color",
+"id": "btn_hoverbg_color",
+"label": "Button Hover Background Color",
+"default": "#fdd413"
+},
+{
+"type": "header",
+"content": "Security Store"
+},
+{
+"type": "text",
+"id": "security_title",
+"label": "Security Title"
+},
+{
+"type": "image_picker",
+"id": "security_img1",
+"label": "Security logo 1"
+},
+{
+"type": "image_picker",
+"id": "security_img2",
+"label": "Security logo 2"
+},
+{
+"type": "image_picker",
+"id": "security_img3",
+"label": "Security logo 3"
+},
+{
+"type": "header",
+"content": "Menu links"
+},
+{
+"type": "text",
+"id": "footer_col_title_5",
+"label": "Heading",
+"default": "Footer Title 5"
+},	
+{
+"type": "link_list",
+"id": "col_5_menu",
+"label": "Footer Column 5"
+},
+{
+"type": "text",
+"id": "footer_col_title_6",
+"label": "Heading",
+"default": "Footer Title 6"
+},	
+{
+"type": "link_list",
+"id": "col_6_menu",
+"label": "Footer Column 6"
+},
+{
+"type": "text",
+"id": "footer_col_title_7",
+"label": "Heading",
+"default": "Footer Title 7"
+},	
+{
+"type": "link_list",
+"id": "col_7_menu",
+"label": "Footer Column 7"
+}
+]
 }
 {% endschema %}
