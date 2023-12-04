@@ -89,56 +89,39 @@
 {% schema %}
 {
 "name": "Footer Design 3",
-  "settings": [
-      {
-        "type": "richtext",
-        "id": "footer_header",
-        "label": "Heading"
-      },
-      {
-        "type": "image_picker",
-        "id": "image_logo",
-        "label": "Image Logo"
-      },
-      {
-        "type": "richtext",
-        "id": "text_intro",
-        "label": "Text intro"
-      }
-    ],
 "blocks": [
-  {
-        "name": "Menu items",
-        "type": "menu",
-        "settings": [
-          {
-            "type": "text",
-            "id": "menu_heading",
-            "label": "Menu Heading"
-          },
-          {
-            "type": "link_list",
-            "id": "menu",
-            "label": "Menu"
-          }
-        ]
-      },
-      {
-        "name": "Button",
-        "type": "button",
-        "settings": [
-          {
-            "type": "text",
-            "id": "btn_text",
-            "label": "Button Text"
-          },
-          {
-            "type": "url",
-            "id": "btn_link",
-            "label": "Button link"
-          }
-        ]
-      },
+{
+  "name": "Menu items",
+  "type": "menu",
+  "settings": [
+    {
+      "type": "text",
+      "id": "menu_heading",
+      "label": "Menu Heading"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
+    }
+  ]
+},
+{
+  "name": "Button",
+  "type": "button",
+  "settings": [
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button link"
+    }
+  ]
+},
 {
 "type": "s_text",
 "name": "services",
@@ -484,6 +467,21 @@
 "type": "link_list",
 "id": "col_7_menu",
 "label": "Footer Column 7"
+},
+{
+  "type": "richtext",
+  "id": "footer_header",
+  "label": "Heading"
+},
+{
+  "type": "image_picker",
+  "id": "image_logo",
+  "label": "Image Logo"
+},
+{
+  "type": "richtext",
+  "id": "text_intro",
+  "label": "Text intro"
 }
 ]
 }
