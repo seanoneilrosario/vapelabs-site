@@ -46,7 +46,7 @@
     "breadcrumb_hover_text_color": "#2453c9",
     "header_style_1": "style_1",
     "mailchimp_form_action": "https:\/\/templatetrip.us5.list-manage.com\/subscribe\/post?u=53b61777f972e1b53c67d2963&amp;id=6f5d8a7e6e",
-    "popup_newsletter_show": true,
+    "popup_newsletter_show": false,
     "newsletter_title": "SIGN UP NEWSLETTER & PROMOTIONS!",
     "logo": "shopify:\/\/shop_images\/newsletter.png",
     "popup_newsletter_description": "GET 25% DISCOUNT",
@@ -112,7 +112,7 @@
     "btn_txt_clr": "#ffffff",
     "btn_bg_hvr_clr": "#ffcc00",
     "btn_txt_hvr_clr": "#222222",
-    "footer_style_1": "style_2",
+    "footer_style_1": "style_3",
     "social_twitter_link": "https:\/\/twitter.com\/shopify",
     "social_facebook_link": "https:\/\/www.facebook.com\/shopify",
     "social_pinterest_link": "https:\/\/www.pinterest.com\/shopify",
@@ -648,7 +648,6 @@
           "f6d57b8c-4e10-4515-bc8d-5aa73c39a6a2": {
             "type": "s_text",
             "settings": {
-              "service_icon": "shopify:\/\/shop_images\/01_29e11d96-9e09-44b8-ac75-cfc6a5eec56b.png",
               "title": "Shop Worldwide",
               "desc": "dropship worldwide"
             }
@@ -656,7 +655,6 @@
           "35d044ad-e906-4ed0-9d74-f6caf7dfc115": {
             "type": "s_text",
             "settings": {
-              "service_icon": "shopify:\/\/shop_images\/02_dda3e823-b98c-4725-8f78-6cc74e4effd7.png",
               "title": "Big Saving Shop",
               "desc": "Save big every order"
             }
@@ -664,7 +662,6 @@
           "da5f6f66-0c2c-4e9c-883d-000f9f03eb4c": {
             "type": "s_text",
             "settings": {
-              "service_icon": "shopify:\/\/shop_images\/03_b9f36109-2a7f-47eb-9fb4-2ec95a2107a6.png",
               "title": "24H 7D Support",
               "desc": "one-on-one support"
             }
@@ -672,7 +669,6 @@
           "c1196604-a0ad-4ff3-ba6f-96f0d27641d2": {
             "type": "s_text",
             "settings": {
-              "service_icon": "shopify:\/\/shop_images\/04_f3883023-8603-4d09-934c-9659e7470921.png",
               "title": "Money Back Return",
               "desc": "cancel order anytime"
             }
@@ -728,41 +724,34 @@
           "icon_color": "#ffffff",
           "icon_hover_color": "#ffcc00",
           "testi_bg_color": "#ffffff",
-          "Testi_img": "shopify:\/\/shop_images\/testimonial.png",
           "app_heading": "Download App",
-          "dwld_app1": "shopify:\/\/shop_images\/1_a8aea30f-ce75-4030-964a-0d9fe6c10539.png",
           "dwld_app_url1": "#",
-          "dwld_app2": "shopify:\/\/shop_images\/2_d999b2b9-c230-4913-a3f2-9d204acb6854.png",
           "dwld_app_url2": "#",
-          "dwld_app3": "shopify:\/\/shop_images\/3_42e75559-8611-4525-85d2-e74d90b8ad92.png",
           "dwld_app_url3": "#",
           "footer_contact_title": "Store Information",
           "contact_address": "<p>4030, Central Bazzar,<br\/>Varachha Road, Surat.<\/p>",
           "contact_no": "092770-77088",
           "contact_email": "sales@yourcompany.com",
           "footer_col_title_1": "Quick Links",
-          "col_1_menu": "footer-menu",
+          "col_1_menu": "",
           "footer_col_title_2": "My Accounts",
-          "col_2_menu": "footer-menu",
+          "col_2_menu": "",
           "footer_col_title_3": "Products",
-          "col_3_menu": "footer-menu",
+          "col_3_menu": "",
           "footer_col_title_4": "Our Company",
-          "col_4_menu": "footer-menu",
+          "col_4_menu": "",
           "newsletter_title": "Sign up for Newsletter",
           "btn_txt_color": "#111111",
           "btn_bg_color": "#ffcc00",
           "btn_hovertxt_color": "#ffffff",
           "btn_hoverbg_color": "#2453c9",
           "security_title": "Security Store",
-          "security_img1": "shopify:\/\/shop_images\/1_95df5c81-028d-4a52-a8b5-486c253b61e4.png",
-          "security_img2": "shopify:\/\/shop_images\/2_56ec582c-b706-4436-b7ce-591e7970cbfc.png",
-          "security_img3": "shopify:\/\/shop_images\/3_d31c8fbf-e424-4c39-a102-db64759d64d5.png",
           "footer_col_title_5": "Mobiles :",
-          "col_5_menu": "footer-menu",
+          "col_5_menu": "",
           "footer_col_title_6": "Mobiles Accessories :",
-          "col_6_menu": "footer-menu",
+          "col_6_menu": "",
           "footer_col_title_7": "Memory Cards :",
-          "col_7_menu": "footer-menu"
+          "col_7_menu": ""
         }
       },
       "footer-model-2": {
@@ -847,11 +836,11 @@
           "icon_color": "#111111",
           "icon_hover_color": "#3f41bc",
           "testi_bg_color": "#2453c9",
-          "app_heading": "Download App",
+          "app_heading": "",
           "dwld_app_url1": "#",
           "dwld_app_url2": "#",
           "dwld_app_url3": "#",
-          "newsletter_title": "Sign up for Newsletter",
+          "newsletter_title": "",
           "footer_desc": "Shopping First for Coupon  $20  Receive  and....",
           "btn_txt_color": "#111111",
           "btn_bg_color": "#ffcc00",
