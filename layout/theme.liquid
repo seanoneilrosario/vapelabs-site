@@ -39,6 +39,7 @@
     {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }} 
     {{ 'owl.carousel.css' | asset_url | stylesheet_tag }}
     {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {{ 'custom.css' | asset_url | stylesheet_tag }}
     {{ 'aos.css' | asset_url | stylesheet_tag }}
     {{ 'product.css' | asset_url | stylesheet_tag }}
     {% if template == 'index' %}
@@ -198,9 +199,6 @@
         </ul>
       </div>
       {% endif %}
-      {% if template == 'index' %}
-      {% section 'topheader-banner' %}
-      {% endif %}
       {% case settings.header_style_1 %}
       {% when 'style_1' %}  
       {% section 'header-model-1' %}
@@ -209,6 +207,9 @@
       {% when 'style_3' %}
       {% section 'header-style-3' %}
       {% endcase %}
+      {% comment %} {% if template == 'index' %}
+      {% section 'topheader-banner' %}
+      {% endif %} {% endcomment %}
       <main class="main-content" role="main">
         {% render 'breadcrumb' %}
         <div class="pagecontent">
@@ -223,7 +224,7 @@
       {% when 'style_3' %}
       {% section 'footer-model-3' %}
       {% endcase %}
-      {% section 'recommendations-product' %}
+      {% comment %} {% section 'recommendations-product' %} {% endcomment %}
       {% render 'site-cookie' %}
       <script>
         window.ajax_cart = {{ settings.use_ajax_cart }};
