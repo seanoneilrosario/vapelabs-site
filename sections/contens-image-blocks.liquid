@@ -1,0 +1,197 @@
+<div class="contents-image container--narrow">
+    <div class="image_text-contents">
+        {% for block in section.blocks %}
+            {% case block.type %}
+                {% when 'first' %}
+                    <div class="first_row">
+                        <div class="first-row_left">
+                            <div>
+                                <h4>{{ block.settings.left_text }}</h4>
+                            {{ block.settings.left_contents }}
+                            </div>
+                        </div>
+                        <div class="first-row_right">
+                            <div>
+                                <div class="first-right-row-contents">
+                                    <h4>{{ block.settings.right_title }}</h4>
+                                    {{ block.settings.right_contents }}
+                                </div>
+                                <img src="{{ block.settings.right_image | img_url: 'master' }}" />
+                            </div>
+                        </div>
+                    </div>
+                {% when 'second' %}
+                    <div class="second_row">
+                        <div class="second-row_left">
+                            <div>
+                                <h4>{{ block.settings.left_title }}</h4>
+                                <img src="{{ block.settings.left_image | img_url: 'master' }}" />
+                            </div>
+                        </div>
+                        <div class="second-row_right">
+                            <div style="background:{{ block.settings.bg_col1 }}" class="boxes">
+                                <h4>{{ block.settings.right_first_box_title }}</h4>
+                                {{ block.settings.right_first_box_content }}
+                            </div>
+                            <div style="background:{{ block.settings.bg_col2 }}" class="boxes">
+                                <img src="{{ block.settings.second_image | img_url: 'master' }}" />
+                            </div>
+                            <div style="background:{{ block.settings.bg_col3 }}" class="boxes">
+                                <img src="{{ block.settings.third_image | img_url: 'master' }}" />
+                            </div>
+                            <div style="background:{{ block.settings.bg_col4 }}" class="boxes">
+                                <img src="{{ block.settings.fourth_image | img_url: 'master' }}" />
+                            </div>
+                        </div>
+                    </div>
+            {% endcase %}
+        {% endfor %}
+        
+    </div>
+</div>
+
+{%- schema -%}
+    {
+        "name": "Contents Image Blocks",
+        "tag": "section",
+        "class": "contents-image-block_wrap",
+        "settings": [
+            
+        ],
+        "blocks": [
+            {
+                "type": "first",
+                "name": "First Row",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "left_text",
+                        "label": "Left side Title"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "left_contents",
+                        "label": "Left side Contents"
+                    },
+                    {
+                        "type": "text",
+                        "id": "right_title",
+                        "label": "Right side Title"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "right_contents",
+                        "label": "Right side Contents"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "right_image",
+                        "label": "Image"
+                    }
+                ]
+            },
+            {
+                "type": "second",
+                "name": "Second Row",
+                "settings": [
+                    {
+                        "type": "color",
+                        "id": "bg_col1",
+                        "label": "First Box Background",
+                        "default": "#fff"
+                    },
+                    {
+                        "type": "color",
+                        "id": "bg_col2",
+                        "label": "Second Box Background",
+                        "default": "#001A3E"
+                    },
+                    {
+                        "type": "color",
+                        "id": "bg_col3",
+                        "label": "Third Box Background",
+                        "default": "#2B4C7B"
+                    },
+                    {
+                        "type": "color",
+                        "id": "bg_col4",
+                        "label": "Fourth Box Background",
+                        "default": "#fff"
+                    },
+                    {
+                        "type": "text",
+                        "id": "left_title",
+                        "label": "Title"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "left_image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "right_first_box_title",
+                        "label": "Right first box Title"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "right_first_box_content",
+                        "label": "Right first box Content"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "second_image",
+                        "label": "Secon Box Image"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "third_image",
+                        "label": "Third Box Image"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "fourth_image",
+                        "label": "Fourth Box Image"
+                    }
+                ]
+            },
+            {
+                "type": "third",
+                "name": "Third Row",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "third_left_text",
+                        "label": "Left side Title"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "third_left_contents",
+                        "label": "Left side Contents"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "third_third_image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "third_right_title",
+                        "label": "Right side Title"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "third_right_contents",
+                        "label": "Right side Contents"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Contents Image Blocks",
+                "settings": {}
+            }
+        ]
+    }
+{%- endschema -%}

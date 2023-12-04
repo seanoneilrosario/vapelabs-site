@@ -76,7 +76,7 @@
       </div>
     </div> {% endcomment %}
     <div id="header-sticky" class="main-header {{ sticky_class }}">
-      <div class="container header_contents-wrap">
+      <div class="header_contents-wrap">
         <div class="header_logo_wrap">
           <div class="h1 header-logo" itemscope itemtype="http://schema.org/Organization">
             {% if section.settings.logo != blank %}
@@ -95,74 +95,85 @@
             {% render 'search-bar' %} 
           </div>
         </div>  {% endcomment %}
-        <div class="right-link-icon">
-          {% if section.settings.display_wishlist %}   
-          <div class="wishlist-icon-div">
-            {% render 'wishlist' %} 
+        {% if customer %}
+          <div class="right-link-icon">
+            {% if section.settings.display_wishlist %}   
+            <div class="wishlist-icon-div">
+              {% render 'wishlist' %} 
+            </div>
+            {% endif %}
+            {% if section.settings.display_compare %}   
+            <div class="compare-icon-div">
+              <a class="compare" href="{% if shop.locale != 'en' %}/{{ shop.locale }}{% endif %}/pages/compare" title="{{ 'products.compare.compare_name' | t }}">
+                <i class="mdi mdi-repeat"></i><div class="compare-icon">{{ 'products.compare.compare_name' | t }}</div><span class="compare-count"></span></a>
+            </div>
+            {% endif %} 
+            {% if section.settings.display_myaccount %}
+            <div class="myaccount icon-btn">
+              <span class="dropdown-toggle" title="My Account" data-toggle="dropdown">
+                <i class="mdi mdi-account-outline"></i>
+                <span class="account-title">{{ 'customer.account.title' | t }}</span>
+                <i class="mdi mdi-chevron-down" aria-hidden="true"></i>
+                <i class="mdi mdi-chevron-up" aria-hidden="true"></i>
+              </span>
+              <div class="customer_account">  
+                <ul>
+                  {% if shop.customer_accounts_enabled %}
+                  {% if customer %}
+                  <li>
+                    <a href="/account" title="{{ 'customer.account.hello' | t }}">{{ 'customer.account.hello' | t }} , <span class="username">{{ customer.first_name }}</span></a>
+                  </li>
+                  <li class="logout-link">
+                    {{ 'layout.customer.log_out' | t | customer_logout_link }}
+                  </li>
+                  {% else %}
+                  <li>
+                    <i class="mdi mdi-login"></i>
+                    <a href="/account/login" title="{{ 'layout.customer.log_in' | t }}">{{ 'layout.customer.log_in' | t }}</a>
+                  </li>
+                  <li>
+                    <i class="mdi mdi-account-plus-outline"></i>
+                    <a href="/account/register" title="{{ 'layout.customer.create_account' | t }}">{{ 'layout.customer.create_account' | t }}</a>
+                  </li>          
+                  {% endif %}  
+                  {% endif %} 
+                </ul>
+              </div>
+            </div>
+            {% endif %}
+            {% if section.settings.display_cart %}  
+            <div class="site-header__cart icon-btn">
+              <div class="wrapper-top-cart">                 
+                <a href="/cart" id="cart-products-count" class="site-header_cart_link">                    
+                  <i class="mdi mdi-cart"></i>
+                  {% if cart.item_count > 0 %}
+                  <div id="CartCount_sticky" class="site-header__cart-count" title="Cart" >
+                    <span class="cart-products-count" aria-hidden="true">{{ cart.item_count }}</span>
+                    <span class="cart-products-detail">{{ 'general.header.cart_title' | t }}</span>                
+                  </div>
+                  {% else %}
+                  <div id="CartCount_sticky" class="site-header__cart-count">
+                    <span class="cart-products-count" aria-hidden="true">0</span><span class="cart-products-detail">{{ 'general.header.cart_title' | t }}</span>        
+                  </div>
+                  {% endif %}
+                </a>
+              </div>
+            </div>
+            <div class="fixed-cart-wrap">
+              {% render 'mini-cart' %} 
+            </div>
+            {% endif %}
           </div>
-          {% endif %}
-          {% if section.settings.display_compare %}   
-          <div class="compare-icon-div">
-            <a class="compare" href="{% if shop.locale != 'en' %}/{{ shop.locale }}{% endif %}/pages/compare" title="{{ 'products.compare.compare_name' | t }}">
-              <i class="mdi mdi-repeat"></i><div class="compare-icon">{{ 'products.compare.compare_name' | t }}</div><span class="compare-count"></span></a>
-          </div>
-          {% endif %} 
-          {% if section.settings.display_myaccount %}
-          <div class="myaccount icon-btn">
-            <span class="dropdown-toggle" title="My Account" data-toggle="dropdown">
-              <i class="mdi mdi-account-outline"></i>
-              <span class="account-title">{{ 'customer.account.title' | t }}</span>
-              <i class="mdi mdi-chevron-down" aria-hidden="true"></i>
-              <i class="mdi mdi-chevron-up" aria-hidden="true"></i>
-            </span>
-            <div class="customer_account">  
-              <ul>
-                {% if shop.customer_accounts_enabled %}
-                {% if customer %}
-                <li>
-                  <a href="/account" title="{{ 'customer.account.hello' | t }}">{{ 'customer.account.hello' | t }} , <span class="username">{{ customer.first_name }}</span></a>
-                </li>
-                <li class="logout-link">
-                  {{ 'layout.customer.log_out' | t | customer_logout_link }}
-                </li>
-                {% else %}
-                <li>
-                  <i class="mdi mdi-login"></i>
-                  <a href="/account/login" title="{{ 'layout.customer.log_in' | t }}">{{ 'layout.customer.log_in' | t }}</a>
-                </li>
-                <li>
-                  <i class="mdi mdi-account-plus-outline"></i>
-                  <a href="/account/register" title="{{ 'layout.customer.create_account' | t }}">{{ 'layout.customer.create_account' | t }}</a>
-                </li>          
-                {% endif %}  
-                {% endif %} 
-              </ul>
+        {% else %}
+          <div class="login_register">
+            <h4 class="login_wrap">
+              <a href="/my-account/">Login</a>
+            </h4>
+            <div class="register_wrap">
+              <a href="/my-account/">Register Today</a>
             </div>
           </div>
-          {% endif %}
-          {% if section.settings.display_cart %}  
-          <div class="site-header__cart icon-btn">
-            <div class="wrapper-top-cart">                 
-              <a href="/cart" id="cart-products-count" class="site-header_cart_link">                    
-                <i class="mdi mdi-cart"></i>
-                {% if cart.item_count > 0 %}
-                <div id="CartCount_sticky" class="site-header__cart-count" title="Cart" >
-                  <span class="cart-products-count" aria-hidden="true">{{ cart.item_count }}</span>
-                  <span class="cart-products-detail">{{ 'general.header.cart_title' | t }}</span>                
-                </div>
-                {% else %}
-                <div id="CartCount_sticky" class="site-header__cart-count">
-                  <span class="cart-products-count" aria-hidden="true">0</span><span class="cart-products-detail">{{ 'general.header.cart_title' | t }}</span>        
-                </div>
-                {% endif %}
-              </a>
-            </div>
-          </div>
-          <div class="fixed-cart-wrap">
-            {% render 'mini-cart' %} 
-          </div>
-          {% endif %}
-        </div>
+        {% endif %}
       </div>
     </div>
     <div class="bottom_header_1">

@@ -1982,8 +1982,8 @@ pre code {
 
   .container--narrow {
     max-width: 1140px;
-    padding-right: 30px;
-    padding-left: 30px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

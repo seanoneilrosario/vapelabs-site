@@ -71,9 +71,16 @@
               <h3>{{ block.settings.menu_heading }}</h3>
               <div class="footer-menu_item">
                 {% for link in block.settings.menu.links %}
+                  {% if link.url == "#" %}
+                    <span>
+                      {{ link.title }}
+                    </span>
+                  {% else %}
                   <a href="{{ link.url }}">
                     {{ link.title }}
                   </a>
+                  {% endif %}
+                  
                 {% endfor %}
               </div> 
         

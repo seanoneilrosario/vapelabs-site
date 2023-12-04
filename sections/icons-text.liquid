@@ -1,0 +1,50 @@
+<div class="icons-text container--narrow">
+    <div class="icon_items" style="background:{{ section.settings.bg_color }}">
+        {% for block in section.blocks %}
+            <div class="icon_item">
+                <img src="{{ block.settings.icon_image | img_url: 'master' }}" />
+                <span>{{ block.settings.icon_title }}</span>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{%- schema -%}
+    {
+        "name": "Icons with text",
+        "tag": "section",
+        "class": "icons-text_wrap",
+        "settings": [
+            {
+                "type": "color",
+                "id": "bg_color",
+                "label": "Background Color",
+                "default": "#F8F8F8"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "icons",
+                "name": "Icons with Text",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "icon_image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "icon_title",
+                        "label": "Title"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Icons with text",
+                "settings": {}
+            }
+        ]
+    }
+{%- endschema -%}
