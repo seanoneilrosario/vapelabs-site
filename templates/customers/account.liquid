@@ -7,141 +7,142 @@ More info:- http://www.tetchi.ca/shopify-theme-from-scratch-part-11/
 Template note:- All IDs on this template are required to make the form(s) submit properly
 For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-variables/customer
 {% endcomment %}
-<div class="account-dash">
-  <div class="logo_toggle">
-    <a><img /></a>
-    <span><</span>
+<div class="account_details">
+  <div class="account-dash">
+    <div class="logo_toggle">
+      <a><img /></a>
+      <span><</span>
+    </div>
+    <div>
+      <img />
+      <h3>Welcome</h3>
+      <span>On Behalf of</span>
+    </div>
+    <h4>ACCOUNT DASHBOARD</h4>
+    <ul>
+      <li>
+        <a>
+          <span></span>
+          <span>
+            Account Details
+          </span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <span></span>
+          <span>
+            Shop Products
+          </span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <span></span>
+          <span>
+            Orders
+          </span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <span></span>
+          <span>
+            Book Free Training Session
+          </span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <span></span>
+          <span>
+            Education Centre
+          </span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <span></span>
+          <span>
+            Cart Items
+          </span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <span></span>
+          <span>
+            Checkout Page
+          </span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <span></span>
+          <span>
+            Settings
+          </span>
+        </a>
+      </li>
+      <li>
+        {%- if customer -%}
+           <a href="/account/logout">
+               Logout
+           </a>
+        {%- endif -%}
+      </li>
+    </ul>
   </div>
-  <div>
-    <img />
-    <h3>Welcome</h3>
-    <span>On Behalf of</span>
-  </div>
-  <h4>ACCOUNT DASHBOARD</h4>
-  <ul>
-    <li>
-      <a>
-        <span></span>
-        <span>
-          Account Details
-        </span>
-      </a>
-    </li>
-    <li>
-      <a>
-        <span></span>
-        <span>
-          Shop Products
-        </span>
-      </a>
-    </li>
-    <li>
-      <a>
-        <span></span>
-        <span>
-          Orders
-        </span>
-      </a>
-    </li>
-    <li>
-      <a>
-        <span></span>
-        <span>
-          Book Free Training Session
-        </span>
-      </a>
-    </li>
-    <li>
-      <a>
-        <span></span>
-        <span>
-          Education Centre
-        </span>
-      </a>
-    </li>
-    <li>
-      <a>
-        <span></span>
-        <span>
-          Cart Items
-        </span>
-      </a>
-    </li>
-    <li>
-      <a>
-        <span></span>
-        <span>
-          Checkout Page
-        </span>
-      </a>
-    </li>
-    <li>
-      <a>
-        <span></span>
-        <span>
-          Settings
-        </span>
-      </a>
-    </li>
-    <li>
-      {%- if customer -%}
-         <a href="/account/logout">
-             Logout
-         </a>
-      {%- endif -%}
-    </li>
-  </ul>
-</div>
-<div class="account-container">
-  <div class="grid">
-    <div class="grid-item customer-orders two-thirds medium-down--one-whole">
-      <h2 class="tt-innerpagetitle">{{ 'customer.orders.title' | t }}</h2>
-      {% comment %}
-      If we have past orders, loop through each one
-      {% endcomment %}
-      {% paginate customer.orders by 20 %}
-      {% if customer.orders.size != 0 %}
-      <table class="full">
-        <thead>
-          <tr>
-            <th>{{ 'customer.orders.order_number' | t }}</th>
-            <th>{{ 'customer.orders.date' | t }}</th>
-            <th>{{ 'customer.orders.payment_status' | t }}</th>
-            <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
-            <th>{{ 'customer.orders.total' | t }}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for order in customer.orders %}
-          <tr>
-            <td>{{ order.name | link_to: order.customer_url }}</td>
-            <td>{{ order.created_at | date: "%b %d, %Y" }}</td>
-            <td>{{ order.financial_status_label }}</td>
-            <td>{{ order.fulfillment_status_label }}</td>
-            <td>{{ order.total_price | money }}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-      {% else %}
-      <p>{{ 'customer.orders.none' | t }}</p>
-      {% endif %}
-      {% if paginate.pages > 1 %}
-      <div class="text-center">
-        {% render 'pagination-custom', paginate: paginate %}
+  <div class="account-container">
+    <div class="grid">
+      <div class="grid-item customer-orders two-thirds medium-down--one-whole">
+        <h2 class="tt-innerpagetitle">{{ 'customer.orders.title' | t }}</h2>
+        {% comment %}
+        If we have past orders, loop through each one
+        {% endcomment %}
+        {% paginate customer.orders by 20 %}
+        {% if customer.orders.size != 0 %}
+        <table class="full">
+          <thead>
+            <tr>
+              <th>{{ 'customer.orders.order_number' | t }}</th>
+              <th>{{ 'customer.orders.date' | t }}</th>
+              <th>{{ 'customer.orders.payment_status' | t }}</th>
+              <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
+              <th>{{ 'customer.orders.total' | t }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for order in customer.orders %}
+            <tr>
+              <td>{{ order.name | link_to: order.customer_url }}</td>
+              <td>{{ order.created_at | date: "%b %d, %Y" }}</td>
+              <td>{{ order.financial_status_label }}</td>
+              <td>{{ order.fulfillment_status_label }}</td>
+              <td>{{ order.total_price | money }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <p>{{ 'customer.orders.none' | t }}</p>
+        {% endif %}
+        {% if paginate.pages > 1 %}
+        <div class="text-center">
+          {% render 'pagination-custom', paginate: paginate %}
+        </div>
+        {% endif %}
+        {% endpaginate %}
       </div>
-      {% endif %}
-      {% endpaginate %}
-    </div>
-    <div class="grid-item one-third medium-down--one-whole">
-      <h2 class="tt-innerpagetitle">{{ 'customer.account.details' | t }}</h2>
-
-      {{customer.default_address | format_address }}
-      <p><a href="{{ routes.account_addresses_url }}">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a></p>
+      <div class="grid-item one-third medium-down--one-whole">
+        <h2 class="tt-innerpagetitle">{{ 'customer.account.details' | t }}</h2>
+  
+        {{customer.default_address | format_address }}
+        <p><a href="{{ routes.account_addresses_url }}">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a></p>
+      </div>
     </div>
   </div>
 </div>
-
 <style>
   .page-element.header_1,
   .breadcrumb-wrap {
