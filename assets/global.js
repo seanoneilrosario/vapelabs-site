@@ -846,12 +846,8 @@ customElements.define('variant-radios', VariantRadios);
 filterCollection()
 
 $(document).ready(function() {
-    const header_height = $('#header-sticky');
+    const header_height = $('.header_logo_wrap');
     document.documentElement.style.setProperty('--header-height', `${header_height.height()}px`);
-    $(window).on('resize', function(){
-      document.documentElement.style.setProperty('--header-height', `${header_height.height()}px`);
-    });
-  console.log(header_height.height())
 });
 
 const parallax_start = document.querySelector('.cta-parallax-banner_wrap');
