@@ -845,12 +845,13 @@ customElements.define('variant-radios', VariantRadios);
   }
 filterCollection()
 
-const header_height = document.querySelector('.header_contents-wrap');
-document.documentElement.style.setProperty('--header-height', `${header_height.clientHeight}px`);
-$(window).on('resize', function(){
-  document.documentElement.style.setProperty('--header-height', `${header_height.clientHeight}px`);
+$(document).ready(function() {
+    const header_height = document.querySelector('.header_contents-wrap');
+    document.documentElement.style.setProperty('--header-height', `${header_height.clientHeight}px`);
+    $(window).on('resize', function(){
+      document.documentElement.style.setProperty('--header-height', `${header_height.clientHeight}px`);
+    });
 });
-
 
 const parallax_start = document.querySelector('.cta-parallax-banner_wrap');
 const image = document.querySelector('.parallax_wrapper img');
