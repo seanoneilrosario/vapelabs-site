@@ -14,8 +14,8 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
   </div>
   <div>
     <img />
-    <h3>Welcome</h3>
-    <span>On Behalf of</span>
+    <h3>Welcome {{ customer.first_name }}</h3>
+    <span>On Behalf of {% for tag in customer.tags %}{{ tag }}{% endfor %}</span>
   </div>
   <h4>ACCOUNT DASHBOARD</h4>
   <ul>
@@ -228,6 +228,7 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
     font-weight: 600;
     color: #2D4D7C;
     padding: 10px;
+    line-height: 1.2;
   }
 
   .icon {
