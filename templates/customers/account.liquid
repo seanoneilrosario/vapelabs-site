@@ -169,12 +169,25 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
 </div>
 <div class="account_details">
   <div class="account-container">
-    <div class="grid">
+    <div class="verified">
+      <h3>{% for tag in customer.tags %}{{ tag }}{% endfor %}</h3>
+      <span>
+        <svg viewBox="0 0 384 448">
+          <title></title>
+          <g id="icomoon-ignore">
+          </g>
+          <path fill="#fff" d="M321 183.5c0-4.25-1.5-8.5-4.5-11.5l-22.75-22.5c-3-3-7-4.75-11.25-4.75s-8.25 1.75-11.25 4.75l-102 101.75-56.5-56.5c-3-3-7-4.75-11.25-4.75s-8.25 1.75-11.25 4.75l-22.75 22.5c-3 3-4.5 7.25-4.5 11.5s1.5 8.25 4.5 11.25l90.5 90.5c3 3 7.25 4.75 11.25 4.75 4.25 0 8.5-1.75 11.5-4.75l135.75-135.75c3-3 4.5-7 4.5-11.25zM384 224c0 106-86 192-192 192s-192-86-192-192 86-192 192-192 192 86 192 192z"></path>
+        </svg>
+        VERIFIED PHARMACIST
+      </span>
+    </div>
+    {% comment %}<div class="grid">
       <div class="grid-item customer-orders two-thirds medium-down--one-whole">
-        <h2 class="tt-innerpagetitle">{{ 'customer.orders.title' | t }}</h2>
-        {% comment %}
-        If we have past orders, loop through each one
-        {% endcomment %}
+        <div>
+          
+        </div>
+        <h2 class="tt-innerpagetitle">{% for tag in customer.tags %}{{ tag }}{% endfor %}</h2>
+        
         {% paginate customer.orders by 20 %}
         {% if customer.orders.size != 0 %}
         <table class="full">
@@ -214,7 +227,7 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
         {{customer.default_address | format_address }}
         <p><a href="{{ routes.account_addresses_url }}">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a></p>
       </div>
-    </div>
+    </div> {% endcomment %}
   </div>
 </div>
 <style>
