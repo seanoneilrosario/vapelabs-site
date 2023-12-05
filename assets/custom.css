@@ -1199,7 +1199,7 @@ body {
     justify-content: space-between;
     background: #81BBE1;
     align-items: center;
-    margin: 0 40px;
+    margin: 0 20px;
     padding: 10px 25px;
     border-radius: 10px;
     flex-wrap: wrap;
@@ -1225,5 +1225,9 @@ body {
 @media(min-width: 990px) {
     .cta-bar_contents h3 {
         font-size: 20px;
+    }
+
+    .cta-bar_contents {
+        margin: 0 40px;
     }
 }
