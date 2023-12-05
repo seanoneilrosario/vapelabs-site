@@ -846,7 +846,7 @@ customElements.define('variant-radios', VariantRadios);
 filterCollection()
 
 $(document).ready(function() {
-    const header_height = $('.header_contents-wrap');
+    const header_height = $('#header-sticky');
     document.documentElement.style.setProperty('--header-height', `${header_height.height()}px`);
     $(window).on('resize', function(){
       document.documentElement.style.setProperty('--header-height', `${header_height.height()}px`);
