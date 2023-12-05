@@ -851,6 +851,7 @@ $(document).ready(function() {
     $(window).on('resize', function(){
       document.documentElement.style.setProperty('--header-height', `${header_height.clientHeight}px`);
     });
+  console.log(header_height.clientHeight)
 });
 
 const parallax_start = document.querySelector('.cta-parallax-banner_wrap');
