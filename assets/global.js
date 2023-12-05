@@ -846,12 +846,12 @@ customElements.define('variant-radios', VariantRadios);
 filterCollection()
 
 $(document).ready(function() {
-    const header_height = document.querySelector('.header_contents-wrap');
-    document.documentElement.style.setProperty('--header-height', `${header_height.clientHeight}px`);
+    const header_height = $('.header_contents-wrap');
+    document.documentElement.style.setProperty('--header-height', `${header_height.height()}px`);
     $(window).on('resize', function(){
-      document.documentElement.style.setProperty('--header-height', `${header_height.clientHeight}px`);
+      document.documentElement.style.setProperty('--header-height', `${header_height.height()}px`);
     });
-  console.log(header_height.clientHeight)
+  console.log(header_height.height())
 });
 
 const parallax_start = document.querySelector('.cta-parallax-banner_wrap');
@@ -864,7 +864,6 @@ if (parallax_start) {
     }
     const el_from_top = window.scrollY + parallax_start.getBoundingClientRect().top - parallax_start.offsetHeight - 40;
     const scroll = scrollY - el_from_top;
-    console.log(scroll, scrollY);
     if (scrollY >= el_from_top && scroll < 380) {
       const es = scrollY - el_from_top;
       image.style.transform = `translateY(-${es / 3}px)`;
