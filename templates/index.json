@@ -112,7 +112,7 @@
         "9f47c712-7304-4f84-8791-0db7f4b20b85": {
           "type": "third",
           "settings": {
-            "first_bg_col": "#fff",
+            "first_bg_col": "#ffffff",
             "second_bg_col": "#001a3d",
             "third_left_text": "Get Products Faster.",
             "third_left_contents": "<p>Say goodbye to unnecessary delays and experience the convenience of a well-coordinated supply chain. No matter where you’re located in Australia, Vapelabs ensures prompt and reliable shipping.<\/p>",
@@ -151,6 +151,89 @@
         "button_title": "BOOK NOW",
         "button_link": "#"
       }
+    },
+    "cfeabc86-3a57-44ac-8953-9f7440d710f3": {
+      "type": "logo-slider",
+      "blocks": {
+        "10be7fd6-2619-4056-8ce6-137d4a4e1d4d": {
+          "type": "logo",
+          "settings": {
+            "image_logo": "shopify:\/\/shop_images\/1-1-PhotoRoom.png-PhotoRoom.png"
+          }
+        },
+        "7d804229-d330-46e3-9af4-812c18732e68": {
+          "type": "logo",
+          "settings": {
+            "image_logo": "shopify:\/\/shop_images\/Watson-e1699426326835-PhotoRoom.png-PhotoRoom.png"
+          }
+        },
+        "8d3f2e31-da19-45ae-ac8a-3cb77a123a3d": {
+          "type": "logo",
+          "settings": {
+            "image_logo": "shopify:\/\/shop_images\/Star-PhotoRoom.png-PhotoRoom.png"
+          }
+        },
+        "70c5a61f-ef38-42d7-939e-f7f23e0ff668": {
+          "type": "logo",
+          "settings": {
+            "image_logo": "shopify:\/\/shop_images\/Amcal.png"
+          }
+        },
+        "a1fab3da-b8f5-477e-87e8-4e671c7b0517": {
+          "type": "logo",
+          "settings": {
+            "image_logo": "shopify:\/\/shop_images\/download.png"
+          }
+        }
+      },
+      "block_order": [
+        "10be7fd6-2619-4056-8ce6-137d4a4e1d4d",
+        "7d804229-d330-46e3-9af4-812c18732e68",
+        "8d3f2e31-da19-45ae-ac8a-3cb77a123a3d",
+        "70c5a61f-ef38-42d7-939e-f7f23e0ff668",
+        "a1fab3da-b8f5-477e-87e8-4e671c7b0517"
+      ],
+      "settings": {
+        "heading": "Join our growing list of partners"
+      }
+    },
+    "a1e90f4c-1133-4e6c-9abf-521dbceb4d3c": {
+      "type": "featured-blogs",
+      "blocks": {
+        "70d63065-3dd0-4dad-8244-5937db3a08c9": {
+          "type": "logo",
+          "settings": {
+            "article": "news\/test-1"
+          }
+        },
+        "09ea33fa-3ff5-4ab5-b8a8-cd4d0e505a1c": {
+          "type": "logo",
+          "settings": {
+            "article": "news\/test-2"
+          }
+        },
+        "437db006-0ef1-4cf0-9dca-c38b41cf109f": {
+          "type": "logo",
+          "settings": {
+            "article": "news\/test-3"
+          }
+        },
+        "9ba4853f-50aa-419a-be67-fe4cf66ab4f6": {
+          "type": "logo",
+          "settings": {
+            "article": "news\/test-4"
+          }
+        }
+      },
+      "block_order": [
+        "70d63065-3dd0-4dad-8244-5937db3a08c9",
+        "09ea33fa-3ff5-4ab5-b8a8-cd4d0e505a1c",
+        "437db006-0ef1-4cf0-9dca-c38b41cf109f",
+        "9ba4853f-50aa-419a-be67-fe4cf66ab4f6"
+      ],
+      "settings": {
+        "heading": "Education & Guides"
+      }
     }
   },
   "order": [
@@ -160,6 +243,8 @@
     "084ee365-c6d4-419d-8d90-c578dc6949fe",
     "3c2ff592-a431-46a7-b3ec-d1383953b656",
     "e1e7994b-7c11-4201-a901-d971d1c4118e",
-    "57dfba87-ecd8-4166-87b9-7deaf2b0c3ba"
+    "57dfba87-ecd8-4166-87b9-7deaf2b0c3ba",
+    "cfeabc86-3a57-44ac-8953-9f7440d710f3",
+    "a1e90f4c-1133-4e6c-9abf-521dbceb4d3c"
   ]
 }
