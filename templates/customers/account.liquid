@@ -212,7 +212,6 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
 
   .account-dash ul li {
     margin: 5px 5px 15px 5px;
-    padding: 10px;
     border-radius: 10px;
     transition: 0.3s;
   }
@@ -228,6 +227,7 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
     font-size: 18px;
     font-weight: 600;
     color: #2D4D7C;
+    padding: 10px;
   }
 
   .icon {
@@ -235,10 +235,16 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
     display: flex;
   }
 
+  .account-dash ul li:hover .icon svg {
+    stroke: #77B6DE;
+    fill: #77B6DE;
+  }
+
   .icon svg {
     width: 25px;
     stroke: #2D4D7C;
-    fill: #2D4D7C; 
+    fill: #2D4D7C;
+    transition: 0.3s;
   }
 
   .account-dash {
