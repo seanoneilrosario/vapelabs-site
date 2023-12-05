@@ -8,7 +8,6 @@ Template note:- All IDs on this template are required to make the form(s) submit
 For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-variables/customer
 {% endcomment %}
 <div class="container">
-  <h1 class="tt-innerpagetitle">{{ 'customer.account.title' | t }}</h1>
   <div class="grid">
     <div class="grid-item customer-orders two-thirds medium-down--one-whole">
       <h2 class="tt-innerpagetitle">{{ 'customer.orders.title' | t }}</h2>
@@ -64,7 +63,9 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
 </div>
 
 <style>
-  .page-element.header_1 {
+  .page-element.header_1,
+  .breadcrumb-wrap {
     display: none !important;
   }
+  
 </style>
