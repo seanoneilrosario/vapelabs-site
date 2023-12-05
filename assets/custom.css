@@ -72,6 +72,7 @@ body {
     top: 0 !important;
     position: fixed;
     box-shadow: rgba(0, 0, 0, 0.75) 0px 5px 18px -11px;
+    z-index: 1000000;
 }
 
 #accessibleNav>li>a:before {
