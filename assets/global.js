@@ -847,7 +847,7 @@ filterCollection()
 
 $(document).ready(function() {
     const header_height = $('.header_logo_wrap');
-    document.documentElement.style.setProperty('--header-height', `${header_height.height()}px`);
+    document.documentElement.style.setProperty('--header-height', `${header_height.height() + 20}px`);
 });
 
 const parallax_start = document.querySelector('.cta-parallax-banner_wrap');
