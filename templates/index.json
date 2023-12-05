@@ -196,6 +196,44 @@
       "settings": {
         "heading": "Join our growing list of partners"
       }
+    },
+    "a1e90f4c-1133-4e6c-9abf-521dbceb4d3c": {
+      "type": "featured-blogs",
+      "blocks": {
+        "70d63065-3dd0-4dad-8244-5937db3a08c9": {
+          "type": "logo",
+          "settings": {
+            "article": "news\/test-1"
+          }
+        },
+        "09ea33fa-3ff5-4ab5-b8a8-cd4d0e505a1c": {
+          "type": "logo",
+          "settings": {
+            "article": "news\/test-2"
+          }
+        },
+        "437db006-0ef1-4cf0-9dca-c38b41cf109f": {
+          "type": "logo",
+          "settings": {
+            "article": "news\/test-3"
+          }
+        },
+        "9ba4853f-50aa-419a-be67-fe4cf66ab4f6": {
+          "type": "logo",
+          "settings": {
+            "article": "news\/test-4"
+          }
+        }
+      },
+      "block_order": [
+        "70d63065-3dd0-4dad-8244-5937db3a08c9",
+        "09ea33fa-3ff5-4ab5-b8a8-cd4d0e505a1c",
+        "437db006-0ef1-4cf0-9dca-c38b41cf109f",
+        "9ba4853f-50aa-419a-be67-fe4cf66ab4f6"
+      ],
+      "settings": {
+        "heading": "Education & Guides"
+      }
     }
   },
   "order": [
@@ -206,6 +244,7 @@
     "3c2ff592-a431-46a7-b3ec-d1383953b656",
     "e1e7994b-7c11-4201-a901-d971d1c4118e",
     "57dfba87-ecd8-4166-87b9-7deaf2b0c3ba",
-    "cfeabc86-3a57-44ac-8953-9f7440d710f3"
+    "cfeabc86-3a57-44ac-8953-9f7440d710f3",
+    "a1e90f4c-1133-4e6c-9abf-521dbceb4d3c"
   ]
 }
