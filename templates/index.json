@@ -304,6 +304,86 @@
       "settings": {
         "heading": "What our customers say"
       }
+    },
+    "97e22b58-7da8-4995-84e5-580e874a8583": {
+      "type": "image-with-text",
+      "settings": {
+        "bg_color": "#fff",
+        "heading_color": "#2d4d7c",
+        "color_text": "#2b2928",
+        "image_aligment": "right",
+        "image": "shopify:\/\/shop_images\/home-3.png",
+        "heading": "Increase your offering",
+        "contents": "<p>Increase your offering with access to Australia’s largest range of products. Our product range will enable you to make the best selection for your patients and support them through their smoking cessation journey.  Vapelabs provides you with an education centre where pharmacists can learn about products to give you the confidence to dispense our range. <\/p>",
+        "btn_text": "SIGN UP TO VIEW OUR RANGE",
+        "btn_link": "#"
+      }
+    },
+    "e4ad7bb6-3da7-4343-819d-67fa08c6ca82": {
+      "type": "logo-slider",
+      "blocks": {
+        "4b8c566d-f6da-441f-90c9-a3d9c46718d0": {
+          "type": "logo",
+          "settings": {
+            "image_logo": "shopify:\/\/shop_images\/WhatsApp-Image-2023-11-08-at-16.19.44_e96f2187.jpg"
+          }
+        },
+        "3d542305-6927-44a9-b14f-996eed610605": {
+          "type": "logo",
+          "settings": {
+            "image_logo": "shopify:\/\/shop_images\/1-4-e1700609597789.png"
+          }
+        },
+        "92959fd0-4ee0-48b4-979d-8324f5f4d99a": {
+          "type": "logo",
+          "settings": {
+            "image_logo": "shopify:\/\/shop_images\/4-3.png"
+          }
+        },
+        "d7429057-eaa8-451f-929b-00f0857c0960": {
+          "type": "logo",
+          "settings": {
+            "image_logo": "shopify:\/\/shop_images\/2-3.png"
+          }
+        },
+        "7723cb81-518f-4e46-9e77-d06ebf1a6084": {
+          "type": "logo",
+          "settings": {
+            "image_logo": "shopify:\/\/shop_images\/3-3.png"
+          }
+        },
+        "f227f21f-4f07-41ea-9de2-270f2a2c2cef": {
+          "type": "logo",
+          "settings": {
+            "image_logo": "shopify:\/\/shop_images\/Screenshot-2023-11-22-093826.png"
+          }
+        },
+        "9a6881a8-7d92-46ac-96d8-4326f55ed685": {
+          "type": "logo",
+          "settings": {
+            "image_logo": "shopify:\/\/shop_images\/Bay-pharma-768x130.png"
+          }
+        },
+        "d90b43c2-9997-4f23-8fd2-076027dbd25d": {
+          "type": "logo",
+          "settings": {
+            "image_logo": "shopify:\/\/shop_images\/6-1.png"
+          }
+        }
+      },
+      "block_order": [
+        "4b8c566d-f6da-441f-90c9-a3d9c46718d0",
+        "3d542305-6927-44a9-b14f-996eed610605",
+        "92959fd0-4ee0-48b4-979d-8324f5f4d99a",
+        "d7429057-eaa8-451f-929b-00f0857c0960",
+        "7723cb81-518f-4e46-9e77-d06ebf1a6084",
+        "f227f21f-4f07-41ea-9de2-270f2a2c2cef",
+        "9a6881a8-7d92-46ac-96d8-4326f55ed685",
+        "d90b43c2-9997-4f23-8fd2-076027dbd25d"
+      ],
+      "settings": {
+        "heading": "Discover our wide range of products"
+      }
     }
   },
   "order": [
@@ -317,6 +397,8 @@
     "cfeabc86-3a57-44ac-8953-9f7440d710f3",
     "a1e90f4c-1133-4e6c-9abf-521dbceb4d3c",
     "759563d6-ac26-44c4-82ff-94593b999598",
-    "acd5a8e8-8b2b-43bf-bc28-ecc3828cc686"
+    "acd5a8e8-8b2b-43bf-bc28-ecc3828cc686",
+    "97e22b58-7da8-4995-84e5-580e874a8583",
+    "e4ad7bb6-3da7-4343-819d-67fa08c6ca82"
   ]
 }
