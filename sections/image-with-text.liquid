@@ -1,15 +1,29 @@
 <div class="image-with-text container--narrow">
-    <div class="image_text {{ section.settings.image_aligment }}">
+    <div style="background:{{ section.settings.bg_color }}" class="image_text {{ section.settings.image_aligment }}">
         <div class="image_wrap">
             <img src="{{ section.settings.image | img_url: 'master' }}" />
         </div>
-        <div class="contents_wrap">
-            <h3>{{ section.settings.heading }}</h3>
+        <div style="color:{{ section.settings.color_text }}" class="contents_wrap">
+            <h3 style="color:{{ section.settings.heading_color }}">{{ section.settings.heading }}</h3>
             {{ section.settings.contents }}
             <a class="btn_primary" href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }}</a>
         </div>
     </div>
 </div>
+
+{% if section.settings.bg_color != '#ffffff'%}
+    <style>
+        #shopify-section-{{ section.id }} .image_text {
+            padding: 30px 30px 60px;
+            border-radius: 20px;
+        }
+
+        #shopify-section-{{ section.id }} .image_wrap img {
+            border-radius: 20px;
+        }
+    </style>
+{% endif %}
+
 
 {%- schema -%}
     {
@@ -17,6 +31,24 @@
         "tag": "section",
         "class": "image-with-text_wrap",
         "settings": [
+            {
+                "type": "color",
+                "id": "bg_color",
+                "label": "Backgroud Color",
+                "default": "#fff"
+            },
+            {
+                "type": "color",
+                "id": "heading_color",
+                "label": "Heading Color",
+                "default": "#2d4d7c"
+            },
+            {
+                "type": "color",
+                "id": "color_text",
+                "label": "Text Color",
+                "default": "#2b2928"
+            },
             {
                 "type": "radio",
                 "id": "image_aligment",

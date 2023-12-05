@@ -1,0 +1,73 @@
+<div class="testimonials">
+    <h2>{{ section.settings.heading }}</h2>
+    <div class="testimonials_slider">
+        {% for block in section.blocks %}
+            <div class="testimonial-slides">
+                <h3>{{ block.settings.title }}</h3>
+                <p>{{ block.settings.content }}</p>
+                <div class="img_and-name">
+                    <img src="{{ block.settings.image | img_url: 'master' }}" />
+                    <p>{{ block.settings.name }}</p>
+                    <span>
+                        <svg viewBox="0 0 384 448">
+                        <title/>
+                        <g id="icomoon-ignore">
+                        </g>
+                        <path fill="#fff" d="M321 183.5c0-4.25-1.5-8.5-4.5-11.5l-22.75-22.5c-3-3-7-4.75-11.25-4.75s-8.25 1.75-11.25 4.75l-102 101.75-56.5-56.5c-3-3-7-4.75-11.25-4.75s-8.25 1.75-11.25 4.75l-22.75 22.5c-3 3-4.5 7.25-4.5 11.5s1.5 8.25 4.5 11.25l90.5 90.5c3 3 7.25 4.75 11.25 4.75 4.25 0 8.5-1.75 11.5-4.75l135.75-135.75c3-3 4.5-7 4.5-11.25zM384 224c0 106-86 192-192 192s-192-86-192-192 86-192 192-192 192 86 192 192z"/>
+                        </svg>
+                        Pharmacist
+                    </span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{%- schema -%}
+    {
+        "name": "Testimonials",
+        "tag": "section",
+        "class": "testimonials_wrap",
+        "settings": [
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "testimony",
+                "name": "Testimony",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Heading"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "content",
+                        "label": "Contents"
+                    },
+                    {
+                        "type": "text",
+                        "id": "name",
+                        "label": "Name"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Testimonials",
+                "settings": {}
+            }
+        ]
+    }
+{%- endschema -%}
