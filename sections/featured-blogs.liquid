@@ -1,0 +1,48 @@
+<div class="feat-blog-post">
+    <h2>{{ section.settings.heading }}</h2>
+    <div class="feat-blog-post_slider">
+        {% for block in section.blocks %}
+            <a href="{{ block.settings.article.url }}" class="article-slides">
+                <img src="{{ block.settings.article.image.src | img_url: 'master' }}" />
+                <div class="article_contents">
+                    <h3>{{ block.settings.article.title | truncate: 23 }}</h3>
+                    <p>{{ block.settings.article.excerpt | truncate: 70 }}</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</div>
+
+{%- schema -%}
+    {
+        "name": "Featured Blog Post",
+        "tag": "section",
+        "class": "feat-blog-post_wrap",
+        "settings": [
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "logo",
+                "name": "Featured Article",
+                "settings": [
+                    {
+                        "type": "article",
+                        "id": "article",
+                        "label": "Article"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Featured Blog Post",
+                "settings": {}
+            }
+        ]
+    }
+{%- endschema -%}
