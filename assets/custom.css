@@ -936,6 +936,19 @@ body {
     margin: 20px 0;
 }
 
+.logo-slider_slider .slick-arrow:before {
+    background-color: #2b4b7a;
+    padding: 10px;
+    border-radius: 100%;
+    height: 40px;
+    display: block;
+    width: 40px;
+    font-size: 30px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .logo-slider_slider .slick-track {
     display: flex;
     align-items: center;
