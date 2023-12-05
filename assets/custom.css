@@ -7,10 +7,8 @@ body {
     background-color: #fff !important;
 }
 
-@media(min-width: 990px) {
-    main.main-content {
-        margin-top: var(--header-height) !important;
-    }
+main.main-content {
+    margin-top: var(--header-height) !important;
 }
 
 .btn_primary {
