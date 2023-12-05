@@ -68,6 +68,12 @@ body {
     display: none;
 }
 
+.header_1_wrapper .main-header {
+    top: 0 !important;
+    position: fixed;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 5px 18px -11px;
+}
+
 #accessibleNav>li>a:before {
     display: none;
 }
