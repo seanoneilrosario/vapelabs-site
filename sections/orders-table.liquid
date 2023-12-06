@@ -40,8 +40,12 @@
     {% else %}
     <p>{{ 'customer.orders.none' | t }}</p>
     {% endif %}
-    {% for line_item in order.line_items %}
-      <a href="{{ line_item.fulfillment.tracking_url }}">{{ line_item.fulfillment.tracking_company }} #{{ line_item.fulfillment.tracking_number}}</a>
+    {% for order in customer.orders %}
+      {% for line_item in order.line_items %}
+        <pre>
+          {{ line_item }}
+        </pre>
+      {% endfor %}
     {% endfor %}
     {% if paginate.pages > 1 %}
     <div class="text-center">
