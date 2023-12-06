@@ -192,10 +192,26 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
       </div>
     </div>
 
-    <div>
+    <div class="account_details">
       <h2>
         ACCOUNT DETAILS
       </h2>
+      <div class="details_boxes">
+        <div class="details-box">
+          <div class="edit_box">
+            <h4>COMPANY DETAILS</h4>
+            <a>EDIT</a>
+          </div>
+          <div class="box-details">
+            <img />
+            <div class="details-contents">
+              <h5>{% for tag in customer.tags %}{{ tag }}{% endfor %}</h5>
+              <p>{{ customer_address.address1 }}</p>
+              <p>{{ customer_address.address2 }} {{ customer_address.street }} {{ customer_address.city }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     {% comment %}<div class="grid">
       <div class="grid-item customer-orders two-thirds medium-down--one-whole">
