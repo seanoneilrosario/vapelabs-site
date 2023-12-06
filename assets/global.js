@@ -899,7 +899,7 @@ const options = {
   }
 };
 
-fetch('https://www.zohoapis.com/subscriptions/v1/invoices', options)
+fetch('https://www.zohoapis.com.au/subscriptions/v1/invoices', options)
   .then(response => response.json())
   .then(response => console.log(response))
   .catch(err => console.error(err));
