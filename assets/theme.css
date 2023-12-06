@@ -3403,6 +3403,9 @@ input[type="search"] {
 .customer-orders table td {
   background: #fff;
 }
+.customer-orders table td {
+  white-space: nowrap;
+}
 .customer-orders table a {
   font-weight: 600;
   color: #77b6de;
