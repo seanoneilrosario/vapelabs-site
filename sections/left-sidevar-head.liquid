@@ -301,13 +301,14 @@
   }
 
   .toggle_open {
-    position: fixed;
+    position: absolute;
     transition: 0.3s;
     left: 20px;
     transform: rotate(180deg);
   }
 
   .toggle_open.active {
+    position: fixed;
     left: 250px;
     transform: rotate(0deg);
   }
