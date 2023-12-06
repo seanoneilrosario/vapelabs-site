@@ -879,6 +879,7 @@ $('.toggle_open').on( "click", function() {
 const options = {
   method: 'GET',
   headers: {
+    'Access-Control-Allow-Origin': 'Access-Control-Allow-Origin',
     Authorization: 'Zoho-oauthtoken 1000.c5357a4e8f4bf181d4733e489e56feb2.76d0ded08df7cbf22d8bdd0d1a1c3b27'
   }
 };
