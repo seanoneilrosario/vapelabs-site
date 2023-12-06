@@ -22,7 +22,7 @@
         "linkedlist_title": "Category",
         "show_filter": true,
         "collapse_on_larger_devices": false,
-        "enable_sorting": false,
+        "enable_sorting": true,
         "enable_sidebar_multiple_choice": true,
         "show_best_products": false,
         "best_title": "best seller",
