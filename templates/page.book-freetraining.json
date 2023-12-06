@@ -2,11 +2,18 @@
   "sections": {
     "main": {
       "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "f7ddcf00-dede-4642-b2f2-38cfb93bee21": {
+      "type": "left-sidevar-head",
       "settings": {
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "f7ddcf00-dede-4642-b2f2-38cfb93bee21"
   ]
 }
