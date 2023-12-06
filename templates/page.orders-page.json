@@ -20,6 +20,11 @@
         "button_link": "#"
       }
     },
+    "0111669a-db28-48fa-8a3e-e62d8ae92563": {
+      "type": "white-boxes",
+      "settings": {
+      }
+    },
     "f4b0dfc5-f49b-493b-af85-854cf1ebc8b2": {
       "type": "orders-table",
       "settings": {
@@ -30,6 +35,7 @@
     "main",
     "54066118-8441-4caa-a21a-e26494d59c72",
     "3430df6b-e8e6-480e-823d-eb3f48d79e75",
+    "0111669a-db28-48fa-8a3e-e62d8ae92563",
     "f4b0dfc5-f49b-493b-af85-854cf1ebc8b2"
   ]
 }
