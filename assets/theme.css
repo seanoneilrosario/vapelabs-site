@@ -3392,7 +3392,7 @@ input[type="search"] {
 .customer-orders .tt-innerpagetitle{
   color: #fff;
   float: none;
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
 }
 .tt-innerpagetitle {
   float: left;
