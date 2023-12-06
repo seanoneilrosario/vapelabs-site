@@ -3394,6 +3394,17 @@ input[type="search"] {
   float: none;
   margin-bottom: 20px !important;
 }
+.customer-orders table {
+  background: #fff;
+}
+.customer-orders table th,
+.customer-orders table td {
+  background: #fff;
+}
+.customer-orders table a {
+  font-weight: 600;
+  color: #77b6de;
+}
 .tt-innerpagetitle {
   float: left;
   font: 500 22px/28px var(--font-stack-header);
