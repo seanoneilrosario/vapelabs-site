@@ -43,7 +43,7 @@
     {% for order in customer.orders %}
       {% for line_item in order.line_items %}
         <pre>
-          {{ line_item }}
+          {{ line_item.note }}
         </pre>
       {% endfor %}
     {% endfor %}
