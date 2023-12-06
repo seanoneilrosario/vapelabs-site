@@ -1,8 +1,14 @@
-<iframe src="https://book.vapelabs.com.au/portal-embed#/customer/nvp" width="100%" height="750px" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<iframe src="{{ section.settings.ifram_url }}" width="100%" height="750px" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 {% schema %}
   {
     "name": "Iframe",
-    "settings": [],
+    "settings": [
+      {
+        "type": "text",
+        "id": "ifram_url",
+        "label": "Iframe Url"
+      }
+    ],
     "presets": [
         {
             "name": "Iframe",
