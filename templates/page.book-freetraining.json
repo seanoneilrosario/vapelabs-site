@@ -11,7 +11,7 @@
       "settings": {
       }
     },
-    "70049026-eb19-436b-8d6c-f850f5975e11": {
+    "e261b9f0-3931-4afb-8a18-7a5ec4febdff": {
       "type": "iframe",
       "settings": {
         "ifram_url": "https:\/\/book.vapelabs.com.au\/portal-embed#\/customer\/nvp"
@@ -21,6 +21,6 @@
   "order": [
     "main",
     "f7ddcf00-dede-4642-b2f2-38cfb93bee21",
-    "70049026-eb19-436b-8d6c-f850f5975e11"
+    "e261b9f0-3931-4afb-8a18-7a5ec4febdff"
   ]
 }
