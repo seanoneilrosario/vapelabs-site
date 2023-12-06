@@ -436,11 +436,7 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
 
   .booking_logo {
     display: flex;
-<<<<<<< HEAD
-    background: #2d4d7c; 
-=======
     background: #2d4d7c;
->>>>>>> 8d7c9e5949d0f1f24c15614e699693ed14978c5b
     padding: 20px;
     width: 100%;
     margin-right: 0;
@@ -568,10 +564,53 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
     margin-bottom: 0;
   }
 
+  .toggle_open {
+    position: fixed;
+    transition: 0.3s;
+    left: 20px;
+    transform: rotate(180deg);
+  }
+
+  .toggle_open.active {
+    position: fixed;
+    left: 250px;
+    transform: rotate(0deg);
+  }
+
   @media(min-width: 990px) {
     .details-box {
       width: calc(50% - 20px);
       margin: 10px;
+    }
+  }
+
+  @media(min-width: 1200px) {
+    body .page-wrapper main.main-content {
+      margin-left: 300px !important;
+    }
+
+    body .page-wrapper main.main-content.active {
+      margin-left: 0 !important;
+    }
+
+    .account-dash {
+      left: 0;
+    }
+
+    .account-dash.width-hide {
+      left: -300px;
+    }
+
+    .toggle_open {
+      left: 250px;
+      position: absolute;
+      transition: 0.3s;
+      transform: rotate(0deg);
+    }
+
+    .toggle_open.active {
+      left: 40px;
+      transform: rotate(180deg);
     }
   }
   
