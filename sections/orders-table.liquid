@@ -41,7 +41,7 @@
     <p>{{ 'customer.orders.none' | t }}</p>
     {% endif %}
     {% for order in customer.orders %}
-      {{ order.id }}
+      {{ order.name }}
       {% for tag in order.tags %}
         <p>{{ tag }}</p>
       {% endfor %}
