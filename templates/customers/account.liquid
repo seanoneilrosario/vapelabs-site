@@ -210,6 +210,9 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
               <p>{{ customer_address.address2 }} {{ customer_address.street }} {{ customer_address.city }}</p>
               {% for address in customer.addresses %}
                 {{ address.street }}
+                {{ address.state }}
+                {{ address.zip }}
+                {{ address.country }}
               {% endfor %}
             </div>
           </div>
