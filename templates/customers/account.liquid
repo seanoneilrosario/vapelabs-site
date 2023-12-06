@@ -211,6 +211,7 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
               {% for address in customer.addresses %}
                 {{ address.street }}
                 {{ address.city }}
+                {{ address.province }}
                 {{ address.zip }}
                 {{ address.country }}
               {% endfor %}
