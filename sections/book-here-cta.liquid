@@ -1,5 +1,11 @@
 <div class="verified">
-    <h3>{{ section.settings.page_title }}</h3>
+    <h3>
+        {% if collection.title %}
+            {{ collection.title }}
+        {% else %}
+            {{ section.settings.page_title }}
+        {% endif %}
+    </h3>
 </div>
 <div class="booking_section">
     <div class="booking_logo">

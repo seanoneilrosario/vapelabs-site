@@ -3743,6 +3743,8 @@ h3.tt-pagesubtitle {
   float: left;
   width: 100%;
   position: relative;
+  border-radius: 10px;
+  overflow: hidden;
 }
 /*---------------- CountDown CSS ----------------------------*/
 .countdownHolder{
@@ -15259,7 +15261,6 @@ details.mobile-facets__disclosure.disclosure-has-popup .mobile-facets__open{
 }
 /*=========================== Collection Page =============================*/
 .collection_template {
-  float: left;
   width: 100%;
 }
 .collection_template .collection-desc-wrap {
@@ -15273,14 +15274,14 @@ details.mobile-facets__disclosure.disclosure-has-popup .mobile-facets__open{
   -ms-box-shadow: 1px 2px 3px 0 #e5e5e5;
   -o-box-shadow: 1px 2px 3px 0 #e5e5e5;
 }
-@media only screen and (min-width: 1200px) {
+/* @media only screen and (min-width: 1200px) {
   .template-collection .left-sidebar.sidebar,.template-collection .right-sidebar.sidebar {
     width: 20%;
   }
   .template-collection .collection_wrapper{
     width: 80%;
   }
-}
+} */
 .collection-grid {
   margin-bottom: -var(--gutter);
     }
@@ -15457,7 +15458,7 @@ p.collection-count {
 a.grid-link.collection-link span.grid-link__title {
   font-size: 14px;
   font-weight: 600;
-  color: #111;
+  color: #2c4c7b;
   white-space: nowrap;
   transition: all 400ms ease-in-out 0s;
   -webkit-transition: all 400ms ease-in-out 0s;
@@ -15466,7 +15467,7 @@ a.grid-link.collection-link span.grid-link__title {
   -ms-transition: all 400ms ease-in-out 0s;
 }
 a.grid-link.collection-link span.grid-link__title:hover {
-  color: #FF5635;
+  color: #7bb9e2;
 }
 .filter-wrapper {
   float: left;

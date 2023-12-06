@@ -1,13 +1,9 @@
 <!-- /templates/collection.liquid -->
-<div class="container">
   <div class="row">
     <!-- /snippets/collection.liquid -->
     {% if settings.collection_sidebar_use == "left_sidebar" %}
     <div class="content_wrap left-sidebar-column">
-      <div class="col-xs-12 col-sm-3 left-sidebar sidebar">
-        {% render 'collection-sidebar' %}
-      </div>
-      <div class="col-xs-12 col-sm-9 collection_wrapper collection_right">
+      <div class="col-xs-12 col-sm-12 collection_wrapper collection_right">
         {% if settings.collections_masonry %}  
         {% render 'product-masonry' %}
         {% else %}
@@ -69,7 +65,6 @@
       {% endif %}
     </div>
   </div> 
-</div>
 {% schema %}
 {
 "name": "Collection",

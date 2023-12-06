@@ -1,6 +1,4 @@
 <!-- templates/list-collections -->
-<div class="container">
-  <div class="collection_wrapper">
     <div class="collection_template">
       <div class="grid">
         {% if settings.Collection_type =='show_category' %}
@@ -59,8 +57,6 @@
         {% endif %}
       </div>
     </div>
-  </div>
-</div>
 <style>.list-collection-products.show_products.owl-carousel {display: block;}</style>
 {{ 'masonry.js' | asset_url | script_tag }}
 <script>$(window).load(function(){var $container=$(".show_category.list-collection-products");$container.imagesLoaded(function(){$container.masonry({itemSelector:".grid__item",columnWidth:".grid__item",percentPosition:!0})})});</script>
