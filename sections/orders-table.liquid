@@ -19,16 +19,20 @@
         </tr>
       </thead>
       <tbody>
-        {% for orders in customer.orders %}
+        {% for order in customer.orders %}
         <tr>
-          <td>{{ orders.name | link_to: order.customer_url }}</td>
-          <td>{{ orders.created_at | date: "%b %d, %Y" }}</td>
-          <td>{{ orders.financial_status_label }}</td>
-          <td>{{ orders.fulfillment_status_label }}</td>
+          <td>{{ order.name | link_to: order.customer_url }}</td>
+          <td>{{ order.created_at | date: "%b %d, %Y" }}</td>
+          <td>{{ order.financial_status_label }}</td>
+          <td>{{ order.fulfillment_status_label }}</td>
           {% for line_item in order.line_items %}
-            <a href="{{ line_item.fulfillment.tracking_url }}">#{{ line_item.fulfillment.tracking_number}}</a>
+            {% if line_item.fulfillment.tracking_number %}
+              <td><a href="{{ line_item.fulfillment.tracking_url }}">#{{ line_item.fulfillment.tracking_number}}</a></td>
+            {% else %}
+              ---
+            {% endif %}
           {% endfor %}
-          <td>{{ orders.total_price | money }}</td>
+          <td>{{ order.total_price | money }}</td>
         </tr>
         {% endfor %}
       </tbody>
