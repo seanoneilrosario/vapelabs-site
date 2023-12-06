@@ -1,1 +1,18 @@
-{"sections":{"main":{"type":"main-list-collections","settings":{}}},"order":["main"]}
+{
+  "sections": {
+    "cc180d39-40f2-4653-beaf-7a02cb383faf": {
+      "type": "left-sidevar-head",
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "main-list-collections",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "cc180d39-40f2-4653-beaf-7a02cb383faf",
+    "main"
+  ]
+}
