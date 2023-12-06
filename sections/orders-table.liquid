@@ -41,11 +41,8 @@
     <p>{{ 'customer.orders.none' | t }}</p>
     {% endif %}
     {% for order in customer.orders %}
-      {% for line_item in order.line_items %}
-        <pre>
-          {{ line_item.note }}
-        </pre>
-      {% endfor %}
+      {{ order.tags }}
+      
     {% endfor %}
     {% if paginate.pages > 1 %}
     <div class="text-center">
