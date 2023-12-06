@@ -29,7 +29,7 @@
             {% if line_item.fulfillment.tracking_number %}
               <td><a href="{{ line_item.fulfillment.tracking_url }}">#{{ line_item.fulfillment.tracking_number}}</a></td>
             {% else %}
-              ---
+              <td>---</td>
             {% endif %}
           {% endfor %}
           <td>{{ order.total_price | money }}</td>
