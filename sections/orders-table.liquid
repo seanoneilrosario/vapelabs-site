@@ -1,43 +1,47 @@
-<div class="grid">
-  <div class="grid-item customer-orders two-thirds medium-down--one-whole">
-    <div>
-      
+<div class="account_details">
+  <div class="account-container">
+    <div class="grid">
+      <div class="grid-item customer-orders two-thirds medium-down--one-whole">
+        <div>
+          
+        </div>
+        <h2 class="tt-innerpagetitle">{% for tag in customer.tags %}{{ tag }}{% endfor %}</h2>
+        
+        {% paginate customer.orders by 20 %}
+        {% if customer.orders.size != 0 %}
+        <table class="full">
+          <thead>
+            <tr>
+              <th>{{ 'customer.orders.order_number' | t }}</th>
+              <th>{{ 'customer.orders.date' | t }}</th>
+              <th>{{ 'customer.orders.payment_status' | t }}</th>
+              <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
+              <th>{{ 'customer.orders.total' | t }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for order in customer.orders %}
+            <tr>
+              <td>{{ order.name | link_to: order.customer_url }}</td>
+              <td>{{ order.created_at | date: "%b %d, %Y" }}</td>
+              <td>{{ order.financial_status_label }}</td>
+              <td>{{ order.fulfillment_status_label }}</td>
+              <td>{{ order.total_price | money }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <p>{{ 'customer.orders.none' | t }}</p>
+        {% endif %}
+        {% if paginate.pages > 1 %}
+        <div class="text-center">
+          {% render 'pagination-custom', paginate: paginate %}
+        </div>
+        {% endif %}
+        {% endpaginate %}
+      </div>
     </div>
-    <h2 class="tt-innerpagetitle">{% for tag in customer.tags %}{{ tag }}{% endfor %}</h2>
-    
-    {% paginate customer.orders by 20 %}
-    {% if customer.orders.size != 0 %}
-    <table class="full">
-      <thead>
-        <tr>
-          <th>{{ 'customer.orders.order_number' | t }}</th>
-          <th>{{ 'customer.orders.date' | t }}</th>
-          <th>{{ 'customer.orders.payment_status' | t }}</th>
-          <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
-          <th>{{ 'customer.orders.total' | t }}</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for order in customer.orders %}
-        <tr>
-          <td>{{ order.name | link_to: order.customer_url }}</td>
-          <td>{{ order.created_at | date: "%b %d, %Y" }}</td>
-          <td>{{ order.financial_status_label }}</td>
-          <td>{{ order.fulfillment_status_label }}</td>
-          <td>{{ order.total_price | money }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-    {% else %}
-    <p>{{ 'customer.orders.none' | t }}</p>
-    {% endif %}
-    {% if paginate.pages > 1 %}
-    <div class="text-center">
-      {% render 'pagination-custom', paginate: paginate %}
-    </div>
-    {% endif %}
-    {% endpaginate %}
   </div>
 </div>
 {% schema %}
