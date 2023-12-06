@@ -429,10 +429,9 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
     display: flex;
     background: #77b6de;
     padding: 20px 40px 20px 15px;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
+    width: 100%;
     height: 150px;
-    margin-right: 30px;
+    margin-right: 0;
   }
 
   .booking_logo svg {
@@ -464,6 +463,14 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
       height: 100px;
       overflow: hidden;
       align-items: center;
+    }
+
+    .booking_logo {
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+      height: 150px;
+      margin-right: 30px;
+      width: fit-content;
     }
   }
   
