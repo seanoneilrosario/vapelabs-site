@@ -875,6 +875,20 @@ $('.toggle_open').on( "click", function() {
   $('.main-content').toggleClass('active');
 } );
 
+
+const options = {
+  method: 'GET',
+  headers: {
+    Authorization: 'Zoho-oauthtoken 1000.c5357a4e8f4bf181d4733e489e56feb2.76d0ded08df7cbf22d8bdd0d1a1c3b27'
+  }
+};
+
+fetch('https://www.zohoapis.com/inventory/v1/invoices/100109000000894467?organization_id=7003173052', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
+
+
 // slider
 $('.logo-slider_slider').slick({
   infinite: true,
