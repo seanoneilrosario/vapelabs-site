@@ -3396,6 +3396,8 @@ input[type="search"] {
 }
 .customer-orders table {
   background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .customer-orders table th,
 .customer-orders table td {
