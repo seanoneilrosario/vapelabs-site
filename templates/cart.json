@@ -1,1 +1,78 @@
-{"wrapper":"div.container","sections":{"cart-template":{"type":"cart-template","settings":{"icon_color":"#000000"}},"cart-footer":{"type":"cart-footer","blocks":{"e4d06561-9909-43e7-a8e3-958ca54d37da":{"type":"subtotal","settings":{}},"0559e17c-2b65-4710-80ba-9bc07d3b2778":{"type":"buttons","settings":{}},"655603c2-0421-44a9-84eb-e0c2b277953c":{"type":"s_text","settings":{"policy_icon":"shopify:\/\/shop_images\/services-01.png","title":"Security policy","desc":"(edit with the Customer Reassurance module)"}},"cc231b2d-d537-47e2-ba2f-70d157bca4e5":{"type":"s_text","settings":{"policy_icon":"shopify:\/\/shop_images\/services-02.png","title":"Delivery policy","desc":"(edit with the Customer Reassurance module)"}},"cbecf515-f350-46e4-96c0-2ea7effef493":{"type":"s_text","settings":{"policy_icon":"shopify:\/\/shop_images\/services-03.png","title":"Return policy","desc":"(edit with the Customer Reassurance module)"}}},"block_order":["e4d06561-9909-43e7-a8e3-958ca54d37da","0559e17c-2b65-4710-80ba-9bc07d3b2778","655603c2-0421-44a9-84eb-e0c2b277953c","cc231b2d-d537-47e2-ba2f-70d157bca4e5","cbecf515-f350-46e4-96c0-2ea7effef493"],"settings":{"show_cart_note":true,"icon_color":"#000000"}},"featured-products":{"type":"featured-collection","settings":{"title":"Featured collection","collection":"electronics","products_to_show":6,"show_view_all":true}}},"order":["cart-template","cart-footer","featured-products"]}
+{
+  "wrapper": "div.container",
+  "sections": {
+    "b52b6887-07db-4591-a0a4-d7f5c7e43418": {
+      "type": "left-sidevar-head",
+      "settings": {
+      }
+    },
+    "cart-template": {
+      "type": "cart-template",
+      "settings": {
+        "icon_color": "#000000"
+      }
+    },
+    "cart-footer": {
+      "type": "cart-footer",
+      "blocks": {
+        "e4d06561-9909-43e7-a8e3-958ca54d37da": {
+          "type": "subtotal",
+          "settings": {
+          }
+        },
+        "0559e17c-2b65-4710-80ba-9bc07d3b2778": {
+          "type": "buttons",
+          "settings": {
+          }
+        },
+        "655603c2-0421-44a9-84eb-e0c2b277953c": {
+          "type": "s_text",
+          "settings": {
+            "title": "Security policy",
+            "desc": "(edit with the Customer Reassurance module)"
+          }
+        },
+        "cc231b2d-d537-47e2-ba2f-70d157bca4e5": {
+          "type": "s_text",
+          "settings": {
+            "title": "Delivery policy",
+            "desc": "(edit with the Customer Reassurance module)"
+          }
+        },
+        "cbecf515-f350-46e4-96c0-2ea7effef493": {
+          "type": "s_text",
+          "settings": {
+            "title": "Return policy",
+            "desc": "(edit with the Customer Reassurance module)"
+          }
+        }
+      },
+      "block_order": [
+        "e4d06561-9909-43e7-a8e3-958ca54d37da",
+        "0559e17c-2b65-4710-80ba-9bc07d3b2778",
+        "655603c2-0421-44a9-84eb-e0c2b277953c",
+        "cc231b2d-d537-47e2-ba2f-70d157bca4e5",
+        "cbecf515-f350-46e4-96c0-2ea7effef493"
+      ],
+      "settings": {
+        "show_cart_note": true,
+        "icon_color": "#000000"
+      }
+    },
+    "featured-products": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured collection",
+        "collection": "electronics",
+        "products_to_show": 6,
+        "show_view_all": true
+      }
+    }
+  },
+  "order": [
+    "b52b6887-07db-4591-a0a4-d7f5c7e43418",
+    "cart-template",
+    "cart-footer",
+    "featured-products"
+  ]
+}
