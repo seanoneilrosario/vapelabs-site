@@ -955,7 +955,6 @@ main.main-content {
 }
 
 .logo-slider_slider {
-    background-color: #81bbe1;
     border-radius: 20px;
     margin: 20px 0;
 }
@@ -971,6 +970,14 @@ main.main-content {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.logo-slider_slider .slick-next.slick-arrow {
+    right: 0;
+}
+
+.logo-slider_slider .slick-prev.slick-arrow {
+    left: -10px;
 }
 
 .logo-slider_slider .slick-track {
@@ -1306,7 +1313,7 @@ main.main-content {
 
   .booking_logo {
     display: flex;
-    background: #77b6de;
+    background: #2d4d7c;
     padding: 20px;
     width: 100%;
     margin-right: 0;
@@ -1369,3 +1376,8 @@ main.main-content {
       margin-bottom: 0;
     }
   }
+
+/* Collection wrapper */
+.collection_wrapper {
+    padding: 0 !important;
+}

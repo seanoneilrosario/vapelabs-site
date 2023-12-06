@@ -167,10 +167,10 @@
 
   body .page-wrapper main.main-content {
     margin-top: 0 !important;
-    margin-left: 300px;
     min-height: 100vh;
-    background: #2c4c7b;
+    background: #77b6de;
     padding: 40px 20px;
+    transition: 0.3s;
   }
 
   body main.main-content,
@@ -224,12 +224,13 @@
     width: 300px;
     position: fixed;
     top: 0;
-    left: 0;
+    left: -300px;
     min-height: 100vh;
     overflow: scroll;
-    z-index: 10000;
+    z-index: 5;
     height: 100%;
     background: #fff;
+    transition: 0.3s;
   }
 
   .account-dash::-webkit-scrollbar {
@@ -310,9 +311,54 @@
     font-weight: 500;
   }
 
+  .account-dash.width-hide {
+    left: 0;
+  }
+
+  .toggle_open {
+    position: fixed;
+    transition: 0.3s;
+    left: 20px;
+    transform: rotate(180deg);
+  }
+
+  .toggle_open.active {
+    left: 250px;
+    transform: rotate(0deg);
+  }
+
   @media(min-width: 990px) {
     body .page-wrapper main.main-content {
       padding: 60px 40px;
+    }
+  }
+
+  @media(min-width: 1200px) {
+    body .page-wrapper main.main-content {
+      margin-left: 300px !important;
+    }
+
+    body .page-wrapper main.main-content.active {
+      margin-left: 0 !important;
+    }
+
+    .account-dash {
+      left: 0;
+    }
+
+    .account-dash.width-hide {
+      left: -300px;
+    }
+
+    .toggle_open {
+      left: 250px;
+      transition: 0.3s;
+      transform: rotate(0deg);
+    }
+
+    .toggle_open.active {
+      left: 40px;
+      transform: rotate(180deg);
     }
   }
   

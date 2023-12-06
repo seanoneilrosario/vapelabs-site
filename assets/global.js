@@ -867,6 +867,14 @@ if (parallax_start) {
   })
 }
 
+
+// toggle dashboard
+$('.toggle_open').on( "click", function() {
+  $('.account-dash').toggleClass('width-hide');
+  $(this).toggleClass('active');
+  $('.main-content').toggleClass('active');
+} );
+
 // slider
 $('.logo-slider_slider').slick({
   infinite: true,

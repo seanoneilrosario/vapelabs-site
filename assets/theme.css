@@ -11712,6 +11712,13 @@ body .compare-model .max_compare {
   width: 100%;
   position: relative;
   overflow: hidden;
+  color: #2C4C7B;
+}
+.product-wrapper .pro_btn .mdi{
+  transition: 0.3s;
+}
+.product-wrapper .pro_btn .mdi:hover{
+  color: #fff !important;
 }
 .product-layouts .product-wrapper .product-thumb .btn_wrapper {
   bottom: 0;
@@ -15923,14 +15930,15 @@ a.filter-left i{
 }
 .sidebar .widget h4, .sidebar-block .widget .h4, .sidebar-block .widget h4 {
   font: 500 15px/20px var(--font-stack-header);
-    color: var(--color-text);
+    color: #fff;
       margin: 0 0 15px;
       cursor: pointer;
       float: left;
       width: 100%;
       padding: 10px 10px;
       position: relative;
-      background: #F1F3F8;
+      background: #77b6de;
+      border-radius: 10px;
       transition: all 400ms ease-in-out 0s;
       -webkit-transition: all 400ms ease-in-out 0s;
       -moz-transition: all 400ms ease-in-out 0s;
@@ -16778,8 +16786,8 @@ ul.mobile-facets__list li.Color label.mobile-facets__label input[type=checkbox]{
   color: var(--color-product-primary-text);
     padding: 9px 12px;
     background: 0 0;
-    border: 2px solid var(--color-product-secondary);
-      }
+    border: 2px solid #2c4c7b;
+  }
 .product-wrapper .add_tocart.pro_btn a.btn:hover,.product-wrapper .add_tocart.pro_btn a.btn:active,.product-wrapper .add_tocart.pro_btn a.btn:focus{
   color: var(--color-product-secondary-text);
     }
@@ -16794,8 +16802,15 @@ ul.mobile-facets__list li.Color label.mobile-facets__label input[type=checkbox]{
   color: var(--color-product-secondary-text);
     }
 .product-wrapper .pro_btn a::after{
-  background-color: var(--color-product-secondary);
+  background-color: #2c4c7b;
     }
+.product-wrapper .pro_btn a.add-cart-btn .mdi-plus {
+  transition: 0.3s;
+}
+.product-wrapper .pro_btn a.add-cart-btn:hover,
+.product-wrapper .pro_btn a.add-cart-btn:hover .mdi-plus{
+  color: #fff !important;
+}
 .product-wrapper .btn_wrapper .pro_btn a.added-wishlist.btn,.product-wrapper .btn_wrapper .pro_btn.add-to-compare a.add-in-compare-js.added,.product-wrapper .pro_btn > a.loading {
   background: var(--color-product-secondary);
     color:var(--color-product-secondary-text);
