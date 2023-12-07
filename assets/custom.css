@@ -1588,9 +1588,13 @@ main.main-content {
 }
 
 .img_play span {
+    color: #2d4d7c;
     position: absolute;
     left: 0;
-    top: 5px;
+    top: 20px;
+    background: #fff;
+    font-weight: 600;
+    padding: 3px 10px;
 }
 
 .img_play img {
