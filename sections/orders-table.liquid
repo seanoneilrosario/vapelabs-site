@@ -42,7 +42,8 @@
         </tr>
           {% assign notes = order.note | split: "," %}
           {% for note in notes %}
-            <p>{{ note }}</p>
+            <p>{{ note.first }} sdf</p>
+            <p>{{ note.last }}</p>
           {% endfor %}
         {% endfor %}
       </tbody>
