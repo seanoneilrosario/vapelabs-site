@@ -896,35 +896,35 @@ $('.toggle_open').on( "click", function() {
 // }
 // boom()
 
-// const options = {
-//   method: 'GET',
-//   headers: {
-//     "Access-Control-Allow-Origin": "*",
-//     "Access-Control-Allow-Credentials": "true",
-//     "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS,POST,PUT",
-//     "Access-Control-Allow-Headers": "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers",
-//     Authorization: 'Zoho-oauthtoken 1000.c5357a4e8f4bf181d4733e489e56feb2.76d0ded08df7cbf22d8bdd0d1a1c3b27'
-//   }
-// };
-
-
-// fetch('https://www.zohoapis.com/inventory/v1/invoices/100109000000894467?organization_id=7003173052', options)
-//   .then(response => response.json())
-//   .then(response => console.log(response))
-//   .catch(err => console.error(err));
-
 const options = {
   method: 'GET',
   headers: {
-    'X-com-zoho-subscriptions-organizationid': '7003173052',
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Credentials": "true",
+    "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS,POST,PUT",
+    "Access-Control-Allow-Headers": "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers",
     Authorization: 'Zoho-oauthtoken 1000.c5357a4e8f4bf181d4733e489e56feb2.76d0ded08df7cbf22d8bdd0d1a1c3b27'
   }
 };
 
-fetch('https://www.zohoapis.com.au/subscriptions/v1/invoices', options)
+
+fetch('https://www.zohoapis.com/inventory/v1/invoices/100109000000894467?organization_id=7003173052', options)
   .then(response => response.json())
   .then(response => console.log(response))
   .catch(err => console.error(err));
+
+// const options = {
+//   method: 'GET',
+//   headers: {
+//     'X-com-zoho-subscriptions-organizationid': '7003173052',
+//     Authorization: 'Zoho-oauthtoken 1000.c5357a4e8f4bf181d4733e489e56feb2.76d0ded08df7cbf22d8bdd0d1a1c3b27'
+//   }
+// };
+
+// fetch('https://www.zohoapis.com.au/subscriptions/v1/invoices', options)
+//   .then(response => response.json())
+//   .then(response => console.log(response))
+//   .catch(err => console.error(err));
 
 
 
