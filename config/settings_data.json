@@ -920,7 +920,7 @@
             "type": "button",
             "settings": {
               "btn_text": "JOIN NOW",
-              "btn_link": "#"
+              "btn_link": "\/account\/register"
             }
           }
         },
