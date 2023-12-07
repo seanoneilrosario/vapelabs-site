@@ -25,6 +25,10 @@
           <td>{{ order.created_at | date: "%b %d, %Y" }}</td>
           <td>
             {% if order.note %}
+              {% assign notes = order.note | split: "," %}
+              {% for note in notes %}
+                {{ note }}
+              {% endfor %}
               <a href="{{ order.note }}">{{ order.financial_status_label }}</a>
             {% else %}
               ---
