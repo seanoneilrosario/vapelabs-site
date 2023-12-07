@@ -25,10 +25,6 @@
           <td>{{ order.created_at | date: "%b %d, %Y" }}</td>
           <td>
             {% if order.note %}
-              {% assign notes = order.note | split: "," %}
-              {% for note in notes %}
-                {{ note }}
-              {% endfor %}
               <a href="{{ order.note }}">{{ order.financial_status_label }}</a>
             {% else %}
               ---
@@ -50,11 +46,9 @@
     {% else %}
     <p>{{ 'customer.orders.none' | t }}</p>
     {% endif %}
-    {% for order in customer.orders %}
-      <p>{{ order.id }}</p>
-      {% for tag in order.tags %}
-        <p>{{ tag }}</p>
-      {% endfor %}
+    {% assign notes = order.note | split: "," %}
+    {% for note in notes %}
+      <p>{{ note }}</p>
     {% endfor %}
     {% if paginate.pages > 1 %}
     <div class="text-center">
