@@ -190,6 +190,13 @@
       "settings": {
         "title": "Downloadables"
       }
+    },
+    "2099e844-66e9-428d-9802-c003e35246e6": {
+      "type": "article-list",
+      "settings": {
+        "title": "Articles",
+        "blog": "news"
+      }
     }
   },
   "order": [
@@ -198,6 +205,7 @@
     "2a0f4418-6c3e-4df5-8aef-0f2e9d8b0b98",
     "b934cce7-440a-4603-a1c9-5bbd76ee2493",
     "e424701a-8e60-4b96-9d3b-95de246695c2",
-    "f478ff6c-7823-4ca6-85d1-e9b9530ba1f8"
+    "f478ff6c-7823-4ca6-85d1-e9b9530ba1f8",
+    "2099e844-66e9-428d-9802-c003e35246e6"
   ]
 }
