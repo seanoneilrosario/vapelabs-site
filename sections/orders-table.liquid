@@ -41,10 +41,8 @@
           <td>{{ order.total_price | money }}</td>
         </tr>
           {% assign notes = order.note | split: "," %}
-          {% for note in notes %}
-            <p>{{ note.first }} sdf</p>
-            <p>{{ note.last }}</p>
-          {% endfor %}
+            <p>{{ notes.first }} sdf</p>
+            <p>{{ notes.last }}</p>
         {% endfor %}
       </tbody>
     </table>
