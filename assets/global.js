@@ -877,24 +877,24 @@ $('.toggle_open').on( "click", function() {
 
 
 
-let logger = Logger.getInstance(Levels.ALL);
-let environment = DataCenter.US.PRODUCTION();
+// let logger = Logger.getInstance(Levels.ALL);
+// let environment = DataCenter.US.PRODUCTION();
 
-let token = new OAuthBuilder()
-	.clientId("1000.AZLLKU5UVSUC4KSLTPI9MOJD94GUQU")
-	.scope("ZohoInventory.invoices.ALL")
-	.redirectURL("https://vapelabsau.myshopify.com/")
-	.build();
+// let token = new OAuthBuilder()
+// 	.clientId("1000.AZLLKU5UVSUC4KSLTPI9MOJD94GUQU")
+// 	.scope("ZohoInventory.invoices.ALL")
+// 	.redirectURL("https://vapelabsau.myshopify.com/")
+// 	.build();
 
-const boom = async () => {
-  let contactRolesOperations = new ZCRM.ContactRole.Operations();
-  let response = await contactRolesOperations.getContactRoles();
-    if(response != null) {
-    //Get the status code from response
-    console.log("Status Code: " + response.getStatusCode());
-  }
-}
-boom()
+// const boom = async () => {
+//   let contactRolesOperations = new ZCRM.ContactRole.Operations();
+//   let response = await contactRolesOperations.getContactRoles();
+//     if(response != null) {
+//     //Get the status code from response
+//     console.log("Status Code: " + response.getStatusCode());
+//   }
+// }
+// boom()
 
 // const options = {
 //   method: 'GET',
@@ -913,18 +913,18 @@ boom()
 //   .then(response => console.log(response))
 //   .catch(err => console.error(err));
 
-// const options = {
-//   method: 'GET',
-//   headers: {
-//     'X-com-zoho-subscriptions-organizationid': '7003173052',
-//     Authorization: 'Zoho-oauthtoken 1000.c5357a4e8f4bf181d4733e489e56feb2.76d0ded08df7cbf22d8bdd0d1a1c3b27'
-//   }
-// };
+const options = {
+  method: 'GET',
+  headers: {
+    'X-com-zoho-subscriptions-organizationid': '7003173052',
+    Authorization: 'Zoho-oauthtoken 1000.c5357a4e8f4bf181d4733e489e56feb2.76d0ded08df7cbf22d8bdd0d1a1c3b27'
+  }
+};
 
-// fetch('https://www.zohoapis.com.au/subscriptions/v1/invoices', options)
-//   .then(response => response.json())
-//   .then(response => console.log(response))
-//   .catch(err => console.error(err));
+fetch('https://www.zohoapis.com.au/subscriptions/v1/invoices', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
 
 
 
