@@ -2,11 +2,72 @@
   "sections": {
     "main": {
       "type": "page",
+      "disabled": true,
       "settings": {
+      }
+    },
+    "42f963dd-ba18-456e-bf4f-2614fd9b41f6": {
+      "type": "left-sidevar-head",
+      "settings": {
+      }
+    },
+    "2a0f4418-6c3e-4df5-8aef-0f2e9d8b0b98": {
+      "type": "hero-banner",
+      "settings": {
+        "image_banner": "shopify:\/\/shop_images\/11.png",
+        "sub_title": "STAY IN THE KNOW",
+        "title": "Vapelabs Education Centre",
+        "button_title": "OUR FAQ",
+        "button_link": "shopify:\/\/pages\/faq"
+      }
+    },
+    "b934cce7-440a-4603-a1c9-5bbd76ee2493": {
+      "type": "icons-text",
+      "blocks": {
+        "da73531a-96ff-4fbc-bf25-bb464214cce6": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_2.png",
+            "icon_title": "Express Delivery"
+          }
+        },
+        "e2f4f02c-5587-4618-a55c-81cbcfc742c8": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_4.png",
+            "icon_title": "Widest range"
+          }
+        },
+        "b4e32612-34ae-41a6-be14-e5387118705c": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_5.png",
+            "icon_title": "TGO 110 complian"
+          }
+        },
+        "473da9b4-53bd-465d-b231-a02a7f6d506c": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_3.png",
+            "icon_title": "Dedicated Support"
+          }
+        }
+      },
+      "block_order": [
+        "da73531a-96ff-4fbc-bf25-bb464214cce6",
+        "e2f4f02c-5587-4618-a55c-81cbcfc742c8",
+        "b4e32612-34ae-41a6-be14-e5387118705c",
+        "473da9b4-53bd-465d-b231-a02a7f6d506c"
+      ],
+      "settings": {
+        "bg_color": "#F8F8F8"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "42f963dd-ba18-456e-bf4f-2614fd9b41f6",
+    "2a0f4418-6c3e-4df5-8aef-0f2e9d8b0b98",
+    "b934cce7-440a-4603-a1c9-5bbd76ee2493"
   ]
 }
