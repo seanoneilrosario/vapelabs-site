@@ -910,10 +910,10 @@ $('.toggle_open').on( "click", function() {
 // Redirect page if not logged in
 
 $(document).ready(function() {
-  console.log(window.location)
+  console.log(window.location.pathname)
    if (!$('.customer-logged-in')) {
-     if (window.location == "https://vapelabsau.myshopify.com/pages/education-centre") {
-        window.location.replace("https://vapelabsau.myshopify.com/account");
+     if (window.location.pathname == "/pages/education-centre") {
+        window.location.pathname = "https://vapelabsau.myshopify.com/account";
       }
    }
 });
