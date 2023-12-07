@@ -23,7 +23,13 @@
         <tr>
           <td>{{ order.name | link_to: order.customer_url }}</td>
           <td>{{ order.created_at | date: "%b %d, %Y" }}</td>
-          <td><a href="{{ order.note }}">{{ order.financial_status_label }}</a></td>
+          <td>
+            {% if order.note %}
+              <a href="{{ order.note }}">{{ order.financial_status_label }}</a>
+            {% else %}
+              {{ order.financial_status_label }}
+            {% endif %}
+          </td>
           <td>{{ order.fulfillment_status_label }}</td>
           {% for line_item in order.line_items %}
             {% if line_item.fulfillment.tracking_number %}
