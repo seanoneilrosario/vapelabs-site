@@ -911,11 +911,11 @@ $('.toggle_open').on( "click", function() {
 
 $(document).ready(function() {
   console.log(window.location.pathname)
-   // if (!$('.customer-logged-in')) {
+   if (!$('.customer-logged-in')) {
      if (window.location.pathname == "/pages/education-centre") {
         window.location.replace("https://vapelabsau.myshopify.com/account");
       }
-   // }
+   }
 });
 
 
