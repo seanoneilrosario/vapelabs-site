@@ -72,7 +72,7 @@
     "084ee365-c6d4-419d-8d90-c578dc6949fe": {
       "type": "image-with-text",
       "settings": {
-        "bg_color": "#fff",
+        "bg_color": "#ffffff",
         "heading_color": "#2d4d7c",
         "color_text": "#2b2928",
         "image_aligment": "right",
@@ -80,7 +80,7 @@
         "heading": "Start your journey with Vapelabs today",
         "contents": "<p>Vapelabs is a leading wholesaler of pharmaceutical Nicotine Vaping Products.  Our comprehensive product selection caters to the requirements of pharmacies throughout Australia, ensuring your patients have access to compliant and regulated items for dispensing.<\/p><p>Register and create your account today to gain access to the latest product information, educational materials, training sessions, and a user-friendly B2B ordering platform, all conveniently available in one place, and all at no cost.<\/p>",
         "btn_text": "REGISTER TODAY",
-        "btn_link": "#"
+        "btn_link": "\/account\/register"
       }
     },
     "3c2ff592-a431-46a7-b3ec-d1383953b656": {
@@ -137,7 +137,7 @@
     "e1e7994b-7c11-4201-a901-d971d1c4118e": {
       "type": "image-with-text",
       "settings": {
-        "bg_color": "#fff",
+        "bg_color": "#ffffff",
         "heading_color": "#2d4d7c",
         "color_text": "#2b2928",
         "image_aligment": "left",
@@ -145,7 +145,7 @@
         "heading": "Unlock New Possibilities for Your Business Today",
         "contents": "<p>Open your 30 day wholesale account today and take advantage of our expansive product selection, competitive pricing, and streamlined ordering process.<\/p>",
         "btn_text": "SIGN UP TO VIEW OUR RANGE",
-        "btn_link": "#"
+        "btn_link": "\/account\/register"
       }
     },
     "57dfba87-ecd8-4166-87b9-7deaf2b0c3ba": {
@@ -155,7 +155,7 @@
         "heading": "Book your free training session with our Nicotine Vaping Product specialists.",
         "content": "<p>Request a chat with our dedicated Account Managers and experience personalised support tailored to your unique needs. Our team of experts is committed to assisting you every step of the way, whether you require a training session on NVP products or onboarding assistance.<\/p><p>Book your free training session with our Nicotine Vaping Product specialist today.<\/p>",
         "button_title": "BOOK NOW",
-        "button_link": "#"
+        "button_link": "https:\/\/book.vapelabs.com.au\/#\/customer\/nvp"
       }
     },
     "cfeabc86-3a57-44ac-8953-9f7440d710f3": {
@@ -252,7 +252,7 @@
         "heading": "Empowering pharmacist Australia-Wide",
         "contents": "<p>At Vapelabs, we believe that knowledge is power. That’s why we offer comprehensive educational resources to help you navigate the ever-evolving regulatory changes.<\/p><p>Our expert guides and industry insights provide you with the latest trends, regulatory updates, and product knowledge. Stay informed, stay ahead, and confidently advise your patients with the information you need from Vapelabs.<\/p>",
         "btn_text": "LOG IN TO VISIT THE EDUCATION CENTRE",
-        "btn_link": "#"
+        "btn_link": "\/account\/?direct=education-centre"
       }
     },
     "acd5a8e8-8b2b-43bf-bc28-ecc3828cc686": {
@@ -308,7 +308,7 @@
     "97e22b58-7da8-4995-84e5-580e874a8583": {
       "type": "image-with-text",
       "settings": {
-        "bg_color": "#fff",
+        "bg_color": "#ffffff",
         "heading_color": "#2d4d7c",
         "color_text": "#2b2928",
         "image_aligment": "right",
@@ -316,7 +316,7 @@
         "heading": "Increase your offering",
         "contents": "<p>Increase your offering with access to Australia’s largest range of products. Our product range will enable you to make the best selection for your patients and support them through their smoking cessation journey.  Vapelabs provides you with an education centre where pharmacists can learn about products to give you the confidence to dispense our range. <\/p>",
         "btn_text": "SIGN UP TO VIEW OUR RANGE",
-        "btn_link": "#"
+        "btn_link": "\/account\/register"
       }
     },
     "e4ad7bb6-3da7-4343-819d-67fa08c6ca82": {
@@ -389,7 +389,7 @@
       "type": "cta-bar",
       "settings": {
         "content": "ENTER YOUR EMAIL & SIGN UP FOR VAPELABS NEWS",
-        "button_link": "#"
+        "button_link": "shopify:\/\/pages\/contact"
       }
     }
   },
