@@ -4,7 +4,7 @@
     {% for blog in section.settings.blog.articles %}
       <a href="{{ blog.url }}" class="article">
         <div class="img_play">
-            <span>{{ blog.tags.first }}</span>
+            {% if blog.tags.first %}<span>{{ blog.tags.first }}</span>{% endif %}
             <img src="{{ blog.image | img_url: 'master' }}" />
             <h3>
                 {{ blog.metafields.custom.sub_title }}
