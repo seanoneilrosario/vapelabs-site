@@ -40,16 +40,16 @@
           {% endfor %}
           <td>{{ order.total_price | money }}</td>
         </tr>
+          {% assign notes = order.note | split: "," %}
+          {% for note in notes %}
+            <p>{{ note }}</p>
+          {% endfor %}
         {% endfor %}
       </tbody>
     </table>
     {% else %}
     <p>{{ 'customer.orders.none' | t }}</p>
     {% endif %}
-    {% assign notes = order.note | split: "," %}
-    {% for note in notes %}
-      <p>{{ note }}</p>
-    {% endfor %}
     {% if paginate.pages > 1 %}
     <div class="text-center">
       {% render 'pagination-custom', paginate: paginate %}
