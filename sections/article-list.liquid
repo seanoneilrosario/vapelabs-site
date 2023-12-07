@@ -1,0 +1,46 @@
+<div class="article-list">
+  <h2>{{ section.settings.title }}</h2>
+  <div class="articles">
+    {% for blog in section.settings.blog.articles %}
+      <a href="{{ blog.url }}" class="article">
+        <div class="img_play">
+            <span>{{ blog.tags.first }}</span>
+            <img src="{{ blog.image | img_url: 'master' }}" />
+            <h3>
+                {{ article.metafields.custom.sub_title }}
+            </h3>
+        </div>
+        <div class="article_content">
+            <h4>{{ blog.title }}</h4>
+            <h5>{{ blog.author }}</h5>
+            <span>{{ article.metafields.custom.watch_on_title }}</span>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Article List",
+    "class": "article-list_wrap",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "blog",
+        "id": "blog",
+        "label": "Blog"
+        }
+    ],
+    "presets": [
+        {
+          "name": "Article List"
+        }
+    ]
+  }
+{% endschema %}

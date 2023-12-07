@@ -1,8 +1,8 @@
 <div>
   <h2>{{ section.settings.title }}</h2>
-  <div class="img_slider">
+  <div class="downloadables">
     {% for block in section.blocks %}
-      <a href="{{ block.settings.video_url }}" class="img_slide">
+      <a href="{{ block.settings.video_url }}" class="dl">
         <img src="{{ block.settings.icon_image | img_url: 'master' }}" />
         <span>{{ section.settings.title }}</span>
         <h4>{{ block.settings.title }}</h4>
@@ -11,17 +11,11 @@
   </div>
 </div>
 
-<style>
-  body.education-centre .page-wrapper main.main-content {
-    background: #fff;
-  }
-</style>
 
-
-{% schema %} 
+{% schema %}
   {
-    "name": "Video Slider",
-    "class": "img_slider_wrap",
+    "name": "Downloadables",
+    "class": "downloadables_wrap",
     "settings": [
       {
         "type": "text",
@@ -54,7 +48,7 @@
     ],
     "presets": [
         {
-          "name": "Video Slider"
+          "name": "Downloadables"
         }
     ]
   }
