@@ -1651,6 +1651,6 @@ main.main-content {
 
 
 /* Checkout remove Credit for now */
-#checkout-main #basic .Wo4qW .B4zH6:first-of-type {
+#checkout-main #basic [dir=rtl] .B4zH6:first-child {
   display: none;
 }
