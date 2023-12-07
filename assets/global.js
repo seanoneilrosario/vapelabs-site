@@ -907,6 +907,19 @@ $('.toggle_open').on( "click", function() {
 
 
 
+// Redirect page if not logged in
+
+$(document).ready(function() {
+   if ($('.customer-logged-in')) {
+     
+   } else {
+     if (window.location == "https://vapelabsau.myshopify.com/pages/education-centre") {
+        window.location.replace("https://vapelabsau.myshopify.com/account");
+      }
+   }
+});
+
+
 // slider
 $('.logo-slider_slider').slick({
   infinite: true,
