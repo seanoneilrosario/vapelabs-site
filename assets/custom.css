@@ -1648,3 +1648,9 @@ main.main-content {
         width: calc(100% / 3 - 30px);
     }
 }
+
+
+/* Checkout remove Credit for now */
+#checkout-main #basic .Wo4qW .B4zH6:first-of-type {
+  display: none;
+}
