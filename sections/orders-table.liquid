@@ -25,7 +25,8 @@
           <td>{{ order.created_at | date: "%b %d, %Y" }}</td>
           <td>
             {% if order.note %}
-              <a href="{{ order.note }}">{{ order.financial_status_label }}</a>
+              {% assign notes = order.note | split: "," %}
+              <a href="{{ notes.last }}">{{ order.financial_status_label }} {{ notes.first }}</a>
             {% else %}
               ---
             {% endif %}
@@ -40,9 +41,6 @@
           {% endfor %}
           <td>{{ order.total_price | money }}</td>
         </tr>
-          {% assign notes = order.note | split: "," %}
-            <p>{{ notes.first }} sdf</p>
-            <p>{{ notes.last }}</p>
         {% endfor %}
       </tbody>
     </table>
