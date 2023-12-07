@@ -26,7 +26,7 @@
           <td>
             {% if order.note %}
               {% assign notes = order.note | split: "," %}
-              <a href="{{ notes.last }}">{{ order.financial_status_label }} {{ notes.first }}</a>
+              <a href="{{ notes.last }}">Due on {{ notes.first }} days</a>
             {% else %}
               ---
             {% endif %}
