@@ -27,7 +27,7 @@
             {% if order.note %}
               <a href="{{ order.note }}">{{ order.financial_status_label }}</a>
             {% else %}
-              {{ order.financial_status_label }}
+              ---
             {% endif %}
           </td>
           <td>{{ order.fulfillment_status_label }}</td>
