@@ -910,6 +910,7 @@ $('.toggle_open').on( "click", function() {
 // Redirect page if not logged in
 
 $(document).ready(function() {
+  console.log(window.location)
    if (!$('.customer-logged-in')) {
      if (window.location == "https://vapelabsau.myshopify.com/pages/education-centre") {
         window.location.replace("https://vapelabsau.myshopify.com/account");
