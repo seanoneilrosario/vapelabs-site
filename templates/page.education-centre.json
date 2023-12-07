@@ -60,7 +60,71 @@
         "473da9b4-53bd-465d-b231-a02a7f6d506c"
       ],
       "settings": {
-        "bg_color": "#F8F8F8"
+        "bg_color": "#f8f8f8"
+      }
+    },
+    "e424701a-8e60-4b96-9d3b-95de246695c2": {
+      "type": "video-slider",
+      "blocks": {
+        "da6fd158-a78b-4911-8f29-491da1d57cef": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/Allo-Cover-2.png",
+            "video_url": "vapelabs.com.au\/wp-content\/uploads\/2023\/11\/Allo-Sync-V2.mp4",
+            "title": "Allo Sync"
+          }
+        },
+        "ffc8cb50-fd7b-42b2-a24e-ef4c209ae749": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/Nicovape-product-image.png",
+            "video_url": "vapelabs.com.au\/wp-content\/uploads\/2023\/11\/Nicovape-V2.mp4",
+            "title": "Nicovape"
+          }
+        },
+        "06597e1d-8757-40f6-b1df-33edb4176ac0": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/RELX-Cover-1.png",
+            "video_url": "vapelabs.com.au\/wp-content\/uploads\/2023\/11\/Relx-V2.mp4",
+            "title": "Relx"
+          }
+        },
+        "38860ca8-6b5f-43d6-82c3-344e7bee9c54": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/Veev-Cover.png",
+            "video_url": "vapelabs.com.au\/wp-content\/uploads\/2023\/11\/Veev-V2.mp4",
+            "title": "Veev"
+          }
+        },
+        "e22edf82-b578-435a-83f4-aba05a5e384e": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/Product-Comparison-COver.png",
+            "video_url": "vapelabs.com.au\/wp-content\/uploads\/2023\/11\/VapeLabs-Comparison-Video.mp4",
+            "title": "Product Comparison"
+          }
+        },
+        "c4344b01-c6fe-441c-90e2-5613b57bc2a3": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/WIld-Cover.png",
+            "video_url": "vapelabs.com.au\/wp-content\/uploads\/2023\/11\/Wild-V2.mp4",
+            "title": "Wild"
+          }
+        }
+      },
+      "block_order": [
+        "da6fd158-a78b-4911-8f29-491da1d57cef",
+        "ffc8cb50-fd7b-42b2-a24e-ef4c209ae749",
+        "06597e1d-8757-40f6-b1df-33edb4176ac0",
+        "38860ca8-6b5f-43d6-82c3-344e7bee9c54",
+        "e22edf82-b578-435a-83f4-aba05a5e384e",
+        "c4344b01-c6fe-441c-90e2-5613b57bc2a3"
+      ],
+      "settings": {
+        "title": "Videos"
       }
     }
   },
@@ -68,6 +132,7 @@
     "main",
     "42f963dd-ba18-456e-bf4f-2614fd9b41f6",
     "2a0f4418-6c3e-4df5-8aef-0f2e9d8b0b98",
-    "b934cce7-440a-4603-a1c9-5bbd76ee2493"
+    "b934cce7-440a-4603-a1c9-5bbd76ee2493",
+    "e424701a-8e60-4b96-9d3b-95de246695c2"
   ]
 }
