@@ -926,18 +926,18 @@ $('.toggle_open').on( "click", function() {
 //   .then(response => console.log(response))
 //   .catch(err => console.error(err));
 
+
+
+
 // Redirect page if not logged in
-
-$(document).ready(function() {
-  console.log(window.location.pathname)
-   if (!$('body').hasClass("customer-logged-in")) {
-     if (window.location.pathname == "/pages/education-centre") {
-        window.location.replace("https://vapelabsau.myshopify.com/account");
-      }
-   }
-});
-
-console.log(window)
+// $(document).ready(function() {
+//   console.log(window.location.pathname)
+//    if (!$('body').hasClass("customer-logged-in")) {
+//      if (window.location.pathname == "/pages/education-centre") {
+//         window.location.replace("https://vapelabsau.myshopify.com/account");
+//       }
+//    }
+// });
 
 
 // slider
