@@ -20,14 +20,13 @@
       </thead>
       <tbody>
         {% for order in customer.orders %}
-          {{ order.note }}
         <tr>
           <td>{{ order.name | link_to: order.customer_url }}</td>
           <td>{{ order.created_at | date: "%b %d, %Y" }}</td>
           <td>
             {% if order.note %}
               {% assign notes = order.note | split: "," %}
-              <a href="{{ notes.last }}">Due in {{ notes.first }} day{% if notes.first != "1" %}s{% endif %}</a>
+              <a href="{{ notes.last }}">{% if notes.first != "Paid" %}Due in {{ notes.first }} day{% if notes.first != "1" %}s{% endif %}{% else %}Paid{% endif %}</a>
             {% else %}
               ---
             {% endif %}
