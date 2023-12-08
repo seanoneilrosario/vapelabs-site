@@ -1554,7 +1554,7 @@ main.main-content {
 
 @media(min-width: 990px) {
     .downloadables a.dl {
-        width: calc(100% / 4 - 60px);
+        width: calc(100% / 3 - 60px);
         margin: 30px;
     }
 }
