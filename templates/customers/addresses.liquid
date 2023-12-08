@@ -6,7 +6,7 @@ Template note:
 into an external JS file
 - There are separate 'add new' and 'edit' address forms
 {% endcomment %}
-<div class="edit-address">
+<div class="edit-address-wrap">
   <div class="container--narrow">
     <h1 class="tt-innerpagetitle">{{ 'customer.account.title' | t }}</h1>
     <a href="#" class="btn" onclick="Shopify.CustomerAddress.toggleNewForm(); return false;">{{ 'customer.addresses.add_new' | t }}</a>
@@ -141,7 +141,7 @@ into an external JS file
     margin-top: 0 !important
   }
 
-  .edit-address {
+  .edit-address-wrap {
     padding: 60px 0;
     background: #81bbe1;
   }
