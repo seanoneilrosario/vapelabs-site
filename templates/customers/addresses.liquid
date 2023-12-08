@@ -81,11 +81,11 @@ into an external JS file
       {{ form.errors | default_errors }}
       <h4 class="tt-innerpagetitle">{{ 'customer.addresses.edit_address' | t }}</h4>
       <div class="grid">
-        <div class="grid-item one-half small--one-whole first">
+        <div class="grid-item one-half">
           <label for="address_first_name_{{form.id}}">{{ 'customer.addresses.first_name' | t }}</label>
           <input type="text" id="address_first_name_{{form.id}}" class="address_form" name="address[first_name]" value="{{form.first_name}}" autocapitalize="words">
         </div>
-        <div class="grid-item one-half small--one-whole last">
+        <div class="grid-item one-half">
           <label for="address_last_name_{{form.id}}">{{ 'customer.addresses.last_name' | t }}</label>
           <input type="text" id="address_last_name_{{form.id}}" class="address_form" name="address[last_name]" value="{{form.last_name}}" autocapitalize="words">
         </div>
