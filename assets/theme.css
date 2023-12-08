@@ -15423,16 +15423,6 @@ p.text-center.veiw_all_collections a span.icon.icon-chevron-right {
   -moz-transition: all 400ms ease-in-out 0s;
   -o-transition: all 400ms ease-in-out 0s;
   -ms-transition: all 400ms ease-in-out 0s;
-  transform: translateX(-150px);
-  -webkit-transform: translateX(-150px);
-  -moz-transform: translateX(-150px);
-  -o-transform: translateX(-150px);
-  -ms-transform: translateX(-150px);
-  opacity: 0;
-  -moz-opacity: 0; 
-  -khtml-opacity: 0; 
-  -webkit-opacity: 0;
-  visibility: hidden;
 }
 .list-collection-products .pickgradient-products:hover .deatil .collection-desc{
   transform: translateX(10px);
@@ -15449,6 +15439,17 @@ p.text-center.veiw_all_collections a span.icon.icon-chevron-right {
   -khtml-opacity: 1; 
   -webkit-opacity: 1;
   visibility:visible;
+}
+@media(min-width: 990px) {
+  .list-collection-products .pickgradient-products .deatil .collection-desc {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-150px);
+    -webkit-transform: translateX(-150px);
+    -moz-transform: translateX(-150px);
+    -o-transform: translateX(-150px);
+    -ms-transform: translateX(-150px);
+  }
 }
 .list-collection-products .pickgradient-products .deatil .tt-event-overlay {
   float: left;
