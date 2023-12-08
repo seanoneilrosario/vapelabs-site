@@ -45,6 +45,7 @@ main.main-content {
     font-size: 0 !important;
     border: none !important;
     background: transparent !important;
+    z-index: 4 !important;
 }
 
 .slick-arrow.slick-prev:before {
