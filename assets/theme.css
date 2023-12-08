@@ -11019,10 +11019,14 @@ ul.nav-tabs.jquery-tab-pager-tabbar {
 .contact-title {
   float: left;
   width: 100%;
-  font: 600 22px/24px var(--font-stack-header);
-    color: var(--color-text);
+  font-family: "Outfit",Sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 20px;
+    color: #001a3e;
       margin: 0 0 30px;
-      }
+}
 .contact-form .btn {
   background: var(--color-btn-primary);
     color: var(--color-btn-primary-text);
