@@ -462,7 +462,7 @@
                       <button id="AddToCart"
                               type="submit"
                               name="add"
-                              class="btn product-form__submit button button--full-width {% if product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
+                              class="btn_primary product-form__submit button button--full-width {% if product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
                               {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                               >
                         <i class="mdi mdi-cart-outline"></i>
@@ -784,7 +784,7 @@
                     <button id="AddToCart"
                             type="submit"
                             name="add"
-                            class="btn product-form__submit button button--full-width {% if product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
+                            class="btn_primary product-form__submit button button--full-width {% if product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
                             {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                             >
                       <i class="mdi mdi-cart-outline"></i>
