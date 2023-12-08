@@ -11021,12 +11021,13 @@ ul.nav-tabs.jquery-tab-pager-tabbar {
   float: left;
   width: 100%;
   font-family: "Outfit",Sans-serif;
-    font-size: 23px;
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 20px;
-    color: #274b7b;
-      margin: 0 0 30px;
+  text-transform: uppercase;
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 20px;
+  color: #274b7b;
+  margin: 0 0 30px;
 }
 .contact-form .btn {
   background: var(--color-btn-primary);
