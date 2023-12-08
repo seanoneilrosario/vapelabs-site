@@ -930,14 +930,14 @@ $('.toggle_open').on( "click", function() {
 
 
 // Redirect page if not logged in
-// $(document).ready(function() {
-//   console.log(window.location.pathname)
-//    if (!$('body').hasClass("customer-logged-in")) {
-//      if (window.location.pathname == "/pages/education-centre") {
-//         window.location.replace("https://vapelabsau.myshopify.com/account");
-//       }
-//    }
-// });
+$(document).ready(function() {
+  console.log(window.location.pathname)
+   if (!$('body').hasClass("customer-logged-in")) {
+     if (window.location.pathname == "/pages/education-centre") {
+        window.location.replace("https://vapelabsau.myshopify.com/account");
+      }
+   }
+});
 
 
 // slider
