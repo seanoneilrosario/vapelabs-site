@@ -129,6 +129,16 @@ into an external JS file
   {% endpaginate %}
   <p><a href="{{ routes.account_url }}"><i class="mdi mdi-chevron-left"></i> {{ 'customer.account.return' | t }}</a></p>
 </div>
+<style>
+  .breadcrumb-wrap {
+    display: none !important;
+  }
+
+  #shopify-section-footer-model-3,
+  footer.footer {
+    margin-top: 0 !important
+  }
+</style>
 <script>new Shopify.CountryProvinceSelector('address_country_new','address_province_new',{hideElement:'address_province_container_new'});{%for address in customer.addresses%}
 new Shopify.CountryProvinceSelector('address_country_{{address.id}}','address_province_{{address.id}}',{hideElement:'address_province_container_{{address.id}}'});{%endfor%}
 Shopify.CustomerAddress={toggleForm:function(id){var editEl=document.getElementById('edit_address_'+id);editEl.style.display=editEl.style.display=='none'?'':'none';return!1},toggleNewForm:function(){var el=document.getElementById('add_address');el.style.display=el.style.display=='none'?'':'none';return!1},destroy:function(id,confirm_msg){if(confirm(confirm_msg||"Are you sure you wish to delete this address?")){Shopify.postLink('/account/addresses/'+id,{'parameters':{'_method':'delete'}})}}}</script>
