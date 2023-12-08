@@ -901,7 +901,7 @@
       </div>
       {% endif %}
       {% if section.settings.product_layout == 'design_1' %}
-      <div class="product-single__description rte demo">
+      {% comment %}<div class="product-single__description rte demo">
         <div class="product_tab_wrapper col-xs-12">
           <ul class="tabs nav nav-tabs">
             <li class="active"><a data-toggle="tab"  href="#tab-1">{{ 'products.product.description' | t }}</a></li>
@@ -919,14 +919,14 @@
         {% if product.metafields.spr.reviews != "" %}
         <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div> 
         {% endif %}
-      </div>
+      </div>{% endcomment %}
       {% endif %}
     </div>
     {% if section.settings.product_layout == 'design_2' %}
     <div class="container">
       {% endif %}
       {% if section.settings.product_layout == 'design_2' %}
-      <div class="product-single__description rte demo">
+      {% comment %}<div class="product-single__description rte demo">
         <div class="product_tab_wrapper col-xs-12">
           <ul class="tabs nav nav-tabs">
             <li class="active"><a data-toggle="tab"  href="#tab-1">{{ 'products.product.description' | t }}</a></li>
@@ -944,7 +944,7 @@
         {% if product.metafields.spr.reviews != "" %}
         <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div> 
         {% endif %}
-      </div>
+      </div>{% endcomment %}
       {% endif %}
       {% if section.settings.related_products_enable %}     
       {% render 'related-products', product: product %}
