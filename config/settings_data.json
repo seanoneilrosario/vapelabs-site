@@ -5,7 +5,7 @@
     "preloader_bg": "#ffffff",
     "display_sticky": true,
     "color_body_bg": "#f1f3f8",
-    "color_body_text": "#7b818f",
+    "color_body_text": "#000000",
     "price_color": "#333333",
     "color_accent": "#777777",
     "link_hover_color": "#111111",
