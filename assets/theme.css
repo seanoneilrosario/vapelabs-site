@@ -19639,6 +19639,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0 0 10px;
     float: left;
     width: auto;
+    margin-left: 5px;
     }
 .blogleft_inner_content .tt-blog-content .tt-blog-description h4.article__title > a {
   color: var(--color-text);
