@@ -624,7 +624,7 @@
             </div>
           </div>
           {% if section.settings.product_layout != 'design_3' and section.settings.product_layout != 'design_4' and section.settings.product_layout != 'design_5' %}
-          <div class="payment-content">
+          {% comment %}<div class="payment-content">
             <div class="payment-title">{{ section.settings.payment_title }}</div>
             <div class="payment-subtitle">{{ section.settings.payment_subtitle }}</div>
             {% unless shop.enabled_payment_types == empty %}
@@ -637,7 +637,7 @@
               {%- endfor -%}
             </ul>
             {% endunless %}
-            {% comment %}<div class="payment-desc">{{ section.settings.payment_desc }}</div>
+            <div class="payment-desc">{{ section.settings.payment_desc }}</div>
             <hr class="hr">
             <div class="payment-security">{{ section.settings.security_title }}</div>
             <div class="payment-sec-cnt col-sm-4">
