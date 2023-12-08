@@ -1664,3 +1664,10 @@ main.main-content {
   align-items: center;
   justify-content: center;
 }
+
+
+
+/* Single Product */
+.shopify-payment-button {
+  display: none;
+}
