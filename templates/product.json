@@ -1,5 +1,19 @@
 {
   "sections": {
+    "9a79f8d5-b2c7-4c53-9815-370c7603c3c6": {
+      "type": "left-sidevar-head",
+      "settings": {
+      }
+    },
+    "f377cd19-b580-480b-9244-d24f57a2e4fb": {
+      "type": "book-here-cta",
+      "settings": {
+        "page_title": "{{ product.title }}",
+        "bar_content": "<p><strong>Learn about new products – Book <\/strong><a href=\"https:\/\/book.vapelabs.com.au\/#\/customer\/nvp\"><strong>here<\/strong><\/a><\/p>",
+        "button_text": "GET STARTED",
+        "button_link": "https:\/\/book.vapelabs.com.au\/#\/customer\/nvp"
+      }
+    },
     "main": {
       "type": "product-template",
       "blocks": {
@@ -52,6 +66,8 @@
     }
   },
   "order": [
+    "9a79f8d5-b2c7-4c53-9815-370c7603c3c6",
+    "f377cd19-b580-480b-9244-d24f57a2e4fb",
     "main"
   ]
 }
