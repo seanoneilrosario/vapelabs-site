@@ -1668,3 +1668,11 @@ main.main-content {
 
 
 /* Single Product */
+#recently-viewed-products-wrap h2 {
+  color: #2d4d7c;
+  font-family: "Outfit",Sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
