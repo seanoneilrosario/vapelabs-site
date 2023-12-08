@@ -1,1 +1,62 @@
-{"sections":{"main":{"type":"faq","blocks":{"1515838707365":{"type":"text","settings":{"title":"What is Lorem Ipsum?","description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}},"1515838710078":{"type":"text","settings":{"title":"Why do We Use It?","description":"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."}},"1515838714117":{"type":"text","settings":{"title":"Where Does It Come From?","description":"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."}}},"block_order":["1515838707365","1515838710078","1515838714117"],"settings":{}}},"order":["main"]}
+{
+  "sections": {
+    "ce58c6ee-b8f7-444a-8df4-a471041a9992": {
+      "type": "hero-banner",
+      "settings": {
+        "image_banner": "shopify:\/\/shop_images\/11.png",
+        "sub_title": "GOT QUESTIONS?",
+        "title": "We have got answers",
+        "button_title": "GET IN TOUCH",
+        "button_link": "shopify:\/\/pages\/contact"
+      }
+    },
+    "main": {
+      "type": "faq",
+      "blocks": {
+        "1515838707365": {
+          "type": "text",
+          "settings": {
+            "title": "What is Lorem Ipsum?",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+          }
+        },
+        "1515838710078": {
+          "type": "text",
+          "settings": {
+            "title": "Why do We Use It?",
+            "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+          }
+        },
+        "1515838714117": {
+          "type": "text",
+          "settings": {
+            "title": "Where Does It Come From?",
+            "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+          }
+        }
+      },
+      "block_order": [
+        "1515838707365",
+        "1515838710078",
+        "1515838714117"
+      ],
+      "settings": {
+      }
+    },
+    "90d06f1c-35cf-43c6-9539-4539bb989c06": {
+      "type": "cta-parallax-banner",
+      "settings": {
+        "image_parallax": "shopify:\/\/shop_images\/oos.jpg",
+        "heading": "Request a chat with our Account Managers",
+        "content": "<p>Request a chat with our dedicated Account Managers and experience personalised support tailored to your unique needs. Our team of experts is here to assist you in every step of your journey, whether you’re a valued client seeking assistance or a prospective customer looking to explore our services.<\/p><p>Get in Contact by filling out the form to schedule a one-on-one conversation with one of our Account Managers, and let us help you navigate your way to success. <\/p>",
+        "button_title": "GET IN CONTACT",
+        "button_link": "shopify:\/\/pages\/contact"
+      }
+    }
+  },
+  "order": [
+    "ce58c6ee-b8f7-444a-8df4-a471041a9992",
+    "main",
+    "90d06f1c-35cf-43c6-9539-4539bb989c06"
+  ]
+}
