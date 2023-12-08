@@ -90,6 +90,8 @@ into an external JS file
           <input type="text" id="address_last_name_{{form.id}}" class="address_form" name="address[last_name]" value="{{form.last_name}}" autocapitalize="words">
         </div>
       </div>
+      <label for="avatar">Customer Avatar</label>
+      <input type="file" id="avatar" name="customer[metafields][custom][picture]" value="{{ customer.metafields.custom.picture }}" accept="image/png, image/jpeg" />
       <label for="address_company_{{form.id}}">{{ 'customer.addresses.company' | t }}</label>
       <input type="text" id="address_company_{{form.id}}" class="address_form" name="address[company]" value="{{form.company}}" autocapitalize="words">
       <label for="address_address1_{{form.id}}">{{ 'customer.addresses.address1' | t }}</label>
