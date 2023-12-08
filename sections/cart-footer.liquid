@@ -62,8 +62,9 @@
     {% for block in section.blocks %}   
     {% if block.type == 's_text' %}
     <div class="policy">
-      <div id="icon-{{ block.id }}" class="policy-icon">
-      </div>
+      <!-- <div id="icon-{{ block.id }}" class="policy-icon">
+        
+      </div> -->
       <div class="content">
         <div class="policy-title">{{  block.settings.title }}</div>
         <div class="policy-desc">{{  block.settings.desc }}</div>
