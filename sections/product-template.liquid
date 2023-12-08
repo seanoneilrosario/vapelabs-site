@@ -597,7 +597,7 @@
                 {% endunless %}
                 <div class="payment-desc">{{ section.settings.payment_desc }}</div>
                 <hr class="hr">
-                /* <div class="payment-security">{{ section.settings.security_title }}</div>
+                {% comment %}<div class="payment-security">{{ section.settings.security_title }}</div>
                 <div class="payment-sec-cnt col-sm-4">
                   <img loading="lazy" height="50" width="50" src="{{ section.settings.sec_img1 | img_url: '50x50' }}">
                   <div class="security-content">
@@ -618,7 +618,7 @@
                     <div class="security-title">{{ section.settings.sec_title3 }}</div>
                     <div class="security-subtitle">{{ section.settings.sec_subtitle3 }}</div>
                   </div>
-                </div> */
+                </div>{% endcomment %}
               </div>
               {% endif %}
             </div>
@@ -639,7 +639,7 @@
             {% endunless %}
             <div class="payment-desc">{{ section.settings.payment_desc }}</div>
             <hr class="hr">
-            /* <div class="payment-security">{{ section.settings.security_title }}</div>
+            {% comment %}<div class="payment-security">{{ section.settings.security_title }}</div>
             <div class="payment-sec-cnt col-sm-4">
               <img loading="lazy" height="50" width="50" src="{{ section.settings.sec_img1 | img_url: '50x50' }}">
               <div class="security-content">
@@ -660,7 +660,7 @@
                 <div class="security-title">{{ section.settings.sec_title3 }}</div>
                 <div class="security-subtitle">{{ section.settings.sec_subtitle3 }}</div>
               </div>
-            </div> */
+            </div>{% endcomment %}
           </div>
           {% endif %}
         </div>
