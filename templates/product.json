@@ -25,6 +25,7 @@
         },
         "share": {
           "type": "share",
+          "disabled": true,
           "settings": {
             "share_label": "Share"
           }
@@ -49,7 +50,7 @@
         "pro_thumb_img_widthheight": "97x107",
         "thumb_position": "horizontal_bottom",
         "number_of_thumb": "4",
-        "sizechart_enable": true,
+        "sizechart_enable": false,
         "sizechart_lable": "Size Chart",
         "sizechart_info": "This is an approximate conversion table to help you find your size.\n<div class=\"tt-table-responsive-md\">\n\t<table class=\"tt-table-modal-info\">\n\t\t<thead>\n\t\t\t<tr>\n\t\t\t\t<th>Italian<\/th>\n\t\t\t\t<th>Spanish<\/th>\n\t\t\t\t<th>German<\/th>\n\t\t\t\t<th>UK<\/th>\n\t\t\t\t<th>US<\/th>\n\t\t\t\t<th>Japanese<\/th>\n\t\t\t\t<th>Chinese<\/th>\n\t\t\t\t<th>Russian<\/th>\n\t\t\t\t<th>Korean<\/th>\n\t\t\t<\/tr>\n\t\t<\/thead>\n\t\t<tbody>\n\t\t\t<tr>\n\t\t\t\t<td>34<\/td>\n\t\t\t\t<td>30<\/td>\n\t\t\t\t<td>28<\/td>\n\t\t\t\t<td>4<\/td>\n\t\t\t\t<td>00<\/td>\n\t\t\t\t<td>3<\/td>\n\t\t\t\t<td>155\/75A<\/td>\n\t\t\t\t<td>36<\/td>\n\t\t\t\t<td>44<\/td>\n\t\t\t<\/tr>\n\t\t\t<tr>\n\t\t\t\t<td>36<\/td>\n\t\t\t\t<td>32<\/td>\n\t\t\t\t<td>30<\/td>\n\t\t\t\t<td>6<\/td>\n\t\t\t\t<td>0<\/td>\n\t\t\t\t<td>5<\/td>\n\t\t\t\t<td>155\/80A<\/td>\n\t\t\t\t<td>38<\/td>\n\t\t\t\t<td>44<\/td>\n\t\t\t<\/tr>\n\t\t\t<tr>\n\t\t\t\t<td>38<\/td>\n\t\t\t\t<td>34<\/td>\n\t\t\t\t<td>32<\/td>\n\t\t\t\t<td>8<\/td>\n\t\t\t\t<td>2<\/td>\n\t\t\t\t<td>7<\/td>\n\t\t\t\t<td>160\/84A<\/td>\n\t\t\t\t<td>40<\/td>\n\t\t\t\t<td>55<\/td>\n\t\t\t<\/tr>\n\t\t\t<tr>\n\t\t\t\t<td>40<\/td>\n\t\t\t\t<td>36<\/td>\n\t\t\t\t<td>34<\/td>\n\t\t\t\t<td>10<\/td>\n\t\t\t\t<td>4<\/td>\n\t\t\t\t<td>9<\/td>\n\t\t\t\t<td>165\/88A<\/td>\n\t\t\t\t<td>42<\/td>\n\t\t\t\t<td>55<\/td>\n\t\t\t<\/tr>\n\t\t\t<tr>\n\t\t\t\t<td>42<\/td>\n\t\t\t\t<td>38<\/td>\n\t\t\t\t<td>36<\/td>\n\t\t\t\t<td>12<\/td>\n\t\t\t\t<td>6<\/td>\n\t\t\t\t<td>11<\/td>\n\t\t\t\t<td>170\/92A<\/td>\n\t\t\t\t<td>44<\/td>\n\t\t\t\t<td>66<\/td>\n\t\t\t<\/tr>\n\t\t\t<tr>\n\t\t\t\t<td>44<\/td>\n\t\t\t\t<td>40<\/td>\n\t\t\t\t<td>38<\/td>\n\t\t\t\t<td>14<\/td>\n\t\t\t\t<td>8<\/td>\n\t\t\t\t<td>13<\/td>\n\t\t\t\t<td>175\/96A<\/td>\n\t\t\t\t<td>46<\/td>\n\t\t\t\t<td>66<\/td>\n\t\t\t<\/tr>\n\t\t\t<tr>\n\t\t\t\t<td>46<\/td>\n\t\t\t\t<td>42<\/td>\n\t\t\t\t<td>40<\/td>\n\t\t\t\t<td>16<\/td>\n\t\t\t\t<td>10<\/td>\n\t\t\t\t<td>15<\/td>\n\t\t\t\t<td>170\/98A<\/td>\n\t\t\t\t<td>48<\/td>\n\t\t\t\t<td>77<\/td>\n\t\t\t<\/tr>\n\t\t\t<tr>\n\t\t\t\t<td>48<\/td>\n\t\t\t\t<td>44<\/td>\n\t\t\t\t<td>42<\/td>\n\t\t\t\t<td>18<\/td>\n\t\t\t\t<td>12<\/td>\n\t\t\t\t<td>17<\/td>\n\t\t\t\t<td>170\/100B<\/td>\n\t\t\t\t<td>50<\/td>\n\t\t\t\t<td>77<\/td>\n\t\t\t<\/tr>\n\t\t\t<tr>\n\t\t\t\t<td>50<\/td>\n\t\t\t\t<td>46<\/td>\n\t\t\t\t<td>44<\/td>\n\t\t\t\t<td>20<\/td>\n\t\t\t\t<td>14<\/td>\n\t\t\t\t<td>19<\/td>\n\t\t\t\t<td>175\/100B<\/td>\n\t\t\t\t<td>52<\/td>\n\t\t\t\t<td>88<\/td>\n\t\t\t<\/tr>\n\t\t\t<tr>\n\t\t\t\t<td>52<\/td>\n\t\t\t\t<td>48<\/td>\n\t\t\t\t<td>46<\/td>\n\t\t\t\t<td>22<\/td>\n\t\t\t\t<td>16<\/td>\n\t\t\t\t<td>21<\/td>\n\t\t\t\t<td>180\/104B<\/td>\n\t\t\t\t<td>54<\/td>\n\t\t\t\t<td>88<\/td>\n\t\t\t<\/tr>\n\t\t<\/tbody>\n\t<\/table>\n<\/div>",
         "payment_title": "Payment & Security",
