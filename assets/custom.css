@@ -1544,6 +1544,10 @@ main.main-content {
     margin: 10px;
 }
 
+.downloadables a.dl h4 {
+    line-height: 1.2;
+}
+
 .downloadables_wrap h2 {
     color: #2d4d7c;
     text-align: center;
