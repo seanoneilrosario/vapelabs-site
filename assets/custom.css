@@ -1676,3 +1676,10 @@ main.main-content {
   line-height: 1.2;
   margin-bottom: 20px;
 }
+
+
+
+/* Breadcrumbs */
+.breadcrumb-wrap {
+  display: none;
+}
