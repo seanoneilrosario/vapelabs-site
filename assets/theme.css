@@ -15423,6 +15423,9 @@ p.text-center.veiw_all_collections a span.icon.icon-chevron-right {
   -moz-transition: all 400ms ease-in-out 0s;
   -o-transition: all 400ms ease-in-out 0s;
   -ms-transition: all 400ms ease-in-out 0s;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
 }
 .list-collection-products .pickgradient-products:hover .deatil .collection-desc{
   transform: translateX(10px);
