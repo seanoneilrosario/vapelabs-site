@@ -1737,7 +1737,7 @@ a.spr-icon.spr-icon-star.spr-icon-star-empty.spr-icon-star-hover {
 }
 /*------------------- Size guide Chart ---------------------*/
 .product-template__container{
-  float: left;
+  /* float: left; */
   width: 100%;
   position: relative;
 }
