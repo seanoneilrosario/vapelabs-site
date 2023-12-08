@@ -15,6 +15,9 @@
   -ms-box-shadow: 1px 2px 3px 0px #e5e5e5;
   -o-box-shadow: 1px 2px 3px 0px #e5e5e5;
 }
+.product-wrapper-owlslider {
+  top: 40px !important;
+}
 @media only screen and (max-width: 991px) {
   .page-wrapper .main-content {
     margin: 0;
