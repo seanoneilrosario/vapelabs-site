@@ -1658,3 +1658,9 @@ main.main-content {
 .cart__blocks .shopify-cleanslate .p28_J2fRvZNDqyZkZ2H9 {
   display: none !important;
 }
+
+.cart-item .quantity__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
