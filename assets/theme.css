@@ -10955,7 +10955,7 @@ ul.nav-tabs.jquery-tab-pager-tabbar {
 /*-------------------- GoTo Top ------------------*/
 #GotoTop {
   mix-blend-mode: difference;
-  background: #d1c383 !important;
+  background:;
     bottom: 40px;
     cursor: pointer;
     height: 40px;
@@ -10968,7 +10968,7 @@ ul.nav-tabs.jquery-tab-pager-tabbar {
     text-align: center;
     width: 40px;
     z-index: 1;
-    color: #000 !important;
+    color: #000;
       display: none;
       top: auto !important;
       transition: all 400ms ease-in-out 0s;
@@ -10988,8 +10988,6 @@ ul.nav-tabs.jquery-tab-pager-tabbar {
   }
 }
 #GotoTop:hover {
-  background: var(--color-btn-primary);
-    color: var(--color-btn-primary-text) !important;
       transform: translateY(-6px);
       -webkit-transform: translateY(-6px);
       -moz-transform: translateY(-6px);
