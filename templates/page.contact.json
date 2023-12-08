@@ -1,1 +1,83 @@
-{"sections":{"form":{"type":"contact-form","settings":{"heading":"Contact Us","map_height":"400px","map_api_key":"AIzaSyDS1A1NkVZlfNpumO5nQlAPEKFjyxcvuWs","map_type":"ROADMAP","map_address":"india","map_custom_style":""}}},"order":["form"]}
+{
+  "sections": {
+    "68fc8ab7-a153-49b7-b3c9-e2c93745c273": {
+      "type": "hero-banner",
+      "settings": {
+        "image_banner": "shopify:\/\/shop_images\/7.png",
+        "sub_title": "CONTACT VAPELABS",
+        "title": "Get in touch",
+        "button_title": "BOOK ONBOARDING",
+        "button_link": "https:\/\/book.vapelabs.com.au\/#\/customer\/nvp"
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "General Enquiry",
+        "map_height": "",
+        "map_api_key": "",
+        "map_type": "ROADMAP",
+        "map_address": "",
+        "map_custom_style": ""
+      }
+    },
+    "080c92ec-6767-46cd-a3a6-2754959b613d": {
+      "type": "icons-text",
+      "blocks": {
+        "38f3afc6-a64b-481f-af88-9723da2a68f9": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_2.png",
+            "icon_title": "Express Delivery"
+          }
+        },
+        "18afe169-976a-4e4d-9d5c-aacb08d99b40": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_4.png",
+            "icon_title": "Widest Range"
+          }
+        },
+        "a052d1f0-dd99-4b5b-9c92-a4637d4e6a27": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_5.png",
+            "icon_title": "TGO110 Compliant"
+          }
+        },
+        "f42329d1-2f70-485a-993a-c8eaa990c5f4": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_3.png",
+            "icon_title": "Dedicated Support"
+          }
+        }
+      },
+      "block_order": [
+        "38f3afc6-a64b-481f-af88-9723da2a68f9",
+        "18afe169-976a-4e4d-9d5c-aacb08d99b40",
+        "a052d1f0-dd99-4b5b-9c92-a4637d4e6a27",
+        "f42329d1-2f70-485a-993a-c8eaa990c5f4"
+      ],
+      "settings": {
+        "bg_color": "#F8F8F8"
+      }
+    },
+    "2b1ddbad-8ccb-415d-ba77-e386158bf544": {
+      "type": "cta-parallax-banner",
+      "settings": {
+        "image_parallax": "shopify:\/\/shop_images\/oos.jpg",
+        "heading": "Book your free training session with our Nicotine Vaping Product specialists.",
+        "content": "<p>Request a chat with our dedicated Account Managers and experience personalised support tailored to your unique needs. Our team of experts is committed to assisting you every step of the way, whether you require a training session on NVP dispensing or onboarding assistance.<\/p><p>Book your free training session with our Nicotine Vaping Product specialist today.<\/p>",
+        "button_title": "BOOK NOW",
+        "button_link": "https:\/\/book.vapelabs.com.au\/#\/customer\/nvp"
+      }
+    }
+  },
+  "order": [
+    "68fc8ab7-a153-49b7-b3c9-e2c93745c273",
+    "form",
+    "080c92ec-6767-46cd-a3a6-2754959b613d",
+    "2b1ddbad-8ccb-415d-ba77-e386158bf544"
+  ]
+}
