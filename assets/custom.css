@@ -1641,6 +1641,7 @@ main.main-content {
 
 .article_content h4 {
     margin: 0;
+  line-height: 1.2;
 }
 
 @media(min-width:990px) {
