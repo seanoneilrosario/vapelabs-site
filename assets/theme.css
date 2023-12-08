@@ -10955,7 +10955,7 @@ ul.nav-tabs.jquery-tab-pager-tabbar {
 /*-------------------- GoTo Top ------------------*/
 #GotoTop {
   mix-blend-mode: difference;
-  background:;
+  background: #d1c383;
     bottom: 40px;
     cursor: pointer;
     height: 40px;
