@@ -1656,5 +1656,5 @@ main.main-content {
 
 /* Carts */
 .cart__blocks .shopify-cleanslate .p28_J2fRvZNDqyZkZ2H9 {
-  display: none;
+  display: none !important;
 }
