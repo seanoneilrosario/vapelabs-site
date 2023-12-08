@@ -1650,3 +1650,11 @@ main.main-content {
         width: calc(100% / 3 - 30px);
     }
 }
+
+
+
+
+/* Carts */
+.cart__blocks .shopify-cleanslate .p28_J2fRvZNDqyZkZ2H9 {
+  display: none;
+}
