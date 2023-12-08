@@ -57,6 +57,9 @@ input[type="search"]::-webkit-search-decoration {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+.edit-address .grid-item {
+  padding-left: 0;
+}
 .products-grid-view.collections_masonry.shop_masonry {
   float: left;
   width: 100%;
