@@ -145,6 +145,12 @@ into an external JS file
     padding: 60px 0;
     background: #81bbe1;
   }
+
+  .edit-address-wrap .container--narrow {
+    background:#fff;
+    padding: 30px;
+    border-raduis: 20px;
+  }
 </style>
 <script>new Shopify.CountryProvinceSelector('address_country_new','address_province_new',{hideElement:'address_province_container_new'});{%for address in customer.addresses%}
 new Shopify.CountryProvinceSelector('address_country_{{address.id}}','address_province_{{address.id}}',{hideElement:'address_province_container_{{address.id}}'});{%endfor%}
