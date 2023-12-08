@@ -1312,7 +1312,7 @@ hr.hr--clear {
 .tt-toggle-accordion.active a:before, .tt-toggle-accordion.active a:after, .tt-toggle-frame .tt-toggle.active a:before, .tt-toggle-frame .tt-toggle.active a:after, .tt-toggle-frame-set .tt-toggle-frame h5.tt-toggle.active:before{content:"";}
 .tt-toggle-frame-set h5.tt-toggle-accordion:before, h5.tt-toggle:before{content:"\f140";font-family:"Material Design Icons";}
 h5.tt-toggle-accordion.active:before, .tt-toggle-frame-set h5.tt-toggle.active:before{content:"\f143";font-family:"Material Design Icons";}
-h5.tt-toggle-accordion.active { background:var(--color-btn-primary);color:#fff; }
+h5.tt-toggle-accordion.active { background:#7fb7e3;color:#fff; }
 h5.tt-toggle-accordion.active a { color:#fff; border: none;}
 .course h5.tt-toggle-accordion:before{content:"?";}
 .course h5.tt-toggle-accordion.active:before{content:"?";}
