@@ -38,6 +38,8 @@
               {% for note in notes %}  
                     {% if note contains 'INV' %} 
                       <a href="{{ notes.last }}">{{ note }}</a>
+                    {% else %}
+                      ---
                     {% endif %}
               {% endfor %}
               
