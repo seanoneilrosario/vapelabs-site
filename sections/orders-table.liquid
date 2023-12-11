@@ -13,6 +13,7 @@
           <th>{{ 'customer.orders.order_number' | t }}</th>
           <th>{{ 'customer.orders.date' | t }}</th>
           <th>Invoice Status</th>
+          <th>Invoice Number</th>
           <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
           <th>Tracking Link</th>
           <th>{{ 'customer.orders.total' | t }}</th>
@@ -26,7 +27,20 @@
           <td>
             {% if order.note %}
               {% assign notes = order.note | split: "," %}
-              <a href="{{ notes.last }}">{% if notes.first != "Paid" %}Waiting for payment{% else %}Paid{% endif %}</a>
+              {% if notes.first != "Paid" %}Waiting for payment{% else %}Paid{% endif %}
+            {% else %}
+              ---
+            {% endif %}
+          </td>
+          <td>
+            {% if order.note %}
+              {% assign notes = order.note | split: "," %}
+              {% for note in notes %}  
+                    {% if note contains 'INV' %} 
+                      <a href="{{ notes.last }}">{{ note }}</a>
+                    {% endif %}
+              {% endfor %}
+              
             {% else %}
               ---
             {% endif %}
