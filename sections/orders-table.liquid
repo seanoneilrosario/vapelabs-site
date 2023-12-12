@@ -29,7 +29,7 @@
               {% assign notes = order.note | split: "," %}
               {% if notes.first != "Paid" %}Waiting for payment{% else %}Paid{% endif %}
             {% else %}
-              ---
+              No Invoice
             {% endif %}
           </td>
           <td>
@@ -41,7 +41,7 @@
                     {% endif %}
               {% endfor %}
             {% else %}
-              ---
+              No Invoice
             {% endif %}
           </td>
           {% comment %}<td>{{ order.fulfillment_status_label }}</td>{% endcomment %}
@@ -49,7 +49,7 @@
             {% if line_item.fulfillment.tracking_number %}
               <td><a href="{{ line_item.fulfillment.tracking_url }}">#{{ line_item.fulfillment.tracking_number}}</a></td>
             {% else %}
-              <td>---</td>
+              <td>No tracking number</td>
             {% endif %}
           {% endfor %}
           <td>{{ order.total_price | money }}</td>
