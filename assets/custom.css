@@ -1677,6 +1677,15 @@ main.main-content {
   margin-bottom: 20px;
 }
 
+.tags_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 10px;
+}
+
 
 
 /* Breadcrumbs */
