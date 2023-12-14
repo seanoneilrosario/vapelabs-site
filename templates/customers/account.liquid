@@ -219,7 +219,7 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
           <div class="box-details">
             <div class="details-contents">
               <h5>{% for address in customer.addresses %}{{ address.company }}{% endfor %}</h5>
-              {% for address in customer.addresses %}
+              {% for address in checkout.shipping_address %}
                 <p>{{ address.street }}</p>
                 <p>{{ address.province }}, {{ address.zip }}, {{ address.country }}</p>
               {% endfor %}
