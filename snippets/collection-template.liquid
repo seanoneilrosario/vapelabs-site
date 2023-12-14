@@ -3,7 +3,6 @@
 {% assign products_per_page = settings.products_per_page %}
 {% endunless %}
 <div id="ProductGridContainer">
-  {% paginate collection.products by products_per_page %}
   <div class="collection_template" id="product-grid" data-id="{{ section.id }}">
     <header class="section-header text-left">
       {% if collection.description != blank and settings.enable_category_image == true %}
@@ -160,12 +159,11 @@
         {% endfor %}
       </div>
     </div>
-    <div class="text-center pagination-wrap">
+    {% comment %}<div class="text-center pagination-wrap">
       {% render 'pagination-custom', paginate: paginate %}
       <div class="showing">
         <span class="show-txt">Showing</span> <span class="loadcount">{{ collection.products.size }}</span> of {{ collection.all_products_count }}.
       </div>
-    </div>
+    </div>{% endcomment %}
   </div>
-  {% endpaginate %}
 </div>
