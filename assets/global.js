@@ -939,18 +939,30 @@ $(document).ready(function() {
    }
 });
 
-function getUserPictureUrl(email){
-    let defaultPictureUrl = 'https://lh3.googleusercontent.com/a-/AOh14Gj-cdUSUVoEge7rD5a063tQkyTDT3mripEuDZ0v=s100';
-    const People = 'https://people.googleapis.com/v1/people/me';
-    let people = People.People.searchDirectoryPeople( {
-        query: email,
-        readMask: 'photos',
-        sources: 'DIRECTORY_SOURCE_TYPE_DOMAIN_PROFILE'
-    });
-   let userPictureUrl = people?.people[0]?.photos[0]?.url;
-   return userPictureUrl ?? defaultPictureUrl;    
-}
-console.log(getUserPictureUrl('seanrosario119@gmail.com'));
+GET https://people.googleapis.com/v1/people/me
+function getPicture() {
+        gapi.client.people.people.get({
+           'resourceName': 'people/me',
+           'pageSize': 10,
+           'personFields': 'photos',
+         }).then(function(response) {
+           var connections = response.result.connections;
+           appendPre('Connections:');
+           if (connections.length > 0) {
+             for (i = 0; i < connections.length; i++) {
+               var person = connections[i];
+               if (person.url && person.url.length > 0) {
+                 appendPre(person.names[0].url)
+               } else {
+                 appendPre("No display name found for connection.");
+               }
+             }
+           } else {
+             appendPre('No connections found.');
+           }
+         });
+      }
+console.log(getPicture() )
 
 
 // slider
