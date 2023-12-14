@@ -1695,6 +1695,10 @@ main.main-content {
   float: none;
 }
 
+.filter-show {
+  display: none !important;
+}
+
 
 /* Breadcrumbs */
 .breadcrumb-wrap {
