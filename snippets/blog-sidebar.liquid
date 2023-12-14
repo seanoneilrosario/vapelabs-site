@@ -29,6 +29,14 @@
   </ul>
 </div>
 {% endif %}
+<div class="widget widget_blogs">
+  <h4>Blogs<span class="right"></span></h4>
+  <ul>
+    {% for article in blog.articles %}
+      <h2>{{ article.title }}</h2>
+    {% endfor %}
+  </ul>
+</div>
 {% if settings.show_blog_tags %}
 {% if blog.all_tags.size > 0 %}
 <div class="widget widget_categories">
