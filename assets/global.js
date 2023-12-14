@@ -939,6 +939,18 @@ $(document).ready(function() {
    }
 });
 
+function getUserPictureUrl(email){
+    let defaultPictureUrl = 'https://lh3.googleusercontent.com/a-/AOh14Gj-cdUSUVoEge7rD5a063tQkyTDT3mripEuDZ0v=s100';
+    let people = People.People.searchDirectoryPeople( {
+        query: email,
+        readMask: 'photos',
+        sources: 'DIRECTORY_SOURCE_TYPE_DOMAIN_PROFILE'
+    });
+   let userPictureUrl = people?.people[0]?.photos[0]?.url;
+   return userPictureUrl ?? defaultPictureUrl;    
+}
+console.log(getUserPictureUrl('seanrosario119@gmail.com'));
+
 
 // slider
 $('.logo-slider_slider').slick({
