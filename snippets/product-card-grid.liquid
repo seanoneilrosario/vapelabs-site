@@ -14,7 +14,7 @@
     <div class="thumbs product-thumb">
       {% if settings.product_hover_btn =="style1" %}
       {% if settings.show_vendor %}
-      {% comment %}<div class="grid-view-item__vendor">{{ product.vendor }}</div>{% endcomment %}
+      <div class="grid-view-item__vendor">{{ product.vendor }}</div>
       {% endif %}
       <div class="h4 grid-view-item__title">
         <a class="grid-view-item__link grid-link__title" href="{{ product.url | within: collection }}">{{ product.title }}</a>
@@ -127,7 +127,7 @@
       {% endif %} 
       {% if settings.product_hover_btn !="style1" %}
       {% if settings.show_vendor %}
-      {% comment %}<div class="grid-view-item__vendor">{{ product.vendor }}</div>{% endcomment %}
+      <div class="grid-view-item__vendor">{{ product.vendor }}</div>
       {% endif %}
       <div class="h4 grid-view-item__title">
         <a class="grid-view-item__link grid-link__title" href="{{ product.url | within: collection }}">{{ product.title | strip_html | truncatewords: 5 }}</a>
