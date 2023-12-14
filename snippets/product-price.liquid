@@ -32,6 +32,9 @@
     {% endif %}
     <span class="product-price__price product-price__sale">
       <span class="product-price__price">{{ money_price }} <sup>WHOLESALE + GST</sup></span>
+      <span class="product-price__price">
+        {{ product.metafields.custom.rrp }} <sup>RRP</sup>
+      </span>
     </span>
     <s class="product-price__price compare_price">{{ compare_at_price | money }}</s>
   </div>
@@ -39,6 +42,9 @@
     <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>    
     <span class="product-price__price product-price__sale">
       {{ money_price }} <sup>WHOLESALE + GST</sup>
+    </span>
+    <span class="product-price__price">
+      {{ product.metafields.custom.rrp }} <sup>RRP</sup>
     </span>
   </div>
 </div>
