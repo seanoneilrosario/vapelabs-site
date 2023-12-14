@@ -11798,7 +11798,6 @@ body .compare-model .max_compare {
   width:100%;
   margin: 0 0 8px; 
   text-overflow: ellipsis;
-  white-space: nowrap;
   overflow:hidden;
 }
 #slidedown-cart .product-details .product-name,#slidedown-cart .product-details .variants{
@@ -12156,7 +12155,6 @@ a.grid-link__title {
       -o-transition: all 400ms ease-in-out 0s;
       -ms-transition: all 400ms ease-in-out 0s;
       text-overflow: ellipsis;
-      white-space: nowrap;
       overflow:hidden;
       }
 @media only screen and (min-width: 1025px) {
