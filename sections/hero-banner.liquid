@@ -3,7 +3,7 @@
     <div class="banner_contents">
         <h3>{{ section.settings.sub_title }}</h3>
         <h2>{{ section.settings.title }}</h2>
-        {% if section.settings.button_title %}
+        {% if section.settings.button_title != empty %}
             <a class="btn_primary" href="{{ section.settings.button_link }}">{{ section.settings.button_title }}</a>
         {% endif %}
     </div>
