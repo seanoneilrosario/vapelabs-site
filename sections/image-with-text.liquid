@@ -6,7 +6,9 @@
         <div style="color:{{ section.settings.color_text }}" class="contents_wrap">
             <h3 style="color:{{ section.settings.heading_color }}">{{ section.settings.heading }}</h3>
             {{ section.settings.contents }}
-            <a class="btn_primary" href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }}</a>
+            {% if section.settings.btn_text %}
+              <a class="btn_primary" href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }}</a>
+            {% endif %}
         </div>
     </div>
 </div>
