@@ -32,8 +32,8 @@
 <div class="widget widget_blogs">
   <h4>Blogs<span class="right"></span></h4>
   <ul>
-    {% for article in blog.articles %}
-      <h2>{{ article.title }}</h2>
+    {% for blog in blogs %}
+      <li>{{ blog.title }}</li>
     {% endfor %}
   </ul>
 </div>
