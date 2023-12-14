@@ -940,6 +940,7 @@ $(document).ready(function() {
 });
 
 function getPicture() {
+  const gapi = 'https://people.googleapis.com/v1/people/me';
         gapi.client.people.people.get({
            'resourceName': 'people/me',
            'pageSize': 10,
