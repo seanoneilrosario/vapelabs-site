@@ -939,31 +939,6 @@ $(document).ready(function() {
    }
 });
 
-GET 'https://people.googleapis.com/v1/people/me'
-function getPicture() {
-        gapi.client.people.people.get({
-           'resourceName': 'people/me',
-           'pageSize': 10,
-           'personFields': 'photos',
-         }).then(function(response) {
-           var connections = response.result.connections;
-           appendPre('Connections:');
-           if (connections.length > 0) {
-             for (i = 0; i < connections.length; i++) {
-               var person = connections[i];
-               if (person.url && person.url.length > 0) {
-                 appendPre(person.names[0].url)
-               } else {
-                 appendPre("No display name found for connection.");
-               }
-             }
-           } else {
-             appendPre('No connections found.');
-           }
-         });
-      }
-console.log(getPicture() )
-
 
 // slider
 $('.logo-slider_slider').slick({
