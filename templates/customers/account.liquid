@@ -155,7 +155,7 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
 <div class="account_details">
   <div class="account-container">
     <div class="verified">
-      <h3>{% for tag in customer.tags %}{{ tag }}{% endfor %}</h3>
+      <h3>{% for address in customer.addresses %}{{ address.company }}{% endfor %}</h3>
       <span>
         <svg viewBox="0 0 384 448">
           <g id="icomoon-ignore">
@@ -189,7 +189,7 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
           <div class="box-details">
             <img src="{{ customer.metafields.custom.picture | img_url: 'master' }}" />
             <div class="details-contents">
-              <h5>{% for tag in customer.tags %}{{ tag }}{% endfor %}</h5>
+              <h5>{% for address in customer.addresses %}{{ address.company }}{% endfor %}</h5>
               {% for address in customer.addresses %}
                 <p>{{ address.street }}</p>
                 <p>{{ address.province }}, {{ address.zip }}, {{ address.country }}</p>
@@ -218,7 +218,7 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
           </div>
           <div class="box-details">
             <div class="details-contents">
-              <h5>{% for tag in customer.tags %}{{ tag }}{% endfor %}</h5>
+              <h5>{% for address in customer.addresses %}{{ address.company }}{% endfor %}</h5>
               {% for address in customer.addresses %}
                 <p>{{ address.street }}</p>
                 <p>{{ address.province }}, {{ address.zip }}, {{ address.country }}</p>
@@ -232,7 +232,7 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
           </div>
           <div class="box-details">
             <div class="details-contents">
-              <h5>{% for tag in customer.tags %}{{ tag }}{% endfor %}</h5>
+              <h5>{% for address in customer.addresses %}{{ address.company }}{% endfor %}</h5>
               {% for address in customer.addresses %}
                 <p>{{ address.street }}</p>
                 <p>{{ address.province }}, {{ address.zip }}, {{ address.country }}</p>
