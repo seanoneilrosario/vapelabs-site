@@ -31,14 +31,14 @@
     <span class="discount-percentage">Save -{{ target.compare_at_price | minus: target.price | times: 100.0 | divided_by: target.compare_at_price | round }}%</span>
     {% endif %}
     <span class="product-price__price product-price__sale">
-      <span class="product-price__price">{{ money_price }} <sub>WHOLESALE + GST</sub></span>
+      <span class="product-price__price">{{ money_price }} <sup>WHOLESALE + GST</sup></span>
     </span>
     <s class="product-price__price compare_price">{{ compare_at_price | money }}</s>
   </div>
   <div class="regular-price">
     <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>    
     <span class="product-price__price product-price__sale">
-      {{ money_price }} <sub>WHOLESALE + GST</sub>
+      {{ money_price }} <sup>WHOLESALE + GST</sup>
     </span>
   </div>
 </div>
