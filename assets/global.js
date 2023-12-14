@@ -939,7 +939,7 @@ $(document).ready(function() {
    }
 });
 
-GET https://people.googleapis.com/v1/people/me
+GET 'https://people.googleapis.com/v1/people/me'
 function getPicture() {
         gapi.client.people.people.get({
            'resourceName': 'people/me',
