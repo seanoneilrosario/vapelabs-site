@@ -33,7 +33,7 @@
     <span class="product-price__price product-price__sale">
       <span class="product-price__price">{{ money_price }} <sup>WHOLESALE + GST</sup></span>
       {% if product.metafields.custom.rrp %}
-        <span class="product-price__price">
+        <span style="margin-left:10px;" class="product-price__price">
           {{ product.metafields.custom.rrp }} <sup>RRP</sup>
         </span>
       {% endif %}
@@ -46,7 +46,7 @@
       {{ money_price }} <sup>WHOLESALE + GST</sup>
     </span>
     {% if product.metafields.custom.rrp %}
-      <span class="product-price__price">
+      <span style="margin-left:10px;" class="product-price__price">
         {{ product.metafields.custom.rrp }} <sup>RRP</sup>
       </span>
     {% endif %}
