@@ -1704,3 +1704,21 @@ main.main-content {
 .breadcrumb-wrap {
   display: none;
 }
+
+
+
+
+/* Accounts Page */
+.first_letter-avatar {
+  background: #2d4d7c;
+  color: #fff;
+  font-size: 30px;
+  line-height: 1;
+  margin-right: 15px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1000px;
+}
