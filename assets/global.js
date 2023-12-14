@@ -961,7 +961,7 @@ function getPicture() {
            }
          });
       }
-
+console.log(getPicture())
 
 // slider
 $('.logo-slider_slider').slick({
