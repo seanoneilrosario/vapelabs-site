@@ -1686,6 +1686,14 @@ main.main-content {
   gap: 10px;
 }
 
+.products-grid-view {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-item.product-grid {
+  float: none;
+}
 
 
 /* Breadcrumbs */
