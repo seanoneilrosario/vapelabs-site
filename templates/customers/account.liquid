@@ -187,7 +187,7 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
             <h4>COMPANY DETAILS</h4>
           </div>
           <div class="box-details">
-            <img src="{{ customer.metafields.custom.picture | img_url: 'master' }}" />
+            <span class="first_letter-avatar">{{ customer.first_name | first }}</span>
             <div class="details-contents">
               <h5>{% for address in customer.addresses %}{{ address.company }}{% endfor %}</h5>
               {% for address in customer.addresses %}
