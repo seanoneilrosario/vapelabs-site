@@ -256,7 +256,7 @@
                 <div class="title-arrows">
                   <h1 itemprop="name" class="product-single__title text-capitalize{% if section.settings.product_vendor_enable %} wvendor{% endif %}">{{ product.title }}</h1>
                   {% if product.metafields.custom.cost_per_ml %}
-                    <h4>Cost per ml{{ product.metafields.custom.cost_per_ml }}</h4>
+                    <h4>Cost per ml {{ product.metafields.custom.cost_per_ml }}</h4>
                   {% endif %}
                   {% if collection %}
                   {% if collection.previous_product or collection.next_product %}
