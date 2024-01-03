@@ -45,7 +45,7 @@
             {% endif %}
           </td>
           {% comment %}<td>{{ order.fulfillment_status_label }}</td>{% endcomment %}
-          {% for line_item in order.line_items %}
+          {% for line_item in order.line_items.first %}
             {% if line_item.fulfillment.tracking_number %}
               <td><a href="{{ line_item.fulfillment.tracking_url }}">#{{ line_item.fulfillment.tracking_number}}</a></td>
             {% else %}
