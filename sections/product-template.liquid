@@ -308,13 +308,13 @@
                   {% if section.settings.enable_progressbar %}                 
                     {% if product.selected_or_first_available_variant.inventory_management %} 
                     {% if current_variant.inventory_quantity > 0 %}
-                    <div class="ttqtyprogress">                  
+                    <!-- <div class="ttqtyprogress">                  
                       <span class="QuantityAvailable"> {{ 'products.product.hurry_up' | t }}
                         <span class="quantity">{{current_variant.inventory_quantity}}</span> {{ 'products.product.left_item' | t }}</span>
                       <div class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"></div>
                       </div>                  
-                    </div> 
+                    </div>  -->
                       <hr class="hr">
                     {% endif %}
                     {% endif %}
