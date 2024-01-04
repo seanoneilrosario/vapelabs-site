@@ -45,13 +45,11 @@
             {% endif %}
           </td>
           {% comment %}<td>{{ order.fulfillment_status_label }}</td>{% endcomment %}
-          {% for line_item in order.line_items %}
-            {% if line_item.fulfillment.tracking_number %}
-              <td><a href="{{ line_item.fulfillment.tracking_url }}">#{{ line_item.fulfillment.tracking_number}}</a></td>
+            {% if order.line_items[0].fulfillment.tracking_number %}
+              <td><a href="{{ order.line_items[0].fulfillment.tracking_url }}">#{{ order.line_items[0].fulfillment.tracking_number}}</a></td>
             {% else %}
               <td>---</td>
             {% endif %}
-          {% endfor %}
           <td>{{ order.total_price | money }}</td>
         </tr>
         {% endfor %}
