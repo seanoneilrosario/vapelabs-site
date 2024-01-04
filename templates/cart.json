@@ -27,6 +27,7 @@
         },
         "655603c2-0421-44a9-84eb-e0c2b277953c": {
           "type": "s_text",
+          "disabled": true,
           "settings": {
             "title": "Security policy",
             "desc": "(edit with the Customer Reassurance module)"
@@ -34,6 +35,7 @@
         },
         "cc231b2d-d537-47e2-ba2f-70d157bca4e5": {
           "type": "s_text",
+          "disabled": true,
           "settings": {
             "title": "Delivery policy",
             "desc": "(edit with the Customer Reassurance module)"
@@ -41,6 +43,7 @@
         },
         "cbecf515-f350-46e4-96c0-2ea7effef493": {
           "type": "s_text",
+          "disabled": true,
           "settings": {
             "title": "Return policy",
             "desc": "(edit with the Customer Reassurance module)"
