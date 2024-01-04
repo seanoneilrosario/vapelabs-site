@@ -15433,34 +15433,6 @@ p.text-center.veiw_all_collections a span.icon.icon-chevron-right {
   visibility: visible;
   transform: translateX(0);
 }
-@media(min-width: 990px) {
-  .list-collection-products .pickgradient-products .deatil .collection-desc {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(-150px);
-    -webkit-transform: translateX(-150px);
-    -moz-transform: translateX(-150px);
-    -o-transform: translateX(-150px);
-    -ms-transform: translateX(-150px);
-  }
-
-  .list-collection-products .pickgradient-products:hover .deatil .collection-desc{
-    transform: translateX(10px);
-    -webkit-transform: translateX(10px);
-    -moz-transform: translateX(10px);
-    -o-transform: translateX(10px);
-    -ms-transform: translateX(10px);
-    opacity: 1;
-    -moz-opacity: 1; 
-    -khtml-opacity: 1; 
-    -webkit-opacity: 1;
-    opacity: 1;
-    -moz-opacity: 1; 
-    -khtml-opacity: 1; 
-    -webkit-opacity: 1;
-    visibility:visible;
-  }
-}
 .list-collection-products .pickgradient-products .deatil .tt-event-overlay {
   float: left;
   width: 100%;
