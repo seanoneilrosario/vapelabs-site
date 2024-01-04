@@ -303,7 +303,7 @@
                 <div class="h2 product-single__price" id="price-{{ section.id }}">
                   {% render 'product-price', product: product, use_variant: true, show_vendor: section.settings.show_vendor %}
                 </div> 
-                <hr class="hr"> 
+                <!-- <hr class="hr">  -->
                 {% endif %} 
                   {% if section.settings.enable_progressbar %}                 
                     {% if product.selected_or_first_available_variant.inventory_management %} 
