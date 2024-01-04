@@ -20098,5 +20098,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
-.cookiestatus {
+.cookiestatus,
+.cart-policy {
   display: none;
+}
