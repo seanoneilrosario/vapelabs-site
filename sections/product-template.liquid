@@ -522,7 +522,7 @@
                 {% endif %}
               </div>
               <hr class="hr">              
-              <div class="product-share">
+              {% comment %}<div class="product-share">
                 {%- for block in section.blocks -%}
                 {%- case block.type -%} 
                 {%- when 'share' -%}
@@ -578,7 +578,7 @@
                 {% endcase %}  
                 {% endfor %}
                 {% render 'social-sharing', product: product %}
-              </div>                
+              </div>      {% endcomment %}          
               {% endif %} 
               {% if section.settings.product_layout == 'design_3' %}
               <hr class="hr">
