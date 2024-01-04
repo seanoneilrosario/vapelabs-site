@@ -4170,7 +4170,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ".NDMe9.NdTJE.PuVf0 > div:first-of-type,#checkout-main {display: none !important;}"
+
     ]
   }
 }
