@@ -326,7 +326,7 @@
                   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
                   <meta itemprop="image" content="{{ product.featured_media.src | img_url: 'grande' }}">
                   {% if collection.handle %}
-                  <p class="product-type"><label>Product</label>
+                  <p class="product-type"><label>Product : </label>
                     <span><a href="{{ collection.url }}" class="collection-title text-center" item-prop="collection">{{ collection.title }}</a></span>
                   </p>
                   {% endif %}
