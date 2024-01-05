@@ -108,7 +108,7 @@
               <input class="field__input"
                      name="{{ filter.max_value.param_name }}"
                      id="Filter-{{ filter.label | escape }}-LTE"
-                     {%- if filter.max_value.value -%}{%- if uses_comma_decimals -%}value="{{ filter.max_value.value | money_without_currency | plus: max_not_money_price | replace: '.', '' | replace: ',', '.' }}"{%- else -%}value="{{ filter.max_value.value | money_without_currency | plus: max_not_money_price | replace: ',', '' }}"{% endif %}
+                     {%- if filter.max_value.value -%}{%- if uses_comma_decimals -%}value="{{ filter.max_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"{% endif %}
                      {%- endif -%}
                      type="number"
                      min="0"
