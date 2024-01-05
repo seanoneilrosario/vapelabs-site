@@ -71,7 +71,7 @@
                   endif
                 %}
 
-        {%- assign decimals = filter.min_value.value | money_without_currency -%}
+        {%- assign decimals = filter.range_max | money_without_currency -%}
         {%- assign not_money_price = decimals | times: 0.091 | round: 2 -%}
         {%- assign equal = decimals | minus: not_money_price -%}
           
@@ -84,7 +84,7 @@
           <div class="facets-filter">
             <price-range class="facets__price">
               <div class="field">
-                {{ filter.range_max | money_without_currency }}
+                {{ equal }}
                 <span class="field-currency">{{ cart.currency.symbol }}</span>
                 <label class="field__label" for="Filter-{{ filter.label | escape }}-GTE">{{ 'products.facets.from' | t }}</label>
                 <input class="field__input"
