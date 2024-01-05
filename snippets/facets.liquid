@@ -83,6 +83,7 @@
           </summary>
           <div class="facets-filter">
             <price-range class="facets__price">
+          {{ not_money_price }}
               <div class="field">
                 <span class="field-currency">{{ cart.currency.symbol }}</span>
                 <label class="field__label" for="Filter-{{ filter.label | escape }}-GTE">{{ 'products.facets.from' | t }}</label>
