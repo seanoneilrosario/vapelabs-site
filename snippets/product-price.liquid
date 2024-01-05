@@ -21,7 +21,8 @@
 -%}
 
 {%- assign money_price = price | money -%}
-{%- assign not_money_price = price | times: 0.0091 -%}
+{%- assign decimals = price | times: 0.010 -%}
+{%- assign not_money_price = decimals | times: 0.091 -%}
 
 <div class="price{% if available == false %} price--sold-out{% endif %}
             {% if compare_at_price > price %} price--on-sale{% endif %}
@@ -44,7 +45,7 @@
   <div class="regular-price">
     <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>    
     <span class="product-price__price product-price__sale">
-      {{ price | times: 0.010 }} <sup>WHOLESALE + GST</sup>
+      {{ not_money_price }} <sup>WHOLESALE + GST</sup>
     </span>
     {% if product.metafields.custom.rrp %}
       <span style="margin-left:10px;" class="product-price__price">
