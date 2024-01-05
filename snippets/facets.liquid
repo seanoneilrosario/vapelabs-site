@@ -71,13 +71,9 @@
                   endif
                 %}
 
-        {%- assign decimals = filter.range_max | money_without_currency -%}
+        {%- assign decimals = filter.min_value.value | money_without_currency -%}
         {%- assign not_money_price = decimals | times: 0.091 | round: 2 -%}
         {%- assign equal = decimals | minus: not_money_price -%}
-
-        {%- assign filter_val = filter.min_value.value | money_without_currency -%}
-        {%- assign not_money_filter_val = filter_val | times: 0.091 | round: 2 -%}
-        {%- assign final_val = filter_val | minus: not_money_filter_val -%}
           
         <div class="disclosure-has-popup facets__disclosure js-filter widget" data-index="{{ forloop.index }}">
           <summary class="facets__summary caption-large focus-offset">
@@ -88,18 +84,19 @@
           <div class="facets-filter">
             <price-range class="facets__price">
               <div class="field">
+                
                 <span class="field-currency">{{ cart.currency.symbol }}</span>
                 <label class="field__label" for="Filter-{{ filter.label | escape }}-GTE">{{ 'products.facets.from' | t }}</label>
                 <input class="field__input"
                        name="{{ filter.min_value.param_name }}"
                        id="Filter-{{ filter.label | escape }}-GTE"
                        {%- if filter.min_value.value -%}
-                       {%- if uses_comma_decimals -%}value="{{ final_val }}"{%- else -%}value="{{ final_val }}"{% endif %}
+                       {%- if uses_comma_decimals -%}value="{{ filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"{% endif %}
                        {%- endif -%}
                        type="number"
                        placeholder="0"
                        min="0"
-                       {%- if uses_comma_decimals -%}max="{{ equal }}"{%- else -%}max="{{ equal }}"{% endif %}
+                       {%- if uses_comma_decimals -%}max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"{% endif %}
                        >
                 </input>
               </div>
@@ -117,8 +114,8 @@
                      placeholder="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
                      max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
                      {%- else -%}
-                     placeholder="{{ equal }}"
-                     max="{{ equal }}"
+                     placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                     max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
                      {% endif %}
                      >
               </input>
@@ -243,7 +240,7 @@
                            placeholder="0"
                            min="0"
                            inputmode="decimal"
-                           {%- if uses_comma_decimals -%}max="{{ equal }}"{%- else -%}max="{{ equal }}"{% endif %}
+                           {%- if uses_comma_decimals -%}max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"{% endif %}
                            >
                     </input>
                   </div>
@@ -260,7 +257,7 @@
                          placeholder="0"
                          min="0"
                          inputmode="decimal"
-                         {%- if uses_comma_decimals -%}max="{{ equal }}"{%- else -%}max="{{ equal }}"{% endif %}
+                         {%- if uses_comma_decimals -%}max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"{% endif %}
                          >
                   </input>
               </div>
