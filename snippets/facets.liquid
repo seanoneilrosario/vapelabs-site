@@ -84,7 +84,7 @@
           <div class="facets-filter">
             <price-range class="facets__price">
               <div class="field">
-                {{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}
+                {{ filter.range_max | money_without_currency }}
                 <span class="field-currency">{{ cart.currency.symbol }}</span>
                 <label class="field__label" for="Filter-{{ filter.label | escape }}-GTE">{{ 'products.facets.from' | t }}</label>
                 <input class="field__input"
