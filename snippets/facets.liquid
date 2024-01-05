@@ -96,7 +96,7 @@
                        type="number"
                        placeholder="0"
                        min="0"
-                       {%- if uses_comma_decimals -%}max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"{% endif %}
+                       {%- if uses_comma_decimals -%}max="{{ equal }}"{%- else -%}max="{{ equal }}"{% endif %}
                        >
                 </input>
               </div>
@@ -114,8 +114,8 @@
                      placeholder="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
                      max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
                      {%- else -%}
-                     placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
-                     max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                     placeholder="{{ equal }}"
+                     max="{{ equal }}"
                      {% endif %}
                      >
               </input>
@@ -240,7 +240,7 @@
                            placeholder="0"
                            min="0"
                            inputmode="decimal"
-                           {%- if uses_comma_decimals -%}max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"{% endif %}
+                           {%- if uses_comma_decimals -%}max="{{ equal }}"{%- else -%}max="{{ equal }}"{% endif %}
                            >
                     </input>
                   </div>
@@ -257,7 +257,7 @@
                          placeholder="0"
                          min="0"
                          inputmode="decimal"
-                         {%- if uses_comma_decimals -%}max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"{% endif %}
+                         {%- if uses_comma_decimals -%}max="{{ equal }}"{%- else -%}max="{{ equal }}"{% endif %}
                          >
                   </input>
               </div>
