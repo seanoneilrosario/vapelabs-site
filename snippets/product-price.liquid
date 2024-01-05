@@ -22,7 +22,7 @@
 
 {%- assign money_price = price | money -%}
 {%- assign not_money_price = price | times: 0.010 -%}
-{%- assign equal = money_price | minus {{ not_money_price }} -%}
+{%- assign equal = money_price | minus not_money_price -%}
 <div class="price{% if available == false %} price--sold-out{% endif %}
             {% if compare_at_price > price %} price--on-sale{% endif %}
             {% if variant.unit_price_measurement %} price--unit-available{% endif %}">
