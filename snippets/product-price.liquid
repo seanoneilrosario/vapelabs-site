@@ -21,7 +21,7 @@
 -%}
 
 {%- assign money_price = price | money -%}
-{%- assign decimals = price | times: 0.010 -%}
+{%- assign decimals = price | money_without_currency -%}
 {%- assign not_money_price = decimals | times: 0.091 | round: 2 -%}
 {%- assign equal = decimals | minus: not_money_price -%}
 
