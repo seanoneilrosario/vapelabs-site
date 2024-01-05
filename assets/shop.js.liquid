@@ -372,13 +372,13 @@
           if (maxInput.value) minInput.setAttribute('max', max_total);
           if (minInput.value) maxInput.setAttribute('min', minInput.value);
           if (minInput.value === '') maxInput.setAttribute('min', 0);
-          if (maxInput.value === '') minInput.setAttribute('max', maxInput.getAttribute('max'));
+          if (maxInput.value === '') minInput.setAttribute('max', maxInput.getAttribute('max')+max_val_sub);
         }
 
         adjustToValidValues(input) {
           const value = Number(input.value);
           const min = Number(input.getAttribute('min'));
-          const max = Number(input.getAttribute('max'));
+          const max = Number(input.getAttribute('max')+max_val_sub);
 
           if (value < min) input.value = min;
           if (value > max) input.value = max;
