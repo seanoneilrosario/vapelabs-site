@@ -957,7 +957,7 @@
       {% if section.settings.related_products_enable %}     
       {% render 'related-products', product: product %}
       {% endif %}
-      {% render 'recently-viewed-product', product: product %}
+      {% comment %}{% render 'recently-viewed-product', product: product %}{% endcomment %}
       {% if section.settings.product_layout == 'design_2' %}
     </div>
     {% endif %}
