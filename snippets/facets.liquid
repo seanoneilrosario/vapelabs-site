@@ -74,6 +74,10 @@
         {%- assign decimals = filter.range_max | money_without_currency -%}
         {%- assign not_money_price = decimals | times: 0.091 | round: 2 -%}
         {%- assign equal = decimals | minus: not_money_price -%}
+
+        {%- assign max_val = filter.max_value.value | money_without_currency -%}
+        {%- assign max_not_money_price = max_val | times: 0.091 | round: 2 -%}
+        {%- assign max_total = max_val | minus: max_not_money_price -%}
           
         <div class="disclosure-has-popup facets__disclosure js-filter widget" data-index="{{ forloop.index }}">
           <summary class="facets__summary caption-large focus-offset">
@@ -83,7 +87,7 @@
           </summary>
           <div class="facets-filter">
             <price-range class="facets__price">
-          {{ not_money_price }}
+          {{ max_not_money_price }}
               <div class="field">
                 <span class="field-currency">{{ cart.currency.symbol }}</span>
                 <label class="field__label" for="Filter-{{ filter.label | escape }}-GTE">{{ 'products.facets.from' | t }}</label>
