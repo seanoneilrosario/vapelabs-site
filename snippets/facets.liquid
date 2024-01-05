@@ -9,10 +9,6 @@
   endif
 -%}
 
-{%- assign decimals = filter.min_value.value | money_without_currency -%}
-{%- assign not_money_price = decimals | times: 0.091 | round: 2 -%}
-{%- assign equal = decimals | minus: not_money_price -%}
-
 <div class="facets-container">
   {%- unless collapse_on_larger_devices -%}
   <facet-filters-form class="facets">
@@ -74,6 +70,11 @@
                     assign uses_comma_decimals = true
                   endif
                 %}
+
+        {%- assign decimals = filter.min_value.value | money_without_currency -%}
+        {%- assign not_money_price = decimals | times: 0.091 | round: 2 -%}
+        {%- assign equal = decimals | minus: not_money_price -%}
+          
         <div class="disclosure-has-popup facets__disclosure js-filter widget" data-index="{{ forloop.index }}">
           <summary class="facets__summary caption-large focus-offset">
             <div>
@@ -83,7 +84,7 @@
           <div class="facets-filter">
             <price-range class="facets__price">
               <div class="field">
-                {{ equal }}
+                {{ decimals }}
                 <span class="field-currency">{{ cart.currency.symbol }}</span>
                 <label class="field__label" for="Filter-{{ filter.label | escape }}-GTE">{{ 'products.facets.from' | t }}</label>
                 <input class="field__input"
