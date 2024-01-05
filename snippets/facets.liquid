@@ -87,15 +87,15 @@
           </summary>
           <div class="facets-filter">
             <price-range class="facets__price">
+          {{ filter.min_value.value }}
               <div class="field">
-          {{ final_val }}
                 <span class="field-currency">{{ cart.currency.symbol }}</span>
                 <label class="field__label" for="Filter-{{ filter.label | escape }}-GTE">{{ 'products.facets.from' | t }}</label>
                 <input class="field__input"
                        name="{{ filter.min_value.param_name }}"
                        id="Filter-{{ filter.label | escape }}-GTE"
                        {%- if filter.min_value.value -%}
-                       {%- if uses_comma_decimals -%}value="{{ final_val }}"{%- else -%}value="{{ final_val }}"{% endif %}
+                       {%- if uses_comma_decimals -%}value="{{ filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"{% endif %}
                        {%- endif -%}
                        type="number"
                        placeholder="0"
@@ -238,7 +238,7 @@
                            name="{{ filter.min_value.param_name }}"
                            id="Mobile-Filter-{{ filter.label | escape }}-GTE"
                            {%- if filter.min_value.value -%}
-                           {%- if uses_comma_decimals -%}value="{{ final_val }}"{%- else -%}value="{{ final_val }}"{% endif %}
+                           {%- if uses_comma_decimals -%}value="{{ filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"{% endif %}
                            {%- endif -%}
                            type="number"
                            placeholder="0"
@@ -255,7 +255,7 @@
                          name="{{ filter.min_value.param_name }}"
                          id="Mobile-Filter-{{ filter.label | escape }}-GTE"
                          {%- if filter.min_value.value -%}
-                         {%- if uses_comma_decimals -%}value="{{ final_val }}"{%- else -%}value="{{ final_val }}"{% endif %}
+                         {%- if uses_comma_decimals -%}value="{{ filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"{% endif %}
                          {%- endif -%}
                          type="number"
                          placeholder="0"
