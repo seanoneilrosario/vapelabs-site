@@ -21,7 +21,7 @@
 -%}
 
 {%- assign money_price = price | money -%}
-{%- assign not_money_price = price | times: 0.010 -%}
+{%- assign not_money_price = price | times: 0.020 -%}
 
 <div class="price{% if available == false %} price--sold-out{% endif %}
             {% if compare_at_price > price %} price--on-sale{% endif %}
