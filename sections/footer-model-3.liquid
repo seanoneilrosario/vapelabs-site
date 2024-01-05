@@ -36,8 +36,13 @@
   #shopify-section-footer-model-3 .Newsletter-content .news-desc{color: {{ section.settings.newsletter_desc_color }};}
 
   .linkedin_footer {
-    width: 20px;
-    height: 20px;
+    display: block;
+  }
+
+  .linkedin_footer svg {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
   }
 </style>
 {% capture borderWidth %}{{ settings.border_width }}px{% endcapture %}
@@ -67,16 +72,6 @@
         {{ section.settings.text_intro }}
       </div>
     </div>
-    <div class="linkedin_footer">
-      <a href="https://www.linkedin.com/company/vapelabau/about/">
-        <svg viewBox="0 0 512 512">
-          <title/>
-          <g id="icomoon-ignore">
-          </g>
-          <path d="M464 0h-416c-26.4 0-48 21.6-48 48v416c0 26.4 21.6 48 48 48h416c26.4 0 48-21.6 48-48v-416c0-26.4-21.6-48-48-48zM192 416h-64v-224h64v224zM160 160c-17.7 0-32-14.3-32-32s14.3-32 32-32c17.7 0 32 14.3 32 32s-14.3 32-32 32zM416 416h-64v-128c0-17.7-14.3-32-32-32s-32 14.3-32 32v128h-64v-224h64v39.7c13.2-18.1 33.4-39.7 56-39.7 39.8 0 72 35.8 72 80v144z"/>
-        </svg>
-      </a>
-    </div>
     <div class="footer-links">
       {% for block in section.blocks %}
         <div class="menu_footer_items">
@@ -101,7 +96,14 @@
         
             {% when 'button' %}
               <a class="footer_btn" href="{{ block.settings.btn_link }}">{{ block.settings.btn_text }}</a>
-        
+              <a class="linkedin_footer" href="https://www.linkedin.com/company/vapelabau/about/">
+                <svg viewBox="0 0 512 512">
+                  <title/>
+                  <g id="icomoon-ignore">
+                  </g>
+                  <path d="M464 0h-416c-26.4 0-48 21.6-48 48v416c0 26.4 21.6 48 48 48h416c26.4 0 48-21.6 48-48v-416c0-26.4-21.6-48-48-48zM192 416h-64v-224h64v224zM160 160c-17.7 0-32-14.3-32-32s14.3-32 32-32c17.7 0 32 14.3 32 32s-14.3 32-32 32zM416 416h-64v-128c0-17.7-14.3-32-32-32s-32 14.3-32 32v128h-64v-224h64v39.7c13.2-18.1 33.4-39.7 56-39.7 39.8 0 72 35.8 72 80v144z"/>
+                </svg>
+              </a>
           {% endcase %} 
         </div>
       {% endfor %}
