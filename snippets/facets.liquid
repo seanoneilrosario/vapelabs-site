@@ -71,7 +71,7 @@
                   endif
                 %}
 
-        {%- assign decimals = filter.min_value.value | money_without_currency -%}
+        {%- assign decimals = filter.range_max | money_without_currency -%}
         {%- assign not_money_price = decimals | times: 0.091 | round: 2 -%}
         {%- assign equal = decimals | minus: not_money_price -%}
           
@@ -84,7 +84,6 @@
           <div class="facets-filter">
             <price-range class="facets__price">
               <div class="field">
-                
                 <span class="field-currency">{{ cart.currency.symbol }}</span>
                 <label class="field__label" for="Filter-{{ filter.label | escape }}-GTE">{{ 'products.facets.from' | t }}</label>
                 <input class="field__input"
@@ -96,7 +95,7 @@
                        type="number"
                        placeholder="0"
                        min="0"
-                       {%- if uses_comma_decimals -%}max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"{% endif %}
+                       {%- if uses_comma_decimals -%}max="{{ equal }}"{%- else -%}max="{{ equal }}"{% endif %}
                        >
                 </input>
               </div>
@@ -114,8 +113,8 @@
                      placeholder="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
                      max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
                      {%- else -%}
-                     placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
-                     max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                     placeholder="{{ equal }}"
+                     max="{{ equal }}"
                      {% endif %}
                      >
               </input>
@@ -240,7 +239,7 @@
                            placeholder="0"
                            min="0"
                            inputmode="decimal"
-                           {%- if uses_comma_decimals -%}max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"{% endif %}
+                           {%- if uses_comma_decimals -%}max="{{ equal }}"{%- else -%}max="{{ equal }}"{% endif %}
                            >
                     </input>
                   </div>
@@ -257,7 +256,7 @@
                          placeholder="0"
                          min="0"
                          inputmode="decimal"
-                         {%- if uses_comma_decimals -%}max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"{% endif %}
+                         {%- if uses_comma_decimals -%}max="{{ equal }}"{%- else -%}max="{{ equal }}"{% endif %}
                          >
                   </input>
               </div>
