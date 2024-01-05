@@ -77,7 +77,7 @@
 
         {%- assign filter_val = filter.min_value.value | money_without_currency -%}
         {%- assign not_money_filter_val = filter_val | times: 0.091 | round: 2 -%}
-        {%- assign final_val = decimals | minus: not_money_filter_val -%}
+        {%- assign final_val = filter_val | minus: not_money_filter_val -%}
           
         <div class="disclosure-has-popup facets__disclosure js-filter widget" data-index="{{ forloop.index }}">
           <summary class="facets__summary caption-large focus-offset">
