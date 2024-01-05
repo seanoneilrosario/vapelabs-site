@@ -44,7 +44,7 @@
   <div class="regular-price">
     <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>    
     <span class="product-price__price product-price__sale">
-      {{ price | minus: target.price | times: 100.0 | divided_by: target.compare_at_price | round }} <sup>WHOLESALE + GST</sup>
+      {{ price | times: 0.010 }} <sup>WHOLESALE + GST</sup>
     </span>
     {% if product.metafields.custom.rrp %}
       <span style="margin-left:10px;" class="product-price__price">
