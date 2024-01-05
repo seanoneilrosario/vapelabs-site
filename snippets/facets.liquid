@@ -84,7 +84,7 @@
           <div class="facets-filter">
             <price-range class="facets__price">
               <div class="field">
-                {{ decimals }}
+                {{ filter.min_value.value }}
                 <span class="field-currency">{{ cart.currency.symbol }}</span>
                 <label class="field__label" for="Filter-{{ filter.label | escape }}-GTE">{{ 'products.facets.from' | t }}</label>
                 <input class="field__input"
