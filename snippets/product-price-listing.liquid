@@ -21,6 +21,9 @@
 -%}
 
 {%- assign money_price = price | money -%}
+{%- assign decimals = price | times: 0.010 -%}
+{%- assign not_money_price = decimals | times: 0.091 | round: 2 -%}
+{%- assign equal = decimals | minus: not_money_price -%}
 
 <div class="price{% if available == false %} price--sold-out{% endif %}
             {% if compare_at_price > price %} price--on-sale{% endif %}
@@ -39,7 +42,7 @@
   <div class="regular-price">
     <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>    
     <span class="product-price__price product-price__sale">
-      {{ money_price }}
+      ${{ equal }}
     </span>
   </div>
 </div>
