@@ -365,6 +365,9 @@
           const inputs = this.querySelectorAll('input');
           const minInput = inputs[0];
           const maxInput = inputs[1];
+          const max_val = maxInput.value;
+          const min_val = minInput.value;
+          console.log(max_val, min_val)
           if (maxInput.value) minInput.setAttribute('max', maxInput.value);
           if (minInput.value) maxInput.setAttribute('min', minInput.value);
           if (minInput.value === '') maxInput.setAttribute('min', 0);
