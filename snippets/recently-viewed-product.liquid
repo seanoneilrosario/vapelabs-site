@@ -8,6 +8,11 @@
   <div id="recently-viewed-products" class="collection recently-collection clearfix owl-carousel owl-theme {{ settings.product_hover_btn }}">
   </div>
 </div>
+
+{%- assign decimals = price_min | times: 0.010 -%}
+{%- assign not_money_price = decimals | times: 0.091 | round: 2 -%}
+{%- assign equal = decimals | minus: not_money_price -%}
+
 {% raw %}
 <div class="recentveiw">
   <script id="recently-viewed-product-template"  type="text/x-jquery-tmpl">
@@ -38,12 +43,12 @@
                 <meta itemprop="priceCurrency" content="{{ shop.currency }}">
                 <meta itemprop="price" content="{{ variant.price | divided_by: 100.00 }}">
                             {{if price_varies}}                            
-                              <span itemprop="price" class="price"><span class="money">${price_min}</span></span>
+                              <span itemprop="price" class="price"><span class="money">${equal}</span></span>
                                  {{if compare_at_price > price}}
                               <span class="price-regular"><span class="money">${compare_at_price}</span></span>
                               {{/if}}
                            {{else}}
-                                <span  itemprop="price" class="price"><span class="money">${price_min}</span></span>
+                                <span  itemprop="price" class="price"><span class="money">${equal}</span></span>
                             {{/if}}
     </div>
     </div>
