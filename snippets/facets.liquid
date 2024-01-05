@@ -77,7 +77,6 @@
 
         {%- assign max_val = filter.max_value.value | money_without_currency -%}
         {%- assign max_not_money_price = max_val | times: 0.1 | round: 2 -%}
-        {%- assign max_total = max_val | minus: max_not_money_price -%}
           
         <div class="disclosure-has-popup facets__disclosure js-filter widget" data-index="{{ forloop.index }}">
           <summary class="facets__summary caption-large focus-offset">
@@ -87,7 +86,6 @@
           </summary>
           <div class="facets-filter">
             <price-range class="facets__price">
-          {{ max_not_money_price }}
               <div class="field">
                 <span class="field-currency">{{ cart.currency.symbol }}</span>
                 <label class="field__label" for="Filter-{{ filter.label | escape }}-GTE">{{ 'products.facets.from' | t }}</label>
@@ -110,7 +108,7 @@
               <input class="field__input"
                      name="{{ filter.max_value.param_name }}"
                      id="Filter-{{ filter.label | escape }}-LTE"
-                     {%- if filter.max_value.value -%}{%- if uses_comma_decimals -%}value="{{ filter.max_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"{% endif %}
+                     {%- if filter.max_value.value -%}{%- if uses_comma_decimals -%}value="{{ filter.max_value.value | money_without_currency | plus: max_not_money_price | replace: '.', '' | replace: ',', '.' }}"{%- else -%}value="{{ filter.max_value.value | money_without_currency | plus: max_not_money_price | replace: ',', '' }}"{% endif %}
                      {%- endif -%}
                      type="number"
                      min="0"
