@@ -8,7 +8,6 @@
     assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
   endif
 -%}
-
 <div class="facets-container">
   {%- unless collapse_on_larger_devices -%}
   <facet-filters-form class="facets">
@@ -70,11 +69,6 @@
                     assign uses_comma_decimals = true
                   endif
                 %}
-
-        {%- assign decimals = filter.range_max | money_without_currency -%}
-        {%- assign not_money_price = decimals | times: 0.091 | round: 2 -%}
-        {%- assign equal = decimals | minus: not_money_price -%}
-          
         <div class="disclosure-has-popup facets__disclosure js-filter widget" data-index="{{ forloop.index }}">
           <summary class="facets__summary caption-large focus-offset">
             <div>
@@ -95,7 +89,7 @@
                        type="number"
                        placeholder="0"
                        min="0"
-                       {%- if uses_comma_decimals -%}max="{{ equal }}"{%- else -%}max="{{ equal }}"{% endif %}
+                       {%- if uses_comma_decimals -%}max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"{% endif %}
                        >
                 </input>
               </div>
@@ -113,8 +107,8 @@
                      placeholder="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
                      max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
                      {%- else -%}
-                     placeholder="{{ equal }}"
-                     max="{{ equal }}"
+                     placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                     max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
                      {% endif %}
                      >
               </input>
@@ -239,7 +233,7 @@
                            placeholder="0"
                            min="0"
                            inputmode="decimal"
-                           {%- if uses_comma_decimals -%}max="{{ equal }}"{%- else -%}max="{{ equal }}"{% endif %}
+                           {%- if uses_comma_decimals -%}max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"{% endif %}
                            >
                     </input>
                   </div>
@@ -256,7 +250,7 @@
                          placeholder="0"
                          min="0"
                          inputmode="decimal"
-                         {%- if uses_comma_decimals -%}max="{{ equal }}"{%- else -%}max="{{ equal }}"{% endif %}
+                         {%- if uses_comma_decimals -%}max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"{% endif %}
                          >
                   </input>
               </div>
