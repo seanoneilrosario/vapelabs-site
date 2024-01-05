@@ -369,7 +369,7 @@
           const max_val_sub = max_val * 0.1;
           const max_total = (max_val_sub + max_val).toFixed(2);
           console.log(max_total)
-          if (maxInput.value) minInput.setAttribute('max', max_total);
+          if (maxInput.value) minInput.setAttribute('max', maxInput.value);
           if (minInput.value) maxInput.setAttribute('min', minInput.value);
           if (minInput.value === '') maxInput.setAttribute('min', 0);
           if (maxInput.value === '') minInput.setAttribute('max', maxInput.getAttribute('max'));
@@ -379,10 +379,9 @@
           const value = Number(input.value);
           const min = Number(input.getAttribute('min'));
           const max = Number(input.getAttribute('max'));
-          const max_val_sub = max * 0.1;
-          const max_total = (max_val_sub + max).toFixed(2);
+
           if (value < min) input.value = min;
-          if (value > max_total) input.value = max_total;
+          if (value > max) input.value = max;
         }
       }
 
