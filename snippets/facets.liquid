@@ -74,6 +74,10 @@
         {%- assign decimals = filter.range_max | money_without_currency -%}
         {%- assign not_money_price = decimals | times: 0.091 | round: 2 -%}
         {%- assign equal = decimals | minus: not_money_price -%}
+
+        {%- assign filter_val = filter.min_value.value | money_without_currency -%}
+        {%- assign not_money_filter_val = decimals | times: 0.091 | round: 2 -%}
+        {%- assign final_val = decimals | minus: not_money_price -%}
           
         <div class="disclosure-has-popup facets__disclosure js-filter widget" data-index="{{ forloop.index }}">
           <summary class="facets__summary caption-large focus-offset">
@@ -90,7 +94,7 @@
                        name="{{ filter.min_value.param_name }}"
                        id="Filter-{{ filter.label | escape }}-GTE"
                        {%- if filter.min_value.value -%}
-                       {%- if uses_comma_decimals -%}value="{{ filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"{% endif %}
+                       {%- if uses_comma_decimals -%}value="{{ final_val }}"{%- else -%}value="{{ final_val }}"{% endif %}
                        {%- endif -%}
                        type="number"
                        placeholder="0"
@@ -233,7 +237,7 @@
                            name="{{ filter.min_value.param_name }}"
                            id="Mobile-Filter-{{ filter.label | escape }}-GTE"
                            {%- if filter.min_value.value -%}
-                           {%- if uses_comma_decimals -%}value="{{ filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"{% endif %}
+                           {%- if uses_comma_decimals -%}value="{{ final_val }}"{%- else -%}value="{{ final_val }}"{% endif %}
                            {%- endif -%}
                            type="number"
                            placeholder="0"
@@ -250,7 +254,7 @@
                          name="{{ filter.min_value.param_name }}"
                          id="Mobile-Filter-{{ filter.label | escape }}-GTE"
                          {%- if filter.min_value.value -%}
-                         {%- if uses_comma_decimals -%}value="{{ filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"{% endif %}
+                         {%- if uses_comma_decimals -%}value="{{ final_val }}"{%- else -%}value="{{ final_val }}"{% endif %}
                          {%- endif -%}
                          type="number"
                          placeholder="0"
