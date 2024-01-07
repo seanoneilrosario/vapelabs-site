@@ -30,21 +30,21 @@
         "1515838714117": {
           "type": "text",
           "settings": {
-            "title": "How to request a product return or replacement?",
+            "title": "How do I request a product return or replacement?",
             "description": "In the event that a product needs to be returned or replaced, please login into your account and go into your dashboard to request return or replacement.  Our customer return team will process the return or replacement once we receive the form."
           }
         },
         "84ea8e92-75ca-4b8e-8f70-ecfe5a4e60dc": {
           "type": "text",
           "settings": {
-            "title": "I want help to place an order",
+            "title": "How do I place an order?",
             "description": "Register your pharmacy here: https:\/\/vapelabs.com.au\/account\/register.  Your wholesale account will be approve the same day (business day) for access to order Nicotine Vaping Products"
           }
         },
         "311f6278-81e4-4de2-adb4-453bc856831c": {
           "type": "text",
           "settings": {
-            "title": "How to make a change to a submitted order",
+            "title": "How do I make a change to a submitted order?",
             "description": "Any change to an in-flight order needs to be made by us. We can only do this if the order hasn’t been dispatched. Please use the chat function, email us on hello@vapelabs.com.au or call us on 1300 341 407."
           }
         },
