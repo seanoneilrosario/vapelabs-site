@@ -16,29 +16,53 @@
         "1515838707365": {
           "type": "text",
           "settings": {
-            "title": "What is Lorem Ipsum?",
-            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            "title": "What are Vapelabs payment terms?",
+            "description": "Vapelabs payment terms are automatically generated at the time of order.  Standard due date are end of the next month from date of order."
           }
         },
         "1515838710078": {
           "type": "text",
           "settings": {
-            "title": "Why do We Use It?",
-            "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+            "title": "What are Vapelabs credit limit?",
+            "description": "Our standard credit limit is $5,000.  To request ot increase your credit limit, please contact hello@vapelabs.com.au or call 1300 341 407"
           }
         },
         "1515838714117": {
           "type": "text",
           "settings": {
-            "title": "Where Does It Come From?",
-            "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+            "title": "How to request a product return or replacement?",
+            "description": "In the event that a product needs to be returned or replaced, please login into your account and go into your dashboard to request return or replacement.  Our customer return team will process the return or replacement once we receive the form."
+          }
+        },
+        "84ea8e92-75ca-4b8e-8f70-ecfe5a4e60dc": {
+          "type": "text",
+          "settings": {
+            "title": "I want help to place an order",
+            "description": "Register your pharmacy here: https:\/\/vapelabs.com.au\/account\/register.  Your wholesale account will be approve the same day (business day) for access to order Nicotine Vaping Products"
+          }
+        },
+        "311f6278-81e4-4de2-adb4-453bc856831c": {
+          "type": "text",
+          "settings": {
+            "title": "How to make a change to a submitted order",
+            "description": "Any change to an in-flight order needs to be made by us. We can only do this if the order hasn’t been dispatched. Please use the chat function, email us on hello@vapelabs.com.au or call us on 1300 341 407."
+          }
+        },
+        "58656053-8246-4108-a709-a499976e31d3": {
+          "type": "text",
+          "settings": {
+            "title": "How do I learn more about NVP dispensing?",
+            "description": "We have a education hub for you to learn once you have registered here: https:\/\/vapelabs.com.au\/pages\/education-centre.  We can also provide a free online one to one informational session with one of our Medical Liason."
           }
         }
       },
       "block_order": [
         "1515838707365",
         "1515838710078",
-        "1515838714117"
+        "1515838714117",
+        "84ea8e92-75ca-4b8e-8f70-ecfe5a4e60dc",
+        "311f6278-81e4-4de2-adb4-453bc856831c",
+        "58656053-8246-4108-a709-a499976e31d3"
       ],
       "settings": {
       }
