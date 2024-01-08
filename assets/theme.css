@@ -12157,6 +12157,9 @@ a.grid-link__title {
       text-overflow: ellipsis;
       overflow:hidden;
       }
+.collection-desc .grid-link__title {
+  white-space: wrap;
+}
 @media only screen and (min-width: 1025px) {
   .product {
     position: relative;
