@@ -12158,10 +12158,10 @@ a.grid-link__title {
       overflow:hidden;
       }
 .collection-desc a {
-  line-height: 1;
+  line-height: 1 !important;
 }
 .collection-desc .grid-link__title {
-  white-space: pre-wrap;
+  white-space: pre-wrap !important;
 }
 @media only screen and (min-width: 1025px) {
   .product {
