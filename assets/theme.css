@@ -12157,8 +12157,11 @@ a.grid-link__title {
       text-overflow: ellipsis;
       overflow:hidden;
       }
+.collection-desc a {
+  line-height: 1;
+}
 .collection-desc .grid-link__title {
-  white-space: wrap;
+  white-space: pre-wrap;
 }
 @media only screen and (min-width: 1025px) {
   .product {
