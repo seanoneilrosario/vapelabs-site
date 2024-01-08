@@ -1032,9 +1032,6 @@ $('.img_slider').slick({
     }
   ]
 });
-
-console.log($('.str-filters p'))
-
 $('.str_item').click(function(){
   $(this).siblings().removeClass('active');
   $(this).addClass('active');
