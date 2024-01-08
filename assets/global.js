@@ -1044,7 +1044,7 @@ const uniq = [...new Set(my_array)];
 uniq.forEach((item) => {
   const list_item = document.createElement("li");
   list_item.className = 'list-menu__item facets__item str_item';
-  list_item.innerHTML = `<span id="str-${item}">
+  list_item.innerHTML = `<span id="${item}">
                        ${item}
                         <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
