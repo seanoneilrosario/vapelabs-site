@@ -1053,6 +1053,7 @@ uniq.forEach((item) => {
                     </span>`;
   lists.push(list_item)
 })
+console.log(fil_ul.innerHTML)
 fil_ul.innerHTML = lists;
 
 $('.str_item').click(function(){
