@@ -28,7 +28,7 @@
             <ul class="str-filters">
               {% for product in collection.products %}
                 {% if product.metafields.custom.strength %}
-                  <li class="list-menu__item facets__item">
+                  <li class="list-menu__item facets__item str_item">
                     <span id="str-{{ product.metafields.custom.strength | remove: " " | downcase }}">
                        {{ product.metafields.custom.strength }}
                         <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
