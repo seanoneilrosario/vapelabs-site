@@ -1040,7 +1040,10 @@ fil_items.map((i, item) => {
   my_array.push(new_items)
 })
 const uniq = [...new Set(my_array)];
-console.log(uniq)
+uniq.map((i, item) => {
+  console.log(item)
+})
+
 
 $('.str_item').click(function(){
   $('.str_item').removeClass('active');
