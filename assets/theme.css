@@ -20110,10 +20110,28 @@ input[type=number]::-webkit-outer-spin-button {
   overflow: hidden !important;
 }
 
+.str-filters li {
+  font-weight: 500;
+  position: relative;
+}
+
+.str-filters li span svg {
+  position: absolute;
+  left: 3px;
+  top: 6px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.str-filters li:active span svg {
+  opacity: 1;
+}
+
 .str-filters li:before {
   content: '';
-  width: 10px;
-  height: 10px;
-  border: 1px solid black;
+  margin-right: 5px;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #e5e5e5;;
   display: inline-block;
 }
