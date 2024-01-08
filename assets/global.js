@@ -1040,7 +1040,7 @@ fil_items.map((i, item) => {
   my_array.push(new_items)
 })
 const uniq = [...new Set(my_array)];
-uniq.map((i, item) => {
+uniq.forEach((item) => {
   console.log(item)
 })
 
