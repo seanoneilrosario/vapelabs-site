@@ -1035,7 +1035,7 @@ $('.img_slider').slick({
 
 const fil_items = $('.str-filters li');
 fil_items.map((i, item) => {
-  console.log(item.innerHTML)
+  console.log(item)
 })
 $('.str_item').click(function(){
   $(this).siblings().removeClass('active');
