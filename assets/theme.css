@@ -20102,3 +20102,10 @@ input[type=number]::-webkit-outer-spin-button {
 .cart-policy {
   display: none;
 }
+
+.not_included {
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+}
