@@ -1072,9 +1072,9 @@ $('.ven_item').click(function(){
   $('.ven_item').removeClass('active');
   $(this).addClass('active');
   const str = $(this).children('span').attr('id');
-  $('.grid-item').addClass('hide');
-  $(`.grid-item.${str}`).removeClass('hide');
+  $('.grid-item').addClass('none');
+  $(`.grid-item.${str}`).removeClass('none');
 });
 $('.ven_item.all').click(function(){
-  $('.grid-item').removeClass('hide');
+  $('.grid-item').removeClass('none');
 });
