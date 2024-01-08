@@ -20116,6 +20116,7 @@ input[type=number]::-webkit-outer-spin-button {
 .ven_item.all {
   font-weight: 500;
   position: relative;
+  cursor: pointer;
 }
 
 .str-filters li span svg,
