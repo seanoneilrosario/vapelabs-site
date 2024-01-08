@@ -29,7 +29,7 @@
               {% for product in collection.products %}
                 {% assign my_array = product.metafields.custom.strength | split: '\n' | uniq | join: ' '  %}
                 
-                {{ product.metafields.custom.strength }}
+                <span>{{ product.metafields.custom.strength }}</span>
                 {% comment %}{% if product.metafields.custom.strength %}
                   <li class="list-menu__item facets__item str_item">
                     <span id="str-{{ product.metafields.custom.strength | remove: " " | remove: "/" | downcase }}">
