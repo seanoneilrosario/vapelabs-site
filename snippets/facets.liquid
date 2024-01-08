@@ -18,18 +18,18 @@
       {%- endif -%}
       {% if show_filter %}
       <div id="FacetsWrapperDesktop" class="facets__wrapper">
-        <div class="disclosure-has-popup facets__disclosure js-filter widget" data-index="{{ forloop.index }}">
+        <div class="widget">
           <summary class="facets__summary caption-large focus-offset">
             <div>
               <h4>Strengths</h4>
             </div>
           </summary>
           <div>
-            <ul class="tag-filters">
+            <ul class="str-filters">
               {% for product in collection.products %}
                 {% if product.metafields.custom.strength %}
                   <li class="list-menu__item facets__item">
-                    <label for="str-{{ product.metafields.custom.strength | remove: " " | downcase }}">
+                    <label for="str-{{ product.metafields.custom.strength | remove: " " | downcase }}" class="facet-checkbox">
                       <input type="checkbox" id="str-{{ product.metafields.custom.strength | remove: " " | downcase }}">
                        {{ product.metafields.custom.strength }}
                         <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
