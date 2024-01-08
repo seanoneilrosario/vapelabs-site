@@ -1034,7 +1034,12 @@ $('.img_slider').slick({
 });
 
 $('.str_item').click(function(){
+  $(this).siblings().removeClass('active');
+  $(this).addClass('active');
   const str = $(this).children('span').attr('id');
   $('.grid-item').addClass('hide');
   $(`.grid-item.${str}`).removeClass('hide');
+});
+$('#str-all').click(function(){
+  $('.grid-item').removeClass('hide');
 });
