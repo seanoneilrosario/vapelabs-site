@@ -28,7 +28,7 @@
             <ul class="str-filters">
               {% for product in collection.products %}
                 {% if product.metafields.custom.strength %}
-                {% assign my_array = product.metafields.custom.strength | remove: "\n" %}
+                {% assign my_array = product.metafields.custom.strength | remove: " " %}
                   {{ my_array }}
                   
                
