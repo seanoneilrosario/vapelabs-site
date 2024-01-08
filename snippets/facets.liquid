@@ -25,10 +25,10 @@
             </div>
           </summary>
           <div>
+              
             <ul class="str-filters">
               {% for product in collection.products %}
                 {% if product.metafields.custom.strength %}
-                  {% assign my_array = product.metafields.custom.strength %}
                   
                   
                   {% comment %}
@@ -43,7 +43,7 @@
                   {% endcomment %}
                 {% endif %}
               {% endfor %}
-              asdf{{ product.metafields.custom.strength }}
+
               <li class="list-menu__item facets__item str_item all">
                 <span id="str-all">
                    All
