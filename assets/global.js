@@ -1040,5 +1040,6 @@ $('.str_item').click(function(){
     // $('.grid-item').addClass('hide');
     // $(item).removeClass('hide');
     console.log($(item))
+    console.log(item)
   })
 });
