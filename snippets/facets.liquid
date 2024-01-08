@@ -34,7 +34,7 @@
                   {% endif %}
                 {% endfor %}
               {% endcapture %}
-                {{ test | strip_newlines }}
+                {{ test | remove: '<p>' | remove: '</p>' | strip_newlines }}
               <li class="list-menu__item facets__item str_item all">
                 <span id="str-all">
                    All
