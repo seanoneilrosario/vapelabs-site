@@ -1034,8 +1034,9 @@ $('.img_slider').slick({
 });
 
 const fil_items = $('.str-filters li');
-console.log(fil_items.children('span').attr('id'));
-
+fil_items.map((i, item) => {
+  console.log($(item).children('span').attr('id'))
+})
 $('.str_item').click(function(){
   $(this).siblings().removeClass('active');
   $(this).addClass('active');
