@@ -1035,5 +1035,5 @@ $('.img_slider').slick({
 
 $('.str_item').click(function(){
   const str = $(this).children('span').attr('id');
-  console.log($('.'+str))
+  console.log($(`.${str}`))
 });
