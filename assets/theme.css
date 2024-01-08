@@ -20110,12 +20110,14 @@ input[type=number]::-webkit-outer-spin-button {
   overflow: hidden !important;
 }
 
-.str-filters li {
+.str-filters li,
+.str_item.all {
   font-weight: 500;
   position: relative;
 }
 
-.str-filters li span svg {
+.str-filters li span svg,
+.str_item.all span svg {
   position: absolute;
   left: 3px;
   top: 6px;
@@ -20123,11 +20125,13 @@ input[type=number]::-webkit-outer-spin-button {
   transition: 0.3s;
 }
 
-.str-filters li.active span svg {
+.str-filters li.active span svg,
+.str_item.all.active span svg {
   opacity: 1 !important;
 }
 
-.str-filters li:before {
+.str-filters li:before,
+.str_item.all:before {
   content: '';
   margin-right: 5px;
   width: 18px;
