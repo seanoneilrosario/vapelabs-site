@@ -1053,7 +1053,7 @@ uniq.forEach((item) => {
                     </span>`;
   lists.push(list_item)
 })
-console.log(lists)
+fil_ul.innerHTML = lists;
 
 $('.str_item').click(function(){
   $('.str_item').removeClass('active');
