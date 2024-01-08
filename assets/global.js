@@ -1034,9 +1034,14 @@ $('.img_slider').slick({
 });
 
 const fil_items = $('.str-filters li');
+const my_array = []
 fil_items.map((i, item) => {
-  console.log($(item).children('span').attr('id'))
+  const new_items = $(item).children('span').attr('id')
+  my_array.push(new_items)
 })
+const uniq = [...new Set(my_array)];
+console.log(uniq)
+
 $('.str_item').click(function(){
   $(this).siblings().removeClass('active');
   $(this).addClass('active');
