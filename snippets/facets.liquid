@@ -21,6 +21,13 @@
         {%- for filter in results.filters -%}
         {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
         {% case filter.type %}
+        <div class="disclosure-has-popup facets__disclosure js-filter widget" data-index="{{ forloop.index }}">
+          <summary class="facets__summary caption-large focus-offset">
+            <div>
+              <h4>asdfasdf</h4>
+            </div>
+          </summary>
+        </div>
         {% when 'list' %}
         <div class="disclosure-has-popup facets__disclosure js-filter widget" data-index="{{ forloop.index }}">
           <summary class="facets__summary caption-large focus-offset">
