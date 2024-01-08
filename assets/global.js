@@ -1039,7 +1039,6 @@ $('.str_item').click(function(){
   items.map((i, item) => {
     // $('.grid-item').addClass('hide');
     // $(item).removeClass('hide');
-    console.log($(item))
     console.log(item)
   })
 });
