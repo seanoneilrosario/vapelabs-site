@@ -17060,6 +17060,8 @@ ul.mobile-facets__list li.Color label.mobile-facets__label input[type=checkbox]{
 }
 .product-layouts .product-wrapper .product-thumb a.grid-view-item__link img {
   width: 100%;
+  height: 300px;
+  object-fit: contain;
 }
 .product-layouts .product-wrapper .product-thumb a.grid-view-item__link .image_thumb{
   transition: all 400ms ease-in-out 0s;
