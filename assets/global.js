@@ -1035,10 +1035,6 @@ $('.img_slider').slick({
 
 $('.str_item').click(function(){
   const str = $(this).children('span').attr('id');
-  const items = $(`.grid-item.${str}`);
-  items.map((i, item) => {
-    $('.grid-item').addClass('hide');
-    $(item).removeClass('hide');
-    console.log($(item))
-  })
+  $('.grid-item').addClass('hide');
+  $(`.grid-item.${str}`).removeClass('hide');
 });
