@@ -28,10 +28,8 @@
             <ul class="str-filters">
               {% for product in collection.products %}
                 {% assign my_array = product.metafields.custom.strength | uniq %}
-                {% for test in my_array | uniq %}
-                  <span>{{ test }}</span>
-                {% endfor %}
                 
+                {{ my_array }}
                 {% comment %}{% if product.metafields.custom.strength %}
                   <li class="list-menu__item facets__item str_item">
                     <span id="str-{{ product.metafields.custom.strength | remove: " " | remove: "/" | downcase }}">
