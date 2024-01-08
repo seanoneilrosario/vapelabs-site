@@ -34,7 +34,7 @@
                   {% endif %}
                 {% endfor %}
               {% endcapture %}
-              {% assign my_array = test | split: ", " %}
+              {% assign my_array = test | split: "," %}
               {{ my_array | uniq | join: ", " }}
         
               <li class="list-menu__item facets__item str_item all">
