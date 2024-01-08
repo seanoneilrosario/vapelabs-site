@@ -29,7 +29,7 @@
             <ul class="str-filters">
                 {% for product in collection.products %}
                   {% if product.metafields.custom.strength %}
-                    <p>{{ product.metafields.custom.strength }}</p>,
+                    <p>{{ product.metafields.custom.strength }},</p>
                   {% endif %}
                 {% endfor %}
         
