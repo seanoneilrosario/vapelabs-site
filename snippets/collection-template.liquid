@@ -141,7 +141,7 @@
         {% assign grid_item_width = 'medium-down--one-half large-up--one-sixth' %}
         {% endcase %}
         {% for product in collection.products %}{% if product.type == 'PPLR_HIDDEN_PRODUCT' %}{% continue %}{% endif %}
-        <div class="grid-item {{ settings.product_hover_btn }} {{ grid_item_width }} {{product.type}}">
+        <div class="str-{{ product.metafields.custom.strength | remove: " " | downcase }} grid-item {{ settings.product_hover_btn }} {{ grid_item_width }} {{product.type}}">
           {% render 'product-card-grid', collection: collection, product: product %}
         </div>
 
