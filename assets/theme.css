@@ -20109,3 +20109,11 @@ input[type=number]::-webkit-outer-spin-button {
   opacity: 0 !important;
   overflow: hidden !important;
 }
+
+.str-filters li:before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  display: inline-block;
+}
