@@ -20162,5 +20162,5 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .add-to-wishlist {
-  display: none;
+  display: none !important;
 }
