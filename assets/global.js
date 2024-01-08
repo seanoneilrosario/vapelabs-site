@@ -1036,7 +1036,6 @@ $('.img_slider').slick({
 const fil_ul = $('.str-filters');
 const fil_items = $('.str-filters li');
 const my_array = [];
-const lists = [];
 fil_items.map((i, item) => {
   const new_items = $(item).children('span').attr('id')
   my_array.push(new_items)
@@ -1051,10 +1050,10 @@ uniq.forEach((item) => {
                         <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg>
                     </span>`;
-  lists.push(list_item)
+  fil_ul[0].innerHTML = list_item;
 })
-console.log(lists.innerHTML)
-fil_ul[0].innerHTML = lists;
+
+
 
 $('.str_item').click(function(){
   $('.str_item').removeClass('active');
