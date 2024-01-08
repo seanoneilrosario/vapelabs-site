@@ -25,7 +25,6 @@
             </div>
           </summary>
           <div>
-              
             <ul class="str-filters">
               {% for product in collection.products %}
                 {% if product.metafields.custom.strength %}
@@ -39,16 +38,15 @@
                   </li>
                 {% endif %}
               {% endfor %}
-                
-              <li class="list-menu__item facets__item str_item all">
-                <span id="str-all">
-                   All
-                    <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                </span>
-              </li>
             </ul>
+            <span class="list-menu__item facets__item str_item all">
+              <span id="str-all">
+                 All
+                  <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+            </span>
           </div>
         </div>
         {%- for filter in results.filters -%}

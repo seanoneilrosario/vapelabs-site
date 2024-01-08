@@ -1040,11 +1040,10 @@ fil_items.map((i, item) => {
   my_array.push(new_items)
 })
 const uniq = [...new Set(my_array)];
-uniq.pop()
 console.log(uniq)
 
 $('.str_item').click(function(){
-  $(this).siblings().removeClass('active');
+  $('.str_item').removeClass('active');
   $(this).addClass('active');
   const str = $(this).children('span').attr('id');
   $('.grid-item').addClass('hide');
