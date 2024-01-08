@@ -30,7 +30,7 @@
               {% capture test %}
                 {% for product in collection.products %}
                   {% if product.metafields.custom.strength %}
-                    
+                    <p class="hide">{{ product.metafields.custom.strength }}</p>
                   {% endif %}
                 {% endfor %}
               {% endcapture %}
