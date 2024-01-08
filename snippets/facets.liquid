@@ -42,7 +42,46 @@
         {%- for filter in results.filters -%}
         {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
         {% case filter.type %}
-        
+        {% when 'list' %}
+        <div class="disclosure-has-popup facets__disclosure js-filter widget" data-index="{{ forloop.index }}">
+          <summary class="facets__summary caption-large focus-offset">
+            <div>
+              <h4>{{ filter.label | escape }}</h4>
+            </div>
+          </summary>
+          <div class="facets-filter">
+            <ul class="facets__list list-unstyled" role="list">
+              {%- for value in filter.values -%}
+              <li class="list-menu__item facets__item {% if filter.label == 'Color' %} Color{% endif %}">
+                <label for="Filter-{{ filter.label | escape }}-{{ forloop.index }}" class="facet-checkbox{% if value.active %} facet-checkbox--disabled{% endif %}" {% if filter.label == 'Color' %}style="background-color:{{ value.value }}"{% endif %}>
+                  <input type="checkbox"
+                         name="{{ value.param_name }}"
+                         value="{{ value.value }}"
+                         id="Filter-{{ filter.label | escape }}-{{ forloop.index }}"
+                         {% if value.active %}checked{% endif %}
+                         {% if value.count == 0 and value.active == false %}disabled{% endif %}
+                         >
+                  {% if filter.label != 'Color' %} {{ value.label | escape }} ({{ value.count }}){% endif %}
+                  <svg class="icon icon-checkmark"
+                       width="11"
+                       height="7"
+                       viewBox="0 0 11 7"
+                       fill="none"
+                       xmlns="http://www.w3.org/2000/svg">
+
+                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1"
+                          stroke="currentColor"
+                          stroke-width="1.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                  </svg>
+                </label>
+                {% if filter.label == 'Color' %} <span>{{ value.label | escape }} ({{ value.count }})</span> {% endif %}
+              </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        </div>
         {% when 'price_range' %}
         {% liquid
                   assign currencies_using_comma_decimals = 'ANG,ARS,BRL,BYN,BYR,CLF,CLP,COP,CRC,CZK,DKK,EUR,HRK,HUF,IDR,ISK,MZN,NOK,PLN,RON,RUB,SEK,TRY,UYU,VES,VND' | split: ','
