@@ -18,27 +18,7 @@
       {%- endif -%}
       {% if show_filter %}
       <div id="FacetsWrapperDesktop" class="facets__wrapper">
-        <div class="disclosure-has-popup facets__disclosure js-filter widget" data-index="{{ forloop.index }}">
-          <summary class="facets__summary caption-large focus-offset">
-            <div>
-              <h4>Filter Products</h4>
-            </div>
-          </summary>
-          <div>
-            {% if collection.all_tags.size > 0 %}
-              <ul class="tag-filters">
-                {% for tag in collection.all_tags %}
-                  {% if current_tags contains tag %}
-                    <li class="tag-filters__item active">{{ tag | link_to_remove_tag: tag }}</li>
-                  {% else %}
-                    <li class="tag-filters__item">{{ tag | link_to_add_tag: tag }}</li>
-                  {% endif %}
-                {% endfor %}
-              <li><a href="{{ collection.url }}">All</a></li>
-              </ul>
-            {% endif %}
-          </div>
-        </div>
+        
         {%- for filter in results.filters -%}
         {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
         {% case filter.type %}
