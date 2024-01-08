@@ -29,7 +29,7 @@
               {% for product in collection.products %}
                 {% if product.metafields.custom.strength %}
                 {% assign my_array = product.metafields.custom.strength | uniq %}
-                <span>{{ my_array }}</span>
+                <span class="asdf">{{ my_array }}</span>
                 <span>{{ product.metafields.custom.strength }}</span>
                   {% comment %}
                     <li class="list-menu__item facets__item str_item">
