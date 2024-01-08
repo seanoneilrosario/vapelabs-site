@@ -141,7 +141,7 @@
         {% assign grid_item_width = 'medium-down--one-half large-up--one-sixth' %}
         {% endcase %}
         {% for product in collection.products %}{% if product.type == 'PPLR_HIDDEN_PRODUCT' %}{% continue %}{% endif %}
-        <div class="{% if product.metafields.custom.strength %}str-{{ product.metafields.custom.strength | remove: " " | downcase }}{% endif %} grid-item {{ settings.product_hover_btn }} {{ grid_item_width }} {{product.type}}">
+        <div class="{% if product.metafields.custom.strength %}str-{{ product.metafields.custom.strength | remove: " " | remove: "/" | downcase }}{% endif %} grid-item {{ settings.product_hover_btn }} {{ grid_item_width }} {{product.type}}">
           {% render 'product-card-grid', collection: collection, product: product %}
         </div>
 
