@@ -1050,7 +1050,7 @@ uniq.forEach((item) => {
                         <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg>
                     </span>`;
-  fil_ul[0].innerHTML = list_item;
+  fil_ul[0].appendChild(list_item);
 })
 
 
