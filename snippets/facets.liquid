@@ -18,9 +18,6 @@
       {%- endif -%}
       {% if show_filter %}
       <div id="FacetsWrapperDesktop" class="facets__wrapper">
-        {%- for filter in results.filters -%}
-        {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
-        {% case filter.type %}
         <div class="disclosure-has-popup facets__disclosure js-filter widget" data-index="{{ forloop.index }}">
           <summary class="facets__summary caption-large focus-offset">
             <div>
@@ -28,6 +25,9 @@
             </div>
           </summary>
         </div>
+        {%- for filter in results.filters -%}
+        {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
+        {% case filter.type %}
         {% when 'list' %}
         <div class="disclosure-has-popup facets__disclosure js-filter widget" data-index="{{ forloop.index }}">
           <summary class="facets__summary caption-large focus-offset">
