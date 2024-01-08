@@ -1040,6 +1040,6 @@ $('.str_item').click(function(){
   $('.grid-item').addClass('hide');
   $(`.grid-item.${str}`).removeClass('hide');
 });
-$('#str-all').click(function(){
+$('.str_item.all').click(function(){
   $('.grid-item').removeClass('hide');
 });
