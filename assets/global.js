@@ -1037,7 +1037,7 @@ $('.str_item').click(function(){
   const str = $(this).children('span').attr('id');
   const items = $(`.grid-item.${str}`);
   items.map((i, item) => {
-    $('.grid-item').addClass('hide')
-    item.removeClass('hide');
+    $('.grid-item').addClass('hide');
+    $(item).removeClass('hide');
   })
 });
