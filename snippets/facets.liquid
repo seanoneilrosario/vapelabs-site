@@ -43,7 +43,9 @@
                   {% endcomment %}
                 {% endif %}
               {% endfor %}
-              {{ my_array }}
+              {% for test in my_array %}
+                {{ test }}
+              {% endfor %}
               <li class="list-menu__item facets__item str_item all">
                 <span id="str-all">
                    All
