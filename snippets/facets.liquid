@@ -30,11 +30,11 @@
               {% capture test %}
                 {% for product in collection.products %}
                   {% if product.metafields.custom.strength %}
-                    <p>{{ product.metafields.custom.strength }},</p>
+                    
                   {% endif %}
                 {% endfor %}
               {% endcapture %}
-                {{ test | remove: '<p>' | remove: '</p>' | strip_newlines }}
+                
               <li class="list-menu__item facets__item str_item all">
                 <span id="str-all">
                    All
