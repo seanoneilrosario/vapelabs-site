@@ -1036,7 +1036,7 @@ $('.img_slider').slick({
 $('.str_item').click(function(){
   const str = $(this).children('span').attr('id');
   const items = $(`.grid-item.${str}`);
-  items.map((item) => {
+  items.map((i, item) => {
     console.log(item)
   })
 });
