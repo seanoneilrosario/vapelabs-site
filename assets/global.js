@@ -1054,7 +1054,7 @@ uniq.forEach((item) => {
   lists.push(list_item)
 })
 console.log(fil_ul)
-fil_ul.innerHTML = lists;
+fil_ul[0].innerHTML = lists;
 
 $('.str_item').click(function(){
   $('.str_item').removeClass('active');
