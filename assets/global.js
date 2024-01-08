@@ -1033,17 +1033,27 @@ $('.img_slider').slick({
   ]
 });
 
+const fil_ul = $('.str-filters');
 const fil_items = $('.str-filters li');
-const my_array = []
+const my_array = [];
+const lists = [];
 fil_items.map((i, item) => {
   const new_items = $(item).children('span').attr('id')
   my_array.push(new_items)
 })
 const uniq = [...new Set(my_array)];
 uniq.forEach((item) => {
-  console.log(item)
+  const list_item = document.createElement("li");
+  list_item.classList.add('list-menu__item facets__item str_item');
+  list_item.innerHTML = `<span id="str-${item}">
+                       ${item}
+                        <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>`;
+  lists.push(list_item)
 })
-
+console.log(lists)
 
 $('.str_item').click(function(){
   $('.str_item').removeClass('active');
