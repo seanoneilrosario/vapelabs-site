@@ -1033,8 +1033,10 @@ $('.img_slider').slick({
   ]
 });
 
-console.log($('.str-filters li'))
-
+const fil_items = $('.str-filters li');
+fil_items.map((i, item) => {
+  console.log(item.innerHTML)
+})
 $('.str_item').click(function(){
   $(this).siblings().removeClass('active');
   $(this).addClass('active');
