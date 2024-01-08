@@ -28,10 +28,9 @@
             <ul class="str-filters">
               {% for product in collection.products %}
                 {% if product.metafields.custom.strength %}
-                {% assign my_array = product.metafields.custom.strength | uniq %}
-                  {% for test in my_array %}
-                    <span class="asdf">{{ test }}</span>
-                  {% endfor %}
+                {% assign my_array = product.metafields.custom.strength | remove: "\n" %}
+                  {{ my_array }}
+                  
                
                   {% comment %}
                     <li class="list-menu__item facets__item str_item">
