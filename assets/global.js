@@ -1033,7 +1033,7 @@ $('.img_slider').slick({
   ]
 });
 
-console.log($('.str-filters li').innerHTM)
+console.log($('.str-filters li'))
 
 $('.str_item').click(function(){
   $(this).siblings().removeClass('active');
