@@ -1044,7 +1044,7 @@ fil_items.map((i, item) => {
 const uniq = [...new Set(my_array)];
 uniq.forEach((item) => {
   const list_item = document.createElement("li");
-  list_item.classList.add('list-menu__item facets__item str_item');
+  list_item.className = 'list-menu__item facets__item str_item';
   list_item.innerHTML = `<span id="str-${item}">
                        ${item}
                         <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
