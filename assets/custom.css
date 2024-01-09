@@ -1129,7 +1129,7 @@ main.main-content {
 
 /* Testimonials */
 .testimonials {
-    margin: 40px 0;
+    margin: 40px auto;
 }
 
 .testimonials h2 {
@@ -1219,7 +1219,7 @@ main.main-content {
     }
 
     .testimonials {
-        margin: 60px 0;
+        margin: 60px auto;
     }
 
     .testimonials_slider .slick-list {
