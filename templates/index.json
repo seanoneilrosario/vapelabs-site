@@ -287,7 +287,6 @@
         },
         "96ba1be5-9f54-4114-b3f1-4d1f3ccc340a": {
           "type": "testimony",
-          "disabled": true,
           "settings": {
             "title": "Test 1",
             "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
