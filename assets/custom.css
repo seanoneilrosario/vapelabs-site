@@ -1178,7 +1178,7 @@ main.main-content {
     background-color: #2d4d7c;
     border-radius: 20px;
     padding: 20px;
-    height: auto;
+    height: auto !important;
     display: flex !important;
     flex-direction: column;
 }
