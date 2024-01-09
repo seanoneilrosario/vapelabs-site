@@ -50,19 +50,19 @@
         "5de12304-28eb-4812-9762-6bc84ae7c257"
       ],
       "settings": {
-        "bg_color": "#F8F8F8"
+        "bg_color": "#f8f8f8"
       }
     },
     "b2dfc303-d4d8-4679-8482-f65b8bc9c903": {
       "type": "image-with-text",
       "settings": {
-        "bg_color": "#fff",
+        "bg_color": "#ffffff",
         "heading_color": "#2d4d7c",
         "color_text": "#2b2928",
         "image_aligment": "right",
         "image": "shopify:\/\/shop_images\/1.png",
         "heading": "Empowering your Business with Knowledge",
-        "contents": "<p>At Vapelabs, we believe that knowledge is power. That’s why we offer comprehensive educational resources to help you navigate the ever-evolving vaping landscape.<\/p><p>Our expert guides and industry insight provide you with the latest trends, regulatory updates and product knowledge. Stay informed, stay ahead and confidently advise your customers with the information you need.<\/p>",
+        "contents": "<p>Stay informed, stay ahead and confidently advise your customers with the information you need. <\/p><p>Our expert guides and industry insight are designed to keep you updated on the latest trends, regulatory updates and product knowledge and help you navigate the ever-evolving vaping landscape.<\/p>",
         "btn_text": "",
         "btn_link": ""
       }
