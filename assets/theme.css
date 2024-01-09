@@ -20121,7 +20121,8 @@ input[type=number]::-webkit-outer-spin-button {
 .str-filters li,
 .str_item.all,
 .ven-filters li,
-.ven_item.all {
+.ven_item.all,
+.blog_side_bar_item {
   font-weight: 500;
   position: relative;
   cursor: pointer;
@@ -20130,7 +20131,8 @@ input[type=number]::-webkit-outer-spin-button {
 .str-filters li span svg,
 .str_item.all span svg,
 .ven-filters li span svg,
-.ven_item.all span svg {
+.ven_item.all span svg,
+.blog_side_bar_item svg {
   position: absolute;
   left: 3px;
   top: 6px;
@@ -20141,14 +20143,16 @@ input[type=number]::-webkit-outer-spin-button {
 .str-filters li.active span svg,
 .str_item.all.active span svg,
 .ven-filters li.active span svg,
-.ven_item.all.active span svg {
+.ven_item.all.active span svg,
+.blog_side_bar_item span svg {
   opacity: 1 !important;
 }
 
 .str-filters li:before,
 .str_item.all:before,
 .ven-filters li:before,
-.ven_item.all:before {
+.ven_item.all:before,
+.blog_side_bar_item:before {
   content: '';
   margin-right: 5px;
   width: 18px;
