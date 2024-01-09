@@ -140,23 +140,25 @@
         {% when '6' %}
         {% assign grid_item_width = 'medium-down--one-half large-up--one-sixth' %}
         {% endcase %}
-        {% for product in collection.products %}{% if product.type == 'PPLR_HIDDEN_PRODUCT' %}{% continue %}{% endif %}
-        <div class="ven-{{ product.vendor }} {% if product.metafields.custom.strength %}str-{{ product.metafields.custom.strength | remove: " " | remove: "/" | downcase }}{% endif %} grid-item {{ settings.product_hover_btn }} {{ grid_item_width }} {{product.type}}">
-          {% render 'product-card-grid', collection: collection, product: product %}
-        </div>
-
-        {% else %}
-        {% if collection.handle == 'all' %}
-        {% render 'onboarding-empty-collection' %}
-        {% else %}
-        {% comment %}
-        If collection exists but is empty, display message
-        {% endcomment %}
-        <div class="grid-item">
-          <p>{{ 'collections.general.no_matches' | t }}</p>
-        </div>
-        {% endif %}
-        {% endfor %}
+        {% paginate collection.products by 1000 %}
+          {% for product in collection.products  %}{% if product.type == 'PPLR_HIDDEN_PRODUCT' %}{% continue %}{% endif %}
+            <div class="ven-{{ product.vendor }} {% if product.metafields.custom.strength %}str-{{ product.metafields.custom.strength | remove: " " | remove: "/" | downcase }}{% endif %} grid-item {{ settings.product_hover_btn }} {{ grid_item_width }} {{product.type}}">
+              {% render 'product-card-grid', collection: collection, product: product %}
+            </div>
+    
+            {% else %}
+            {% if collection.handle == 'all' %}
+            {% render 'onboarding-empty-collection' %}
+            {% else %}
+            {% comment %}
+            If collection exists but is empty, display message
+            {% endcomment %}
+            <div class="grid-item">
+              <p>{{ 'collections.general.no_matches' | t }}</p>
+            </div>
+            {% endif %}
+          {% endfor %}
+        {% endpaginate %}
       </div>
     </div>
     {% comment %}<div class="text-center pagination-wrap">
