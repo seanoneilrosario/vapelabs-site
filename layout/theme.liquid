@@ -6,6 +6,7 @@
 <!--[if (gt IE 9)|!(IE)]><!--> 
 <html  lang="{{ shop.locale }}" class="no-js{% if shop.locale == 'ar' or shop.locale == 'he' or shop.locale == 'ur' %} rtl {% endif %}"> <!--<![endif]-->
   <head>
+ {%- render 'beae_header' -%}
     <!-- Basic page needs ================================================== -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -287,5 +288,7 @@
         shareSuccess: `{{ 'general.share.success_message' | t }}`,
       }
     </script>
-  </body>
+  
+ {%- render 'beae_footer' -%}
+ </body>
 </html>
