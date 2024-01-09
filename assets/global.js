@@ -1053,7 +1053,18 @@ uniq.forEach((item) => {
                     </span>`;
   fil_ul[0].appendChild(list_item);
 })
-
+uniq.forEach((item) => {
+  const list_item = document.createElement("li");
+  const item_name = item.replace('str-','');
+  list_item.className = 'list-menu__item facets__item str_item';
+  list_item.innerHTML = `<span id="${item}">
+                       ${item_name}
+                        <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>`;
+  fil_ul[1].appendChild(list_item);
+})
 
 
 $('.str_item').click(function(){
