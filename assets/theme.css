@@ -19774,12 +19774,17 @@ input[type=number]::-webkit-outer-spin-button {
   line-height: 20px;
 }
 .blog-post-single .section-header.text-left h1 {
-  font: 500 40px/40px var(--font-stack-header);
+  font: 500 20px/22px var(--font-stack-header);
     color: var(--color-text);
       float: left;
       width: 100%;
       margin: 20px 0 0;
   }
+@media(min-width:1008px) {
+.blog-post-single .section-header.text-left h1 {
+  font: 500 40px/40px var(--font-stack-header);
+  }
+}
 .blog-post-single > .rte {
   float: left;
   width: 100%;
