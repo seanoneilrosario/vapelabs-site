@@ -56,7 +56,7 @@
     "b2dfc303-d4d8-4679-8482-f65b8bc9c903": {
       "type": "image-with-text",
       "settings": {
-        "bg_color": "#f6f8fc",
+        "bg_color": "#f8f8f8",
         "heading_color": "#2d4d7c",
         "color_text": "#2b2928",
         "image_aligment": "right",
