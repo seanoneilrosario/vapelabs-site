@@ -20132,7 +20132,7 @@ input[type=number]::-webkit-outer-spin-button {
 .str_item.all span svg,
 .ven-filters li span svg,
 .ven_item.all span svg,
-.blog_side_bar_item svg {
+.blog_side_bar_item span svg {
   position: absolute;
   left: 3px;
   top: 6px;
@@ -20144,7 +20144,7 @@ input[type=number]::-webkit-outer-spin-button {
 .str_item.all.active span svg,
 .ven-filters li.active span svg,
 .ven_item.all.active span svg,
-.blog_side_bar_item span svg {
+.blog_side_bar_item.active span svg {
   opacity: 1 !important;
 }
 
