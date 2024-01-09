@@ -60,10 +60,13 @@ if(window.location.hash=='#recover'){showRecoverPasswordForm()}
 document.getElementById('resetSuccess').style.display='block';{%endif%}</script>
 
 <style>
-  .footer-head_gap .gap_white,
-  .footer-head_text {
-    background: #77b6de !important;
-  }
+  {% if page.url contains 'education-centre' %}
+      .footer-head_gap .gap_white,
+      .footer-head_text {
+        background: #77b6de !important;
+      }
+  {% endif %}
+ 
     
   .breadcrumb-wrap {
     display: none !important;
