@@ -4,7 +4,7 @@
         {% for block in section.blocks %}
             <div class="testimonial-slides">
                 <h3>{{ block.settings.title }}</h3>
-                <p>{{ block.settings.content }}</p>
+                {{ block.settings.content }}
                 <div class="img_and-name">
                     <img src="{{ block.settings.image | img_url: 'master' }}" />
                     <p>{{ block.settings.name }}</p>
