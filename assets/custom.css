@@ -1165,7 +1165,7 @@ main.main-content {
 }
 
 .testimonials_slider .slick-list {
-    margin: 0 10px;
+    margin: 0;
     overflow: visible;
 }
 
@@ -1223,7 +1223,7 @@ main.main-content {
     }
 
     .testimonials_slider .slick-list {
-        margin: 0 50px;
+        margin: 0;
     }
 }
 
