@@ -32,8 +32,7 @@
 <div class="widget widget_blogs">
   <h4>Blogs<span class="right"></span></h4>
   <ul>
-    {{ blog.url }}
-    <li class="blog_side_bar_item {% if page.url contains news %}active{% endif %}">
+    <li class="blog_side_bar_item {% if blog.url contains news %}active{% endif %}">
       <span>
         <a href="https://vapelabsau.myshopify.com/blogs/news">News</a>
         <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +40,7 @@
         </svg>
       </span>
     </li>
-    <li class="blog_side_bar_item {% if page.url contains laws-regulations %}active{% endif %}">
+    <li class="blog_side_bar_item {% if blog.url contains laws-regulations %}active{% endif %}">
       <span>
         <a href="https://vapelabsau.myshopify.com/blogs/laws-regulations">Laws & Regulations</a>
         <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +48,7 @@
         </svg>
       </span>
     </li>
-    <li class="blog_side_bar_item {% if page.url contains pharmacist-guides %}active{% endif %}">
+    <li class="blog_side_bar_item {% if blog.url contains pharmacist-guides %}active{% endif %}">
       <span>
         <a href="https://vapelabsau.myshopify.com/blogs/pharmacist-guides">Pharmacist Guides</a>
         <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
