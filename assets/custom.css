@@ -1730,3 +1730,9 @@ main.main-content {
   border-radius: 1000px;
   font-weight: 600;
 }
+
+
+.mobile-facets__details ul {
+  padding: 0 !important;
+  margin: 0 !important;
+}
