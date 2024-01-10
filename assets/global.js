@@ -1041,6 +1041,7 @@ fil_items.map((i, item) => {
   my_array.push(new_items)
 })
 const uniq = [...new Set(my_array)];
+uniq.sort();
 uniq.forEach((item) => {
   const list_item = document.createElement("li");
   const item_name = item.replace('str-','');
