@@ -5,7 +5,7 @@
       "type": "hero-banner",
       "settings": {
         "image_banner": "shopify:\/\/shop_images\/3-2.png",
-        "sub_title": "NEWS AND ARTICLES",
+        "sub_title": "{{ blog.title }}",
         "title": "Blogs",
         "button_title": "",
         "button_link": ""
