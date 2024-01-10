@@ -392,11 +392,11 @@
           super();
           this.querySelector('a').addEventListener('click', (event) => {
             event.preventDefault();
-            const form = this.closest('facet-filters-form') || document.querySelector('facet-filters-form');
-            form.onActiveFilterClick(event);
             $('.list-menu__item').removeClass('active');
             $('.grid-item').removeClass('none');
             $('.grid-item').removeClass('hide');
+            const form = this.closest('facet-filters-form') || document.querySelector('facet-filters-form');
+            form.onActiveFilterClick(event);
           });
         }
       }
