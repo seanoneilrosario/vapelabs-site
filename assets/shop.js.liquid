@@ -270,7 +270,6 @@
           const countsToRender = Array.from(facetDetailsElements).find(matchesIndex);
 
           facetsToRender.forEach((element) => {
-            console.log(element, element.dataset)
             document.querySelector(`.js-filter[data-index="${element.dataset.index}"]`).innerHTML = element.innerHTML;
           });
 
