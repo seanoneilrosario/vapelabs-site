@@ -278,6 +278,7 @@ main.main-content {
     line-height: 1;
     max-width: 700px;
     margin-bottom: 40px;
+    text-transform: uppercase;
 }
 
 .hero-banner a {
