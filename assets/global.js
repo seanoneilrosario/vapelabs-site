@@ -1091,3 +1091,4 @@ $('.ven_item.all').click(function(){
 });
 
 console.log(document.querySelector(`.js-filter[data-index="1"]`))
+console.log(document.querySelector(`.js-filter[data-index="1"]`).innerHTML)
