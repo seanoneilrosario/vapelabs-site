@@ -82,7 +82,7 @@
         {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
         {% case filter.type %}
         {% when 'list' %}
-        <div class="disclosure-has-popup facets__disclosure js-filter widget" data-index="{{ forloop.index }}">
+        <div class="disclosure-has-popup facets__disclosure js-filter widget" data-index="{{ forloop.index | plus: 2 }}">
           <summary class="facets__summary caption-large focus-offset">
             <div>
               <h4>{{ filter.label | escape }}</h4>
@@ -129,7 +129,7 @@
                     assign uses_comma_decimals = true
                   endif
                 %}
-        <div class="disclosure-has-popup facets__disclosure js-filter widget" data-index="{{ forloop.index }}">
+        <div class="disclosure-has-popup facets__disclosure js-filter widget" data-index="{{ forloop.index | plus: 2 }}">
           <summary class="facets__summary caption-large focus-offset">
             <div>
               <h4>{{ filter.label | escape }}</h4>
