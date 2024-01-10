@@ -1071,8 +1071,9 @@ $('.str_item').click(function(){
   $('.str_item').removeClass('active');
   $(this).addClass('active');
   const str = $(this).children('span').attr('id').replace('.','');
+  const str_final = str.replace('/','');
   $('.grid-item').addClass('hide');
-  $(`.grid-item.${str}`).removeClass('hide');
+  $(`.grid-item.${str_final}`).removeClass('hide');
 });
 $('.str_item.all').click(function(){
   $('.grid-item').removeClass('hide');
