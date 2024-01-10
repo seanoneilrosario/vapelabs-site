@@ -1089,3 +1089,10 @@ $('.ven_item').click(function(){
 $('.ven_item.all').click(function(){
   $('.grid-item').removeClass('none');
 });
+
+
+$('.active-facets__button-remove').click(function(){
+  $('.list-menu__item').removeClass('active');
+  $('.grid-item').removeClass('none');
+  $('.grid-item').removeClass('hide');
+});
