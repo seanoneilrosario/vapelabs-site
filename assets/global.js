@@ -1070,7 +1070,7 @@ uniq.forEach((item) => {
 $('.str_item').click(function(){
   $('.str_item').removeClass('active');
   $(this).addClass('active');
-  const str = $(this).children('span').attr('id');
+  const str = $(this).children('span').attr('id').replace('.','');
   $('.grid-item').addClass('hide');
   $(`.grid-item.${str}`).removeClass('hide');
 });

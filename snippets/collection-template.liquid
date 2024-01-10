@@ -142,7 +142,7 @@
         {% endcase %}
         {% paginate collection.products by 1000 %}
           {% for product in collection.products  %}{% if product.type == 'PPLR_HIDDEN_PRODUCT' %}{% continue %}{% endif %}
-            <div class="ven-{{ product.vendor }} {% if product.metafields.custom.strength %}str-{{ product.metafields.custom.strength | remove: " " | remove: "/" | downcase }}{% endif %} grid-item {{ settings.product_hover_btn }} {{ grid_item_width }} {{product.type}}">
+            <div class="ven-{{ product.vendor }} {% if product.metafields.custom.strength %}str-{{ product.metafields.custom.strength | remove: " " | remove: "."  | remove: "/" | downcase }}{% endif %} grid-item {{ settings.product_hover_btn }} {{ grid_item_width }} {{product.type}}">
               {% render 'product-card-grid', collection: collection, product: product %}
             </div>
     
