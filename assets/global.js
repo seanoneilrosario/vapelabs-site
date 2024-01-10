@@ -1089,3 +1089,5 @@ $('.ven_item').click(function(){
 $('.ven_item.all').click(function(){
   $('.grid-item').removeClass('none');
 });
+
+console.log(document.querySelector(`.js-filter[data-index="1"]`).innerHTM)
