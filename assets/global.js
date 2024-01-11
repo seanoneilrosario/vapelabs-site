@@ -1065,7 +1065,53 @@ uniq.forEach((item) => {
                       </svg>
                     </span>`;
   fil_ul[1].appendChild(list_item);
+});
+
+
+const prod_ul = $('.prod-filters');
+const prod_items = $('.prod-filters li');
+const my_prod_array = [];
+prod_items.map((i, item) => {
+  const new_items = $(item).children('span').attr('id')
+  my_prod_array.push(new_items)
 })
+const prod_uniq = [...new Set(my_prod_array)];
+prod_uniq.sort();
+prod_uniq.forEach((item) => {
+  const list_item = document.createElement("li");
+  const item_name = item.replace('prod-','');
+  list_item.className = 'list-menu__item facets__item prod_item';
+  list_item.innerHTML = `<span id="${item}">
+                       ${item_name}
+                        <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>`;
+  prod_ul[0].appendChild(list_item);
+})
+prod_uniq.forEach((item) => {
+  const list_item = document.createElement("li");
+  const item_name = item.replace('prod-','');
+  list_item.className = 'list-menu__item facets__item prod_item';
+  list_item.innerHTML = `<span id="${item}">
+                       ${item_name}
+                        <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>`;
+  prod_ul[1].appendChild(list_item);
+})
+
+$('.prod_item').click(function(){
+  $('.prod_item').removeClass('active');
+  $(this).addClass('active');
+  const prod = $(this).children('span').attr('id').replace(' ','');
+  $('.grid-item').addClass('nodis');
+  $(`.grid-item.${prod}`).removeClass('nodis');
+});
+$('.prod_item.all').click(function(){
+  $('.grid-item').removeClass('nodis');
+});
 
 
 $('.str_item').click(function(){
