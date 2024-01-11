@@ -20129,7 +20129,8 @@ input[type=number]::-webkit-outer-spin-button {
 .ven-filters li,
 .ven_item.all,
 .prod-filters li,
-.prod_item.all {
+.prod_item.all,
+.blog_side_bar_item {
   font-weight: 500;
   position: relative;
   cursor: pointer;
@@ -20144,7 +20145,8 @@ input[type=number]::-webkit-outer-spin-button {
 .ven-filters li span svg,
 .ven_item.all span svg,
 .prod-filters li span svg,
-.prod_item.all span svg {
+.prod_item.all span svg,
+.blog_side_bar_item span svg {
   position: absolute;
   left: 3px;
   top: 6px;
@@ -20157,7 +20159,8 @@ input[type=number]::-webkit-outer-spin-button {
 .ven-filters li.active span svg,
 .ven_item.all.active span svg,
 .prod-filters li.active span svg,
-.prod_item.all.active span svg {
+.prod_item.all.active span svg,
+.blog_side_bar_item.active span svg {
   opacity: 1 !important;
 }
 
@@ -20166,7 +20169,8 @@ input[type=number]::-webkit-outer-spin-button {
 .ven-filters li:before,
 .ven_item.all:before,
 .prod-filters li:before,
-.prod_item.all:before {
+.prod_item.all:before,
+.blog_side_bar_item:before {
   content: '';
   margin-right: 5px;
   width: 18px;
