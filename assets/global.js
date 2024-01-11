@@ -1137,3 +1137,16 @@ $('.ven_item').click(function(){
 $('.ven_item.all').click(function(){
   $('.grid-item').removeClass('none');
 });
+
+
+
+
+// Open new tab resources
+cosnt my_url = $('.product-single__desc a');
+$(my_url).click(function(){
+  $this = $(this);
+  console.log($this.attr('href'))
+});
+function openInNewTab(url) {
+  window.open(url, '_blank').focus();
+}
