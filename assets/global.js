@@ -1142,7 +1142,7 @@ $('.ven_item.all').click(function(){
 
 
 // Open new tab resources
-cosnt my_url = $('.product-single__desc a');
+const my_url = $('.product-single__desc a');
 $(my_url).click(function(e){
   $this = $(this);
   e.preventDefault();
