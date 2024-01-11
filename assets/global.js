@@ -1146,8 +1146,8 @@ const my_url = $('.product-single__desc a');
 $(my_url).click(function(e){
   $this = $(this);
   e.preventDefault();
-  console.log($this.attr('href'))
+  function openInNewTab(url) {
+    window.open(url, '_blank').focus();
+  }
+  openInNewTab($this.attr('href'))
 });
-function openInNewTab(url) {
-  window.open(url, '_blank').focus();
-}
