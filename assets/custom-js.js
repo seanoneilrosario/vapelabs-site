@@ -402,7 +402,6 @@ $(document).ready(function() {
     var $progress = $desc;
     var $progressBar = $pbar;
     var $quantity = $qty.html();
-    console.log($quantity);
     var currentWidth = parseInt($progressBar.css('width'));
     var allowedWidth = parseInt($progress.css('width'));
     var addedWidth = currentWidth + parseInt($quantity);
@@ -568,7 +567,6 @@ $(document).ready(function() {
     var $progress = $desc;
     var $progressBar = $pbar;
     var $quantity = $qty.html();
-    console.log($quantity);
     var currentWidth = parseInt($progressBar.css('width'));
     var allowedWidth = parseInt($progress.css('width'));
     var addedWidth = currentWidth + parseInt($quantity);
