@@ -20128,17 +20128,23 @@ input[type=number]::-webkit-outer-spin-button {
 .str_item.all,
 .ven-filters li,
 .ven_item.all,
-.blog_side_bar_item {
+.prod-filters li,
+.prod_item.all {
   font-weight: 500;
   position: relative;
   cursor: pointer;
+}
+
+.prod_item span {
+  text-transform: capitalize;
 }
 
 .str-filters li span svg,
 .str_item.all span svg,
 .ven-filters li span svg,
 .ven_item.all span svg,
-.blog_side_bar_item span svg {
+.prod-filters li span svg,
+.prod_item.all span svg {
   position: absolute;
   left: 3px;
   top: 6px;
@@ -20150,7 +20156,8 @@ input[type=number]::-webkit-outer-spin-button {
 .str_item.all.active span svg,
 .ven-filters li.active span svg,
 .ven_item.all.active span svg,
-.blog_side_bar_item.active span svg {
+.prod-filters li.active span svg,
+.prod_item.all.active span svg {
   opacity: 1 !important;
 }
 
@@ -20158,7 +20165,8 @@ input[type=number]::-webkit-outer-spin-button {
 .str_item.all:before,
 .ven-filters li:before,
 .ven_item.all:before,
-.blog_side_bar_item:before {
+.prod-filters li:before,
+.prod_item.all:before {
   content: '';
   margin-right: 5px;
   width: 18px;
@@ -20167,7 +20175,8 @@ input[type=number]::-webkit-outer-spin-button {
   display: inline-block;
 }
 
-.collection_template .grid-item.none {
+.collection_template .grid-item.none,
+.collection_template .grid-item.nodis {
   display: none;
 }
 
