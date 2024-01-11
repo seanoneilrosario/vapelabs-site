@@ -395,6 +395,7 @@
             $('.list-menu__item').removeClass('active');
             $('.grid-item').removeClass('none');
             $('.grid-item').removeClass('hide');
+            $('.grid-item').removeClass('nodis');
             const form = this.closest('facet-filters-form') || document.querySelector('facet-filters-form');
             form.onActiveFilterClick(event);
           });
