@@ -248,9 +248,9 @@
         <div class="mobile-facets__inner">
           <div class="mobile-facets__main">
             <div class="mobile-facets__footer main">
-              <facet-remove class="mobile-facets__clear-wrapper">
+              {% comment %}<facet-remove class="mobile-facets__clear-wrapper">
                 <a href="{{ results_url }}" class="mobile-facets__clear underlined-link btn">{{ 'products.facets.clear_all' | t }}</a>
-              </facet-remove>
+              </facet-remove>{% endcomment %}
               <button type="button" class="no-js-hidden btn btn-primary" onclick="this.closest('.mobile-facets__wrapper').querySelector('summary').click()">Apply All</button>
               <noscript><button class="button button--primary">Apply All</button></noscript>
             </div>
@@ -442,9 +442,9 @@
               </div>
               </price-range>
             <div class="no-js-hidden mobile-facets__footer">
-              <facet-remove class="mobile-facets__clear-wrapper">
+              {% comment %}<facet-remove class="mobile-facets__clear-wrapper">
                 <a href="{{ results_url }}" class="mobile-facets__clear underlined-link btn">{{ 'products.facets.clear' | t }}</a>
-              </facet-remove>
+              </facet-remove>{% endcomment %}
               <button type="button" class="no-js-hidden btn btn-primary" onclick="this.closest('.mobile-facets__wrapper').querySelector('summary').click()">{{ 'products.facets.apply' | t }}</button>
               <noscript><button class="button button--primary">{{ 'products.facets.apply' | t }}</button></noscript>
             </div>
