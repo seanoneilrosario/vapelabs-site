@@ -2,11 +2,81 @@
   "sections": {
     "main": {
       "type": "page",
+      "disabled": true,
       "settings": {
+      }
+    },
+    "hero_banner_6WWhiR": {
+      "type": "hero-banner",
+      "settings": {
+        "image_banner": "shopify:\/\/shop_images\/3-2.png",
+        "sub_title": "All Blogs",
+        "title": "Blogs",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "icons_text_XaK8aa": {
+      "type": "icons-text",
+      "blocks": {
+        "icons_TNrGeF": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_2.png",
+            "icon_title": "Express Delivery"
+          }
+        },
+        "icons_E4y7hD": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_4.png",
+            "icon_title": "Widest Range"
+          }
+        },
+        "icons_63N9Fn": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_5.png",
+            "icon_title": "TGO110 Compliant"
+          }
+        },
+        "icons_Pn4NK4": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_3.png",
+            "icon_title": "Dedicated Support"
+          }
+        }
+      },
+      "block_order": [
+        "icons_TNrGeF",
+        "icons_E4y7hD",
+        "icons_63N9Fn",
+        "icons_Pn4NK4"
+      ],
+      "settings": {
+        "bg_color": "#F8F8F8"
+      }
+    },
+    "image_with_text_yqpEU7": {
+      "type": "image-with-text",
+      "settings": {
+        "bg_color": "#f8f8f8",
+        "heading_color": "#2d4d7c",
+        "color_text": "#2b2928",
+        "image_aligment": "right",
+        "image": "shopify:\/\/shop_images\/Featured_blog_Laws.png",
+        "heading": "Featured Blog",
+        "contents": "<h2><strong>Navigating Australian Regulations: A Guide for Pharmacists Selling Nicotine Products.<\/strong><\/h2><p>Selling nicotine products in Australia comes with a set of specific regulations and guidelines that pharmacists must navigate to ensure compliance and uphold safety standards. In this comprehensive blog post, we aim to..<\/p>",
+        "btn_text": "Read Full Article",
+        "btn_link": "https:\/\/vapelabs.com.au\/blogs\/laws-regulations\/navigating-australian-regulations-a-guide-for-pharmacists-selling-nicotine-products"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "hero_banner_6WWhiR",
+    "icons_text_XaK8aa",
+    "image_with_text_yqpEU7"
   ]
 }
