@@ -941,7 +941,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   console.log(window.location.pathname)
    if (!$('body').hasClass("customer-logged-in")) {
-     if (window.location.pathname == "/collections/all") {
+     if (window.location.pathname.includes('/collections')) {
         window.location.replace("https://vapelabs.com.au/account");
       }
    }
