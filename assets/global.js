@@ -933,7 +933,16 @@ $('.toggle_open').on( "click", function() {
 $(document).ready(function() {
    if (!$('body').hasClass("customer-logged-in")) {
      if (window.location.pathname == "/pages/education-centre") {
-        window.location.replace("https://vapelabsau.myshopify.com/account");
+        window.location.replace("https://vapelabs.com.au/account");
+      }
+   }
+});
+
+$(document).ready(function() {
+  console.log(window.location.pathname)
+   if (!$('body').hasClass("customer-logged-in")) {
+     if (window.location.pathname == "/collections/all") {
+        window.location.replace("https://vapelabs.com.au/account");
       }
    }
 });
