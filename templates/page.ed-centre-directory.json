@@ -66,7 +66,7 @@
     "image_with_text_biRqag": {
       "type": "image-with-text",
       "settings": {
-        "bg_color": "#fff",
+        "bg_color": "#f8f8f8",
         "heading_color": "#2d4d7c",
         "color_text": "#2b2928",
         "image_aligment": "right",
@@ -80,7 +80,7 @@
     "image_with_text_RqX8gH": {
       "type": "image-with-text",
       "settings": {
-        "bg_color": "#fff",
+        "bg_color": "#f8f8f8",
         "heading_color": "#2d4d7c",
         "color_text": "#2b2928",
         "image_aligment": "right",
@@ -94,7 +94,7 @@
     "image_with_text_jhbeQY": {
       "type": "image-with-text",
       "settings": {
-        "bg_color": "#fff",
+        "bg_color": "#f8f8f8",
         "heading_color": "#2d4d7c",
         "color_text": "#2b2928",
         "image_aligment": "right",
