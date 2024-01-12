@@ -11,7 +11,7 @@
       <div class="blog_content_wrap">as
         {% assign blog_handles = "news-and-articles,laws-regulations" | split: "," %}
         {% for handle in blog_handles %}
-          {% for article in blogs.news-and-articles.articles %}
+          {% for article in blogs[handle].articles %}
             <p>{{ article.title }}</p>
             
           {% endfor %}
