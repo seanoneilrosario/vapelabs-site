@@ -63,23 +63,6 @@
         "bg_color": "#f1f3f8"
       }
     },
-    "2099e844-66e9-428d-9802-c003e35246e6": {
-      "type": "article-list",
-      "settings": {
-        "title": "Articles",
-        "blog": "news"
-      }
-    },
-    "3b07cbe8-8d12-49f0-ba95-6982e5fdb4df": {
-      "type": "cta-parallax-banner",
-      "settings": {
-        "image_parallax": "shopify:\/\/shop_images\/oos.jpg",
-        "heading": "Book your free training session with our Nicotine Vaping Product specialists.",
-        "content": "<p>Request a chat with our dedicated Account Managers and experience personalised support tailored to your unique needs. Our team of experts is committed to assisting you every step of the way, whether you require a training session on NVP dispensing or onboarding assistance.<\/p><p>Book your free training session with our Nicotine Vaping Product specialist today.<\/p>",
-        "button_title": "BOOK NOW",
-        "button_link": "https:\/\/book.vapelabs.com.au\/#\/nvp"
-      }
-    },
     "50550a20-07dd-4376-9894-6786c3746bcc": {
       "type": "cta-bar",
       "settings": {
@@ -128,6 +111,16 @@
         "btn_text": "View all Articles",
         "btn_link": ""
       }
+    },
+    "3b07cbe8-8d12-49f0-ba95-6982e5fdb4df": {
+      "type": "cta-parallax-banner",
+      "settings": {
+        "image_parallax": "shopify:\/\/shop_images\/oos.jpg",
+        "heading": "Book your free training session with our Nicotine Vaping Product specialists.",
+        "content": "<p>Request a chat with our dedicated Account Managers and experience personalised support tailored to your unique needs. Our team of experts is committed to assisting you every step of the way, whether you require a training session on NVP dispensing or onboarding assistance.<\/p><p>Book your free training session with our Nicotine Vaping Product specialist today.<\/p>",
+        "button_title": "BOOK NOW",
+        "button_link": "https:\/\/book.vapelabs.com.au\/#\/nvp"
+      }
     }
   },
   "order": [
@@ -135,11 +128,10 @@
     "42f963dd-ba18-456e-bf4f-2614fd9b41f6",
     "2a0f4418-6c3e-4df5-8aef-0f2e9d8b0b98",
     "b934cce7-440a-4603-a1c9-5bbd76ee2493",
-    "2099e844-66e9-428d-9802-c003e35246e6",
-    "3b07cbe8-8d12-49f0-ba95-6982e5fdb4df",
     "50550a20-07dd-4376-9894-6786c3746bcc",
     "image_with_text_biRqag",
     "image_with_text_RqX8gH",
-    "image_with_text_jhbeQY"
+    "image_with_text_jhbeQY",
+    "3b07cbe8-8d12-49f0-ba95-6982e5fdb4df"
   ]
 }
