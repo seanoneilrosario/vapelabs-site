@@ -1749,3 +1749,12 @@ main.main-content {
 .tt-blog-content {
   height: calc(100% - 30px)
 }
+
+.tt-blog-description .blog-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.blogleft_inner_content .tt-blog-content .tt-blog-description p {
+  padding: 0 5px;
+}
