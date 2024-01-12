@@ -1,6 +1,6 @@
 <div>
   <h2>{{ section.settings.title }}</h2>
-  <div class="img_slider">
+  <div class="downloadables">
     {% for block in section.blocks %}
       <a href="{{ block.settings.video_url }}" class="img_slide">
         <img src="{{ block.settings.icon_image | img_url: 'master' }}" />
