@@ -65,45 +65,14 @@
         "icons_cMHxFg"
       ],
       "settings": {
-        "bg_color": "#F8F8F8"
+        "bg_color": "#f8f8f8"
       }
     },
-    "featured_blogs_Kh3Fia": {
-      "type": "featured-blogs",
-      "blocks": {
-        "logo_ragGJB": {
-          "type": "logo",
-          "settings": {
-            "article": "pharmacist-guides\/ensuring-compliance-tgo-110-guidelines-and-dispensing-practices"
-          }
-        },
-        "logo_LQfAch": {
-          "type": "logo",
-          "settings": {
-            "article": "laws-regulations\/navigating-australian-regulations-a-guide-for-pharmacists-selling-nicotine-products"
-          }
-        },
-        "logo_aizm3P": {
-          "type": "logo",
-          "settings": {
-            "article": "news-and-articles\/the-latest-trends-in-the-smoking-cessation-industry-what-pharmacists-should-know"
-          }
-        },
-        "logo_dkHdgV": {
-          "type": "logo",
-          "settings": {
-            "article": "news-and-articles\/tga-s-vigilance-on-unapproved-vaping-products-a-70-000-product-seizure"
-          }
-        }
-      },
-      "block_order": [
-        "logo_ragGJB",
-        "logo_LQfAch",
-        "logo_aizm3P",
-        "logo_dkHdgV"
-      ],
+    "article_list_aeeBpJ": {
+      "type": "article-list",
       "settings": {
-        "heading": "Articles"
+        "title": "Articles",
+        "blog": "news-and-articles"
       }
     },
     "cta_parallax_banner_GqeXdi": {
@@ -123,7 +92,7 @@
     "centre_directory_rNKGTa",
     "hero_banner_7gH3Ha",
     "icons_text_R8Mx6m",
-    "featured_blogs_Kh3Fia",
+    "article_list_aeeBpJ",
     "cta_parallax_banner_GqeXdi"
   ]
 }
