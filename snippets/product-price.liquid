@@ -53,5 +53,8 @@
         {{ product.metafields.custom.rrp }} <sup>RRP</sup>
       </span>
     {% endif %}
+    {% if product.metafields.custom.cost_per_ml %}
+      <span class="product-price__price">Cost per ml {{ product.metafields.custom.cost_per_ml }}</span>
+    {% endif %}
   </div>
 </div>
