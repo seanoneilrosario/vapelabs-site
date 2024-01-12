@@ -55,7 +55,7 @@
         "icons_Pn4NK4"
       ],
       "settings": {
-        "bg_color": "#F8F8F8"
+        "bg_color": "#f8f8f8"
       }
     },
     "image_with_text_yqpEU7": {
@@ -71,12 +71,18 @@
         "btn_text": "Read Full Article",
         "btn_link": "https:\/\/vapelabs.com.au\/blogs\/laws-regulations\/navigating-australian-regulations-a-guide-for-pharmacists-selling-nicotine-products"
       }
+    },
+    "all_blogs_wLETe9": {
+      "type": "all-blogs",
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
     "hero_banner_6WWhiR",
     "icons_text_XaK8aa",
-    "image_with_text_yqpEU7"
+    "image_with_text_yqpEU7",
+    "all_blogs_wLETe9"
   ]
 }
