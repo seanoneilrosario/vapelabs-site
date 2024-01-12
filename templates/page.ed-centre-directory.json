@@ -96,7 +96,7 @@
         "image_aligment": "right",
         "image": "shopify:\/\/shop_images\/RELX-Cover-1.png",
         "heading": "Video Guides",
-        "contents": "<p>Explore our range of video guides to learn more about products and how to dispense them.<\/p>",
+        "contents": "<p>Discover our collection of instructional videos to gain insights into our products and their dispensing processes.<\/p>",
         "btn_text": "View all Video Guides",
         "btn_link": ""
       }
@@ -110,7 +110,7 @@
         "image_aligment": "right",
         "image": "shopify:\/\/shop_images\/Product-Comparisson-Product-Image.png",
         "heading": "Downloadable Guides",
-        "contents": "<p>Explore our range of downloadable guides to learn more about products and how to dispense them and share them with your team.<\/p>",
+        "contents": "<p>Explore our selection of downloadable guides to enhance your understanding of products and their dispensing procedures. Feel free to share these resources with your team.<\/p>",
         "btn_text": "View all Downloadable Guides",
         "btn_link": ""
       }
@@ -124,7 +124,7 @@
         "image_aligment": "right",
         "image": "shopify:\/\/shop_images\/home-3.png",
         "heading": "Members-only Articles",
-        "contents": "<p>Explore Vapelabs collection of useful articles for pharmacists from producsts to laws and regulations, stay in the know.<\/p>",
+        "contents": "<p>Delve into Vapelabs' assortment of informative articles tailored for pharmacists, covering everything from products to laws and regulations. Stay informed and up-to-date with our comprehensive content.<\/p>",
         "btn_text": "View all Articles",
         "btn_link": ""
       }
