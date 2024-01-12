@@ -990,7 +990,7 @@ $('.feat-blog-post_slider').slick({
     {
       breakpoint: 990,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
         centerMode: true,
       }
