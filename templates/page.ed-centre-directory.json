@@ -114,6 +114,11 @@
         "button_title": "BOOK NOW",
         "button_link": "https:\/\/book.vapelabs.com.au\/#\/nvp"
       }
+    },
+    "centre_directory_6BiwTB": {
+      "type": "centre-directory",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -124,6 +129,7 @@
     "image_with_text_biRqag",
     "image_with_text_RqX8gH",
     "image_with_text_jhbeQY",
-    "3b07cbe8-8d12-49f0-ba95-6982e5fdb4df"
+    "3b07cbe8-8d12-49f0-ba95-6982e5fdb4df",
+    "centre_directory_6BiwTB"
   ]
 }
