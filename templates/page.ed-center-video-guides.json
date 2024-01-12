@@ -19,10 +19,117 @@
     "hero_banner_M8wCH9": {
       "type": "hero-banner",
       "settings": {
-        "sub_title": "",
-        "title": "",
-        "button_title": "",
-        "button_link": ""
+        "image_banner": "shopify:\/\/shop_images\/11.png",
+        "sub_title": "STAY IN THE KNOW",
+        "title": "Vapelabs Education Centre",
+        "button_title": "OUR FAQ",
+        "button_link": "shopify:\/\/pages\/faq"
+      }
+    },
+    "icons_text_hpPzK8": {
+      "type": "icons-text",
+      "blocks": {
+        "icons_7j8jDX": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_2.png",
+            "icon_title": "Express Delivery"
+          }
+        },
+        "icons_PcwBXD": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_4.png",
+            "icon_title": "Widest range"
+          }
+        },
+        "icons_edRXHg": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_5.png",
+            "icon_title": "TGO 110 compliant"
+          }
+        },
+        "icons_jJFBEF": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_3.png",
+            "icon_title": "Dedicated Support"
+          }
+        }
+      },
+      "block_order": [
+        "icons_7j8jDX",
+        "icons_PcwBXD",
+        "icons_edRXHg",
+        "icons_jJFBEF"
+      ],
+      "settings": {
+        "bg_color": "#F8F8F8"
+      }
+    },
+    "video_slider_tgywUp": {
+      "type": "video-slider",
+      "blocks": {
+        "icons_JaYKbL": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/Allo-Cover-2.png",
+            "video_url": "https:\/\/workdrive.zoho.com.au\/file\/7niiv9c33a492dc72411387844ec0add2d879",
+            "title": "Allo Sync"
+          }
+        },
+        "icons_pmhYpK": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/Nicovape-Cover-1.png",
+            "video_url": "https:\/\/workdrive.zoho.com.au\/file\/7niiv2d5ac38c74ee4920aaed26c09baea6b8",
+            "title": "Nicovape"
+          }
+        },
+        "icons_aHntct": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/RELX-Cover-1.png",
+            "video_url": "https:\/\/workdrive.zoho.com.au\/file\/7niivabb9c634bed94b52aac24ddf5f5bc2ca",
+            "title": "Relx"
+          }
+        },
+        "icons_gQKyYL": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/Veev-Cover.png",
+            "video_url": "https:\/\/workdrive.zoho.com.au\/file\/7niiv16aefcc373b1450fb5ef76bbc86233c4",
+            "title": "Veev"
+          }
+        },
+        "icons_TErpiw": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/Product-Comparison-COver.png",
+            "video_url": "https:\/\/workdrive.zoho.com.au\/file\/7niiv7b0fac8e4625421a8cfbca9c75189175",
+            "title": "Product Comparison"
+          }
+        },
+        "icons_EKEaCT": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/WIld-Cover.png",
+            "video_url": "vapelabs.com.au\/wp-content\/uploads\/2023\/11\/Wild-V2.mp4",
+            "title": "Wild"
+          }
+        }
+      },
+      "block_order": [
+        "icons_JaYKbL",
+        "icons_pmhYpK",
+        "icons_aHntct",
+        "icons_gQKyYL",
+        "icons_TErpiw",
+        "icons_EKEaCT"
+      ],
+      "settings": {
+        "title": "Videos"
       }
     }
   },
@@ -30,6 +137,8 @@
     "main",
     "left_sidevar_head_d7RpmL",
     "centre_directory_XXwJa4",
-    "hero_banner_M8wCH9"
+    "hero_banner_M8wCH9",
+    "icons_text_hpPzK8",
+    "video_slider_tgywUp"
   ]
 }
