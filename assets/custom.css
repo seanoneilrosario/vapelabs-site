@@ -1712,13 +1712,14 @@ main.main-content {
 
 .product__media,
 .product__media img:first-of-type {
-  height: 350px
+  height: 350px;
+  object-fit: contain;
 }
 
 @media(min-width: 990px) {
   .product__media,
   .product__media img:first-of-type {
-    height: 400px
+    height: 400px;
   }
 }
 
