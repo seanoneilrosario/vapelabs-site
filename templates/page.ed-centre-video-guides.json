@@ -20,8 +20,8 @@
       "type": "hero-banner",
       "settings": {
         "image_banner": "shopify:\/\/shop_images\/11.png",
-        "sub_title": "STAY IN THE KNOW",
-        "title": "Vapelabs Education Centre",
+        "sub_title": "Vapelabs Education Centre",
+        "title": "VIDEO GUIDES",
         "button_title": "OUR FAQ",
         "button_link": "shopify:\/\/pages\/faq"
       }
@@ -129,7 +129,7 @@
         "icons_EKEaCT"
       ],
       "settings": {
-        "title": "Videos"
+        "title": ""
       }
     },
     "cta_parallax_banner_XDJWgr": {
