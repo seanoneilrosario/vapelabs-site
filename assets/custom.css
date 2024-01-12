@@ -1710,6 +1710,16 @@ main.main-content {
   display: none !important;
 }
 
+.product__media {
+  height: 350px
+}
+
+@media(min-width: 990px) {
+  .product__media {
+    height: 400px
+  }
+}
+
 
 /* Breadcrumbs */
 .breadcrumb-wrap {
