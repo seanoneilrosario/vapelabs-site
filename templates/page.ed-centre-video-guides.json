@@ -65,7 +65,7 @@
         "icons_jJFBEF"
       ],
       "settings": {
-        "bg_color": "#F8F8F8"
+        "bg_color": "#f8f8f8"
       }
     },
     "video_slider_tgywUp": {
@@ -131,6 +131,15 @@
       "settings": {
         "title": "Videos"
       }
+    },
+    "cta_parallax_banner_XDJWgr": {
+      "type": "cta-parallax-banner",
+      "settings": {
+        "heading": "Book your free training session with our Nicotine Vaping Product specialists.",
+        "content": "<p>Request a chat with our dedicated Account Managers and experience personalised support tailored to your unique needs. Our team of experts is committed to assisting you every step of the way, whether you require a training session on NVP dispensing or onboarding assistance.<\/p><p>Book your free training session with our Nicotine Vaping Product specialist today.<\/p>",
+        "button_title": "BOOK NOW",
+        "button_link": "https:\/\/book.vapelabs.com.au\/#\/nvp"
+      }
     }
   },
   "order": [
@@ -139,6 +148,7 @@
     "centre_directory_XXwJa4",
     "hero_banner_M8wCH9",
     "icons_text_hpPzK8",
-    "video_slider_tgywUp"
+    "video_slider_tgywUp",
+    "cta_parallax_banner_XDJWgr"
   ]
 }
