@@ -2,11 +2,34 @@
   "sections": {
     "main": {
       "type": "page",
+      "disabled": true,
       "settings": {
+      }
+    },
+    "left_sidevar_head_d7RpmL": {
+      "type": "left-sidevar-head",
+      "settings": {
+      }
+    },
+    "centre_directory_XXwJa4": {
+      "type": "centre-directory",
+      "settings": {
+      }
+    },
+    "hero_banner_M8wCH9": {
+      "type": "hero-banner",
+      "settings": {
+        "sub_title": "",
+        "title": "",
+        "button_title": "",
+        "button_link": ""
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "left_sidevar_head_d7RpmL",
+    "centre_directory_XXwJa4",
+    "hero_banner_M8wCH9"
   ]
 }
