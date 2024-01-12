@@ -53,20 +53,6 @@
         "bg_color": "#f8f8f8"
       }
     },
-    "b2dfc303-d4d8-4679-8482-f65b8bc9c903": {
-      "type": "image-with-text",
-      "settings": {
-        "bg_color": "#f8f8f8",
-        "heading_color": "#2d4d7c",
-        "color_text": "#2b2928",
-        "image_aligment": "right",
-        "image": "shopify:\/\/shop_images\/1.png",
-        "heading": "Empowering your Business with Knowledge",
-        "contents": "<p>Stay informed, stay ahead and confidently advise your customers with the information you need. <\/p><p>Our expert guides and industry insight are designed to keep you updated on the latest trends, regulatory updates and product knowledge and help you navigate the ever-evolving vaping landscape.<\/p>",
-        "btn_text": "",
-        "btn_link": ""
-      }
-    },
     "main": {
       "type": "blogleft_inner_content",
       "settings": {
@@ -86,12 +72,27 @@
         "blog_btn_hover_bg": "#2453c9",
         "blog_hover_btn_text": "#ffffff"
       }
+    },
+    "b2dfc303-d4d8-4679-8482-f65b8bc9c903": {
+      "type": "image-with-text",
+      "disabled": true,
+      "settings": {
+        "bg_color": "#f8f8f8",
+        "heading_color": "#2d4d7c",
+        "color_text": "#2b2928",
+        "image_aligment": "right",
+        "image": "shopify:\/\/shop_images\/1.png",
+        "heading": "Empowering your Business with Knowledge",
+        "contents": "<p>Stay informed, stay ahead and confidently advise your customers with the information you need. <\/p><p>Our expert guides and industry insight are designed to keep you updated on the latest trends, regulatory updates and product knowledge and help you navigate the ever-evolving vaping landscape.<\/p>",
+        "btn_text": "",
+        "btn_link": ""
+      }
     }
   },
   "order": [
     "3361c3ef-184b-4931-9aa0-613beb8fd108",
     "cc89f20b-8c7c-471f-9328-c9f349a29349",
-    "b2dfc303-d4d8-4679-8482-f65b8bc9c903",
-    "main"
+    "main",
+    "b2dfc303-d4d8-4679-8482-f65b8bc9c903"
   ]
 }

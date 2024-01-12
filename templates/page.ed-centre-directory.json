@@ -63,13 +63,6 @@
         "bg_color": "#f1f3f8"
       }
     },
-    "50550a20-07dd-4376-9894-6786c3746bcc": {
-      "type": "cta-bar",
-      "settings": {
-        "content": "ENTER YOUR EMAIL & SIGN UP FOR VAPELAB NEWS",
-        "button_link": "shopify:\/\/pages\/contact"
-      }
-    },
     "image_with_text_biRqag": {
       "type": "image-with-text",
       "settings": {
@@ -128,7 +121,6 @@
     "42f963dd-ba18-456e-bf4f-2614fd9b41f6",
     "2a0f4418-6c3e-4df5-8aef-0f2e9d8b0b98",
     "b934cce7-440a-4603-a1c9-5bbd76ee2493",
-    "50550a20-07dd-4376-9894-6786c3746bcc",
     "image_with_text_biRqag",
     "image_with_text_RqX8gH",
     "image_with_text_jhbeQY",
