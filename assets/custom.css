@@ -1079,6 +1079,10 @@ main.main-content {
     text-align: center;
 }
 
+.feat-blog-post_wrap {
+  overflow: hidden;
+}
+
 @media(min-width: 990px) {
     .feat-blog-post_slider {
         margin-bottom: 90px;
