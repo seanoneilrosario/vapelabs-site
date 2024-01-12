@@ -1,12 +1,33 @@
+<div class="row">
+  <div class="blog-section">
+    <aside class="sidebar left-sidebar col-xs-12 col-sm-3 col-md-3">
+      <div class="sidebar__inner">
+        {% render 'blog-sidebar' %}
+      </div>
+    </aside>
+  </div>
+  <div class="grid__item col-xs-12 col-sm-9  col-md-9 content-wrapper">
+    <div class="blog_masonry_left">
+      <div class="blog_content_wrap {{ blog_column }}">
+        {% for article in blogs  %}
+          {{ article.handle }}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+"name": "Blog Page Inner Section",
+"class": "blogleft_inner_content container--narrow",
+"settings": [
+],
+"presets": [
+    {
+        "name": "Blog Page Inner Section",
+        "settings": {}
+    }
+]
+}
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
