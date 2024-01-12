@@ -54,7 +54,18 @@
       </span>
     {% endif %}
     {% if product.metafields.custom.cost_per_ml %}
-      <span class="product-price__price"><sup>Cost per ml</sup> {{ product.metafields.custom.cost_per_ml }}</span>
+      <span class="product-price__price cost_ml"><sup>Cost per ml</sup> {{ product.metafields.custom.cost_per_ml }}</span>
     {% endif %}
   </div>
 </div>
+
+<style>
+  .regular-price {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .cost_ml {
+    flex-grow: 1;
+  }
+</style>
