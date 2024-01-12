@@ -66,7 +66,7 @@
         "show_twitter_share": false,
         "show_pinterest_share": false,
         "show_linkedin_share": false,
-        "blog_column": "col_2",
+        "blog_column": "col_3",
         "blogpage_article_limit": 100,
         "blog_btn_text": "#ffffff",
         "blog_btn_hover_bg": "#2453c9",
@@ -75,17 +75,35 @@
     },
     "b2dfc303-d4d8-4679-8482-f65b8bc9c903": {
       "type": "image-with-text",
-      "disabled": true,
       "settings": {
         "bg_color": "#f8f8f8",
         "heading_color": "#2d4d7c",
         "color_text": "#2b2928",
         "image_aligment": "right",
-        "image": "shopify:\/\/shop_images\/1.png",
-        "heading": "Empowering your Business with Knowledge",
-        "contents": "<p>Stay informed, stay ahead and confidently advise your customers with the information you need. <\/p><p>Our expert guides and industry insight are designed to keep you updated on the latest trends, regulatory updates and product knowledge and help you navigate the ever-evolving vaping landscape.<\/p>",
-        "btn_text": "",
-        "btn_link": ""
+        "image": "shopify:\/\/shop_images\/Featured_blog_Laws.png",
+        "heading": "Featured Blog: Navigating Australian Regulations:A Guide for Pharmacists Selling Nicotine Products",
+        "contents": "<p>Selling nicotine products in Australia comes with a set of specific regulations and guidelines that pharmacists must navigate to ensure compliance and uphold safety standards. In this comprehensive blog post, we aim to..<\/p>",
+        "btn_text": "Read Full Article",
+        "btn_link": "https:\/\/vapelabs.com.au\/blogs\/laws-regulations\/navigating-australian-regulations-a-guide-for-pharmacists-selling-nicotine-products"
+      }
+    },
+    "feature_blogs_mykK6U": {
+      "type": "feature-blogs",
+      "settings": {
+        "subtitle": "",
+        "subtitle_color": "",
+        "title": "Blog posts",
+        "blog": "laws-regulations",
+        "blog_design": "design_3",
+        "product_col": "2",
+        "post_limit": "4",
+        "blog_btn_text": "#000",
+        "blog_btn_hover_bg": "#000",
+        "blog_hover_btn_text": "#000",
+        "blog_date_color": "#000",
+        "blog_bgdate_color": "#000",
+        "show_view_all": false,
+        "blog_show_date": true
       }
     }
   },
@@ -93,6 +111,7 @@
     "3361c3ef-184b-4931-9aa0-613beb8fd108",
     "cc89f20b-8c7c-471f-9328-c9f349a29349",
     "main",
-    "b2dfc303-d4d8-4679-8482-f65b8bc9c903"
+    "b2dfc303-d4d8-4679-8482-f65b8bc9c903",
+    "feature_blogs_mykK6U"
   ]
 }
