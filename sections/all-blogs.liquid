@@ -9,8 +9,13 @@
   <div class="grid__item col-xs-12 col-sm-9  col-md-9 content-wrapper">
     <div class="blog_masonry_left">
       <div class="blog_content_wrap">as
-        {% for article in blog.articles %}
-          <h2>{{ article.title }}</h2>
+        {% assign blog_handles = "news-and-articles,laws-regulations" | split: "," %}
+        {% for handle in blog_handles %}
+          {% for article in blogs[handle].articles %}
+            {% if article.tags contains blog_tag %}
+              {% assign article_handles = article_handles | append: article.handle | append: "," %}
+            {%endif%}
+          {% endfor %}
         {% endfor %}
       </div>
     </div>
