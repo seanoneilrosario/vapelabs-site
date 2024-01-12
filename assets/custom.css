@@ -1737,3 +1737,11 @@ main.main-content {
   padding: 0 !important;
   margin: 0 !important;
 }
+
+
+
+/* Blogs */
+.blog_content_wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
