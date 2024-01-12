@@ -46,6 +46,10 @@
                       {% endfor %}
                     </div>
                     {% endif %}
+                    <p>{{ article.content | strip_html | truncate: 100 }}</p>
+                    <div class="blog-btn">
+                      <a href="{{ article.url }}">{{ 'blogs.article.read_more' | t }}</a>
+                    </div>
                   </div>
                 </div>
               </div>
