@@ -6,6 +6,11 @@
       "settings": {
       }
     },
+    "centre_directory_hTX3RA": {
+      "type": "centre-directory",
+      "settings": {
+      }
+    },
     "42f963dd-ba18-456e-bf4f-2614fd9b41f6": {
       "type": "left-sidevar-head",
       "settings": {
@@ -61,6 +66,48 @@
       ],
       "settings": {
         "bg_color": "#f8f8f8"
+      }
+    },
+    "image_with_text_zQgmzm": {
+      "type": "image-with-text",
+      "settings": {
+        "bg_color": "#f8f8f8",
+        "heading_color": "#2d4d7c",
+        "color_text": "#2b2928",
+        "image_aligment": "right",
+        "image": "shopify:\/\/shop_images\/RELX-Cover-1.png",
+        "heading": "Video Guides",
+        "contents": "<p>Discover our collection of instructional videos to gain insights into our products and their dispensing processes.<\/p>",
+        "btn_text": "View all Video Guides",
+        "btn_link": "shopify:\/\/pages\/ed-centre-videos"
+      }
+    },
+    "image_with_text_9mkit3": {
+      "type": "image-with-text",
+      "settings": {
+        "bg_color": "#f8f8f8",
+        "heading_color": "#2d4d7c",
+        "color_text": "#2b2928",
+        "image_aligment": "right",
+        "image": "shopify:\/\/shop_images\/Product-Comparisson-Product-Image.png",
+        "heading": "Downloadable Guides",
+        "contents": "<p>Explore our selection of downloadable guides to enhance your understanding of products and their dispensing procedures. Feel free to share these resources with your team.<\/p>",
+        "btn_text": "View all Downloadable Guides",
+        "btn_link": "shopify:\/\/pages\/downloadable"
+      }
+    },
+    "image_with_text_3GkkVV": {
+      "type": "image-with-text",
+      "settings": {
+        "bg_color": "#f8f8f8",
+        "heading_color": "#2d4d7c",
+        "color_text": "#2b2928",
+        "image_aligment": "right",
+        "image": "shopify:\/\/shop_images\/home-3.png",
+        "heading": "Members-only Articles",
+        "contents": "<p>Delve into Vapelabs' assortment of informative articles tailored for pharmacists, covering everything from products to laws and regulations. Stay informed and up-to-date with our comprehensive content.<\/p>",
+        "btn_text": "View all Articles",
+        "btn_link": "shopify:\/\/pages\/ed-centre-articles"
       }
     },
     "e424701a-8e60-4b96-9d3b-95de246695c2": {
@@ -123,6 +170,7 @@
         "e22edf82-b578-435a-83f4-aba05a5e384e",
         "c4344b01-c6fe-441c-90e2-5613b57bc2a3"
       ],
+      "disabled": true,
       "custom_css": [
 
       ],
@@ -190,6 +238,7 @@
         "4e46fc58-75b5-4ee6-a28e-4c84623b28cc",
         "1a4ef552-7e39-472f-8f83-e5e425896c8a"
       ],
+      "disabled": true,
       "custom_css": [
 
       ],
@@ -199,6 +248,7 @@
     },
     "2099e844-66e9-428d-9802-c003e35246e6": {
       "type": "article-list",
+      "disabled": true,
       "settings": {
         "title": "Articles",
         "blog": "news"
@@ -224,9 +274,13 @@
   },
   "order": [
     "main",
+    "centre_directory_hTX3RA",
     "42f963dd-ba18-456e-bf4f-2614fd9b41f6",
     "2a0f4418-6c3e-4df5-8aef-0f2e9d8b0b98",
     "b934cce7-440a-4603-a1c9-5bbd76ee2493",
+    "image_with_text_zQgmzm",
+    "image_with_text_9mkit3",
+    "image_with_text_3GkkVV",
     "e424701a-8e60-4b96-9d3b-95de246695c2",
     "f478ff6c-7823-4ca6-85d1-e9b9530ba1f8",
     "2099e844-66e9-428d-9802-c003e35246e6",
