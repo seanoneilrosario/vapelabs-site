@@ -15983,10 +15983,15 @@ a.filter-left i{
 }
 .sidebar .widget ul li {
   margin: 0 0 5px 0;
-  display: inline-block;
+  display: flex;
   width: 100%;
   vertical-align: top;
   padding: 0;
+  align-items: center;
+}
+.sidebar .widget ul li a {
+  margin-left: -30px;
+  padding-left: 30px;
 }
 .sidebar .widget ul li.product-wrapper {
   margin: 0 0 15px 0;
