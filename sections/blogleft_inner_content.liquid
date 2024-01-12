@@ -60,7 +60,7 @@
                     </div>
                     {% endif %}
                     {% if section.settings.show_blog_4_content %}
-                    <p>{{ article.content | strip_html | truncate: 100 }}</p>
+                    <p>{{ article.content | truncate: 100 }}</p>
                     {% endif %}
                     {% if section.settings.show_blog_4_btn %}
                     <div class="blog-btn">
