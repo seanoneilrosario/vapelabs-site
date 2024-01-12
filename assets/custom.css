@@ -1485,7 +1485,7 @@ main.main-content {
 
 /* Image slider */
 .img_slider_wrap {
-    margin: 40px 0;
+    margin: 40px auto;
 }
 
 .img_slider_wrap .slick-list {
@@ -1526,7 +1526,8 @@ main.main-content {
 
 @media(min-width: 990px) {
     .img_slider_wrap {
-        margin: 60px 40px;
+        margin: 60px auto;
+        padding: 0 40px;
     }
 
     .img_slider {
