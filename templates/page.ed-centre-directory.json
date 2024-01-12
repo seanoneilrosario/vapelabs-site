@@ -1,0 +1,236 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "42f963dd-ba18-456e-bf4f-2614fd9b41f6": {
+      "type": "left-sidevar-head",
+      "settings": {
+      }
+    },
+    "2a0f4418-6c3e-4df5-8aef-0f2e9d8b0b98": {
+      "type": "hero-banner",
+      "settings": {
+        "image_banner": "shopify:\/\/shop_images\/11.png",
+        "sub_title": "STAY IN THE KNOW",
+        "title": "Vapelabs Education Centre",
+        "button_title": "OUR FAQ",
+        "button_link": "shopify:\/\/pages\/faq"
+      }
+    },
+    "b934cce7-440a-4603-a1c9-5bbd76ee2493": {
+      "type": "icons-text",
+      "blocks": {
+        "da73531a-96ff-4fbc-bf25-bb464214cce6": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_2.png",
+            "icon_title": "Express Delivery"
+          }
+        },
+        "e2f4f02c-5587-4618-a55c-81cbcfc742c8": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_4.png",
+            "icon_title": "Widest range"
+          }
+        },
+        "b4e32612-34ae-41a6-be14-e5387118705c": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_5.png",
+            "icon_title": "TGO 110 compliant"
+          }
+        },
+        "473da9b4-53bd-465d-b231-a02a7f6d506c": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_3.png",
+            "icon_title": "Dedicated Support"
+          }
+        }
+      },
+      "block_order": [
+        "da73531a-96ff-4fbc-bf25-bb464214cce6",
+        "e2f4f02c-5587-4618-a55c-81cbcfc742c8",
+        "b4e32612-34ae-41a6-be14-e5387118705c",
+        "473da9b4-53bd-465d-b231-a02a7f6d506c"
+      ],
+      "settings": {
+        "bg_color": "#f8f8f8"
+      }
+    },
+    "e424701a-8e60-4b96-9d3b-95de246695c2": {
+      "type": "video-slider",
+      "blocks": {
+        "da6fd158-a78b-4911-8f29-491da1d57cef": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/Allo-Cover-2.png",
+            "video_url": "https:\/\/workdrive.zoho.com.au\/file\/7niiv9c33a492dc72411387844ec0add2d879",
+            "title": "Allo Sync"
+          }
+        },
+        "ffc8cb50-fd7b-42b2-a24e-ef4c209ae749": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/Nicovape-Cover-1.png",
+            "video_url": "https:\/\/workdrive.zoho.com.au\/file\/7niiv2d5ac38c74ee4920aaed26c09baea6b8",
+            "title": "Nicovape"
+          }
+        },
+        "06597e1d-8757-40f6-b1df-33edb4176ac0": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/RELX-Cover-1.png",
+            "video_url": "https:\/\/workdrive.zoho.com.au\/file\/7niivabb9c634bed94b52aac24ddf5f5bc2ca",
+            "title": "Relx"
+          }
+        },
+        "38860ca8-6b5f-43d6-82c3-344e7bee9c54": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/Veev-Cover.png",
+            "video_url": "https:\/\/workdrive.zoho.com.au\/file\/7niiv16aefcc373b1450fb5ef76bbc86233c4",
+            "title": "Veev"
+          }
+        },
+        "e22edf82-b578-435a-83f4-aba05a5e384e": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/Product-Comparison-COver.png",
+            "video_url": "https:\/\/workdrive.zoho.com.au\/file\/7niiv7b0fac8e4625421a8cfbca9c75189175",
+            "title": "Product Comparison"
+          }
+        },
+        "c4344b01-c6fe-441c-90e2-5613b57bc2a3": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/WIld-Cover.png",
+            "video_url": "vapelabs.com.au\/wp-content\/uploads\/2023\/11\/Wild-V2.mp4",
+            "title": "Wild"
+          }
+        }
+      },
+      "block_order": [
+        "da6fd158-a78b-4911-8f29-491da1d57cef",
+        "ffc8cb50-fd7b-42b2-a24e-ef4c209ae749",
+        "06597e1d-8757-40f6-b1df-33edb4176ac0",
+        "38860ca8-6b5f-43d6-82c3-344e7bee9c54",
+        "e22edf82-b578-435a-83f4-aba05a5e384e",
+        "c4344b01-c6fe-441c-90e2-5613b57bc2a3"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "title": "Videos"
+      }
+    },
+    "f478ff6c-7823-4ca6-85d1-e9b9530ba1f8": {
+      "type": "downloadables",
+      "blocks": {
+        "7c82f14f-75b1-40f4-9db1-c1ea9b0296c4": {
+          "type": "downloadable",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/Allo-Product-Image.png",
+            "video_url": "https:\/\/workdrive.zohopublic.com.au\/file\/7niivfdc1726957af4d56afb9dca0545269f9",
+            "title": "Allo Product Guide"
+          }
+        },
+        "eb7172d1-309c-497c-8764-adfdc30f7df3": {
+          "type": "downloadable",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/RELX-product-image.png",
+            "video_url": "https:\/\/workdrive.zoho.com.au\/file\/7niiv9a50d29e86074413a54e18db453e1641f",
+            "title": "RELX Product Guide"
+          }
+        },
+        "f57accb8-9c11-42b2-b57c-6e93b6278a30": {
+          "type": "downloadable",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/Veev-product-image.png",
+            "video_url": "https:\/\/workdrive.zoho.com.au\/file\/7niivbe7c62aaeafc49b1953c5552ee5e27f4",
+            "title": "VEEV Product Guide"
+          }
+        },
+        "56df4b92-096b-407b-9fd0-e9f28ecf49cd": {
+          "type": "downloadable",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/Wyld-Product-Image.png",
+            "video_url": "https:\/\/workdrive.zoho.com.au\/file\/7niiv6414450ee43744bb97ecd6b5799fd6d5",
+            "title": "WBI Product Guide"
+          }
+        },
+        "4e46fc58-75b5-4ee6-a28e-4c84623b28cc": {
+          "type": "downloadable",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/Nicovape-product-image.png",
+            "video_url": "https:\/\/workdrive.zohopublic.com.au\/file\/7niiv61a5f69617cd4737a33fc50dd1a66ba2",
+            "title": "Nicovape Product Guide"
+          }
+        },
+        "1a4ef552-7e39-472f-8f83-e5e425896c8a": {
+          "type": "downloadable",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/Product-Comparisson-Product-Image.png",
+            "video_url": "https:\/\/workdrive.zohopublic.com.au\/file\/7niivbc1bf589d8ae4de4b656fa69528c838e",
+            "title": "Product Comparison Guide"
+          }
+        }
+      },
+      "block_order": [
+        "7c82f14f-75b1-40f4-9db1-c1ea9b0296c4",
+        "eb7172d1-309c-497c-8764-adfdc30f7df3",
+        "f57accb8-9c11-42b2-b57c-6e93b6278a30",
+        "56df4b92-096b-407b-9fd0-e9f28ecf49cd",
+        "4e46fc58-75b5-4ee6-a28e-4c84623b28cc",
+        "1a4ef552-7e39-472f-8f83-e5e425896c8a"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "title": "Downloadables"
+      }
+    },
+    "2099e844-66e9-428d-9802-c003e35246e6": {
+      "type": "article-list",
+      "settings": {
+        "title": "Articles",
+        "blog": "news"
+      }
+    },
+    "3b07cbe8-8d12-49f0-ba95-6982e5fdb4df": {
+      "type": "cta-parallax-banner",
+      "settings": {
+        "image_parallax": "shopify:\/\/shop_images\/oos.jpg",
+        "heading": "Book your free training session with our Nicotine Vaping Product specialists.",
+        "content": "<p>Request a chat with our dedicated Account Managers and experience personalised support tailored to your unique needs. Our team of experts is committed to assisting you every step of the way, whether you require a training session on NVP dispensing or onboarding assistance.<\/p><p>Book your free training session with our Nicotine Vaping Product specialist today.<\/p>",
+        "button_title": "BOOK NOW",
+        "button_link": "https:\/\/book.vapelabs.com.au\/#\/nvp"
+      }
+    },
+    "50550a20-07dd-4376-9894-6786c3746bcc": {
+      "type": "cta-bar",
+      "settings": {
+        "content": "ENTER YOUR EMAIL & SIGN UP FOR VAPELAB NEWS",
+        "button_link": "shopify:\/\/pages\/contact"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "42f963dd-ba18-456e-bf4f-2614fd9b41f6",
+    "2a0f4418-6c3e-4df5-8aef-0f2e9d8b0b98",
+    "b934cce7-440a-4603-a1c9-5bbd76ee2493",
+    "e424701a-8e60-4b96-9d3b-95de246695c2",
+    "f478ff6c-7823-4ca6-85d1-e9b9530ba1f8",
+    "2099e844-66e9-428d-9802-c003e35246e6",
+    "3b07cbe8-8d12-49f0-ba95-6982e5fdb4df",
+    "50550a20-07dd-4376-9894-6786c3746bcc"
+  ]
+}
