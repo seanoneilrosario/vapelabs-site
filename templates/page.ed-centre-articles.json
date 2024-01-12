@@ -2,11 +2,128 @@
   "sections": {
     "main": {
       "type": "page",
+      "disabled": true,
       "settings": {
+      }
+    },
+    "left_sidevar_head_EaFHzp": {
+      "type": "left-sidevar-head",
+      "settings": {
+      }
+    },
+    "centre_directory_rNKGTa": {
+      "type": "centre-directory",
+      "settings": {
+      }
+    },
+    "hero_banner_7gH3Ha": {
+      "type": "hero-banner",
+      "settings": {
+        "image_banner": "shopify:\/\/shop_images\/11.png",
+        "sub_title": "STAY IN THE KNOW",
+        "title": "Vapelabs Education Centre",
+        "button_title": "OUR FAQ",
+        "button_link": "shopify:\/\/pages\/faq"
+      }
+    },
+    "icons_text_R8Mx6m": {
+      "type": "icons-text",
+      "blocks": {
+        "icons_J9RbkU": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_2.png",
+            "icon_title": "Express Delivery"
+          }
+        },
+        "icons_QP8Ypk": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_4.png",
+            "icon_title": "Widest range"
+          }
+        },
+        "icons_EAWPLU": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_5.png",
+            "icon_title": "TGO 110 compliant"
+          }
+        },
+        "icons_cMHxFg": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/output-onlinepngtools_3.png",
+            "icon_title": "Dedicated Support"
+          }
+        }
+      },
+      "block_order": [
+        "icons_J9RbkU",
+        "icons_QP8Ypk",
+        "icons_EAWPLU",
+        "icons_cMHxFg"
+      ],
+      "settings": {
+        "bg_color": "#F8F8F8"
+      }
+    },
+    "featured_blogs_Kh3Fia": {
+      "type": "featured-blogs",
+      "blocks": {
+        "logo_ragGJB": {
+          "type": "logo",
+          "settings": {
+            "article": "pharmacist-guides\/ensuring-compliance-tgo-110-guidelines-and-dispensing-practices"
+          }
+        },
+        "logo_LQfAch": {
+          "type": "logo",
+          "settings": {
+            "article": "laws-regulations\/navigating-australian-regulations-a-guide-for-pharmacists-selling-nicotine-products"
+          }
+        },
+        "logo_aizm3P": {
+          "type": "logo",
+          "settings": {
+            "article": "news-and-articles\/the-latest-trends-in-the-smoking-cessation-industry-what-pharmacists-should-know"
+          }
+        },
+        "logo_dkHdgV": {
+          "type": "logo",
+          "settings": {
+            "article": "news-and-articles\/tga-s-vigilance-on-unapproved-vaping-products-a-70-000-product-seizure"
+          }
+        }
+      },
+      "block_order": [
+        "logo_ragGJB",
+        "logo_LQfAch",
+        "logo_aizm3P",
+        "logo_dkHdgV"
+      ],
+      "settings": {
+        "heading": "Articles"
+      }
+    },
+    "cta_parallax_banner_GqeXdi": {
+      "type": "cta-parallax-banner",
+      "settings": {
+        "image_parallax": "shopify:\/\/shop_images\/oos.jpg",
+        "heading": "Book your free training session with our Nicotine Vaping Product specialists.",
+        "content": "<p>Request a chat with our dedicated Account Managers and experience personalised support tailored to your unique needs. Our team of experts is committed to assisting you every step of the way, whether you require a training session on NVP dispensing or onboarding assistance.<\/p><p>Book your free training session with our Nicotine Vaping Product specialist today.<\/p>",
+        "button_title": "BOOK NOW",
+        "button_link": "https:\/\/book.vapelabs.com.au\/#\/nvp"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "left_sidevar_head_EaFHzp",
+    "centre_directory_rNKGTa",
+    "hero_banner_7gH3Ha",
+    "icons_text_R8Mx6m",
+    "featured_blogs_Kh3Fia",
+    "cta_parallax_banner_GqeXdi"
   ]
 }
