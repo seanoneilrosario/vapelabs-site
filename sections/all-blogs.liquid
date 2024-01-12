@@ -12,7 +12,8 @@
         {% assign blog_handles = "news-and-articles,laws-regulations" | split: "," %}
         {% for handle in blog_handles %}
           {% for article in blogs.news-and-articles.articles %}
-            {{ article.title }}
+            <p>{{ article.title }}</p>
+            
           {% endfor %}
         {% endfor %}
       </div>
