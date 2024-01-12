@@ -1745,3 +1745,7 @@ main.main-content {
   display: flex;
   flex-wrap: wrap;
 }
+
+.tt-blog-content {
+  height: calc(100% - 30px)
+}
