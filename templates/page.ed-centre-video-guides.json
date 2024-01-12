@@ -135,6 +135,7 @@
     "cta_parallax_banner_XDJWgr": {
       "type": "cta-parallax-banner",
       "settings": {
+        "image_parallax": "shopify:\/\/shop_images\/oos.jpg",
         "heading": "Book your free training session with our Nicotine Vaping Product specialists.",
         "content": "<p>Request a chat with our dedicated Account Managers and experience personalised support tailored to your unique needs. Our team of experts is committed to assisting you every step of the way, whether you require a training session on NVP dispensing or onboarding assistance.<\/p><p>Book your free training session with our Nicotine Vaping Product specialist today.<\/p>",
         "button_title": "BOOK NOW",
