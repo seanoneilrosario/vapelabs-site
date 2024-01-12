@@ -1536,9 +1536,8 @@ main.main-content {
     }
 
     .img_slide {
-        margin: 20px;
         text-align: center;
-        width: calc(100% / 3 - 80px);
+        width: calc(100% / 3 - 40px);
     }
 }
 
