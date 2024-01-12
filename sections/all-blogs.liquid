@@ -12,9 +12,7 @@
         {% assign blog_handles = "news-and-articles,laws-regulations" | split: "," %}
         {% for handle in blog_handles %}
           {% for article in blogs.laws-regulations.title %}
-            {% if article.tags contains blog_tag %}
-              {% assign article_handles = article_handles | append: article.handle | append: "," %}
-            {%endif%}
+            {{ article.title }}
           {% endfor %}
         {% endfor %}
       </div>
