@@ -1509,6 +1509,7 @@ main.main-content {
 .img_slide {
     margin: 20px;
     text-align: center;
+    width: calc(100% / 2 - 40px);
 }
 
 .img_slide img {
@@ -1535,7 +1536,9 @@ main.main-content {
     }
 
     .img_slide {
-        margin: 40px;
+        margin: 20px;
+        text-align: center;
+        width: calc(100% / 3 - 80px);
     }
 }
 
