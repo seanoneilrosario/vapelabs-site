@@ -284,22 +284,12 @@
             "name": "Gloria W",
             "image": "shopify:\/\/shop_images\/30-307416_profile-icon-png-image-free-download-searchpng-employee.png"
           }
-        },
-        "96ba1be5-9f54-4114-b3f1-4d1f3ccc340a": {
-          "type": "testimony",
-          "settings": {
-            "title": "Test 1",
-            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
-            "name": "Test name",
-            "image": "shopify:\/\/shop_images\/30-307416_profile-icon-png-image-free-download-searchpng-employee.png"
-          }
         }
       },
       "block_order": [
         "a5bb42c8-0d83-469a-8700-bf46d5f07307",
         "d1153d57-cdf8-49af-a8c7-81db89984faa",
-        "3b1ba86b-9f81-4a12-922c-52d0cebbcc53",
-        "96ba1be5-9f54-4114-b3f1-4d1f3ccc340a"
+        "3b1ba86b-9f81-4a12-922c-52d0cebbcc53"
       ],
       "settings": {
         "heading": "What our customers say"
