@@ -359,6 +359,12 @@
           "settings": {
             "image_logo": "shopify:\/\/shop_images\/6-1.png"
           }
+        },
+        "logo_pgQ4qh": {
+          "type": "logo",
+          "settings": {
+            "image_logo": "shopify:\/\/shop_images\/HILIQ_LOGO.jpg"
+          }
         }
       },
       "block_order": [
@@ -369,7 +375,8 @@
         "7723cb81-518f-4e46-9e77-d06ebf1a6084",
         "f227f21f-4f07-41ea-9de2-270f2a2c2cef",
         "9a6881a8-7d92-46ac-96d8-4326f55ed685",
-        "d90b43c2-9997-4f23-8fd2-076027dbd25d"
+        "d90b43c2-9997-4f23-8fd2-076027dbd25d",
+        "logo_pgQ4qh"
       ],
       "settings": {
         "heading": "Discover our wide range of products"
