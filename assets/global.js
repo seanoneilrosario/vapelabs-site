@@ -1184,7 +1184,7 @@ form.on('submit', function(e) {
   e.preventDefault();
   console.log(`name-${inputValue}`)
   products.map((e, item) => {
-    if(item.classList.contains(`name-${inputValue}`)) {
+    if(item.classList.includes(`name-${inputValue}`)) {
       console.log(item)
     }
   })
