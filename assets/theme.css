@@ -15482,6 +15482,9 @@ a.grid-link.collection-link span.grid-link__title {
 a.grid-link.collection-link span.grid-link__title:hover {
   color: #7bb9e2;
 }
+.collection_template .section-header {
+  float: none;
+}
 .filter-wrapper {
   width: 100%;
   padding: 5px 0;
