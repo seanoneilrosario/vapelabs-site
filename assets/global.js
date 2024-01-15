@@ -1173,6 +1173,7 @@ $(my_url).click(function(e){
 
 // Search Filter for products
 const products = $('.products-grid-view .grid-item');
+console.log(products.classList)
 const form = $('.product_search_form form');
 const inputSearch = $('.product_search_form form input');
 form.on('submit', function(e) {
@@ -1181,9 +1182,7 @@ form.on('submit', function(e) {
   const removeSpecialChar3 = removeSpecialChar2.replaceAll('/', "-");
   const inputValue = removeSpecialChar3.replaceAll(' ', "-")
   e.preventDefault();
-  if(products.hasClass(`name-${inputValue}`)){
-    console.log('test success')
-  }
+ 
   // products.map((e, item) => {
   //   console.log(item.classList)
   //   if(item.classList.contains(`name-${inputValue}`)){
