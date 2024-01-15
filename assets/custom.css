@@ -1395,6 +1395,10 @@ main.main-content {
     padding: 0 !important;
 }
 
+.collection_template .section-header {
+  flex-wrap: wrap;
+}
+
 .collection_template .section-header,
 .product_search_form form {
   display: flex;
@@ -1411,6 +1415,12 @@ main.main-content {
 .wrap_toggle_filter {
   display: flex;
   flex-wrap: wrap;
+}
+
+@media(min-width: 900px) {
+  .collection_template .section-header {
+    flex-wrap: nowrap;
+  }
 }
 
 
