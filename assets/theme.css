@@ -14854,9 +14854,6 @@ aside.sidebar-tag.filter.color.tags a:hover img, aside.sidebar-tag.filter.color.
 .active-filter {
   font-weight: bold;
 }
-.view-mode.filter-grid-list.grid__item {
-  float: left;
-}
 a.filter-left {
   float: left;
   font-size: 17px;
@@ -15345,7 +15342,6 @@ a.featured-box:hover {
   margin:0px;
 }
 .collection_wrapper .filter-wrapper .sorting_wrapper {
-  float: right;
   width: auto;
   margin: 0 0 0 10px;
 }
@@ -15487,7 +15483,6 @@ a.grid-link.collection-link span.grid-link__title:hover {
   color: #7bb9e2;
 }
 .filter-wrapper {
-  float: left;
   width: 100%;
   padding: 5px 0;
 }
