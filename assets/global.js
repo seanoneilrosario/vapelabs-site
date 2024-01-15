@@ -1049,16 +1049,20 @@ const fil_items = $('.str-filters li');
 const my_array = [];
 fil_items.map((i, item) => {
   const new_items = $(item).children('span').attr('id')
-  my_array.push(new_items)
+  const test1 = new_items.replace('str-', '')
+  const test2 = test1.replace('mg/ml', '')
+  const to_num = Number(test2)
+  my_array.push(to_num)
 })
 const uniq = [...new Set(my_array)];
-uniq.sort();
+uniq.sort(function(a, b) {
+  return a - b;
+});
 uniq.forEach((item) => {
   const list_item = document.createElement("li");
-  const item_name = item.replace('str-','');
   list_item.className = 'list-menu__item facets__item str_item';
-  list_item.innerHTML = `<span id="${item}">
-                       ${item_name}
+  list_item.innerHTML = `<span id="str-${item}mg/ml">
+                        ${item}mg/ml
                         <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg>
@@ -1067,16 +1071,15 @@ uniq.forEach((item) => {
 })
 uniq.forEach((item) => {
   const list_item = document.createElement("li");
-  const item_name = item.replace('str-','');
   list_item.className = 'list-menu__item facets__item str_item';
-  list_item.innerHTML = `<span id="${item}">
-                       ${item_name}
+  list_item.innerHTML = `<span id="str-${item}mg/ml">
+                       ${item}
                         <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg>
                     </span>`;
   fil_ul[1].appendChild(list_item);
-});
+})
 
 
 const prod_ul = $('.prod-filters');
