@@ -1037,7 +1037,7 @@ span.spr-summary-caption {
   width:70%;
   text-align: left;
   margin: 0;
-  font: 500 20px/32px var(--font-stack-header);
+  font: 22px;
     color: var(--color-btn-primary);
       }
 .product-information .add-to-wishlist .tooltip-label,
@@ -1185,7 +1185,7 @@ span.spr-summary-caption {
 }
 @media only screen and (max-width: 1199px) {
   .product-single__title.wvendor {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 28px;
   }
   .shopify-payment-button{
@@ -1208,7 +1208,7 @@ span.spr-summary-caption {
     min-width: 278px;
   }
   .product-single__title.wvendor {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 26px;
   }
 }
@@ -1267,7 +1267,7 @@ span.spr-summary-caption {
     width: 130px;
   }
   .product-single__title.wvendor {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 22px;
     width:100%;
     text-align:left;
