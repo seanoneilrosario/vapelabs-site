@@ -11932,7 +11932,7 @@ body .compare-model .max_compare {
     padding: 0 10px;
   }
   .product-price__price,.product-price__price .money,.price,price .money{
-    font-size: 12px;
+    font-size: 16px;
   }
   .product-price__price.compare_price .money,
   .product-price__price.compare_price{
