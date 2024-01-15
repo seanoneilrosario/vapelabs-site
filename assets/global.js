@@ -1184,8 +1184,10 @@ form.on('submit', function(e) {
   e.preventDefault();
   console.log(`name-${inputValue}`)
   products.map((e, item) => {
+    item.classList.add('unview');
     if(item.classList[0].includes(`name-${inputValue}`)) {
       console.log(item)
+      item.classList.remove('unview')
     }
   })
   
