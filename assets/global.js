@@ -1173,4 +1173,4 @@ $(my_url).click(function(e){
 
 // Search Filter for products
 const products = $('.products-grid-view .grid-item');
-console.log(products.classList)
+console.log(products)
