@@ -1181,12 +1181,15 @@ form.on('submit', function(e) {
   const removeSpecialChar3 = removeSpecialChar2.replaceAll('/', "-");
   const inputValue = removeSpecialChar3.replaceAll(' ', "-")
   e.preventDefault();
-  products.map((e, item) => {
-    console.log(item.classList)
-    if(item.classList.contains(`name-${inputValue}`)){
-      console.log(item);
-    }
-  })
+  if(products.hasClass(`name-${inputValue}`)){
+    console.log('test success')
+  }
+  // products.map((e, item) => {
+  //   console.log(item.classList)
+  //   if(item.classList.contains(`name-${inputValue}`)){
+  //     console.log(item);
+  //   }
+  // })
   // if(products.classList.contains(inputValue)) {
   //   console.log()
   // }
