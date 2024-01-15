@@ -1182,25 +1182,13 @@ form.on('submit', function(e) {
   const removeSpecialChar4 = removeSpecialChar3.replaceAll(' ', "-")
   const inputValue = removeSpecialChar4.toLowerCase();
   e.preventDefault();
-  console.log(`name-${inputValue}`)
   products.map((e, item) => {
     item.classList.add('unview');
-    if(item.classList[0].includes(`name-${inputValue}`)) {
+    if(item.classList[0].includes(`${inputValue}`)) {
       console.log(item)
       item.classList.remove('unview')
     }
   })
-  
-  // products.map((e, item) => {
-  //   console.log(item.classList)
-  //   if(item.classList.contains(`name-${inputValue}`)){
-  //     console.log(item);
-  //   }
-  // })
-  // if(products.classList.contains(inputValue)) {
-  //   console.log()
-  // }
-  // console.log(inputValue.toLowerCase())
 });
 
 
