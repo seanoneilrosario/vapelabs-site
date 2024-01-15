@@ -28,11 +28,11 @@
 {%- assign price = current_variant.price -%}
 <div itemscope itemtype="http://schema.org/Product" class="product-template__container page-width"  id="ProductSection-{{ section.id }}"  data-section-id="{{ section.id }}" data-section-type="product-template" data-enable-history-state="true"  data-zoom-enable="{{ section.settings.product_image_zoom_enable }}" data-ajax-enabled="{{ settings.use_ajax_cart }}">
   {% if section.settings.product_layout != 'design_2' %}
-  <div>
+  <div class="container">
     {% endif %}
     <div class="product-single demo {% if section.settings.product_layout == 'design_1' or section.settings.product_layout == 'design_3' %}{{ section.settings.thumb_position }}{% endif %} {{ section.settings.product_layout }}">
       {% if section.settings.product_layout == 'design_1' or section.settings.product_layout == 'design_5' %} 
-      <div>
+      <div class="row">
         {% endif %}
         {% if section.settings.product_layout == 'design_2' %} 
         <div class="col-sm-6 main-product">
@@ -254,10 +254,7 @@
             <div class="fixed-content">
               <div class="product-single__header col-xs-12">
                 <div class="title-arrows">
-                  <h2 itemprop="name" class="product-single__title text-capitalize{% if section.settings.product_vendor_enable %} wvendor{% endif %}">{{ product.title }}</h2>
-                  {% if product.metafields.custom.cost_per_ml %}
-                    <h4>Cost per ml {{ product.metafields.custom.cost_per_ml }}</h4>
-                  {% endif %}
+                  <h1 itemprop="name" class="product-single__title text-capitalize{% if section.settings.product_vendor_enable %} wvendor{% endif %}">{{ product.title }}</h1>
                   {% if collection %}
                   {% if collection.previous_product or collection.next_product %}
                   <p class="product-arrows">
@@ -339,9 +336,9 @@
                     <label>{{ 'products.product.availability' | t  }}  </label>   
                     {% if product.selected_or_first_available_variant.inventory_management %}
                     <span class="inv {% if current_variant.inventory_quantity > 0 %} instock {% else %} outstock{% endif %}">
-                      {% comment %} <span class="items">{{current_variant.inventory_quantity}}</span> {% endcomment %}
+                      <span class="items">{{current_variant.inventory_quantity}}</span>
                       <span class="stock"> {{ 'products.product.in_stock' | t }}</span>
-                      <span class="outstock">  Out of stock</span>
+                      <span class="outstock"> {{ 'products.product.out_of_stock' | t }}</span>
                     </span>
                     {% for variant in product.variants %}
                     <span class="hide" id="pvr-{{ variant.id }}" data-id="{{variant.inventory_quantity}}">{{variant.inventory_quantity}}</span>
