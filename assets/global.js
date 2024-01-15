@@ -1182,6 +1182,7 @@ form.on('submit', function(e) {
   const inputValue = removeSpecialChar3.replaceAll(' ', "-")
   e.preventDefault();
   products.map((e, item) => {
+    console.log(item.classList)
     if(item.classList.contains(`name-${inputValue}`)){
       console.log(item);
     }
