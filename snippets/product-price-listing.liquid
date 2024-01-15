@@ -30,10 +30,10 @@
             {% if variant.unit_price_measurement %} price--unit-available{% endif %}">
   <div class="sale-price">
     <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>    
-    <span class="product-price__price product-price__sale">
+    <span style="display:flex; flex-wrap:wrap; gap:10px;" class="product-price__price product-price__sale">
       <span class="product-price__price">{{ money_price }} <sup>WHOLESALE + GST</sup></span>
       {% if product.metafields.custom.rrp %}
-        <span style="margin-left:10px;" class="product-price__price">
+        <span class="product-price__price">
           {{ product.metafields.custom.rrp }} <sup>RRP</sup>
         </span>
       {% endif %}
@@ -44,13 +44,13 @@
 
     <s class="product-price__price compare_price">{{ compare_at_price | money }}</s>
   </div>
-  <div class="regular-price">
+  <div style="display:flex; flex-wrap:wrap; gap:10px;" class="regular-price">
     <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>    
     <span class="product-price__price product-price__sale">
       {{ money_price }} <sup>WHOLESALE + GST</sup>
     </span>
     {% if product.metafields.custom.rrp %}
-      <span style="margin-left:10px;" class="product-price__price">
+      <span class="product-price__price">
         {{ product.metafields.custom.rrp }} <sup>RRP</sup>
       </span>
     {% endif %}
