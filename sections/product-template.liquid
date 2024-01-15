@@ -336,9 +336,9 @@
                     <label>{{ 'products.product.availability' | t  }}  </label>   
                     {% if product.selected_or_first_available_variant.inventory_management %}
                     <span class="inv {% if current_variant.inventory_quantity > 0 %} instock {% else %} outstock{% endif %}">
-                      <span class="items">{{current_variant.inventory_quantity}}</span>
-                      <span class="stock"> {{ 'products.product.in_stock' | t }}</span>
-                      <span class="outstock"> {{ 'products.product.out_of_stock' | t }}</span>
+                      {% comment %}<span class="items">{{current_variant.inventory_quantity}}</span>{% endcomment %}
+                      <span class="stock"> In stock</span>
+                      <span class="outstock"> Out of stock</span>
                     </span>
                     {% for variant in product.variants %}
                     <span class="hide" id="pvr-{{ variant.id }}" data-id="{{variant.inventory_quantity}}">{{variant.inventory_quantity}}</span>
