@@ -70,7 +70,7 @@
     "collections_masonry": false,
     "enable_quick_view": true,
     "enable_add_cart": true,
-    "enable_wishlist": true,
+    "enable_wishlist": false,
     "enable_compare": true,
     "enable_quantity": true,
     "enable_countdown": true,
