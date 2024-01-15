@@ -1172,4 +1172,4 @@ $(my_url).click(function(e){
 
 
 // Search Filter for products
-console.log($('.products-grid-view .grid-item').classList[0])
+console.log($('.products-grid-view .grid-item'))
