@@ -1175,7 +1175,7 @@ $(my_url).click(function(e){
 const products = $('.products-grid-view .grid-item');
 
 products.map((e, item) => {
-  console.log(item.classList)
+  console.log(item.classList[0])
   })
 const form = $('.product_search_form form');
 const inputSearch = $('.product_search_form form input');
