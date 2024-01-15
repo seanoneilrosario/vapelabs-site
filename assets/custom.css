@@ -1395,6 +1395,16 @@ main.main-content {
     padding: 0 !important;
 }
 
+.collection_template .section-header {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrap_toggle_filter {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 
 
 /* White Boxes */
