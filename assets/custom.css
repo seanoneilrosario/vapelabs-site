@@ -1395,9 +1395,17 @@ main.main-content {
     padding: 0 !important;
 }
 
-.collection_template .section-header {
+.collection_template .section-header,
+.product_search_form form {
   display: flex;
-  flex-wrap: wrap;
+}
+
+.product_search_form form {
+  min-width: 300px;
+}
+
+.collection_template .section-header {
+  gap: 10px;
 }
 
 .wrap_toggle_filter {
