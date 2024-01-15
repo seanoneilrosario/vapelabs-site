@@ -42,7 +42,14 @@
     <span class="discount-percentage">-{{ target.compare_at_price | minus: target.price | times: 100.0 | divided_by: target.compare_at_price | round }}%</span>
     {% endif %}
 
-    <s class="product-price__price compare_price">{{ compare_at_price | money }}</s>
+    <span class="product-price__price product-price__sale">
+      {{ money_price }} <sup>WHOLESALE + GST</sup>
+    </span>
+    {% if product.metafields.custom.rrp %}
+      <span style="margin-left:10px;" class="product-price__price">
+        {{ product.metafields.custom.rrp }} <sup>RRP</sup>
+      </span>
+    {% endif %}
   </div>
   <div class="regular-price">
     <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>    
