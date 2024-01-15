@@ -1173,7 +1173,10 @@ $(my_url).click(function(e){
 
 // Search Filter for products
 const products = $('.products-grid-view .grid-item');
-console.log(products.classList)
+
+products.map((e, item) => {
+  console.log(item.classList)
+  })
 const form = $('.product_search_form form');
 const inputSearch = $('.product_search_form form input');
 form.on('submit', function(e) {
