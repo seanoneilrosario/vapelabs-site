@@ -84,7 +84,33 @@
     <script src="{{ 'inview.js' | asset_url  }}" defer="defer"></script>     
     <script src="{{ 'custom-js.js' | asset_url }}" defer="defer"></script>  
     <script src="{{ 'jquery.hoverdir.js' | asset_url }}" defer="defer"></script>  
+    {% capture 'productMetaFields' %}
+        {
+          {% paginate collections["all-products"].products by 1000 %}
+            {% for product in collections["all-products"].products %}
+              
+                "{{ product.handle }}" : {
+                  product_title : "{{product.handle}}",
+                  {% if product.metafields.custom.product_type != blank %}
+                    product_type : "{{product.metafields.custom.product_type}}",
+                  {% else %}
+                  product_type : "",
+                  {% endif %}
+                  {% if product.metafields.custom.strength != blank %}
+                    product_strength : "{{product.metafields.custom.strength}}"
+                  {% else %}
+                    product_strength : ""
+                  {% endif %}
+                },
+            
+            {% endfor %}
+          {% endpaginate %}
+        }
+    {% endcapture %}
     
+    <script type = "text/javascript">
+      let productMetaFields = {{ productMetaFields }}
+    </script>
     {% if shop.locale == 'ar' or shop.locale == 'he' or shop.locale == 'ur' %} 
     {{ 'rtl.css' | asset_url | stylesheet_tag }} 
     <script>window.rtltrue = "rtltrue";</script>  

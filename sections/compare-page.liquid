@@ -21,8 +21,11 @@
           <tr class="producttype">
             <th class="product-type"><span class="nobr">{{ 'products.compare.product_type' | t }}</span> </th>
           </tr>
+          <tr class="productstr">
+            <th class="product-str"><span class="nobr">Product Strength</span> </th>
+          </tr>
           <tr class="productvender">
-            <th class="product-vender"><span class="nobr">{{ 'products.compare.product_vender' | t }}</span> </th>
+            <th class="product-vender"><span class="nobr">Brand</span> </th>
           </tr>
           <tr class="productprice">
             <th class="product-price"><span class="nobr">{{ 'products.compare.unit_price' | t }}</span></th>
@@ -117,6 +120,7 @@
     catch(err){}
     function emptycompare(){$(".compare_table").css('display', 'none');$(".table-responsive").append("<div class='compare-empty tc'>{{ 'products.compare.compare-empty' | t }}</div>")}
                                                                                                      function compare_product(product){
+      var metafields = productMetaFields[product.handle];
       $(".compare_table").css('display', 'block');
       var $cloneitem=$(".compare-item1").clone();
       $cloneitem.find(".compare-item-link").attr("href",product.url);
@@ -124,11 +128,13 @@
       var $cloneitemname=$(".compare-item-name").clone();
       var $cloneitemdesc=$(".compare-item-desc").clone();
       var $cloneitemtype=$(".compare-type").clone();
+      var $cloneitemstr=$(".compare-str").clone();
       var $cloneitemvender=$(".compare-vender").clone();
       $cloneitemname.find(".compare-item-link").attr("href",product.url);
       $cloneitemname.find(".compare-item-link").text(product.title);
       $cloneitemdesc.find(".compare-item-des").html(product.description);
-      $cloneitemtype.find(".compare-in-type").text(product.type);
+      $cloneitemtype.find(".compare-in-type").text(metafields.product_type);
+      $cloneitemstr.find(".compare-in-str").text(metafields.product_strength);
       $cloneitemvender.find(".compare-in-vender").text(product.vendor);
       var $cloneitemprice=$(".table-compare-1__product-price");
       $cloneitemprice.html(Shopify.formatMoney(product.price, window.money_format));
@@ -145,6 +151,7 @@
       $('.compare-box .productname').append("<td class='"+product.handle+"' data-comparehandle='"+product.handle+"' >"+$cloneitemname.html()+"</td>");
       $('.compare-box .productdesc').append("<td class='"+product.handle+"' data-comparehandle='"+product.handle+"'>"+$cloneitemdesc.html().split(" ").splice(0, 15).join(" ") + '...'+"</td>");
       $('.compare-box .producttype').append("<td class='"+product.handle+"' data-comparehandle='"+product.handle+"'>"+$cloneitemtype.html()+"</td>");
+      $('.compare-box .productstr').append("<td class='"+product.handle+"' data-comparehandle='"+product.handle+"'>"+$cloneitemstr.html()+"</td>");
       $('.compare-box .productvender').append("<td class='"+product.handle+"' data-comparehandle='"+product.handle+"'>"+$cloneitemvender.html()+"</td>");
       $('.compare-box .productprice').append("<td class='"+product.handle+"' data-comparehandle='"+product.handle+"'>"+$cloneitemprice.html()+"</td>");
       $('.compare-box .product-stock').append("<td class='"+product.handle+"' data-comparehandle='"+product.handle+"'>"+$cloneitemstock.html()+"</td>");
@@ -224,4 +231,5 @@
 </div>
 <div class="compare-stock" style="display:none"><span class="compare-stock-value">#</span></div>
 <div class="compare-type" style="display:none"><span class="compare-in-type">#</span></div>
+<div class="compare-str" style="display:none"><span class="compare-in-str">#</span></div>
 <div class="compare-vender" style="display:none"><span class="compare-in-vender">#</span></div>
