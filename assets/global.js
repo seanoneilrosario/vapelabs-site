@@ -1177,7 +1177,7 @@ const form = $('.product_search_form form');
 const inputSearch = $('.product_search_form form input');
 form.on('submit', function(e) {
   e.preventDefault();
-  console.log(inputSearch)
+  console.log(inputSearch[0].value)
 });
 
 
