@@ -1176,8 +1176,10 @@ const products = $('.products-grid-view .grid-item');
 const form = $('.product_search_form form');
 const inputSearch = $('.product_search_form form input');
 form.on('submit', function(e) {
+  const removeSpecialChar = inputSearch[0].value.replaceAll(/[^a-zA-Z ]/g, "");
+  const inputValue = removeSpecialChar.replaceAll(' ', "-")
   e.preventDefault();
-  console.log(inputSearch[0].value)
+  console.log(inputValue)
 });
 
 
