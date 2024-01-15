@@ -1179,7 +1179,8 @@ form.on('submit', function(e) {
   const removeSpecialChar = inputSearch[0].value.replaceAll('(', "");
   const removeSpecialChar2 = removeSpecialChar.replaceAll(')', "");
   const removeSpecialChar3 = removeSpecialChar2.replaceAll('/', "-");
-  const inputValue = removeSpecialChar3.replaceAll(' ', "-")
+  const removeSpecialChar4 = removeSpecialChar3.replaceAll(' ', "-")
+  const inputValue = removeSpecialChar4.toLowerCase();
   e.preventDefault();
   console.log(`name-${inputValue}`)
   products.map((e, item) => {
