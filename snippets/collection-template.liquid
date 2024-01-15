@@ -5,19 +5,10 @@
 <div id="ProductGridContainer">
   <div class="collection_template" id="product-grid" data-id="{{ section.id }}">
     <header class="section-header text-left">
-      {% if collection.description != blank and settings.enable_category_image == true %}
-      <div class="rte rte--header collection-desc-wrap">
-        {% if settings.category_image != blank %}
-        <div class="category_img">
-          <img loading="lazy" class="lazyload" src="{{ settings.category_image | image_url }}"  alt="{{ collection.title | escape }}" display="block" width="1170" height="250" />
-        </div>   
-        {% endif %}
-        <h1 class="section-header__title text-left">{{ collection.title }}</h1>
-        <div class="description">{{ collection.description }}</div>
+      <div class="product_search_form">  
+        <form>
+        </form>
       </div>
-      {% else %}
-      <h1 class="section-header__title">{{ collection.title }}</h1>
-      {% endif %}    
       <div class="filter-wrapper {{ settings.collection_sidebar_use }} wrap_{{ settings.collection_filter_pos }}">
         {% if settings.collection_sidebar_use == "full_width" %}
         {% if settings.collection_filter_pos == "left_filter" %}  
