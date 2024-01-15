@@ -1172,4 +1172,4 @@ $(my_url).click(function(e){
 
 
 // Search Filter for products
-console.log(Shopify.getProducts())
+console.log($('.products-grid-view .grid-item'))
