@@ -8,7 +8,7 @@ body {
 }
 
 main.main-content {
-    margin-top: var(--header-height) !important;
+    padding-top: var(--header-height) !important;
 }
 
 .btn_primary {
