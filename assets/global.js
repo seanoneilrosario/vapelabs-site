@@ -1167,3 +1167,9 @@ $(my_url).click(function(e){
   }
   openInNewTab($this.attr('href'))
 });
+
+
+
+
+// Search Filter for products
+console.log(Shopify.getProducts())
