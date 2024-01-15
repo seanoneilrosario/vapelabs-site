@@ -1181,7 +1181,13 @@ form.on('submit', function(e) {
   const removeSpecialChar3 = removeSpecialChar2.replaceAll('/', "-");
   const inputValue = removeSpecialChar3.replaceAll(' ', "-")
   e.preventDefault();
-  console.log(inputValue.toLowerCase())
+  products.map((e) => {
+    console.log(e)
+  })
+  // if(products.classList.contains(inputValue)) {
+  //   console.log()
+  // }
+  // console.log(inputValue.toLowerCase())
 });
 
 
