@@ -1172,4 +1172,5 @@ $(my_url).click(function(e){
 
 
 // Search Filter for products
-console.log($('.products-grid-view .grid-item'))
+const products = $('.products-grid-view .grid-item');
+console.log(products.classList[0])
