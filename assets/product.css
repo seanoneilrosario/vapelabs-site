@@ -1447,6 +1447,10 @@ span.spr-summary-caption {
 .slick-arrow.slick-prev:before {
   content: none;
 }
+
+.product-sku {
+  display: flex !important;
+}
 @media (min-width: 768px) and (max-width: 991px) {
   .threesixty-video span {
     font-size: 12px;
