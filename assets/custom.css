@@ -1417,6 +1417,11 @@ main.main-content {
   flex-wrap: wrap;
 }
 
+.variant-sku,
+.product-single__vendor {
+  display: flex;
+}
+
 @media(min-width: 900px) {
   .collection_template .section-header {
     flex-wrap: nowrap;
