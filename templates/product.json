@@ -42,7 +42,7 @@
         "product_vendor_enable": true,
         "enable_progressbar": true,
         "product_image_zoom_enable": true,
-        "related_products_enable": false,
+        "related_products_enable": true,
         "product_qty_enable": true,
         "share_enable": true,
         "enable_payment_button": false,
