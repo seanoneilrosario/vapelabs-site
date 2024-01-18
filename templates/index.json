@@ -229,13 +229,20 @@
           "settings": {
             "article": "laws-regulations\/tgas-vigilance-on-unapproved-vaping-products-a-70-000-product-seizure"
           }
+        },
+        "logo_PctHqP": {
+          "type": "logo",
+          "settings": {
+            "article": "news-and-articles\/the-future-of-vaping-in-australia-reforms-challenges-and-million-gp-visits-in-sight"
+          }
         }
       },
       "block_order": [
         "70d63065-3dd0-4dad-8244-5937db3a08c9",
         "09ea33fa-3ff5-4ab5-b8a8-cd4d0e505a1c",
         "437db006-0ef1-4cf0-9dca-c38b41cf109f",
-        "9ba4853f-50aa-419a-be67-fe4cf66ab4f6"
+        "9ba4853f-50aa-419a-be67-fe4cf66ab4f6",
+        "logo_PctHqP"
       ],
       "settings": {
         "heading": "Education & Guides"
