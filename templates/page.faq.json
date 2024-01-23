@@ -96,6 +96,13 @@
             "title": "What changes have been made to the regulation of vapes, and how do these changes affect sourcing and dispensing?",
             "description": "Changes include stricter controls on importation, manufacture, and supply. Vapes can only be supplied in pharmacies, and new regulations are being implemented in stages in 2024."
           }
+        },
+        "text_F6jLCa": {
+          "type": "text",
+          "settings": {
+            "title": "Are there specific regulations or licensing requirements for pharmacists when dispensing Nicotine Vaping Products (NVPs) in different Australian states and territories?",
+            "description": "Yes, in addition to the general requirements for dispensing Schedule 4 medicines, each state and territory has specific tobacco\/smoking product or e-cigarette control legislation that may affect pharmacists dispensing NVPs or supplying vaping devices. The requirements and associated costs vary by location. As of October 2023, the information is current, but pharmacists should stay informed about potential changes.\n\nQueensland: Contact 07 3708 5864 - No other license requirements.\nNew South Wales: Apply by contacting 02 9391 9944 - No cost to register.\nTasmania: Apply by contacting 03 6777 1979 - $640.80.\nAustralian Capital Territory (ACT): Apply by contacting 02 5124 9208 - No cost to register.\nWestern Australia: No other license requirements.\nNorthern Territory: Contact 08 8922 7341 - No other license requirements.\nVictoria: No other license requirements.\nSouth Australia: No other license requirements."
+          }
         }
       },
       "block_order": [
@@ -110,7 +117,8 @@
         "text_CaNctb",
         "text_NBirKg",
         "text_DLny7F",
-        "text_bCyN7X"
+        "text_bCyN7X",
+        "text_F6jLCa"
       ],
       "settings": {
       }
