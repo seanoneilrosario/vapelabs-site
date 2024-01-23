@@ -54,6 +54,48 @@
             "title": "How do I learn more about NVP dispensing?",
             "description": "We have a education hub for you to learn once you have registered here: https:\/\/vapelabs.com.au\/pages\/education-centre.  We can also provide a free online one to one informational session with one of our Medical Liason."
           }
+        },
+        "text_Yf6dh9": {
+          "type": "text",
+          "settings": {
+            "title": "Is a prescription required for purchasing vapes containing nicotine, and where can they be legally supplied?",
+            "description": "Yes, consumers need a prescription for vapes with nicotine. These can only be supplied in pharmacy settings; it is illegal for other retailers to sell them, even with a prescription."
+          }
+        },
+        "text_JFhXKY": {
+          "type": "text",
+          "settings": {
+            "title": "Do pharmacies require a prescription to stock Nicotine Vaping Products (NVP)?",
+            "description": "No, pharmacies do not need a prescription to stock Nicotine Vaping Products (NVP). However, a prescription is required for the actual dispensing of NVP to consumers. Pharmacies can take possession of unapproved vapes for the purpose of dispensing before receiving prescriptions, and they are advised to ensure the products conform to the relevant standards and regulations."
+          }
+        },
+        "text_CaNctb": {
+          "type": "text",
+          "settings": {
+            "title": "What requirements will importers of vapes need to meet after March 1, 2024, and how can they obtain permits from the Office of Drug Control (ODC)?",
+            "description": "Importers must provide pre-market notifications to the TGA, declare compliance with product standards, and obtain an import license and permit from ODC."
+          }
+        },
+        "text_NBirKg": {
+          "type": "text",
+          "settings": {
+            "title": "What are the options for medical practitioners to prescribe unapproved therapeutic vapes, and how can pharmacists dispense them?",
+            "description": "Medical practitioners can apply for AP approval or SAS B approval. From January 1, 2024, SAS C is also available. Pharmacists can dispense with evidence of these approvals."
+          }
+        },
+        "text_DLny7F": {
+          "type": "text",
+          "settings": {
+            "title": "How can pharmacies source unapproved vapes for dispensing, and what considerations should be taken when ordering from overseas suppliers?",
+            "description": "Pharmacies can source unapproved vapes from Australian sponsors\/wholesalers or directly from overseas. Considerations include ensuring compliance with TGO 110."
+          }
+        },
+        "text_bCyN7X": {
+          "type": "text",
+          "settings": {
+            "title": "What changes have been made to the regulation of vapes, and how do these changes affect sourcing and dispensing?",
+            "description": "Changes include stricter controls on importation, manufacture, and supply. Vapes can only be supplied in pharmacies, and new regulations are being implemented in stages in 2024."
+          }
         }
       },
       "block_order": [
@@ -62,7 +104,13 @@
         "1515838714117",
         "84ea8e92-75ca-4b8e-8f70-ecfe5a4e60dc",
         "311f6278-81e4-4de2-adb4-453bc856831c",
-        "58656053-8246-4108-a709-a499976e31d3"
+        "58656053-8246-4108-a709-a499976e31d3",
+        "text_Yf6dh9",
+        "text_JFhXKY",
+        "text_CaNctb",
+        "text_NBirKg",
+        "text_DLny7F",
+        "text_bCyN7X"
       ],
       "settings": {
       }
