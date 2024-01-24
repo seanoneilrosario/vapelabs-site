@@ -1,6 +1,6 @@
 {% if comment and comment.created_at %}{% assign number_of_comments = article.comments_count | plus: 1 %}{% endif %}
 <div class="grid" data-section-id="{{ section.id }}" data-section-type="article-template">
-  <div class="container">
+  <div class="container--narrow">
     {% if section.settings.enable_left_sidebar %}
     <div class="content_wrap">
       <aside class="sidebar left-sidebar col-xs-12 col-sm-3 col-md-3">
