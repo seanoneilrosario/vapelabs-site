@@ -196,6 +196,12 @@
           "settings": {
             "image_logo": "shopify:\/\/shop_images\/priceline-pharmacy-logo.png"
           }
+        },
+        "logo_bb7Km3": {
+          "type": "logo",
+          "settings": {
+            "image_logo": "shopify:\/\/shop_images\/Advantage_Logo-v14.png"
+          }
         }
       },
       "block_order": [
@@ -204,7 +210,8 @@
         "8d3f2e31-da19-45ae-ac8a-3cb77a123a3d",
         "70c5a61f-ef38-42d7-939e-f7f23e0ff668",
         "a1fab3da-b8f5-477e-87e8-4e671c7b0517",
-        "logo_8TCwne"
+        "logo_8TCwne",
+        "logo_bb7Km3"
       ],
       "settings": {
         "heading": "Join our growing list of partners"
