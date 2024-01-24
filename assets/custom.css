@@ -69,7 +69,7 @@ main.main-content {
     max-width: 1700px;
     margin: 0 auto;
     padding-left: 15px;
-    margin-right: 15px;
+    padding-right: 15px;
 }
 
 .header_contents-wrap .site-nav {
