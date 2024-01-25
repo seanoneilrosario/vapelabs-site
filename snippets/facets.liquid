@@ -26,6 +26,7 @@
           </summary>
           <div>
             <ul class="ven-filters">
+              <!-- Remove Certain Products from a certain customer in a certain state -->
               {% if customer.default_address.province_code == 'NT' or customer.default_address.province_code == 'QLD' %}
                 {% for product_vendor in collection.all_vendors %}
                   <li class="list-menu__item facets__item ven_item">
@@ -275,6 +276,7 @@
               </summary>
               <div>
                 <ul class="ven-filters">
+                  <!-- Remove Certain Products from a certain customer in a certain state -->
                   {% if customer.default_address.province_code == 'NT' or customer.default_address.province_code == 'QLD' %}
                     {% for product_vendor in collection.all_vendors %}{% if product_vendor == 'RELX' %}{% continue %}{% endif %}
                       <li class="list-menu__item facets__item ven_item">
