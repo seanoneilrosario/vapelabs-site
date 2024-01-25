@@ -939,13 +939,22 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  console.log(window.location.pathname)
    if (!$('body').hasClass("customer-logged-in")) {
      if (window.location.pathname.includes('/collections')) {
         window.location.replace("https://vapelabs.com.au/account");
       }
    }
 });
+
+// Remove Certain Products from a certain customer in a certain state
+$(document).ready(function() {
+   if ($('body').hasClass("NT") || $('body').hasClass("QLD")) {
+     if (window.location.pathname.includes('/relx')) {
+        window.location.replace("https://vapelabs.com.au/not-found");
+      }
+   }
+});
+
 
 
 // slider
