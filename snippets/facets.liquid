@@ -8,9 +8,6 @@
     assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
   endif
 -%}
-{% for product_vendor in collection.all_vendors %}{% if product_vendor == 'RELX' %}{% continue %}{% endif %}
-   {{ product_vendor }}
-{% endfor %}
 <div class="facets-container">
   {%- unless collapse_on_larger_devices -%}
   <facet-filters-form class="facets">
@@ -30,7 +27,7 @@
           <div>
             <ul class="ven-filters">
               {% if customer.default_address.province_code == 'NT' or customer.default_address.province_code == 'QLD' %}
-                {% for product_vendor in collection.all_vendors %}{% if product_vendor == 'RELX' %}{% continue %}{% endif %}
+                {% for product_vendor in collection.all_vendors %}
                   <li class="list-menu__item facets__item ven_item">
                     <span id="ven-{{ product_vendor | remove: " " | remove: "."  | remove: "/" | downcase }}">
                        {{ product_vendor }}
@@ -41,7 +38,7 @@
                   </li>
                 {% endfor %}
               {% else %}
-                {% for product_vendor in collection.all_vendors %}
+                {% for product_vendor in collection.all_vendors %}{% if product_vendor == 'RELX' %}{% continue %}{% endif %}
                   <li class="list-menu__item facets__item ven_item">
                     <span id="ven-{{ product_vendor | remove: " " | remove: "."  | remove: "/" | downcase }}">
                        {{ product_vendor }}
@@ -290,7 +287,7 @@
                       </li>
                     {% endfor %}
                   {% else %}
-                    {% for product_vendor in collection.all_vendors %}
+                    {% for product_vendor in collection.all_vendors %}{% if product_vendor == 'RELX' %}{% continue %}{% endif %}
                       <li class="list-menu__item facets__item ven_item">
                         <span id="ven-{{ product_vendor | remove: " " | remove: "."  | remove: "/" | downcase }}">
                            {{ product_vendor }}
