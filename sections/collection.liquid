@@ -2,9 +2,7 @@
 <div class="container">
   {% paginate collection.products by 1000 %}
     {% for product in collection.products  %}{% if product.type == 'PPLR_HIDDEN_PRODUCT' %}{% continue %}{% endif %}
-      {% if customer.default_address.province_code != 'TAS' and product.vendor != 'RELX' %}
-        {{ product.vendor }}
-      {% endif %}
+      
     {% endfor %}
   {% endpaginate %}  
   <div class="row">
