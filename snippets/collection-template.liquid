@@ -133,7 +133,7 @@
         {% when '6' %}
         {% assign grid_item_width = 'medium-down--one-half large-up--one-sixth' %}
         {% endcase %}
-        {{ customer.default_address }}
+        {{ customer.default_address.province_code }}
         {% for address in customer.default_address %}{{ address.province_code }}{% endfor %}
         {% paginate collection.products by 1000 %}
           {% for product in collection.products  %}{% if product.type == 'PPLR_HIDDEN_PRODUCT' %}{% continue %}{% endif %}
