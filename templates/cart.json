@@ -3,6 +3,7 @@
   "sections": {
     "b52b6887-07db-4591-a0a4-d7f5c7e43418": {
       "type": "left-sidevar-head",
+      "disabled": true,
       "settings": {
       }
     },
