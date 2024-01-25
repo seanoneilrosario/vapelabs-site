@@ -8,6 +8,16 @@
     assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
   endif
 -%}
+{% for product_vendor in collection.all_vendors %}{% if product_vendor == 'RELX' %}{% continue %}{% endif %}
+  <li class="list-menu__item facets__item ven_item">
+    <span id="ven-{{ product_vendor | remove: " " | remove: "."  | remove: "/" | downcase }}">
+       {{ product_vendor }}
+        <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </span>
+  </li>
+{% endfor %}
 <div class="facets-container">
   {%- unless collapse_on_larger_devices -%}
   <facet-filters-form class="facets">
