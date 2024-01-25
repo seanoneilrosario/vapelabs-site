@@ -1,9 +1,15 @@
 <!-- /templates/collection.liquid -->
 <div class="container">
   {% paginate collection.products by 1000 %}
-    {% for product in collection.products  %}{% if product.vendor == 'RELX' %}{% continue %}{% endif %}
-      
-    {% endfor %}
+    {% if customer.default_address.province_code == 'NT' or customer.default_address.province_code == 'QLD' %}
+      {% for product in collection.products  %}{% if product.vendor == 'PPLR_HIDDEN_PRODUCT' or product.vendor == 'RELX' %}{% continue %}{% endif %}
+        {{ product.vendor }}
+      {% endfor %}
+    {% else %}
+      {% for product in collection.products  %}{% if product.vendor == 'PPLR_HIDDEN_PRODUCT' %}{% continue %}{% endif %}
+        {{ product.vendor }}
+      {% endfor %}
+    {% endif %}
   {% endpaginate %}  
   <div class="row">
     <!-- /snippets/collection.liquid -->
