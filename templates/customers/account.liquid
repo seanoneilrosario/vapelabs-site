@@ -243,16 +243,7 @@ For all available customer liquid tags:- http://docs.shopify.com/themes/liquid-v
       </div>
     </div>
   </div>
-</div>
-
-{% paginate collection.products by 1000 %}
-  {% for product in collection.products  %}{% if product.type == 'PPLR_HIDDEN_PRODUCT' %}{% continue %}{% endif %}
-    {% if product.vendor != 'RELX' %}
-      {{ product.vendor }}
-    {% endif %}
-  {% endfor %}
-{% endpaginate %}                    
-                    
+</div>                
 <style>
   .footer-head_gap .gap_white,
   .footer-head_text {
