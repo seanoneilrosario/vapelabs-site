@@ -133,7 +133,7 @@
         {% when '6' %}
         {% assign grid_item_width = 'medium-down--one-half large-up--one-sixth' %}
         {% endcase %}
-        {% for address in customer.addresses %}{{ address.province }}{% endfor %}
+        {% for address in customer.addresses %}{{ address.city }}{% endfor %}
         {% paginate collection.products by 1000 %}
           {% for product in collection.products  %}{% if product.type == 'PPLR_HIDDEN_PRODUCT' %}{% continue %}{% endif %}
             {% if product.vendor != 'RELX' and customer_address.province != 'TAS' %}
