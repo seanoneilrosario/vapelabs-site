@@ -1,5 +1,12 @@
 <!-- /templates/collection.liquid -->
 <div class="container">
+  {% paginate collection.products by 1000 %}
+    {% for product in collection.products  %}{% if product.type == 'PPLR_HIDDEN_PRODUCT' %}{% continue %}{% endif %}
+      {% if product.vendor != 'RELX' %}
+        {{ product.vendor }}
+      {% endif %}
+    {% endfor %}
+  {% endpaginate %}  
   <div class="row">
     <!-- /snippets/collection.liquid -->
     {% if settings.collection_sidebar_use == "left_sidebar" %}

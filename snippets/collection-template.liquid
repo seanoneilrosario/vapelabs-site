@@ -161,11 +161,3 @@
     </div>{% endcomment %}
   </div>
 </div>
-
-{% paginate collection.products by 1000 %}
-  {% for product in collection.products  %}{% if product.type == 'PPLR_HIDDEN_PRODUCT' %}{% continue %}{% endif %}
-    {% if product.vendor != 'RELX' %}
-      {{ product.vendor }}
-    {% endif %}
-  {% endfor %}
-{% endpaginate %}  
