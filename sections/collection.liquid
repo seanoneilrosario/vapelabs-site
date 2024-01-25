@@ -1,8 +1,8 @@
 <!-- /templates/collection.liquid -->
 <div class="container">
   {% paginate collection.products by 1000 %}
-    {% for product in collection.products  %}{% if product.type == 'PPLR_HIDDEN_PRODUCT' %}{% continue %}{% endif %}
-      
+    {% for product in collection.products  %}{% if product.vendor == 'RELX' %}{% continue %}{% endif %}
+      {{ product.vendor }}
     {% endfor %}
   {% endpaginate %}  
   <div class="row">
