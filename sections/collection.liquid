@@ -2,7 +2,7 @@
 <div class="container">
   {% paginate collection.products by 1000 %}
     {% for product in collection.products  %}{% if product.type == 'PPLR_HIDDEN_PRODUCT' %}{% continue %}{% endif %}
-      {% if product.vendor != 'RELX' and customer.default_address.province_code == 'TAS' %}
+      {% if product.vendor != 'RELX' and customer.default_address.province_code != 'TAS' %}
         {{ product.vendor }}
       {% endif %}
     {% endfor %}
