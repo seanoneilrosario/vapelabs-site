@@ -11666,7 +11666,7 @@ body .compare-model .max_compare {
   margin: 0 0 30px;
   height: calc(100% - 30px)
 }
-.grid-item.product-grid .products-grid-view .product-layouts .product-wrapper{
+.grid-item.product-grid .product-wrapper{
   height: 100%;
   display: flex;
   flex-direction: column;
