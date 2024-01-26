@@ -72,23 +72,26 @@
   <h4>Blogs<span class="right"></span></h4>
   <ul>
     {% for tag in blog.all_tags %}
-      <li class="blog_side_bar_item {% if current_tags contains tag %}active{% endif %}">
-        <span>
-          {{ tag | link_to_tag: tag }}
-          <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </span>
-      </li>
+      {% if current_tags == empty %}
+        <li class="blog_side_bar_item active">
+          <span>
+            <a href="https://vapelabs.com.au/blogs/all-articles">All</a>
+            <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+        </li>
+      {% else %}
+        <li class="blog_side_bar_item {% if current_tags contains tag %}active{% endif %}">
+          <span>
+            {{ tag | link_to_tag: tag }}
+            <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+        </li>
+      {% endif %}
     {% endfor %}
-    <li class="blog_side_bar_item {% if current_tags == empty %}active{% endif %}">
-      <span>
-        <a href="https://vapelabs.com.au/blogs/all-articles">All</a>
-        <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-      </span>
-    </li>
   </ul>
 </div>
 {% endif %}
