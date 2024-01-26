@@ -12,8 +12,48 @@
         {% assign blog_handles = "news-and-articles,laws-regulations,pharmacist-guides" | split: "," %}
         {% for handle in blog_handles %}
           {% for article in blogs[handle].articles %}
-            <p>{{ article.title | uniq }}</p>
-            
+            <div class="grid__item col-md-4 col-sm-4 col-xs-12">
+              <div class="article tt-blog-content">
+                <div class="ttblog_image_holder blog_image_holder">
+                  {% if article.image %}
+                  {% assign image_alt = article.title | escape %}          
+                  <a href="{{ article.url }}" class="article__grid-image">
+                    {{ article | img_url: '463x', crop: 'center' | img_tag: article.title }}
+                  </a>
+                  <span class="bloglinks">
+                    <a class="icon zoom" data-lightbox="example-set" href="{{ article | img_url: 'master' }}" title="Click to view Full Image">
+                      <i class="mdi mdi-magnify"></i>
+                    </a> 
+                  </span>          
+                  {% else %}
+                  <img loading="lazy" src="{{ 'no-image.gif' | img_url: 'master' }}" class="lazyload"/>
+                  {% endif %}
+                  <div class="blogs-sub-title">
+                    {% if article.comments_enabled? %}
+                    {% assign number_of_comments = article.comments_count %}                
+                    <p class="comments-count"><i class="mdi mdi-comment-multiple" aria-hidden="true"></i> {{  number_of_comments }} <span> {{ 'blogs.comments.comments' | t }}</span></p>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="tt-blog-description">
+                  <div class="home-blog-content blog-detail">				
+                    <h4 class="article__title"><a href="{{ article.url }}">{{ article.title }}</a></h4>
+                    {% if article.tags.size > 0 %}
+                    <div class="blog-tag">
+                      <i class="mdi mdi-tag-multiple" aria-hidden="true"></i>
+                      {% for tag in article.tags %}
+                      <a class="blog-tags" href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %} <span class="meta-sep">&#44;</span> {% endunless %}
+                      {% endfor %}
+                    </div>
+                    {% endif %}
+                    <p>{{ article.content | strip_html | truncate: 100 }}</p>
+                    <div class="blog-btn">
+                      <a href="{{ article.url }}">{{ 'blogs.article.read_more' | t }}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           {% endfor %}
         {% endfor %}
       </div>
