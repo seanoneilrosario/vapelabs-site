@@ -1032,9 +1032,8 @@ main.main-content {
     text-align: left;
 }
 
-.feat-blog-post_slider  .slick-list {
+.feat-blog-post_slider .slick-list {
     overflow: visible;
-    margin-right: 50px;
 }
 
 .feat-blog-post_slider .slick-arrow:before {
