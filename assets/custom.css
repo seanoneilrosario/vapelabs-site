@@ -1405,6 +1405,7 @@ main.main-content {
 
 .product_search_form form {
   min-width: 300px;
+  margin-bottom: 0;
 }
 
 .collection_template .section-header {
