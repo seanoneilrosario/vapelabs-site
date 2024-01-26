@@ -81,7 +81,7 @@
         </span>
       </li>
     {% endfor %}
-    <li class="blog_side_bar_item {% for tag in blog.all_tags %}{% if tag != empty %}active{% endif %}{% endfor %}">
+    <li class="blog_side_bar_item {% for tag in blog.all_tags %}{% if current_tags != tag %}active{% endif %}{% endfor %}">
       <span>
         <a href="https://vapelabs.com.au/blogs/all-articles">All</a>
         <svg class="icon icon-checkmark" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
