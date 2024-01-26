@@ -57,26 +57,9 @@
                 <div class="social-title">Follow Us :</div>
                 {% if settings.show_linkedin_share or settings.show_facebook_share or settings.show_twitter_share or settings.show_google_plus_share or settings.show_mailto_share or settings.show_pinterest_share %}
                 <div class="tt-social-share">
-                  {% if settings.show_facebook_share %}
                   <div class="social-icon">
-                    <a href="http://www.facebook.com/sharer.php?u={{ article.url }}"><i class="mdi mdi-facebook"></i></a>
+                    <a href="https://www.linkedin.com/company/vapelabau/about/"><i class="mdi mdi-linkedin"></i></a>
                   </div>
-                  {% endif %}
-                  {% if settings.show_twitter_share %}
-                  <div class="social-icon">
-                    <a href="http://twitter.com/share?url={{ article.url }}"><i class="mdi mdi-twitter"></i></a>
-                  </div>
-                  {% endif %}
-                  {% if settings.show_pinterest_share %}
-                  <div class="social-icon">
-                    <a href="http://pinterest.com/pin/create/button/?url={{ article.url }}"><i class="mdi mdi-pinterest"></i></a>
-                  </div>
-                  {% endif %}
-                  {% if settings.show_linkedin_share %}
-                  <div class="social-icon">
-                    <a href="http://www.linkedin.com/shareArticle?mini=true&url={{ article.url }}"><i class="mdi mdi-linkedin"></i></a>
-                  </div>
-                  {% endif %}
                 </div>
                 {% endif %}
               </div>
