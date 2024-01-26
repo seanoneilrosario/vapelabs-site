@@ -12,7 +12,7 @@
         {% assign blog_handles = "news-and-articles,laws-regulations,pharmacist-guides" | split: "," %}
         {% for handle in blog_handles %}
           {% for article in blogs[handle].articles %}
-            {{ article.title | uniq }}
+            <p>{{ article.title | uniq }}</p>
             
           {% endfor %}
         {% endfor %}
