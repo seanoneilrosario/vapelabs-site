@@ -5,7 +5,7 @@
     </div>
     <h2 class="tt-innerpagetitle">{% for tag in customer.tags %}{{ tag }}{% endfor %}</h2>
     
-    {% paginate customer.orders by 20 %}
+    
     {% if customer.orders.size != 0 %}
     <table class="full">
       <thead>
@@ -63,7 +63,6 @@
       {% render 'pagination-custom', paginate: paginate %}
     </div>
     {% endif %}
-    {% endpaginate %}
   </div>
 </div>
 {% schema %}
