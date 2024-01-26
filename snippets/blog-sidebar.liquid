@@ -72,7 +72,7 @@
   <h4>Blogs<span class="right"></span></h4>
   <ul>
     {% for tag in blog.all_tags %}
-      {% if current_tags == empty %}
+      {% if current_tags != tag %}
         <li class="blog_side_bar_item active">
           <span>
             <a href="https://vapelabs.com.au/blogs/all-articles">All</a>
