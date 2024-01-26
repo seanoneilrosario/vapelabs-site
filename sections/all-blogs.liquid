@@ -12,7 +12,7 @@
         {% assign blog_handles = "news-and-articles,laws-regulations,pharmacist-guides" | split: "," %}
         {% for handle in blog_handles %}
           {% for article in blogs[handle].articles %}
-            {{ article | uniq }}
+            {{ article.title | uniq }}
             <div class="grid__item col-md-4 col-sm-4 col-xs-12">
               <div class="article tt-blog-content">
                 <div class="ttblog_image_holder blog_image_holder">
