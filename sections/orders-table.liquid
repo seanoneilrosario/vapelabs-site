@@ -4,7 +4,7 @@
       
     </div>
     <h2 class="tt-innerpagetitle">{% for tag in customer.tags %}{{ tag }}{% endfor %}</h2>
-    {{ order.note }}sdfg
+    
     {% paginate customer.orders by 20 %}
     {% if customer.orders.size != 0 %}
     <table class="full">
@@ -21,6 +21,7 @@
       </thead>
       <tbody>
         {% for order in customer.orders %}
+          {{ order.note }}sdfg
         <tr>
           <td>{{ order.name | link_to: order.customer_url }}</td>
           <td>{{ order.created_at | date: "%b %d, %Y" }}</td>
