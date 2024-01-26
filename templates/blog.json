@@ -75,7 +75,7 @@
         "show_blog_4_btn": true,
         "show_blog_4_date": true,
         "show_blog_4_tag": true,
-        "show_blog_masonry": true,
+        "show_blog_masonry": false,
         "show_facebook_share": false,
         "show_twitter_share": false,
         "show_pinterest_share": false,
