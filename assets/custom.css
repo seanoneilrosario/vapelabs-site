@@ -1414,6 +1414,7 @@ main.main-content {
 .wrap_toggle_filter {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .variant-sku,
