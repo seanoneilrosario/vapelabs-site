@@ -78,7 +78,7 @@
     "display_size_variant": true,
     "show_vendor": true,
     "collection_infinite_scroll": true,
-    "collection_products_per_row": "4",
+    "collection_products_per_row": "3",
     "products_per_page": 8,
     "collection_sidebar_use": "left_sidebar",
     "collection_filter_pos": "toggle_filter",
