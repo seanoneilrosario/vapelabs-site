@@ -1398,6 +1398,11 @@ main.main-content {
   flex-wrap: wrap;
 }
 
+.product_search_form {
+  display: flex;
+  align-items: center;
+}
+
 .collection_template .section-header,
 .product_search_form form {
   display: flex;
