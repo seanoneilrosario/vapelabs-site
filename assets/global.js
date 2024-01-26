@@ -986,14 +986,14 @@ $('.feat-blog-post_slider').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   mobileFirst: true,
-  centerMode: true,
+  centerMode: false,
   responsive: [
     {
       breakpoint: 600,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1,
-        centerMode: true,
+        centerMode: false,
       }
     },
     {
@@ -1001,7 +1001,7 @@ $('.feat-blog-post_slider').slick({
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1,
-        centerMode: true,
+        centerMode: false,
       }
     }
   ]
