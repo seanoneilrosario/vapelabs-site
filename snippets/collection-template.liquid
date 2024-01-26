@@ -29,7 +29,7 @@
         <a class="filter-right" href="#">Filter<i class="mdi mdi-format-align-right"></i></a> 
         {% endif %}
         {% endif %}
-        <div class="sorting_wrapper">
+        <div class="sorting_wrapper" style="margin-right: 10px;">
           {%- if enable_sorting -%}
           <facet-filters-form class="facets facet-hide">
             <form id="FacetFiltersForm" class="facets__form collection-sorting">
@@ -94,7 +94,7 @@
             {% endif %}
           </div>
         </div>
-        <a style="margin-left: 10px;" href="/cart" class="secondary_primary">View Cart</a>
+        <a href="/cart" class="secondary_primary">View Cart</a>
         {% if settings.collection_sidebar_use == "full_width" %} 
         {% if settings.collection_filter_pos == "toggle_filter" %}  
         <a class="filter-toggle" href="#">Filter<i class="mdi mdi-format-align-right"></i></a> 
