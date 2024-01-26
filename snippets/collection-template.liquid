@@ -94,15 +94,20 @@
             {% endif %}
           </div>
         </div>
-        <div class="wrapper-top-cart">                 
-          <a href="/cart" id="cart-products-count" class="site-header_cart_link">                    
-            <i class="mdi mdi-cart"></i>
-            {% if cart.item_count > 0 %}
+        <div class="site-header__cart icon-btn">
+          <div class="wrapper-top-cart">                 
+            <a href="/cart" id="cart-products-count" class="site-header_cart_link">                    
+              <i class="mdi mdi-cart"></i>
+              {% if cart.item_count > 0 %}
               <div id="CartCount_sticky" class="site-header__cart-count" title="Cart" >
-                <span class="cart-products-count" aria-hidden="true">{{ cart.item_count }}</span>              
+                <span class="cart-products-count" aria-hidden="true">{{ cart.item_count }}</span>             
               </div>
-            {% endif %}
-          </a>
+              {% endif %}
+            </a>
+          </div>
+        </div>
+        <div class="fixed-cart-wrap">
+          {% render 'mini-cart' %} 
         </div>
         {% if settings.collection_sidebar_use == "full_width" %} 
         {% if settings.collection_filter_pos == "toggle_filter" %}  
