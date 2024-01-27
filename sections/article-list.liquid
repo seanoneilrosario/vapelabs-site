@@ -21,8 +21,8 @@
     {% endfor %}
   </div>
 </div>
-
-{% for article in blogs.all-articles.title %}
+{% assign handle = "all-articles" %}
+{% for article in blogs[handle].articles %}
   {{ article.title | link_to: article.url }}
 {% endfor %}
 
