@@ -1,7 +1,7 @@
 <div class="hero-banner container--narrow">
     <img class="banner_image" src="{{ section.settings.image_banner | img_url: 'master' }}" />
     <div class="banner_contents">
-        <h3>{% if blog.url contains 'all-articles' %}{% if current_tags %}{{ current_tags }}{% else %}All Article{% endif %}{% else %}{{ section.settings.sub_title }}{% endif %}</h3>
+        <h3>{% if blog.url contains 'all-articles' %}{% if current_tags %}{{ current_tags }}{% else %}All Articles{% endif %}{% else %}{{ section.settings.sub_title }}{% endif %}</h3>
         <h2>{{ section.settings.title }}</h2>
         {% if section.settings.button_title != empty %}
             <a class="btn_primary" href="{{ section.settings.button_link }}">{{ section.settings.button_title }}</a>
