@@ -1,6 +1,11 @@
 <div class="article-list">
   <h2>{{ section.settings.title }}</h2>
   <div class="articles">
+    {% for article in blog.articles %}
+        {% if article.tags contains 'News and Articles' %}
+          {{ article.title }}
+        {% endif %}
+    {% endfor %}
     {% for blog in section.settings.blog.articles %}
       <a href="{{ blog.url }}" class="article">
         <div class="img_play">
