@@ -19,6 +19,9 @@
         </a>
       {% endif %}
     {% endfor %}
+    {% for blog in blogs.all-articles.title %}
+      {{ blog.title }}
+    {% endfor %}
   </div>
 </div>
 
@@ -36,7 +39,27 @@
         "type": "blog",
         "id": "blog",
         "label": "Blog"
-        }
+      },
+      {
+        "type": "radio",
+        "id": "choose_blog",
+        "label": "Choose blog",
+        "options": [
+          {
+            "value": "News and Articles",
+            "label": "News and Articles"
+          },
+          {
+            "value": "Laws and Regulations",
+            "label": "News and Articles"
+          },
+          {
+            "value": "Pharmacist Guides",
+            "label": "Pharmacist Guides"
+          }
+        ],
+        "default": "News and Articles"
+      }
     ],
     "presets": [
         {
