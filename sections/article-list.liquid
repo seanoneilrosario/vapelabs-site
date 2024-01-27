@@ -23,10 +23,10 @@
 </div>
 {% assign all_blog = 'all-articles' %}
 {{ section.settings.blog }}
-{% for article in all_blog.blog.articles %}
-  {{ article.title | link_to: article.url }}asdf
+{% for article in all_blog.articles %}
+  {{ article.title | link_to: article.url }}
 {% endfor %}
-asdf
+
 {% schema %}
   {
     "name": "Article List",
