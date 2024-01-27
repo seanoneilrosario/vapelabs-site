@@ -22,7 +22,7 @@
   </div>
 </div>
 {{ section.settings.blog }}
-{% for article in blogs.all-articles.title %}
+{% for article in all-articles.blog.articles %}
   {{ article.title | link_to: article.url }}asdf
 {% endfor %}
 asdf
