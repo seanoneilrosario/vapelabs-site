@@ -19,12 +19,11 @@
         </a>
       {% endif %}
     {% endfor %}
-    {% for blog in blogs.all-articles.title %}
-      {{ blog.title }}
-    {% endfor %}
   </div>
 </div>
-
+{% for article in blogs.all-articles.title %}
+  {{ article.title | link_to: article.url }}
+{% endfor %}
 {% schema %}
   {
     "name": "Article List",
