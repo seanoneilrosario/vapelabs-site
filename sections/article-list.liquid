@@ -19,6 +19,9 @@
     {% endfor %}
   </div>
 </div>
+{% for tag in blog.all_tags %}
+  {{ tag }}
+{% endfor %}
 {% for article in blog.articles %}
     {% if article.tags contains 'News and Articles' %}
       {{ article.title }}sd
