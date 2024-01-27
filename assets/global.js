@@ -955,13 +955,13 @@ $(document).ready(function() {
    }
 });
 
-$(document).ready(function() {
-   if ($('body').hasClass("all-articles")) {
-     if (!window.location.pathname.includes('/tagged')) {
-        $('.blog_side_bar_item.all_item').addClass('active')
-      }
-   }
-});
+// $(document).ready(function() {
+//    if ($('body').hasClass("all-articles")) {
+//      if (!window.location.pathname.includes('/tagged')) {
+//         $('.blog_side_bar_item.all_item').addClass('active')
+//       }
+//    }
+// });
 
 
 // slider
