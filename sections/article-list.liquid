@@ -21,9 +21,8 @@
     {% endfor %}
   </div>
 </div>
-{% assign all_blog = 'all-articles' %}
-{{ section.settings.blog }}
-{% for article in blogs.all-articles.title.articles %}
+
+{% for article in blogs.all-articles.title %}
   {{ article.title | link_to: article.url }}
 {% endfor %}
 
