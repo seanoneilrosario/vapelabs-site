@@ -23,7 +23,7 @@
 </div>
 {% assign all_blog = 'all-articles' %}
 {{ section.settings.blog }}
-{% for article in blogs.all_blog.handle.articles %}
+{% for article in blogs.all-articles.title.articles %}
   {{ article.title | link_to: article.url }}
 {% endfor %}
 
