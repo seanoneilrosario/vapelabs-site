@@ -21,7 +21,7 @@
     {% endfor %}
   </div>
 </div>
-{% for article in blogs.all-articles %}
+{% for article in blogs.all-articles.title.articles %}
   {{ article.title | link_to: article.url }}asdf
 {% endfor %}
 asdf
