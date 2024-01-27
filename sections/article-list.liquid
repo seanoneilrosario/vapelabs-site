@@ -1,8 +1,9 @@
 <div class="article-list">
   <h2>{{ section.settings.title }}</h2>
   <div class="articles">
-    {% for blog in section.settings.blog.articles %}
-      {% if blog.tags contains 'News and Articles' %}
+    {% assign handle = "all-articles" %}
+    {% for blog in blogs[handle].articles %}
+      {% if blog.tags contains section.settings.choose_blog %}
         <a href="{{ blog.url }}" class="article">
           <div class="img_play">
               {% if blog.tags.first %}<span>{{ blog.tags.first }}</span>{% endif %}
@@ -21,10 +22,6 @@
     {% endfor %}
   </div>
 </div>
-{% assign handle = "all-articles" %}
-{% for article in blogs[handle].articles %}
-  {{ article.title | link_to: article.url }}
-{% endfor %}
 
 {% schema %}
   {
@@ -35,11 +32,6 @@
         "type": "text",
         "id": "title",
         "label": "Heading"
-      },
-      {
-        "type": "blog",
-        "id": "blog",
-        "label": "Blog"
       },
       {
         "type": "radio",
