@@ -4629,10 +4629,12 @@ body.template-search.search-open .page-wrapper::after{
     padding:10px;
   }
 }
-@media (max-width: 1529px) {
+@media (max-width: 900px) {
   .header_1 .site-header__cart-count .cart-products-detail{
     display: none;
   }
+}
+@media (max-width: 1529px) {
   .header_1 .wrapper-top-cart>.site-header_cart_link{
     padding:10px;
   }
