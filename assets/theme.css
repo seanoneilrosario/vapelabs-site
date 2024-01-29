@@ -4624,25 +4624,27 @@ body.template-search.search-open .page-wrapper::after{
 .header_1 .sticky_header.fixed #tt-megamenu .toggle_menu::after{
   display:none;
 }
-.myaccount.icon-btn {
-  margin: 30px 0;
-  background: linear-gradient(45deg,var(--color-btn-primary-2),var(--color-btn-primary));
-  border-radius: 5px;
-}
-.myaccount.icon-btn .dropdown-toggle {
-  display: flex;
-  background: #fff;
-  margin: 3px;
-  padding: 13px !important;
-  float: none;
-  width: fit-content;
-  border-radius: 5px;
-}
-.myaccount.icon-btn .dropdown-toggle svg {
-  transition: all 400ms ease-in-out 0s;
-}
-.myaccount.icon-btn .dropdown-toggle:hover svg {
-  transform: rotateY(180deg);
+@media(min-width: 900px) {
+  .myaccount.icon-btn {
+    margin: 30px 0;
+    background: linear-gradient(45deg,var(--color-btn-primary-2),var(--color-btn-primary));
+    border-radius: 5px;
+  }
+  .myaccount.icon-btn .dropdown-toggle {
+    display: flex;
+    background: #fff;
+    margin: 3px;
+    padding: 13px !important;
+    float: none;
+    width: fit-content;
+    border-radius: 5px;
+  }
+  .myaccount.icon-btn .dropdown-toggle svg {
+    transition: all 400ms ease-in-out 0s;
+  }
+  .myaccount.icon-btn .dropdown-toggle:hover svg {
+    transform: rotateY(180deg);
+  }
 }
 @media (min-width: 1430) and (max-width: 1529px) {
   .header_1 .sticky_header.fixed .site-header__cart-count .cart-products-detail{
