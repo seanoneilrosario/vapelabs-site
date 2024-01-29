@@ -4488,12 +4488,14 @@ body.template-search.search-open .page-wrapper::after{
 .header_1 .site-header__search.icon-btn {
   margin: 28px 0;
 }
-.header_1 .account-title {
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: 500;
-  color: #000;
-  padding-left: 10px;
+@media(min-width: 900px) {
+  .header_1 .account-title {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
+    color: #000;
+    padding-left: 10px;
+  }
 }
 .header_1 .wishlist-icon-div{
   margin: 43px 0;
