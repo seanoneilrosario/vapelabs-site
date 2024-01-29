@@ -4488,6 +4488,9 @@ body.template-search.search-open .page-wrapper::after{
 .header_1 .site-header__search.icon-btn {
   margin: 28px 0;
 }
+.header_1 .account-title {
+  display: none;
+}
 @media(min-width: 900px) {
   .header_1 .account-title {
     font-size: 14px;
