@@ -4565,6 +4565,7 @@ body.template-search.search-open .page-wrapper::after{
 }
 .header_1_wrapper .right-link-icon{
   display: flex;
+  align-items: center;
   width: auto;
 }
 .header_1 .right-link-icon .site-header__search.icon-btn {
