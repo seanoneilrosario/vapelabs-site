@@ -4489,7 +4489,11 @@ body.template-search.search-open .page-wrapper::after{
   margin: 28px 0;
 }
 .header_1 .account-title {
-  display: none;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  color: #000;
+  padding-left: 10px;
 }
 .header_1 .wishlist-icon-div{
   margin: 43px 0;
@@ -4629,7 +4633,7 @@ body.template-search.search-open .page-wrapper::after{
   display: flex;
   background: #fff;
   margin: 4px;
-  padding: 10px !important;
+  padding: 13px !important;
   float: none;
   width: fit-content;
 }
