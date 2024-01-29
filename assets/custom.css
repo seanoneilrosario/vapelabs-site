@@ -1430,9 +1430,9 @@ main.main-content {
 }
 
 @media(min-width: 900px) {
-  .collection_template .section-header {
+  /* .collection_template .section-header {
     flex-wrap: nowrap;
-  }
+  } */
 }
 
 
