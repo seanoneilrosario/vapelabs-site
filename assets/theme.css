@@ -4639,7 +4639,7 @@ body.template-search.search-open .page-wrapper::after{
   border-radius: 5px;
 }
 .myaccount.icon-btn .dropdown-toggle svg {
-  transition: 0.3s;
+  transition: all 400ms ease-in-out 0s;
 }
 .myaccount.icon-btn .dropdown-toggle:hover svg {
   transform: rotateY(180deg);
