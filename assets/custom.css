@@ -1422,6 +1422,7 @@ main.main-content {
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
+  max-width: fit-content;
 }
 
 .variant-sku,
