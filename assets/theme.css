@@ -4632,10 +4632,11 @@ body.template-search.search-open .page-wrapper::after{
 .myaccount.icon-btn .dropdown-toggle {
   display: flex;
   background: #fff;
-  margin: 4px;
+  margin: 3px;
   padding: 13px !important;
   float: none;
   width: fit-content;
+  border-radius: 5px;
 }
 @media (min-width: 1430) and (max-width: 1529px) {
   .header_1 .sticky_header.fixed .site-header__cart-count .cart-products-detail{
