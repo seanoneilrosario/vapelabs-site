@@ -4620,7 +4620,19 @@ body.template-search.search-open .page-wrapper::after{
 .header_1 .sticky_header.fixed #tt-megamenu .toggle_menu::after{
   display:none;
 }
-
+.myaccount.icon-btn {
+  margin: 30px 0;
+  background: linear-gradient(45deg,var(--color-btn-primary-2),var(--color-btn-primary));
+  border-radius: 5px;
+}
+.myaccount.icon-btn .dropdown-toggle {
+  display: flex;
+  background: #fff;
+  margin: 4px;
+  padding: 10px;
+  float: none;
+  width: fit-content;
+}
 @media (min-width: 1430) and (max-width: 1529px) {
   .header_1 .sticky_header.fixed .site-header__cart-count .cart-products-detail{
     display: none;
