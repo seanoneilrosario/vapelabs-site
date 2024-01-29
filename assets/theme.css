@@ -4629,7 +4629,7 @@ body.template-search.search-open .page-wrapper::after{
   display: flex;
   background: #fff;
   margin: 4px;
-  padding: 10px;
+  padding: 10px !important;
   float: none;
   width: fit-content;
 }
