@@ -4493,6 +4493,7 @@ body.template-search.search-open .page-wrapper::after{
 }
 @media(min-width: 900px) {
   .header_1 .account-title {
+    display: inline-block;
     font-size: 14px;
     line-height: 18px;
     font-weight: 500;
