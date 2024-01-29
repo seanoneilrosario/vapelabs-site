@@ -4642,7 +4642,7 @@ body.template-search.search-open .page-wrapper::after{
   transition: 0.3s;
 }
 .myaccount.icon-btn .dropdown-toggle:hover svg {
-  transform: rotate(180deg);
+  transform: rotateY(180deg);
 }
 @media (min-width: 1430) and (max-width: 1529px) {
   .header_1 .sticky_header.fixed .site-header__cart-count .cart-products-detail{
