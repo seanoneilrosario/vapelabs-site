@@ -1,14 +1,8 @@
 {
   "wrapper": "div.container",
   "sections": {
-    "b52b6887-07db-4591-a0a4-d7f5c7e43418": {
+    "left_sidevar_head_bzf4fP": {
       "type": "left-sidevar-head",
-      "disabled": true,
-      "settings": {
-      }
-    },
-    "cart_dash_WkhVGg": {
-      "type": "cart_dash",
       "settings": {
       }
     },
@@ -80,8 +74,7 @@
     }
   },
   "order": [
-    "b52b6887-07db-4591-a0a4-d7f5c7e43418",
-    "cart_dash_WkhVGg",
+    "left_sidevar_head_bzf4fP",
     "cart-template",
     "cart-footer",
     "featured-products"
