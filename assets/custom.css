@@ -1037,6 +1037,7 @@ main.main-content {
 }
 
 .feat-blog-post_slider .slick-arrow:before {
+    content: "" !important;
     background-color: #2b4b7a;
     padding: 10px;
     border-radius: 100%;
