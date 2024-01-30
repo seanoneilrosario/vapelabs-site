@@ -117,7 +117,7 @@ main.main-content {
 
 #tt-megamenu .tt-mega_menu {
     right: initial !important;
-    left: 55px !important;
+    left: 0 !important;
     border-color: #2C4C7B !important;
 }
 
