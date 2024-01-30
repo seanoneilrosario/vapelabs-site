@@ -50,14 +50,14 @@ main.main-content {
 
 .slick-arrow.slick-prev:before {
     font-size: 40px;
-    content: "<";
+    content: "<" !important;
     color: #fff;
     font-weight: 900;
 }
 
 .slick-arrow.slick-next:before {
     font-size: 40px;
-    content: ">";
+    content: ">" !important;
     color: #fff;
     font-weight: 900;
 }
@@ -1037,7 +1037,6 @@ main.main-content {
 }
 
 .feat-blog-post_slider .slick-arrow:before {
-    content: "" !important;
     background-color: #2b4b7a;
     padding: 10px;
     border-radius: 100%;
