@@ -949,7 +949,8 @@ $(document).ready(function() {
 $(document).ready(function() {
    if (!$('body').hasClass("customer-logged-in")) {
      if (window.location.pathname.includes('/products')) {
-        window.location.replace("https://vapelabs.com.au");
+        // window.location.replace("https://vapelabs.com.au");
+       redirect.dispatch(Redirect.Action.APP, '/');
       }
    }
 });
