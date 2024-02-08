@@ -222,7 +222,7 @@ main.main-content {
     }
 }
 
-.header_1 .site-header__cart-count .cart-products-count {
+.site-header_cart_link {
   padding: 9px 24px !important;
 }
 
