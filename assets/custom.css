@@ -231,6 +231,17 @@ main.main-content {
   .dropdown-toggle svg {
     fill: #2c4c7b !important;
   }
+
+  .site-header_cart_link {
+    padding: 0 10px !important;
+    background: transparent !important;
+  }
+
+  .header_1 .site-header__cart-count .cart-products-count {
+    color: #fff !important;
+    background: #7bb9e2 !important;
+    margin-top: -9px !important;
+  }
 }
 
 
