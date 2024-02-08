@@ -124,20 +124,22 @@
             </div>
             {% endif %}
             {% if section.settings.display_cart %}  
-            <div class="site-header__cart ">              
-              <a href="/cart" id="cart-products-count" class="site-header_cart_link">                    
-                <i class="mdi mdi-cart"></i>
-                {% if cart.item_count > 0 %}
-                <div id="CartCount_sticky" class="site-header__cart-count" title="Cart" >
-                  <span class="cart-products-count" aria-hidden="true">{{ cart.item_count }}</span>
-                  <span class="cart-products-detail">My Cart</span>                
-                </div>
-                {% else %}
-                <div id="CartCount_sticky" class="site-header__cart-count">
-                  <span class="cart-products-count" aria-hidden="true">0</span><span class="cart-products-detail">My Cart</span>       
-                </div>
-                {% endif %}
-              </a>
+            <div class="site-header__cart ">
+              <div class="wrapper-top-cart">                 
+                <a href="/cart" id="cart-products-count" class="site-header_cart_link">                    
+                  <i class="mdi mdi-cart"></i>
+                  {% if cart.item_count > 0 %}
+                  <div id="CartCount_sticky" class="site-header__cart-count" title="Cart" >
+                    <span class="cart-products-count" aria-hidden="true">{{ cart.item_count }}</span>
+                    <span class="cart-products-detail">My Cart</span>                
+                  </div>
+                  {% else %}
+                  <div id="CartCount_sticky" class="site-header__cart-count">
+                    <span class="cart-products-count" aria-hidden="true">0</span><span class="cart-products-detail">My Cart</span>       
+                  </div>
+                  {% endif %}
+                </a>
+              </div>
             </div>
             <div class="fixed-cart-wrap">
               {% render 'mini-cart' %} 
