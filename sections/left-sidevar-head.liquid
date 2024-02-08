@@ -19,7 +19,7 @@
   </div>
   <h4>ACCOUNT DASHBOARD</h4>
   <ul>
-    <li class="{{ collection.handle }}">
+    <li {% if collection.handle == 'all' %}class="active"{% endif %}>
       <a href="/account/">
         <span class="icon">
           <svg viewBox="0 0 640 640">
