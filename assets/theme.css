@@ -4718,9 +4718,6 @@ body.template-search.search-open .page-wrapper::after{
   .header_1 .compare-icon-div {
     margin: 34px 10px;
   }
-  .header_1 .right-link-icon .myaccount .dropdown-toggle {
-    padding: 34px 0;
-  }
   .header_1 #accessibleNav>li>a {
     padding: 12px 12px;
   }
@@ -4767,9 +4764,6 @@ body.template-search.search-open .page-wrapper::after{
   }
   .header_1 .right-link-icon .myaccount {
     margin-right: 10px;
-  }
-  .header_1 .right-link-icon .myaccount .dropdown-toggle {
-    padding: 30px 0;
   }
   .header_1 .compare-icon-div {
     margin: 0px;
@@ -4862,9 +4856,6 @@ body.template-search.search-open .page-wrapper::after{
   }
   .header_1 .wrapper-top-cart{
     margin: 18px 0;
-  }
-  .header_1 .right-link-icon .myaccount .dropdown-toggle {
-    padding: 18px 0;
   }
   .header_1 .right-link-icon .myaccount {
     margin-right: 5px;
