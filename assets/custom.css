@@ -222,6 +222,17 @@ main.main-content {
     }
 }
 
+@media(max-width: 989px) {
+  .dropdown-toggle {
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  .dropdown-toggle svg {
+    fill: #2c4c7b !important;
+  }
+}
+
 
 /* Pre loader */
 .rotating {
@@ -1833,3 +1844,5 @@ main.main-content {
   fill: #fff !important;
   color: #fff !important;
 }
+
+
