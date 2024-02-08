@@ -4,9 +4,23 @@
       "type": "page",
       "settings": {
       }
+    },
+    "image_with_text_HTnMnj": {
+      "type": "image-with-text",
+      "settings": {
+        "bg_color": "#fff",
+        "heading_color": "#2d4d7c",
+        "color_text": "#2b2928",
+        "image_aligment": "right",
+        "heading": "",
+        "contents": "",
+        "btn_text": "",
+        "btn_link": ""
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "image_with_text_HTnMnj"
   ]
 }
