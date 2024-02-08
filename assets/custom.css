@@ -1819,3 +1819,17 @@ main.main-content {
 .blogleft_inner_content .tt-blog-content .tt-blog-description p {
   padding: 0 5px;
 }
+
+
+
+/* Accounts Dashboard */
+.account-dash ul li.active {
+  background: #2d4d7c;
+}
+
+.account-dash ul li.active a,
+.account-dash ul li.active a path {
+  stroke: #fff !important;
+  fill: #fff !important;
+  color: #fff !important;
+}
