@@ -4341,7 +4341,6 @@ body.template-search.search-open .page-wrapper::after{
   position: relative;
 }
 .myaccount .dropdown-toggle {
-  float: left;
   width: 100%;
   cursor:pointer;  
   transition: all 400ms ease-in-out 0s;
@@ -4349,6 +4348,7 @@ body.template-search.search-open .page-wrapper::after{
   -moz-transition: all 400ms ease-in-out 0s;
   -o-transition: all 400ms ease-in-out 0s;
   -ms-transition: all 400ms ease-in-out 0s;
+  display: flex;
 }
 .myaccount .customer_account {
   width: 200px;
@@ -4497,7 +4497,7 @@ body.template-search.search-open .page-wrapper::after{
     font-size: 14px;
     line-height: 18px;
     font-weight: 500;
-    color: #000;
+    color: #fff;
     padding-left: 10px;
   }
 }
@@ -4581,9 +4581,7 @@ body.template-search.search-open .page-wrapper::after{
   vertical-align: top;
   margin-right: 30px;
 }
-.header_1 .right-link-icon .myaccount .dropdown-toggle{
-  padding: 43px 0;
-}
+
 .header_1 .wrapper-top-cart>.site-header_cart_link i {
   width: 24px;
   height: 24px;
