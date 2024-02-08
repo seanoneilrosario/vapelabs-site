@@ -2669,7 +2669,6 @@ label.error {
   width: auto;
   z-index: 1;
   position: relative;
-  padding: 9px 24px !important;
 }
 .site-header__cart-count .cart-products-count{
   width: 18px;
