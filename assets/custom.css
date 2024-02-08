@@ -1824,7 +1824,7 @@ main.main-content {
 
 /* Accounts Dashboard */
 .account-dash ul li.active {
-  background: #2d4d7c;
+  background: #2d4d7c !important;
 }
 
 .account-dash ul li.active a,
