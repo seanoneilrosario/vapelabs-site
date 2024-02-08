@@ -222,6 +222,10 @@ main.main-content {
     }
 }
 
+.header_1 .site-header__cart-count .cart-products-count {
+  padding: 9px 24px !important;
+}
+
 @media(max-width: 989px) {
   .dropdown-toggle {
     padding: 0 !important;
