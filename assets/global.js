@@ -954,6 +954,14 @@ $(document).ready(function() {
    }
 });
 
+$(document).ready(function() {
+   if (!$('body').hasClass("customer-logged-in")) {
+     if ($('body').hasClass("members-only")) {
+        window.location.replace("https://vapelabs.com.au/account");
+      }
+   }
+});
+
 
 // Remove Certain Products from a certain customer in a certain state
 $(document).ready(function() {
