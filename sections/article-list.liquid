@@ -2,24 +2,26 @@
   <h2>{{ section.settings.title }}</h2>
   <div class="articles">
     {% assign handle = "all-articles" %}
-    {% for blog in blogs[handle].articles %}
-      {% if blog.tags contains section.settings.choose_blog %}
-        <a href="{{ blog.url }}" class="article">
-          <div class="img_play">
-              {% if blog.tags.first %}<span>{{ blog.tags.first }}</span>{% endif %}
-              <img src="{{ blog.image | img_url: 'master' }}" />
-              <h3>
-                  {{ blog.metafields.custom.sub_title }}
-              </h3>
-          </div>
-          <div class="article_content">
-              <h4>{{ blog.title }}</h4>
-              <!-- <h5>{{ blog.author }}</h5> -->
-              <span>{{ blog.metafields.custom.watch_on_title }}</span>
-          </div>
-        </a>
-      {% endif %}
-    {% endfor %}
+    {% paginate blogs[handle].articles by 1000 %}
+      {% for blog in blogs[handle].articles %}
+        {% if blog.tags contains section.settings.choose_blog %}
+          <a href="{{ blog.url }}" class="article">
+            <div class="img_play">
+                {% if blog.tags.first %}<span>{{ blog.tags.first }}</span>{% endif %}
+                <img src="{{ blog.image | img_url: 'master' }}" />
+                <h3>
+                    {{ blog.metafields.custom.sub_title }}
+                </h3>
+            </div>
+            <div class="article_content">
+                <h4>{{ blog.title }}</h4>
+                <!-- <h5>{{ blog.author }}</h5> -->
+                <span>{{ blog.metafields.custom.watch_on_title }}</span>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    {% endpaginate %}
   </div>
 </div>
 
