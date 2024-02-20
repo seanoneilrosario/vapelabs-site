@@ -67,6 +67,16 @@
         "btn_link": "https:\/\/vapelabs.com.au\/blogs\/all-articles\/the-future-of-vaping-in-australia-reforms-challenges-and-million-gp-visits-in-sight"
       }
     },
+    "featured_article_wHJk9K": {
+      "type": "featured-article",
+      "settings": {
+        "bg_color": "#fff",
+        "heading_color": "#2d4d7c",
+        "color_text": "#2b2928",
+        "image_aligment": "right",
+        "article": "all-articles\/the-future-of-vaping-in-australia-reforms-challenges-and-million-gp-visits-in-sight"
+      }
+    },
     "main": {
       "type": "blogleft_inner_content",
       "settings": {
@@ -92,6 +102,7 @@
     "3361c3ef-184b-4931-9aa0-613beb8fd108",
     "cc89f20b-8c7c-471f-9328-c9f349a29349",
     "b2dfc303-d4d8-4679-8482-f65b8bc9c903",
+    "featured_article_wHJk9K",
     "main"
   ]
 }
