@@ -55,6 +55,7 @@
     },
     "b2dfc303-d4d8-4679-8482-f65b8bc9c903": {
       "type": "image-with-text",
+      "disabled": true,
       "settings": {
         "bg_color": "#f8f8f8",
         "heading_color": "#2d4d7c",
@@ -70,7 +71,7 @@
     "featured_article_wHJk9K": {
       "type": "featured-article",
       "settings": {
-        "bg_color": "#fff",
+        "bg_color": "#f8f8f8",
         "heading_color": "#2d4d7c",
         "color_text": "#2b2928",
         "image_aligment": "right",
