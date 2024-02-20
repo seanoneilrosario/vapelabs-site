@@ -1,11 +1,11 @@
 <div class="featured-article image-with-text container--narrow">
     <div style="background:{{ section.settings.bg_color }}" class="image_text {{ section.settings.image_aligment }}">
         <div class="image_wrap">
-            <img src="{{ article.image.src | img_url: 'master' }}">
+            <img src="{{ section.settings.article.image.src | img_url: 'master' }}">
         </div>
         <div style="color:{{ section.settings.color_text }}" class="contents_wrap">
-            <h3 style="color:{{ section.settings.heading_color }}">{{ article.title }}</h3>
-            <p>{{ article.excerpt }}</p>
+            <h3 style="color:{{ section.settings.heading_color }}">{{ section.settings.article.title }}</h3>
+            <p>{{ section.settings.article.excerpt }}</p>
             <a class="btn_primary" href="{{ section.settings.btn_link }}">Read Full Article</a>
         </div>
     </div>
