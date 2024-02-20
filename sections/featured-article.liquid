@@ -1,6 +1,81 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
-{% endschema %}
+<div class="featured-article image-with-text container--narrow">
+    <div style="background:{{ section.settings.bg_color }}" class="image_text {{ section.settings.image_aligment }}">
+        <div class="image_wrap">
+            <img src="{{ article.image.src | img_url: 'master' }}">
+        </div>
+        <div style="color:{{ section.settings.color_text }}" class="contents_wrap">
+            <h3 style="color:{{ section.settings.heading_color }}">{{ article.title }}</h3>
+            <p>{{ article.excerpt }}</p>
+            <a class="btn_primary" href="{{ section.settings.btn_link }}">Read Full Article</a>
+        </div>
+    </div>
+</div>
+
+{% if section.settings.bg_color != '#ffffff'%}
+    <style>
+        #shopify-section-{{ section.id }} .image_text {
+            padding: 30px 30px 60px;
+            border-radius: 20px;
+        }
+
+        #shopify-section-{{ section.id }} .image_wrap img {
+            border-radius: 20px;
+        }
+    </style>
+{% endif %}
+
+
+{%- schema -%}
+    {
+        "name": "Featured Article",
+        "tag": "section",
+        "class": "featured-article_wrap",
+        "settings": [
+            {
+                "type": "color",
+                "id": "bg_color",
+                "label": "Backgroud Color",
+                "default": "#fff"
+            },
+            {
+                "type": "color",
+                "id": "heading_color",
+                "label": "Heading Color",
+                "default": "#2d4d7c"
+            },
+            {
+                "type": "color",
+                "id": "color_text",
+                "label": "Text Color",
+                "default": "#2b2928"
+            },
+            {
+                "type": "radio",
+                "id": "image_aligment",
+                "label": "Image alignment",
+                "options": [
+                    {
+                    "value": "left",
+                    "label": "Left"
+                    },
+                    {
+                    "value": "right",
+                    "label": "Right"
+                    }
+                ],
+                "default": "right"
+            },
+            {
+              "type": "article",
+              "id": "article",
+              "label": "Article"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Featured Article",
+                "settings": {}
+            }
+        ]
+    }
+{%- endschema -%}
