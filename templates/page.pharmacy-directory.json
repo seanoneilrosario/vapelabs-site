@@ -2,25 +2,114 @@
   "sections": {
     "main": {
       "type": "page",
+      "disabled": true,
       "settings": {
       }
     },
-    "image_with_text_HTnMnj": {
-      "type": "image-with-text",
+    "hero_banner_MJzJB4": {
+      "type": "hero-banner",
       "settings": {
-        "bg_color": "#fff",
-        "heading_color": "#2d4d7c",
-        "color_text": "#2b2928",
-        "image_aligment": "right",
-        "heading": "",
-        "contents": "",
-        "btn_text": "",
-        "btn_link": ""
+        "image_banner": "shopify:\/\/shop_images\/11.png",
+        "sub_title": "",
+        "title": "Pharmacy Directory",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "downloadables_KpFqKR": {
+      "type": "downloadables",
+      "blocks": {
+        "downloadable_Uc6yyx": {
+          "type": "downloadable",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/2.png",
+            "video_url": "",
+            "title": "Product List"
+          }
+        },
+        "downloadable_KrcwyA": {
+          "type": "downloadable",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/1_016d0987-0041-43f3-b848-3bffa4d02664.png",
+            "video_url": "",
+            "title": "Comparison chart"
+          }
+        },
+        "downloadable_47wTjm": {
+          "type": "downloadable",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/3.png",
+            "video_url": "",
+            "title": "Resource Centre"
+          }
+        },
+        "downloadable_pbnnRW": {
+          "type": "downloadable",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/4.png",
+            "video_url": "",
+            "title": "Book training"
+          }
+        },
+        "downloadable_KpEm6A": {
+          "type": "downloadable",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/5.png",
+            "video_url": "",
+            "title": "Doctor's prescribing tool"
+          }
+        }
+      },
+      "block_order": [
+        "downloadable_Uc6yyx",
+        "downloadable_KrcwyA",
+        "downloadable_47wTjm",
+        "downloadable_pbnnRW",
+        "downloadable_KpEm6A"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "icons_text_8y7iGA": {
+      "type": "icons-text",
+      "blocks": {
+        "icons_gXfVVf": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/3_17414649-50c6-42c9-9fe7-bba9939adaf6.png",
+            "icon_title": "Get in touch"
+          }
+        },
+        "icons_abMMYK": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/2_7af4d5c0-2867-4a3b-b319-5e8a3c422883.png",
+            "icon_title": "Vist vapelabs.com"
+          }
+        },
+        "icons_xbQ89B": {
+          "type": "icons",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/1_974975bd-2bac-48b2-9d3d-61b559620495.png",
+            "icon_title": "Let's Connect"
+          }
+        }
+      },
+      "block_order": [
+        "icons_gXfVVf",
+        "icons_abMMYK",
+        "icons_xbQ89B"
+      ],
+      "settings": {
+        "bg_color": "#F8F8F8"
       }
     }
   },
   "order": [
     "main",
-    "image_with_text_HTnMnj"
+    "hero_banner_MJzJB4",
+    "downloadables_KpFqKR",
+    "icons_text_8y7iGA"
   ]
 }
