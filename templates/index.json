@@ -416,6 +416,15 @@
         "content": "ENTER YOUR EMAIL & SIGN UP FOR VAPELABS NEWS",
         "button_link": "shopify:\/\/pages\/contact"
       }
+    },
+    "richtext_AYRCNW": {
+      "type": "richtext",
+      "settings": {
+        "heading": "Baho",
+        "contents": "<p>asetaset asetaset<\/p><p>aseta<\/p><p>seta<\/p><p>seta<\/p><p>set<\/p><p>aset<\/p><p>aset<\/p>",
+        "btn_text": "asdf",
+        "btn_link": "#"
+      }
     }
   },
   "order": [
@@ -432,6 +441,7 @@
     "acd5a8e8-8b2b-43bf-bc28-ecc3828cc686",
     "97e22b58-7da8-4995-84e5-580e874a8583",
     "e4ad7bb6-3da7-4343-819d-67fa08c6ca82",
-    "4113f67d-dead-4d45-ac9b-459daeb625f8"
+    "4113f67d-dead-4d45-ac9b-459daeb625f8",
+    "richtext_AYRCNW"
   ]
 }

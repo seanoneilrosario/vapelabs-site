@@ -1865,3 +1865,21 @@ main.main-content {
 }
 
 
+/* Rich Text */
+.rich-text {
+  text-align: center;
+}
+
+.rich-text h2 {
+    color: #2d4d7c;
+    font-family: "Outfit",Sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+}
+
+@media(min-width: 1008px) {
+  .rich-text h2 {
+    font-size: 35px;
+  }
+}
