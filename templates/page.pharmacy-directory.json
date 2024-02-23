@@ -39,7 +39,7 @@
           "type": "downloadable",
           "settings": {
             "icon_image": "shopify:\/\/shop_images\/3.png",
-            "video_url": "",
+            "video_url": "https:\/\/vapelabs.com.au\/pages\/education-centre",
             "title": "Resource Centre"
           }
         },
@@ -47,7 +47,7 @@
           "type": "downloadable",
           "settings": {
             "icon_image": "shopify:\/\/shop_images\/4.png",
-            "video_url": "",
+            "video_url": "https:\/\/vapelabs.com.au\/pages\/book-free-training-session",
             "title": "Book training"
           }
         },
