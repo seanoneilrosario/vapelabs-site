@@ -31,8 +31,8 @@
           "type": "downloadable",
           "settings": {
             "icon_image": "shopify:\/\/shop_images\/1_016d0987-0041-43f3-b848-3bffa4d02664.png",
-            "video_url": "",
-            "title": "Comparison chart"
+            "video_url": "https:\/\/workdrive.vapelabs.com.au\/external\/file\/7niivbc1bf589d8ae4de4b656fa69528c838e",
+            "title": "Product Comparison Guide"
           }
         },
         "downloadable_47wTjm": {
@@ -102,7 +102,7 @@
         "icons_xbQ89B"
       ],
       "settings": {
-        "bg_color": "#F8F8F8"
+        "bg_color": "#f8f8f8"
       }
     }
   },
