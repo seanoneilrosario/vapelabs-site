@@ -65,7 +65,7 @@
         "icons_CMjXHq"
       ],
       "settings": {
-        "bg_color": "#F8F8F8"
+        "bg_color": "#f8f8f8"
       }
     },
     "downloadables_7tHLYn": {
@@ -83,7 +83,7 @@
           "type": "downloadable",
           "settings": {
             "icon_image": "shopify:\/\/shop_images\/RELX-product-image.png",
-            "video_url": "https:\/\/workdrive.zoho.com.au\/file\/7niiv9a50d29e86074413a54e18db453e1641f",
+            "video_url": "https:\/\/workdrive.vapelabs.com.au\/external\/file\/7niiv9a50d29e86074413a54e18db453e1641",
             "title": "RELX Product Guide"
           }
         },
