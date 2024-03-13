@@ -27,12 +27,20 @@
             "title": "Product List"
           }
         },
+        "downloadable_KpEm6A": {
+          "type": "downloadable",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/5.png",
+            "video_url": "https:\/\/tool.vapelabs.com.au\/zs\/JGD8FJ",
+            "title": "Doctor's NVP Prescribing Tool"
+          }
+        },
         "downloadable_KrcwyA": {
           "type": "downloadable",
           "settings": {
             "icon_image": "shopify:\/\/shop_images\/1_016d0987-0041-43f3-b848-3bffa4d02664.png",
             "video_url": "https:\/\/workdrive.vapelabs.com.au\/external\/file\/7niivbc1bf589d8ae4de4b656fa69528c838e",
-            "title": "Product Comparison Guide"
+            "title": "Product Comparison Guide (PODS)"
           }
         },
         "downloadable_47wTjm": {
@@ -40,7 +48,7 @@
           "settings": {
             "icon_image": "shopify:\/\/shop_images\/3.png",
             "video_url": "https:\/\/vapelabs.com.au\/pages\/education-centre",
-            "title": "Resource Centre"
+            "title": "Visit Resource Centre"
           }
         },
         "downloadable_pbnnRW": {
@@ -48,24 +56,16 @@
           "settings": {
             "icon_image": "shopify:\/\/shop_images\/4.png",
             "video_url": "https:\/\/vapelabs.com.au\/pages\/book-free-training-session",
-            "title": "Book training"
-          }
-        },
-        "downloadable_KpEm6A": {
-          "type": "downloadable",
-          "settings": {
-            "icon_image": "shopify:\/\/shop_images\/5.png",
-            "video_url": "https:\/\/tool.vapelabs.com.au\/zs\/JGD8FJ",
-            "title": "Doctor's prescribing tool"
+            "title": "Book Free Training"
           }
         }
       },
       "block_order": [
         "downloadable_Uc6yyx",
+        "downloadable_KpEm6A",
         "downloadable_KrcwyA",
         "downloadable_47wTjm",
-        "downloadable_pbnnRW",
-        "downloadable_KpEm6A"
+        "downloadable_pbnnRW"
       ],
       "settings": {
         "title": ""
