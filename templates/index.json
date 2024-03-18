@@ -393,6 +393,12 @@
           "settings": {
             "image_logo": "shopify:\/\/shop_images\/HILIQ_LOGO.jpg"
           }
+        },
+        "logo_3UyyNy": {
+          "type": "logo",
+          "settings": {
+            "image_logo": "shopify:\/\/shop_images\/VAPURE.png"
+          }
         }
       },
       "block_order": [
@@ -404,7 +410,8 @@
         "f227f21f-4f07-41ea-9de2-270f2a2c2cef",
         "9a6881a8-7d92-46ac-96d8-4326f55ed685",
         "d90b43c2-9997-4f23-8fd2-076027dbd25d",
-        "logo_pgQ4qh"
+        "logo_pgQ4qh",
+        "logo_3UyyNy"
       ],
       "settings": {
         "heading": "Discover our wide range of products"
