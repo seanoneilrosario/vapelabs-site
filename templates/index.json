@@ -417,6 +417,18 @@
           "settings": {
             "image_logo": "shopify:\/\/shop_images\/vapetasia.jpg"
           }
+        },
+        "logo_A37HCg": {
+          "type": "logo",
+          "settings": {
+            "image_logo": "shopify:\/\/shop_images\/ve-premium.jpg"
+          }
+        },
+        "logo_3y93rb": {
+          "type": "logo",
+          "settings": {
+            "image_logo": "shopify:\/\/shop_images\/vb-logo.png"
+          }
         }
       },
       "block_order": [
@@ -432,7 +444,9 @@
         "logo_3UyyNy",
         "logo_WhwhyL",
         "logo_KTXLQP",
-        "logo_dHQ93j"
+        "logo_dHQ93j",
+        "logo_A37HCg",
+        "logo_3y93rb"
       ],
       "settings": {
         "heading": "Discover our wide range of products"
