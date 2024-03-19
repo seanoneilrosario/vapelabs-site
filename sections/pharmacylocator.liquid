@@ -1,0 +1,209 @@
+<div id='scasl-app-container' class="new-for-mobile" style="display:none">
+<div class="bh-sl-container scasl-container" >
+	<div id="page-header">
+		<h1 class="bh-sl-title">Find Our Store</h1>
+	</div>
+
+	<div class="bh-sl-form-container">
+		<div id="scasl-tab-radius">
+			<form id="bh-sl-user-location" class="scasl-distance" method="post" action="#">
+				<div class="form-input">
+					<label for="bh-sl-address">Current Location</label>
+                  	<div class="scasl-address-wrap">
+                        <input type="text" id="bh-sl-address" name="bh-sl-address" />
+                      	<a href="#" id="scapl-geocode-btn" title="Find My Location" style="background-color: none !important">
+                            <img src="{{ 'sca.location-find-location.png' | asset_url }}">
+                        </a>
+                        <button id="scapl-geocode-btn" type="button">Find My Location</button>
+                    </div>
+				</div>
+
+              	<div class="scasl-see-more-content">
+                  <div class="form-input">
+                      <label for="scasl-radius-container">Search Radius</label>
+                      <select id="scasl-radius-container" name="bh-sl-maxdistance">
+                      </select>
+                  </div>
+
+                  <div class="form-input">
+                      <label for="scasl-lengthUnit">Search Radius Measurement</label>
+                      <select id="scasl-lengthUnit" name="scasl-lengthUnit">
+                          <option value="km">Kilometer</option>
+                          <option value="m">Mile</option>
+                      </select>
+                  </div>
+
+                  <div class="bh-sl-filters-container scasl-tag">
+                      <label for="scasl-tag-list-container">Tags</label>
+                      <ul id="scasl-tag-list-container" class="bh-sl-filters scasl-tag-list">
+                      </ul>
+                  </div>
+                </div>
+
+              	<a class="scasl-see-more">More &raquo;</a>
+              	<a class="scasl-see-less">Less &laquo;</a>
+
+				<div class="scasl-search-btn">
+					<button id="bh-sl-submit" type="submit">Search</button>
+				</div>
+			</form>
+			<div class="spinner">
+	            <div class="double-bounce1"></div>
+	            <div class="double-bounce2"></div>
+          	</div>
+		</div>
+	</div>
+
+  	<ul id="scasl-tabs">
+      <li class="scasl-tab-list active">List</li>
+      <li class="scasl-tab-map">Map</li>
+    </ul>
+
+	<div id="bh-sl-map-container" class="bh-sl-map-container scasl-map-container">
+	  <div class="bh-sl-loc-list scasl-location-list">
+	    <ul class="list"></ul>
+	  </div>
+	  <div id="bh-sl-map" class="bh-sl-map scasl-map"></div>
+	</div>
+</div>
+
+</div>
+<br style="clear:both !important;" />
+<script src="//cdn.secomapp.com/storelocator/assets/cdn/js/infobubble.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+<script>
+if("undefined"==typeof Handlebars&&"function"==typeof define&&define.amd){var scasl_tempamd=define.amd;define.amd=void 0;var scasl_fileref=document.createElement("script");scasl_fileref.setAttribute("type","text/javascript"),scasl_fileref.setAttribute("src","//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"),document.getElementsByTagName("head")[0].appendChild(scasl_fileref),setTimeout(function(){define.amd=scasl_tempamd},1e3)}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-marker-clusterer/1.0.0/markerclusterer.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href='{{ "sca.storelocator.css" | asset_url }}' />
+<link rel="stylesheet" type="text/css" href='{{ "sca.api.storelocator.css" | asset_url }}' />
+<script id="scasl-infowindow-template" type="text">
+{%raw%}
+{{#location}}
+<div id="scasl-window-container" class="scasl-info-window">
+	<div class="scasl-info-location" {{#if store_image}} style="width:50%" {{/if}}>
+		<div id="scasl-title" class="scasl-field" >{{name}}</div>
+        <div id="scasl-description" class="scasl-field"><p>{{{description}}}</p></div>
+        <div id="scasl-address" class="scasl-field">{{address}}</div>
+        <div id="scasl-address2" class="scasl-field">{{address2}}</div>
+        {{#if operating_hours}}
+        <div class="scasl-operating-hour scasl-field">
+            <div class="minimize-oh-wrapper">
+                <span class="main-oh-status" style="color: {{oh_color}} !important">{{oh_main_status}}</span>
+                <span class="end-oh-status">{{oh_end_status}}</span>
+            </div>                                 
+        </div>
+        {{/if}}
+        <div>{{#if city}}<span id="scasl-city" class="scasl-field">{{city}}</span> {{/if}}{{#if state}}<span id="scasl-state" class="scasl-field">{{state}}</span> {{/if}}{{#if postal}}<span id="scasl-zipcode" class="scasl-field">{{postal}}</span> {{/if}}{{#if country}} <span id="scasl-country" class="scasl-field">{{country}}</span>{{/if}}</div>
+        {{#if phone}}<div id="scasl-phone" class="scasl-field"><span id="scasl-phone-label">Ph:</span> <a href="tel:{{phone}}">{{phone}}</a> </div>{{/if}}
+       	{{#if fax}}<div id="scasl-fax" class="scasl-field"><span id="scasl-fax-label">Fax:</span> {{fax}} </div>{{/if}}
+        {{#if email}}<div id="scasl-email" class="scasl-field"><span id="scasl-email-label">Email:</span> <a href="mailto:{{email}}">{{email}}</a> </div>{{/if}}
+        {{#if schedule}}<div id="scasl-schedule" class="scasl-field"><span id="scasl-schedule-label">Store Message:</span> {{{schedule}}} </div>{{/if}}
+        {{#each cfields}}
+        <div id="scasl-extra">
+          <span>{{key}}</span>:<span>{{{value}}}</span>
+        </div>
+        {{/each}}
+        <div id="scasl-tags" class="scasl-field">
+          {{#each tags}}
+          <span class="scasl-tags">{{tag}}</span>
+          {{/each}}
+        </div>
+        {{#if web}}
+        <div id="scasl-web" class="scasl-field"><a href="{{web}}" target="_blank">{{#if webdisplay}}{{webdisplay}}{{else}}{{niceURL web}}{{/if}}</a></div>
+        {{/if}}
+        {{#if distance}}
+        <div id="scasl-distance" class="scasl-field">{{distance}} {{length}}</div>
+        <div id="scasl-direction" class="scasl-field"><a href="https://maps.google.com/maps?saddr={{origin}}&amp;daddr={{address}} {{address2}} {{city}}, {{state}} {{postal}}" target="_blank">Directions</a></div>
+        {{/if}}
+	</div>
+
+	{{#if store_image}}
+	<div id="scasl-store_image" class="scasl-info-image scasl-field">
+		<img src="{{store_image}}" />
+	</div>
+	{{/if}}
+</div>
+{{/location}}
+{%endraw%}
+</script>
+
+<script id="scasl-list-template" type="text">
+{%raw%}
+{{#location}}
+<li id="scasl-list-container" data-markerid="{{markerid}}">
+	<div class="list-details scasl-list-details" {{#if store_image}} style="width:50%" {{/if}}>
+		<div class="list-content scasl-list-content">
+			<div id="scasl-title" class="scasl-field" >{{name}}</div>
+            <div id="scasl-description" class="scasl-field"><p>{{{description}}}</p></div>
+            <div id="scasl-address" class="scasl-field">{{address}}</div>
+            <div id="scasl-address2" class="scasl-field">{{address2}}</div>
+            {{#if operating_hours}}
+            <div class="scasl-operating-hour scasl-field">
+                <div class="minimize-oh-wrapper">
+                    <span class="main-oh-status" style="color: {{oh_color}} !important">{{oh_main_status}}</span>
+                    <span class="end-oh-status">{{oh_end_status}}</span>
+                    <img src="{{oh_arrow_down}}" alt="Arrow Down Icon">
+                </div>
+                <div class="maximize-oh-wrapper">
+                    <div class="maximize-oh-status">
+                      <span class="expand-oh-status" style="color: {{oh_color}} !important">{{oh_expand_content}}</span>
+                      <img src="{{oh_arrow_up}}" alt="Arrow Up Icon">
+                    </div>
+                    <table>
+                      {{#each oh_data}}
+                        <tr>
+                          <td rowspan={{rowspan}} class="{{data1.class}}">{{ name }}{{#if reason}}<br>{{reason}}{{/if}}</td>
+                          <td class="{{data1.class}}">{{data1.content}}{{#if data1.timeDiffer}}<br><span class="time-different" style="color: #dd860e !important;">Hours might differ</span>{{/if}}{{#if data1.currentTimezoneText}}<br>{{data1.currentTimezoneText}}{{/if}}</td>
+                        </tr>
+                        {{#leftData}}
+                          <tr>
+                            <td class="{{class}}">{{content}}{{#if timeDiffer}}<br><span class="time-different" style="color: #dd860e !important;">Hours might differ</span>{{/if}}{{#if currentTimezoneText}}<br>{{currentTimezoneText}}{{/if}}</td>
+                          </tr>
+                        {{/leftData}}
+                      {{/each}}
+                    </table>
+                </div>                               
+            </div>
+            {{/if}}
+            <div>{{#if city}}<span id="scasl-city" class="scasl-field">{{city}}</span> {{/if}}{{#if state}}<span id="scasl-state" class="scasl-field">{{state}}</span> {{/if}}{{#if postal}}<span id="scasl-zipcode" class="scasl-field">{{postal}}</span> {{/if}}{{#if country}} <span id="scasl-country" class="scasl-field">{{country}}</span>{{/if}}</div>
+            {{#if phone}}<div id="scasl-phone" class="scasl-field"><span id="scasl-phone-label">Ph:</span> <a href="tel:{{phone}}">{{phone}}</a> </div>{{/if}}
+       		{{#if fax}}<div id="scasl-fax" class="scasl-field"><span id="scasl-fax-label">Fax:</span> {{fax}} </div>{{/if}}
+        	{{#if email}}<div id="scasl-email" class="scasl-field"><span id="scasl-email-label">Email:</span> <a href="mailto:{{email}}">{{email}}</a> </div>{{/if}}
+        	{{#if schedule}}<div id="scasl-schedule" class="scasl-field"><span id="scasl-schedule-label">Store Message:</span> {{{schedule}}} </div>{{/if}}
+            {{#each cfields}}
+            <div id="scasl-extra">
+            <span>{{key}}</span>:<span>{{{value}}}</span>
+            </div>
+            {{/each}}
+            <div id="scasl-tags" class="scasl-field">
+            {{#each tags}}
+            <span class="scasl-tags">{{tag}}</span>
+            {{/each}}
+            </div>
+            {{#if web}}
+            <div id="scasl-web" class="scasl-field"><a href="{{web}}" target="_blank">{{#if webdisplay}}{{webdisplay}}{{else}}{{niceURL web}}{{/if}}</a></div>
+            {{/if}}
+            {{#if distance}}
+				<div id="scasl-distance" class="scasl-field">{{distance}} {{length}}</div>
+        		<div id="scasl-direction" class="scasl-field"><a href="https://maps.google.com/maps?saddr={{origin}}&amp;daddr={{address}} {{address2}} {{city}}, {{state}} {{postal}}" target="_blank">Directions</a></div>
+			{{/if}}
+		</div>
+	</div>
+	{{#if store_image}}
+	<div id="scasl-store_image" class="list-image scasl-list-image scasl-field">
+			<img src="{{store_image}}" />
+	</div>
+    {{/if}}
+</li>
+{{/location}}
+{%endraw%}
+</script>
+
+<script id="scasl-viewmap-btn-template" type="text">
+{%raw%}
+<button class="scasl-view-map-btn">View Map</button>
+{%endraw%}
+</script>
