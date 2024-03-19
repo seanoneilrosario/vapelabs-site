@@ -1,5 +1,10 @@
 {
   "sections": {
+    "pharmacylocator": {
+      "type": "pharmacylocator",
+      "settings": {
+      }
+    },
     "main": {
       "type": "page",
       "disabled": true,
@@ -8,6 +13,7 @@
     }
   },
   "order": [
+    "pharmacylocator",
     "main"
   ]
 }
