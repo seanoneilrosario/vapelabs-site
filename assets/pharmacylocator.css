@@ -32,7 +32,7 @@
 .bh-sl-loc-list ul li { margin: 0 !important; }
 .scasl-location-list { width: 30% !important; }
 .scasl-map { float: right !important; width: 69% !important; }
-.scasl-search-btn button, #scapl-geocode-btn { background: #30ABD9 !important; height: 34px; width: 20%; }
+.scasl-search-btn button, #scapl-geocode-btn { background: #30ABD9; height: 34px; width: 20%; }
 #scapl-geocode-btn { float: right; }
 .scasl-list-image, .scasl-info-image { float: right; }
 .scasl-list-image {/* width: 22%;*/ margin: 10px 10px 0 0; }
