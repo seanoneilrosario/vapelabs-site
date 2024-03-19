@@ -7,7 +7,6 @@
     },
     "main": {
       "type": "page",
-      "disabled": true,
       "settings": {
       }
     }
